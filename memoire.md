@@ -32,12 +32,14 @@ Seuls les deux premiers modules sont concernés par la migration couverte par ce
 
 Afin de collecter toutes données les données de ces deux modules l'architecture suivante a été mise en place (\autoref{fig:ancienne_archi}).
 
+<!---
 \begin{figure}[!h]
     \includestandalone[width=\textwidth]{schemas/ancien_schemas}
     \caption{Ancienne architecture}
     \label{fig:ancienne_archi}
 \end{figure}
 \FloatBarrier
+-->
 
 Explications :
 
