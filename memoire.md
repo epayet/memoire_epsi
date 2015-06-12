@@ -1,5 +1,7 @@
 # Introduction
 
+Lors de mon cursus d'ingénierie informatique a l'epsi Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Durant tout ce temps j'ai eu l'occasion de travailler dans plusieurs équipes ainsi que sur de nombreux projets tres interessants. Cdiscount est une entreprise 
+
 # Présentation de l'entreprise
 
 # Application Web
