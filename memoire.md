@@ -12,6 +12,8 @@ Le but de ce mémoire est de passer en revue ces possibilités, d'offrir des pro
 
 Nous verrons d'abord les besoins de créer une application web et l'évolution au fil des années de celles-ci. Nous verrons ensuite les différentes architectures modernes et utilisées sur le marché ainsi que les technologies actuelles répondant a ces problématiques. Nous aurons l'occasion de voir plusieurs exemples, comprenant la possibilite de faire aussi une application mobile via les applications que j'ai moi-meme develepe au sein de Cdiscount.
 
+Developpeur full stack, architecture moderne
+
 # Présentation de l'entreprise
 
 Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses
@@ -138,19 +140,23 @@ proposer des choix techniques pour certaines applications.
 
 ## Description
 
+Il existe 3 grandes familles d'applications informatique (logiciels) :
+
+* Application de bureau
+
+D'apres Wikipedia : "Une « application de bureau » (Desktop application en anglais) est un logiciel applicatif qui affiche son interface graphique dans un environnement de bureau24, il est hébergé et exécuté par l'ordinateur de l'usager. Cette technologie est apparue avec les premiers environnements de bureau en 1970".
+
+* Application Web
+
 D'apres wikipedia : "une application web (aussi appelée web app, de l'anglais) est une application manipulable grâce à un navigateur web". 
 
-# Une architecture moderne
+* Application mobile
 
-# Technologies actuelles correspondantes
+D'apres Wikipedia : "Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile, tel qu'un assistant personnel, un téléphone portable, un « smartphone », un baladeur numérique, une tablette tactile"
 
-# Un choix difficile
+Ce qui differencie finalement ces 3 types d'applications sont le support sur lequel elles sont accessibles. Ceci implique généralement des technologies / langages differents. Les avancées récentes des navigateurs web ont fait des applications web des applications completes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript). La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web a un tout autre niveau, dépassant meme les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web (Javascript, HTML/CSS, etc) approchant les performances des applications natives. Cela permet un cout de developpement moindre du a la reutilisation de code pour differentes plateformes. 
 
-# Projet de démonstration
-
-# Un gain financier
-
-# Conclusion
+Nous allons donc d'abord voir les interets et les limites des applications web, ainsi que l'évolution au fil du temps des technologies correspondantes.
 
 # Notes
 
