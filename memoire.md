@@ -138,8 +138,6 @@ proposer des choix techniques pour certaines applications.
 
 # Application Web
 
-## Description
-
 Il existe 3 grandes familles d'applications informatique (logiciels) :
 
 * Application de bureau
@@ -156,17 +154,66 @@ D'apres Wikipedia : "Une application mobile est un logiciel applicatif développ
 
 Ce qui differencie finalement ces 3 types d'applications sont le support sur lequel elles sont accessibles. Ceci implique généralement des technologies / langages differents. Les avancées récentes des navigateurs web ont fait des applications web des applications completes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript). La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web a un tout autre niveau, dépassant meme les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web (Javascript, HTML/CSS, etc) approchant les performances des applications natives. Cela permet un cout de developpement moindre du a la reutilisation de code pour differentes plateformes. 
 
-Nous allons donc d'abord voir les interets et les limites des applications web, ainsi que l'évolution au fil du temps des technologies correspondantes.
+Nous allons donc d'abord voir comment fonctionne une application web, ainsi que l'évolution au fil du temps des technologies correspondantes.
 
-# Notes
+## Description
+
+Une application web, contrairement a une application de bureau, est une application uniquement manipulable via un navigateur web. L'application est généralement installée sur un serveur et est accessible via un réseau (internet, réseau local, etc.). On a ici une architecture client/serveur ou le navigateur web est le client. A la différence d'en site web statique, une application web est constitué de liens hypertextes* provoquant l'envoi de nouvelles requetes utilisant généralement le protocole HTTP. Voici les applications web les plus courantes :
+
+* Moteur de recherche : Application qui recherche des documents (Ex : Google, Bing, Yahoo, etc.)
+* WebMail : Application qui permet d'envoyer et de recevoir des courriers électroniques (Ex : Gmail, Outlook, etc.)
+* Systeme de gestion de contenu : Application qui présente des documents
+    * Blog : Systeme de gestion de contenu organisé par date
+    * E-commerce : Site marchand (Ex : Amazon, Cdiscount, etc.)
+    * Wiki : Création collaborative de documents (Ex : Wikipédia)
+* Messagerie instantanée : Application qui permet a plusieurs utilisateurs d'echanger des messages textuels entre eux (Ex : Skype, Facebook messenger, etc.)
+* Jeu : Jeu vidéo accessible via le navigateur web
+* Réseau social : Application permettant de partager du contenu avec d'autres personnes (Ex : Facebook, Linkedin, etc.)
+
+Il existe de nombreux autres types d'applications, comme par exemple Google Maps qui permet de consulter des cartes géographiques du monde entier.
+
+## Evolution des technologies web
+
+Une application Web utilise un ou plusieurs langages de présentation (généralement HTML/CSS) et est interprétée par un navigateur web. Le langage Javascript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapide. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur et de son moteur de rendu (interpréteur HTML/CSS et moteur Javascript).
+
+### Evolution des navigateurs web
+
+Les principaux navigateurs du marché sont :
+
+* Google Chrome
+* Firefox
+* Internet Explorer
+* Safari
+* Opera
+
+Voici en 2015 les pourcentages d'utilisation de ceux-ci :
+
+![browserMarketShare]
+
+Les moteurs de rendu de ses navigateurs ont connu une forte evolution au fil du temps. L'une des plus notoires est l'apparition du moteur Javascript open source V8, créé par Google et apparu en meme temps en 2008 que leur navigateur phare Google Chrome. Le fait de compiler le code Javascript en code natif avant de l'executer lui permet d'avoir des performances exceptionnelles. Ce moteur a été créé pour les navigateurs mais aussi en tant que moteur autonome, ce qui a permis la création de projets indépendants comme NodeJS (serveur web). 
+
+TODO 
+Parler plus des moteurs ? voir wiki Javascript engine. 
+Parler du DOM ??
+
+### Apparition des RIA
+
+
+
+* RIA (flash, silverlight)
+* SPA
+* Interets et limites
+
+# Notes et plan
 
 * Application Web
     * Description
         * Interets
         * Limites
-    * Evolution
-        * Evolution des moteurs (V8)
-        * Passage par flash and co
+    * Evolution des technologies web
+        * Evolution des navigateurs
+        * Apparition des RIA
+        * Evolution du Javascript
         * Passage aux SPA
     * JavaScript everywhere
         * Server
@@ -212,3 +259,7 @@ Nous allons donc d'abord voir les interets et les limites des applications web, 
 * Full stack / Devops
 * Veille
 * Mobile
+Isomorphic app
+Web binary
+
+[browserMarketShare]: images/browser_share.png
