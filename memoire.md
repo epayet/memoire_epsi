@@ -195,30 +195,69 @@ Les moteurs de rendu de ses navigateurs ont connu une forte evolution au fil du 
 TODO 
 Parler plus des moteurs ? voir wiki Javascript engine. 
 Parler du DOM ??
+Attention differencier layout engine and moteur javascript
+avant interprété et maintenant JIT
 
-### Apparition des RIA
+### Apparition et disparition des RIA (Rich Internet Application)
 
+D'apres wikipedia : "Une rich Internet application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web".
 
+Avant que les moteurs Javascript soient aussi avancés, comparés aux applications de bureau, les applications web souffraient d'un manque de performance notoire. Le principe d'une RIA est alors d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du systeme d'exploitation pour faire fonctionner l'application. L'idée est de rester dans le navigateur mais de ne pas utiliser les capacités de celui-ci, plus limitées. Il etait desormais possible d'utiliser des ressources précédemment innacessibles au navigateur comme la camera, ou encore le GPU* pour le jeu video (* TODO a verifier ?).
 
-* RIA (flash, silverlight)
-* SPA
-* Interets et limites
+Les plus utilises sont les suivants :
+
+* Adobe Flash
+* JavaFX
+* Microsoft Silverlight
+
+Une etude avec Google Trends (*TODO lien source ?) a montre que depuis 2012, ces plugins sont remplacés au fur et a mesure par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML/5, Javascript, etc.). Cela s'explique par l'avancée récente des standards du web. L'intéret est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir a jour un logiciel tiers lorsqu'ils naviguent sur le web. Adobe Flash lui meme qu'il allait arreter la production de son logiciel pour les mobiles et qu'ils incitaient les developpeurs a se tourner vers des solutions full web.
+
+### Evolution du Javascript
+
+Javascript, aussi appelé ECMAScript est un langage de programmation dynamique. Ce langage a d'abord été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est a ce jour a la version 6 (on parle d'ECMAScript 6 ou encore d'ECMAScript 2015.). Nous allons voir comment celui-ci a beaucoup evolué, et pourquoi ce langage est devenu l'un des langages les plus utilisés actuellement.
+
+#### Une version 6 bien évoluée
+
+avant les gens aimaient pas, trouvaient le langage nul
+maitenant c'est trop bien, vrai langage
+lister les nouveaux trucs
+asyncrone
+
+#### Des performances plus que correctes
+
+moteurs trop biens
+asm.js
+unreal engine firefox
+web assembly
+
+conclusion
+
+fini les ria
+parler comme quoi ca trend vraiment avec des chiffres de github
+parler vite fait comme quoi ca s'etend a d'autres utilisations
+
+### Apparition des SPA (Single Page Application)
+
+## JavaScript Everywhere
+
+* paypal est passé d'une solution full java a nodejs
 
 # Notes et plan
 
 * Application Web
     * Description
-        * Interets
-        * Limites
     * Evolution des technologies web
         * Evolution des navigateurs
-        * Apparition des RIA
+        * Apparition et disparition des RIA
         * Evolution du Javascript
+            * Une version 6 bien evoluée
+            * Des performances plus que correctes
         * Passage aux SPA
     * JavaScript everywhere
-        * Server
-        * Cordova
-        * Client lourd
+        * Serveur
+        * Mobile
+        * Application de bureau
+        * Internet of Things ??
 * Tendances Architectures actuelles
     * Front 
         * MVC/MVVM
@@ -261,5 +300,6 @@ Parler du DOM ??
 * Mobile
 Isomorphic app
 Web binary
+Api gateway (microservices with REST)
 
 [browserMarketShare]: images/browser_share.png
