@@ -216,17 +216,68 @@ Une etude avec Google Trends (*TODO lien source ?) a montre que depuis 2012, ces
 
 Javascript, aussi appelé ECMAScript est un langage de programmation dynamique. Ce langage a d'abord été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est a ce jour a la version 6 (on parle d'ECMAScript 6 ou encore d'ECMAScript 2015.). Nous allons voir comment celui-ci a beaucoup evolué, et pourquoi ce langage est devenu l'un des langages les plus utilisés actuellement.
 
+TODO parler plus de ce que propose le langage avant de dire ce qui va pas avec ? asynchrone, first class function, etc.
+
+#### Un langage pas si apprécié
+
+Le langage JavaScript a souvent été un langage de programmation déprécié de beaucoup de développeurs, surtout de ceux ayant l'habitude de programmer avec des langages fortement typés comme Java ou C#. En effet, contrairement a ce que l'on pourrait croire, le JavaScript n'a rien en commun avec le Java. C'est un langage dynamiquement typé* qui pousse a la programmation orienté prototype* (une forme de programmation orienté objet, mais sans classe), ce qui peut paraitre tres deroutant. 
+
+De plus le langage JavaScript a tres longtemps ete associe aux navigateurs web et a la manipulation du DOM* TODO expliquer ce que c'est, la ou avant (Document Object Model). Etant donné que celui-ci a plusieurs implémentations différentes selon le navigateur et le moteur de rendu, devoir manipuler le DOM est alors souvent associé a manipuler le JavaScript avec des standards souvent tres differents. Malgré l'apparition de la librairie tres connue jQuery pour consolider ces differences, le fond du probleme reste inchangé. On devient alors tres dépendant de cette librairie que l'on inclut sur toutes les pages web, ce qui apporte son autre lot de problématiques (taille du site web augmentée, une nouvelle librairie tierce a maintenir a jour, etc.). 
+
+Apres plusieurs sondages, voici une liste des reproches les plus accusés au langage JavaScript, le rendant souvent déroutant :
+
+* Ressemblence forte au Java, mais tellement si différent
+* Variables non limités par un scope (bloc de code), permettant ainsi l'utilisation de variables globales (difficile a debuger et a maintenir)
+* Le mot-clé "this" a une signification et une référence différente selon le contexte, contrairement aux autres langages ou il a une signification et une valeur fixe
+* Les fonctions sont des objets et non des classes (on parle ici d'objet de premiere classe)
+* Difficile a debuguer
+* Les point-virgules sont optionels
+* Les fonctions retournent forcément une valeur (si rien n'est retourné, on récupere la valeur "undefined")
+* Compatibilté entre les navigateurs
+
+Pour combler les manques du langage et ses imcompréhensions, de nombreux surlangages sont apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d'etre directement interprété par le navigateur, soit la possibilité de se transcrire en JavaScript. Il en existe plusieurs, et les plus connus sont :
+
+#### Des alternatives viables mais pas majoritairement adoptées
+
+* CoffeeScript : Créé en 2009, inspiré par le Python, Ruby, et le Haskell
+* TypeScript : Créé par Microsoft en 2012, ajoute la possibilité d'ajouter des variables fortement typées et d'utiliser des classes pour un orienté objet plus "classique"
+* Dart : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc.
+
+Ces surcouches ont toutes le meme but : ajouter des fonctionnalités et faciliter le développement web. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons :
+
+* trop de js
+* pas facile a detroner
+* Moins de standards 
+* Moteur implémenté pas sur tous les navigateurs, js en fallback
+* Dépendence forte au js
+* Le développement des moteurs JavaScript des navigateurs est tres avancé
+
+Est-on vraiment obligé de dépendre d'une librairie tierce, ou un surlangage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup de ses problématiques. 
+
 #### Une version 6 bien évoluée
 
+JavaScrit est un langage tres puissant mais tres souvent mal compris et mal utilisé. 
+
+dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
 avant les gens aimaient pas, trouvaient le langage nul
+coffeeScript, TypeScript
 maitenant c'est trop bien, vrai langage
 lister les nouveaux trucs
 asyncrone
+callback hell
+permet la programmation lisp like (programmation fonctionnelle)
+nombre impressionnant de module nodejs, celui qui a le plus
+webgl
+asmjs c'est bien, mais ca reste du js, pas de multithread, locks, SIMD, etc. des trucs bien bas niveau
+On ne peut pas effacer le web et recommencer, citation de Brenden Eich : "You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail"
+Wasm 20x plus rapide
+wasm target for static langage
 
 #### Des performances plus que correctes
 
 moteurs trop biens
 asm.js
+tres souvent un langage intermediaire, emscripten, gwt...
 unreal engine firefox
 web assembly
 
