@@ -10,6 +10,7 @@ https://dzone.com/articles/why-java-developers-hate
 https://en.wikipedia.org/wiki/CoffeeScript
 https://en.wikipedia.org/wiki/TypeScript
 https://en.wikipedia.org/wiki/Dart_(programming_language)
+https://medium.com/javascript-scene/why-we-need-webassembly-an-interview-with-brendan-eich-7fb2a60b0723
 
 # Images
 

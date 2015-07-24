@@ -243,37 +243,52 @@ Pour combler les manques du langage et ses imcompréhensions, de nombreux surlan
 * TypeScript : Créé par Microsoft en 2012, ajoute la possibilité d'ajouter des variables fortement typées et d'utiliser des classes pour un orienté objet plus "classique"
 * Dart : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc.
 
-Ces surcouches ont toutes le meme but : ajouter des fonctionnalités et faciliter le développement web. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons :
+Ces surcouches ont toutes le meme but : ajouter des fonctionnalités et faciliter le développement web, et apporter des évolutions qui appairaitront plus vite grace au support de la communauté plutot que d'attendre la sortie des nouveaux standards ECMAScript. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons : 
 
-* trop de js
-* pas facile a detroner
-* Moins de standards 
-* Moteur implémenté pas sur tous les navigateurs, js en fallback
-* Dépendence forte au js
-* Le développement des moteurs JavaScript des navigateurs est tres avancé
+* Il existe trop de JavaScript. On reste énormément dépendant de ce langage, étant le seul ayant un interpréteur de bonne qualité sur tous les navigateurs. De plus, le développement existant dans ce langage est trop volumineux pour s'en défaire. 
+* Beaucoup de développeurs connaissent deja tres bien le JavaScript et ne veulent pas s'en défaire pour apprendre un nouveau langage. Ou peut-etre tout simplement qu'il ne convient pas a toutes les equipes de développement. TODO c'est pas ce que je redis ce qu'il y a en bas, si y'a que 2 trucs, des paragraphes c'est mieux
+ 
+Dans tous les cas, la dépendance au JavaScript est trop forte pour s'en défaire. Voici une citation de Brendan Eich, le créateur du langage Javascript : "You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail", qui signifie : "On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera". Selon lui, il n'est pas possible refaire le web, la seule solution est de l'améliorer.
 
-Est-on vraiment obligé de dépendre d'une librairie tierce, ou un surlangage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup de ses problématiques. 
+Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l'adoptent pas forcément. Le fait qu'il existe de nombreuses surcouches montre bien qu'il est difficile de n'avoir qu'un seul standard de développement suitant tous les développeurs. Il est cependant agréable d'avoir le choix, l'intégration de ceux-ci n'étant finalement pas si compliquée. TODO : expliquer pourquoi ? flux de dev gulp tout ca
+
+Le langage Javascript est trop omnipresent et il est difficile de s'en défaire. Est-on vraiment obligé de dépendre d'une librairie tierce, ou un surlangage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup de ces problématiques. 
 
 #### Une version 6 bien évoluée
 
-JavaScrit est un langage tres puissant mais tres souvent mal compris et mal utilisé. 
+JavaScript est un langage tres puissant mais tres souvent mal compris et mal utilisé. On dit souvent que c'est un langage a la fois adoré et détesté. Malgré une évolution plus lente que les autres alternatives open source*, les dernieres et futures nouveautés font de celui-ci un langage de plus en plus viable. Nous avons vu précédemment les reproches et les manques de celui-ci. La version 6 a pour but de combler un maximum ceux-ci, et malgré le fait qu'aujourd'hui, pas tous les navigateurs implémentent toutes les fonctionalités définissant cette nouvelle version, il est possible d'écrire du code en ES6, et le transpiler* (TODO, expliquer ce que c'est avant) en ES5 et avoir ainsi un code qui fonctionne sur les navigateurs aujourd'hui et maintenir une version plus moderne de celui-ci. 
 
-dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
-avant les gens aimaient pas, trouvaient le langage nul
-coffeeScript, TypeScript
-maitenant c'est trop bien, vrai langage
-lister les nouveaux trucs
-asyncrone
-callback hell
-permet la programmation lisp like (programmation fonctionnelle)
-nombre impressionnant de module nodejs, celui qui a le plus
-webgl
-asmjs c'est bien, mais ca reste du js, pas de multithread, locks, SIMD, etc. des trucs bien bas niveau
-On ne peut pas effacer le web et recommencer, citation de Brenden Eich : "You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail"
-Wasm 20x plus rapide
-wasm target for static langage
+Voici donc les nouvelles fonctionnalités accessible avec cette nouvelle version :
+
+* Les Promesses (Promises)
+
+Le concept n'est pas nouveau des développeurs JavaScript, mais n'a jamais été standard car toujours implémenté via des librairies tierces. Une définition standardisée est maintenant disponible. Le but est d'éviter d'avoir "l'enfer du callback*" en ayant la possibilité d'enchainer simplement des fonctions asynchrones. 
+
+* Des variables plus scopées
+
+Le mot clé "var" permet de définir une nouvelle variable en Javascript. Cependant, celui-ci n'assurait pas que la variable reste dans le scope (bloc de code) ou elle est déclarée. Ceci peut porter a confusier et amener a avoir des variables globales sans s'en rendre compte ou d'avoir une variable deja utilisee dans un scope precedent. La nouvelle version arrive avec deux nouveaux mot-clés : "let" et "const", qui permettent de s'assurer que les variables restent bien le scope ou elles sont déclarées.
+
+* Arrow functions
+
+Cela permet d'utiliser des fonctions de type callback* (TODO expliquer ce que c'est, plutot au debut du l'explication du js) tout en gardant la meme référence du mot clé "this". Comme vu precedemment, cela a toujours ete tres confu pour les developpeurs. De plus, elle permettent l'utilisation plus classique des fonction anonymes (lambdas*).
+
+* Les Générateurs
+
+C'est un type de fonction qui permet de suspendre l'activité du bloc ou elle est appelee attendre le résultat de celui-ci (programmation synchrone). Le Javascript poussant au maximum la programmation asynchrone, il n'est pas toujours aisé d'attendre le resultat d'un travail asynchrone, resultant souvant dans "l'enfer du callback". Le nouveau mot cle "yield" nous permet de realiser cela. 
+
+* Les Modules
+
+La gestion des modules en JavaScript n'a jamais eu de définition claire et precise. Deux standards sont arrives (AMD et CommonJS). Le but ici est de standardiser et de les rallier ces deux patterns* non officiels. 
+
+* Classes
+
+L'arrivee de cette version est attendue de beaucoup de developpeurs car il est desormais possible de creer des classes avec le pattern oriente objet classique grace au mot cle "class". Il est cependant toujours possible d'utiliser l'oriente objet de type prototype.
+
+Nous remarquerons que toutes ces nouveautés resolvent beaucoup des reproches cites auparavant et fait du Javascript un langage tres moderne utilisable des aujourd'hui. Les nouveautes ne vont pas finir d'arriver car la prochaine version (ES7) est deja annoncee avec son propre lot de nouveautes. Cette version encore aujourd'hui au stade de proposition. 
 
 #### Des performances plus que correctes
+
+Nous avons vu que le web est énormement dependant du langage JavaScript. La performance des moteurs JavaScript est donc cruciale pour l'avancee des applications web. Les developpeurs des navigateurs web l'ont bien compris et fournissent enormement d'effort a l'optimisation de ceux-ci. 
 
 moteurs trop biens
 asm.js
@@ -281,17 +296,30 @@ tres souvent un langage intermediaire, emscripten, gwt...
 unreal engine firefox
 web assembly
 
+dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
+asyncrone
+callback hell
+permet la programmation lisp like (programmation fonctionnelle)
+nombre impressionnant de module nodejs, celui qui a le plus
+webgl
+asmjs c'est bien, mais ca reste du js, pas de multithread, locks, SIMD, etc. des trucs bien bas niveau
+Wasm 20x plus rapide
+wasm target for static langage
+
 conclusion
 
 fini les ria
 parler comme quoi ca trend vraiment avec des chiffres de github
 parler vite fait comme quoi ca s'etend a d'autres utilisations
 
-### Apparition des SPA (Single Page Application)
-
 ## JavaScript Everywhere
 
-* paypal est passé d'une solution full java a nodejs
+                * Serveur
+                * Mobile
+                * Application de bureau
+                * Internet of Things ??
+
+paypal est passé d'une solution full java a nodejs
 
 # Notes et plan
 
@@ -301,15 +329,13 @@ parler vite fait comme quoi ca s'etend a d'autres utilisations
         * Evolution des navigateurs
         * Apparition et disparition des RIA
         * Evolution du Javascript
+            * Un langage pas si apprécié
+            * Des alternatives viables mais pas majoritairement adoptées
             * Une version 6 bien evoluée
             * Des performances plus que correctes
-        * Passage aux SPA
-    * JavaScript everywhere
-        * Serveur
-        * Mobile
-        * Application de bureau
-        * Internet of Things ??
+            * Une utilisation etendue
 * Tendances Architectures actuelles
+    * Passage aux SPA
     * Front 
         * MVC/MVVM
         * Orienté composants
