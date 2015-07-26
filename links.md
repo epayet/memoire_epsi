@@ -11,6 +11,12 @@ https://en.wikipedia.org/wiki/CoffeeScript
 https://en.wikipedia.org/wiki/TypeScript
 https://en.wikipedia.org/wiki/Dart_(programming_language)
 https://medium.com/javascript-scene/why-we-need-webassembly-an-interview-with-brendan-eich-7fb2a60b0723
+http://asmjs.org/faq.html
+https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6
+https://en.wikipedia.org/wiki/Asm.js
+https://en.wikipedia.org/wiki/LLVM
+https://fr.wikipedia.org/wiki/Node.js
+http://githut.info/
 
 # Images
 
