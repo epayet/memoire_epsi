@@ -17,7 +17,7 @@ Using the docker container :
 Using your own machine :
 
 ```
-make
+make memoire.pdf
 ```
 
 ## Files
