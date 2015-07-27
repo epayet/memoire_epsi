@@ -180,7 +180,7 @@ Une application Web utilise un ou plusieurs langages de présentation (général
 
 ### Évolution des navigateurs web
 
-Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaSript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. Voici actuellement les principaux navigateurs web ainsi que les moteurs utilisés :
+Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. Voici actuellement les principaux navigateurs web ainsi que les moteurs utilisés :
 
 * Google Chrome (moteur de rendu : **Blink**, moteur JavaScript : **V8**)
 * Firefox (moteur de rendu : **Gecko**, moteur JavaScript : **Spidermonkey**)
@@ -198,24 +198,43 @@ Avant standardisation, les navigateurs avaient tout d'abord leur implémentation
 
 D'après Wikipédia : « *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* ».
 
+Avant que les moteurs Javascript soient aussi avancés, comparés aux applications de bureau, les applications web souffraient d'un manque de performance notoire très souvent à cause de la manipulation du DOM très coûteuse. Le principe d'une RIA est alors d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était desormais possible d'utiliser des ressources précédemment innacessibles au navigateur comme la caméra, ou encore le GPU* pour du jeu video plus performant.
 
-Avant que les moteurs Javascript soient aussi avancés, comparés aux applications de bureau, les applications web souffraient d'un manque de performance notoire. Le principe d'une RIA est alors d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du systeme d'exploitation pour faire fonctionner l'application. L'idée est de rester dans le navigateur mais de ne pas utiliser les capacités de celui-ci, plus limitées. Il etait desormais possible d'utiliser des ressources précédemment innacessibles au navigateur comme la camera, ou encore le GPU* pour le jeu video (* TODO a verifier ?).
-
-Les plus utilises sont les suivants :
+Les plus utilisés et installés sont les suivants :
 
 * Adobe Flash
 * JavaFX
 * Microsoft Silverlight
 
-Une etude avec Google Trends (*TODO lien source ?) a montre que depuis 2012, ces plugins sont remplacés au fur et a mesure par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML/5, Javascript, etc.). Cela s'explique par l'avancée récente des standards du web. L'intéret est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir a jour un logiciel tiers lorsqu'ils naviguent sur le web. Adobe Flash lui meme qu'il allait arreter la production de son logiciel pour les mobiles et qu'ils incitaient les developpeurs a se tourner vers des solutions full web.
+Une étude avec Google Trends montre que depuis 2012, ces plugins sont remplacés au fur et à mesure par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'accès aux ressources comme la caméra, un espace de stockage relativement élevé (LocalStorage), une utilisation avancée des sockets*, au portage de librairies avancées dans le monde du web comme WebGL (sous-ensemble d'OpenGL, interface de programmation de 3D dynamique bien connue dans les applications de bureau), etc.
 
-### Evolution du Javascript
+L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. Nous allons voir comment l'évolution de ces technologies ont permis de se reposer uniquement sur celles-ci pour faire des applications web.
 
-Javascript, aussi appelé ECMAScript est un langage de programmation dynamique. Ce langage a d'abord été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est a ce jour a la version 6 (on parle d'ECMAScript 6 ou encore d'ECMAScript 2015.). Nous allons voir comment celui-ci a beaucoup evolué, et pourquoi ce langage est devenu l'un des langages les plus utilisés actuellement.
+### Évolution du Javascript
 
-TODO parler plus de ce que propose le langage avant de dire ce qui va pas avec ? asynchrone, first class function, etc.
+JavaScript, aussi appelé ECMAScript est un langage de scripts. Il a été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est à ce jour à la version 6 (on parle d'ECMAScript 6 ou encore d'ECMAScript2015.). Nous allons voir comment celui-ci a beaucoup évolué, et pourquoi ce langage est devenu l'un des langages les plus utilisés actuellement.
 
-#### Un langage pas si apprécié
+#### Attributs du langage JavaScript
+
+* **Programmation dynamique**
+
+Le JavaScript est un langage de programmation dit dynamique ou interprété. C'est donc un langage qui exécute au lancement du programme beaucoup de comportements que les langages dits statiques exécutent durant la compilation. 
+
+* **Langage de scripts**
+
+Le JavaScript est aussi un langage de scripts. Un moteur interprète directement le code source à la volée plutôt que d'exécuter du code machine pré-compilé.
+
+* **Langage orienté prototype**
+
+L'orienté prototype est une forme d'orienté objet sans classe, basée sur la notion de prototype. Un prototype est un objet à partir duquel on crée de nouveaux objets.
+
+* **First-class function**
+
+Les fonctions sont des objets de première classe, c'est-à-dire pouvant être utilisés sans restriction. Ce langage permet donc l'utilisation des fonctions comme tout autre variable, ce qui les rend utilisable dans différents contexte (arguments pour d'autres fonctions, retour de fonctions, stockage dans des structures de données, fonctions anonymes, etc.).
+
+Ce mélange de caractéristiques permet au JavaScript d'êtres un langage multi-paradigme* permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel). C'est une fonction qui est passée en argument à une autre fonction. Cette dernière peut alors faire usage de cette fonction de rappel comme de n'importe quelle autre fonction, alors qu'elle ne la connaît pas par avance.
+
+#### Un langage incompris TODOOOOOOOOOO
 
 Le langage JavaScript a souvent été un langage de programmation déprécié de beaucoup de développeurs, surtout de ceux ayant l'habitude de programmer avec des langages fortement typés comme Java ou C#. En effet, contrairement a ce que l'on pourrait croire, le JavaScript n'a rien en commun avec le Java. C'est un langage dynamiquement typé* qui pousse a la programmation orienté prototype* (une forme de programmation orienté objet, mais sans classe), ce qui peut paraitre tres deroutant. 
 
@@ -399,6 +418,9 @@ Api gateway (microservices with REST)
 * HTML
 * CSS
 * XML
+* GPU
+* socket
+* paradigme
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
