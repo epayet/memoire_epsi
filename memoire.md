@@ -140,19 +140,21 @@ proposer des choix techniques pour certaines applications.
 
 Il existe 3 grandes familles d'applications informatique (logiciels) :
 
-* Application de bureau
+* **Application de bureau**
 
-D'apres Wikipedia : "Une « application de bureau » (Desktop application en anglais) est un logiciel applicatif qui affiche son interface graphique dans un environnement de bureau24, il est hébergé et exécuté par l'ordinateur de l'usager. Cette technologie est apparue avec les premiers environnements de bureau en 1970".
+D'après Wikipédia : « *Une application de bureau (Desktop application en anglais) est un logiciel applicatif qui affiche son interface graphique dans un environnement de bureau, il est hébergé et exécuté par l'ordinateur de l'usager. Cette technologie est apparue avec les premiers environnements de bureau en 1970* ».
 
-* Application Web
+* **Application Web**
 
-D'apres wikipedia : "une application web (aussi appelée web app, de l'anglais) est une application manipulable grâce à un navigateur web". 
+D'après Wikipédia : « *Une application web (aussi appelée web app, de l'anglais) est une application manipulable grâce à un navigateur web* ».
 
-* Application mobile
+* **Application mobile**
 
-D'apres Wikipedia : "Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile, tel qu'un assistant personnel, un téléphone portable, un « smartphone », un baladeur numérique, une tablette tactile"
+D'après Wikipédia : « *Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile, tel qu'un assistant personnel, un téléphone portable, un « smartphone », un baladeur numérique, une tablette tactile* ».
 
-Ce qui differencie finalement ces 3 types d'applications sont le support sur lequel elles sont accessibles. Ceci implique généralement des technologies / langages differents. Les avancées récentes des navigateurs web ont fait des applications web des applications completes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript). La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web a un tout autre niveau, dépassant meme les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web (Javascript, HTML/CSS, etc) approchant les performances des applications natives. Cela permet un cout de developpement moindre du a la reutilisation de code pour differentes plateformes. 
+Ce qui différencie finalement ces 3 types d'applications est le support sur lequel elles sont accessibles. Ceci implique généralement des technologies et langages différents. Les avancées récentes des navigateurs web ont fait des applications web des applications complètes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript). 
+
+La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web a un tout autre niveau, dépassant meme les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web (Javascript, HTML/CSS, etc) approchant les performances des applications natives. Cela permet un cout de developpement moindre du a la reutilisation de code pour differentes plateformes. 
 
 Nous allons donc d'abord voir comment fonctionne une application web, ainsi que l'évolution au fil du temps des technologies correspondantes.
 
