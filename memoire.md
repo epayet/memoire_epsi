@@ -198,6 +198,7 @@ Avant standardisation, les navigateurs avaient tout d'abord leur implémentation
 
 D'après Wikipédia : « *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* ».
 
+
 Avant que les moteurs Javascript soient aussi avancés, comparés aux applications de bureau, les applications web souffraient d'un manque de performance notoire. Le principe d'une RIA est alors d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du systeme d'exploitation pour faire fonctionner l'application. L'idée est de rester dans le navigateur mais de ne pas utiliser les capacités de celui-ci, plus limitées. Il etait desormais possible d'utiliser des ressources précédemment innacessibles au navigateur comme la camera, ou encore le GPU* pour le jeu video (* TODO a verifier ?).
 
 Les plus utilises sont les suivants :
@@ -323,6 +324,7 @@ La popularite de Node.js et des applications web ont fait grimpe en fleche l'uti
 
 ![Github][repositoryGithub]
 
+dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
 asyncrone
 callback hell
 permet la programmation lisp like (programmation fonctionnelle)
