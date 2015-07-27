@@ -329,7 +329,6 @@ La popularite de Node.js et des applications web ont fait grimpe en fleche l'uti
 
 ![Github][repositoryGithub]
 
-dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
 asyncrone
 callback hell
 permet la programmation lisp like (programmation fonctionnelle)
