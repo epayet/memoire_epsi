@@ -234,75 +234,76 @@ Les fonctions sont des objets de première classe, c'est-à-dire pouvant être u
 
 Ce mélange de caractéristiques permet au JavaScript d'êtres un langage multi-paradigme* permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel). C'est une fonction qui est passée en argument à une autre fonction. Cette dernière peut alors faire usage de cette fonction de rappel comme de n'importe quelle autre fonction, alors qu'elle ne la connaît pas par avance.
 
-#### Un langage incompris TODOOOOOOOOOO
+#### Un langage incompris
 
-Le langage JavaScript a souvent été un langage de programmation déprécié de beaucoup de développeurs, surtout de ceux ayant l'habitude de programmer avec des langages fortement typés comme Java ou C#. En effet, contrairement a ce que l'on pourrait croire, le JavaScript n'a rien en commun avec le Java. C'est un langage dynamiquement typé* qui pousse a la programmation orienté prototype* (une forme de programmation orienté objet, mais sans classe), ce qui peut paraitre tres deroutant. 
+Le langage JavaScript a souvent été un langage de programmation déprécié de beaucoup de développeurs, surtout de ceux ayant l'habitude de programmer avec des langages fortement typés comme Java ou C#. En effet, contrairement à ce que l'on pourrait croire, le JavaScript n'a rien en commun avec le Java, ayant des sémantiques très différentes.
 
-De plus le langage JavaScript a tres longtemps ete associe aux navigateurs web et a la manipulation du DOM* TODO expliquer ce que c'est, la ou avant (Document Object Model). Etant donné que celui-ci a plusieurs implémentations différentes selon le navigateur et le moteur de rendu, devoir manipuler le DOM est alors souvent associé a manipuler le JavaScript avec des standards souvent tres differents. Malgré l'apparition de la librairie tres connue jQuery pour consolider ces differences, le fond du probleme reste inchangé. On devient alors tres dépendant de cette librairie que l'on inclut sur toutes les pages web, ce qui apporte son autre lot de problématiques (taille du site web augmentée, une nouvelle librairie tierce a maintenir a jour, etc.). 
+De plus le langage JavaScript a très longtemps été associe aux navigateurs web et à la manipulation du DOM* (Document Object Model). Etant donné que celui-ci a plusieurs implémentations différentes selon le navigateur et le moteur de rendu, devoir manipuler le DOM est alors souvent associé a manipuler le JavaScript avec des méthodes très différentes. Cela est de moins en moins grâce à la standardisation du W3C. Malgré l'apparition de la librairie très connue jQuery pour consolider ces différences, le fond du problème reste inchangé. On devient alors très dépendant de cette librairie que l'on inclut sur toutes les pages web, ce qui apporte son autre lot de problématiques (taille du site web augmentée, une nouvelle librairie tierce à maintenir à jour, etc.). 
 
 Apres plusieurs sondages, voici une liste des reproches les plus accusés au langage JavaScript, le rendant souvent déroutant :
 
-* Ressemblence forte au Java, mais tellement si différent
-* Variables non limités par un scope (bloc de code), permettant ainsi l'utilisation de variables globales (difficile a debuger et a maintenir)
+* Ressemblance forte au Java, mais tellement si différent
+* Variables non limités par un scope (bloc de code), permettant ainsi l'utilisation de variables globales (difficile à déboguer et à maintenir)
 * Le mot-clé "this" a une signification et une référence différente selon le contexte, contrairement aux autres langages ou il a une signification et une valeur fixe
-* Les fonctions sont des objets et non des classes (on parle ici d'objet de premiere classe)
-* Difficile a debuguer
-* Les point-virgules sont optionels
-* Les fonctions retournent forcément une valeur (si rien n'est retourné, on récupere la valeur "undefined")
-* Compatibilté entre les navigateurs
+* Les fonctions sont des objets et non des classes (on parle ici d'objet de première classe)
+* Les point-virgules sont optionnels
+* Les fonctions retournent forcément une valeur (si rien n'est retourné, on récupère la valeur "undefined")
+* Compatibilité entre les navigateurs
+* Code asynchrone difficile à maintenir, dû à la gestion de nombreuses callbacks (fonction de rappel). L’enchaînement d'instructions asynchrone n'est pas aisé et complexifie le code. On parle même "d'enfer de callback" (callback hell)
 
-Pour combler les manques du langage et ses imcompréhensions, de nombreux surlangages sont apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d'etre directement interprété par le navigateur, soit la possibilité de se transcrire en JavaScript. Il en existe plusieurs, et les plus connus sont :
+Pour combler les manques du langage et ses incompréhensions, de nombreux sur-langages sont apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d’être directement interprété par le navigateur, soit la possibilité de se transcrire en JavaScript.
 
 #### Des alternatives viables mais pas majoritairement adoptées
 
-* CoffeeScript : Créé en 2009, inspiré par le Python, Ruby, et le Haskell
-* TypeScript : Créé par Microsoft en 2012, ajoute la possibilité d'ajouter des variables fortement typées et d'utiliser des classes pour un orienté objet plus "classique"
-* Dart : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc.
+Les sur-langages les plus utilisés sont les suivants :
 
-Ces surcouches ont toutes le meme but : ajouter des fonctionnalités et faciliter le développement web, et apporter des évolutions qui appairaitront plus vite grace au support de la communauté plutot que d'attendre la sortie des nouveaux standards ECMAScript. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons : 
+* **CoffeeScript** : Créé en 2009, inspiré par le Python, Ruby, et le Haskell
+* **TypeScript** : Créé par Microsoft en 2012, ajoute la possibilité d'ajouter des variables fortement typées et d'utiliser des classes pour un orienté objet plus "classique"
+* **Dart** : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc. Possède aussi un interpréteur directement intégré au navigateur Google Chrome. Le JavaScript est utilisé pour les autres navigateurs.
 
-* Il existe trop de JavaScript. On reste énormément dépendant de ce langage, étant le seul ayant un interpréteur de bonne qualité sur tous les navigateurs. De plus, le développement existant dans ce langage est trop volumineux pour s'en défaire. 
-* Beaucoup de développeurs connaissent deja tres bien le JavaScript et ne veulent pas s'en défaire pour apprendre un nouveau langage. Ou peut-etre tout simplement qu'il ne convient pas a toutes les equipes de développement. TODO c'est pas ce que je redis ce qu'il y a en bas, si y'a que 2 trucs, des paragraphes c'est mieux
+Ces surcouches ont toutes le même but : ajouter des fonctionnalités, faciliter le développement web, et apporter des évolutions qui apparaîtront plus vite que les nouveaux standards ECMAScript grace au support de la communauté. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons.
+
+D'une part, le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. On reste énormément dépendant de ce langage, étant le seul ayant un interpréteur de bonne qualité et standardisé sur tous les navigateurs.
+
+Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l'adoptent pas forcément. Beaucoup de développeurs connaissent déjà très bien le JavaScript et ne veulent pas s'en défaire pour apprendre un nouveau langage. Le fait qu'il existe de nombreuses surcouches montre bien qu'il est difficile de n'avoir qu'un seul standard de développement satisfaisant tous les développeurs. Il est cependant agréable d'avoir le choix.
  
-Dans tous les cas, la dépendance au JavaScript est trop forte pour s'en défaire. Voici une citation de Brendan Eich, le créateur du langage Javascript : "You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail", qui signifie : "On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera". Selon lui, il n'est pas possible refaire le web, la seule solution est de l'améliorer.
+Voici une citation de Brendan Eich, le créateur du langage Javascript : « *You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail* », qui peut être traduit par : « *On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera* ». Selon lui, il n'est pas possible refaire le web, la seule solution est de l'améliorer.
 
-Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l'adoptent pas forcément. Le fait qu'il existe de nombreuses surcouches montre bien qu'il est difficile de n'avoir qu'un seul standard de développement suitant tous les développeurs. Il est cependant agréable d'avoir le choix, l'intégration de ceux-ci n'étant finalement pas si compliquée. TODO : expliquer pourquoi ? flux de dev gulp tout ca
-
-Le langage Javascript est trop omnipresent et il est difficile de s'en défaire. Est-on vraiment obligé de dépendre d'une librairie tierce, ou un surlangage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup de ces problématiques. 
+Le langage Javascript est trop omniprésent et il est difficile de s'en défaire. Est-on vraiment obligé de dépendre d'une librairie tierce, ou un sur-langage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup des problématiques posées. 
 
 #### Une version 6 bien évoluée
 
-JavaScript est un langage tres puissant mais tres souvent mal compris et mal utilisé. On dit souvent que c'est un langage a la fois adoré et détesté. Malgré une évolution plus lente que les autres alternatives open source*, les dernieres et futures nouveautés font de celui-ci un langage de plus en plus viable. Nous avons vu précédemment les reproches et les manques de celui-ci. La version 6 a pour but de combler un maximum ceux-ci, et malgré le fait qu'aujourd'hui, pas tous les navigateurs implémentent toutes les fonctionalités définissant cette nouvelle version, il est possible d'écrire du code en ES6, et le transpiler* (TODO, expliquer ce que c'est avant) en ES5 et avoir ainsi un code qui fonctionne sur les navigateurs aujourd'hui et maintenir une version plus moderne de celui-ci. 
+On dit souvent que c'est que le JavaScript est à la fois adoré et détesté. C'est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives open source, la récente version 6 fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. Même si aujourd'hui, cette version n'est pas prise en charge par tous les navigateurs, il est possible d'écrire du code en ES6, et le transformer en ES5 grâce à des transpileur (transforme un code source en un équivalent dans un autre langage). Le code écris est alors plus moderne et fonctionne malgré tout sur les différents navigateurs dès aujourd'hui. Le but est d'utiliser au plus tôt les derniers standards et avoir une application plus facile à maintenir et profiter rapidement des dernières évolutions.
 
-Voici donc les nouvelles fonctionnalités accessible avec cette nouvelle version :
+Voici donc les principales nouvelles fonctionnalités accessibles avec cette nouvelle version :
 
-* Les Promesses (Promises)
+* **Les Promesses (Promises)**
 
-Le concept n'est pas nouveau des développeurs JavaScript, mais n'a jamais été standard car toujours implémenté via des librairies tierces. Une définition standardisée est maintenant disponible. Le but est d'éviter d'avoir "l'enfer du callback*" en ayant la possibilité d'enchainer simplement des fonctions asynchrones. 
+Le concept n'est pas nouveau des développeurs JavaScript, mais n'a jamais été standard car toujours implémenté via des librairies tierces. L'utilisation des promesses est désormais intégré avec le langage lui-même. Le but est d'éviter d'avoir "l'enfer du callback*" en ayant la possibilité d’enchaîner simplement des fonctions asynchrones.
 
-* Des variables plus scopées
+* **Des variables plus scopées**
 
-Le mot clé "var" permet de définir une nouvelle variable en Javascript. Cependant, celui-ci n'assurait pas que la variable reste dans le scope (bloc de code) ou elle est déclarée. Ceci peut porter a confusier et amener a avoir des variables globales sans s'en rendre compte ou d'avoir une variable deja utilisee dans un scope precedent. La nouvelle version arrive avec deux nouveaux mot-clés : "let" et "const", qui permettent de s'assurer que les variables restent bien le scope ou elles sont déclarées.
+Le mot clé "var" permet de définir une nouvelle variable en Javascript. Cependant, celui-ci n'assurait pas que la variable reste dans le scope (bloc de code) ou elle est déclarée. Ceci peut porter à confusion et amener à avoir des variables globales sans s'en rendre compte ou d'avoir une variable déjà utilisée dans un scope précédent. La nouvelle version propose deux nouveaux mot-clés : "let" et "const", qui permettent de s'assurer que les variables restent bien le scope où elles sont déclarées.
 
-* Arrow functions
+* **Arrow functions**
 
-Cela permet d'utiliser des fonctions de type callback* (TODO expliquer ce que c'est, plutot au debut du l'explication du js) tout en gardant la meme référence du mot clé "this". Comme vu precedemment, cela a toujours ete tres confu pour les developpeurs. De plus, elle permettent l'utilisation plus classique des fonction anonymes (lambdas*).
+Cela permet d'utiliser des fonctions de rappel (callback) tout en gardant la même référence du mot-clé "this". Comme vu précédemment, cela a toujours été très confus pour les développeurs, ayant l'habitude que ce mot-clé ait toujours la même référence. De plus, elle permettent l'utilisation plus classique des fonctions anonymes (lambda expression*).
 
-* Les Générateurs
+* **Les Générateurs**
 
-C'est un type de fonction qui permet de suspendre l'activité du bloc ou elle est appelee attendre le résultat de celui-ci (programmation synchrone). Le Javascript poussant au maximum la programmation asynchrone, il n'est pas toujours aisé d'attendre le resultat d'un travail asynchrone, resultant souvant dans "l'enfer du callback". Le nouveau mot cle "yield" nous permet de realiser cela. 
+C'est un type de fonction qui permet de suspendre l'activité du bloc où elle est appelée et d'attendre le résultat de celui-ci (programmation synchrone). Il est désormais possible d'exécuter facilement du code asynchrone dans une boucle, permettant d'éviter encore une fois l'enfer du callback.
 
-* Les Modules
+* **Les Modules**
 
-La gestion des modules en JavaScript n'a jamais eu de définition claire et precise. Deux standards sont arrives (AMD et CommonJS). Le but ici est de standardiser et de les rallier ces deux patterns* non officiels. 
+La gestion des modules en JavaScript n'a jamais eu de définition claire et précise. Deux standards non officiels existent : AMD et CommonJS. Le but ici est de les rallier ces deux patterns* et d'en faire un standard officiel.
 
-* Classes
+* **Classes**
 
-L'arrivee de cette version est attendue de beaucoup de developpeurs car il est desormais possible de creer des classes avec le pattern oriente objet classique grace au mot cle "class". Il est cependant toujours possible d'utiliser l'oriente objet de type prototype.
+L’arrivée de cette version est attendue de beaucoup de développeurs car il est désormais possible de créer des classes avec le pattern* orienté objet classique grâce au mot-clé "class". Il est cependant toujours possible d'utiliser l'orienté objet de type prototype.
 
-Nous remarquerons que toutes ces nouveautés resolvent beaucoup des reproches cites auparavant et fait du Javascript un langage tres moderne utilisable des aujourd'hui. Les nouveautes ne vont pas finir d'arriver car la prochaine version (ES7) est deja annoncee avec son propre lot de nouveautes. Cette version encore aujourd'hui au stade de proposition. 
+Nous remarquerons que toutes ces nouveautés résolvent beaucoup des reproches cités auparavant et fait du JavaScript un langage très moderne utilisable des aujourd'hui. La prochaine version (ES7) est déjà annoncée et proposera elle-aussi son lot de nouveautés. Cette version encore aujourd'hui au stade de proposition. 
 
-#### Des performances plus que correctes
+#### Des performances plus que correctes		TODDDDDDDDDDDDDDDDDDDDO
 
 Nous avons vu que le web est énormement dependant du langage JavaScript. La performance des moteurs JavaScript est donc cruciale pour l'avancee des applications web. Les developpeurs des navigateurs web l'ont bien compris et fournissent enormement d'effort a l'optimisation de ceux-ci. La concurrence des navigateurs est telle qu'on la surnomme la "guerre des navigateurs". 
 
@@ -342,11 +343,6 @@ De nombreux outils et frameworks sont apparus avec Node.js, dont les plus connus
 La popularite de Node.js et des applications web ont fait grimpe en fleche l'utilisation du JavaScript et font de celui-ci le langage le plus actif actuellement. Les donnees du tres connu site web github (gestionnaire le plus utilise de modules open source) le demontre bien. Ainsi, en plus de posseder le plus grand nombres de modules, il contient le plus grand nombre de repository actifs sur github.
 
 ![Github][repositoryGithub]
-
-dans l'intro, preciser que toute appli devient appli web maintenant et appli web = Javascript et rien d'autre
-asyncrone
-callback hell
-permet la programmation lisp like (programmation fonctionnelle)
 
 conclusion
 
@@ -421,6 +417,7 @@ Api gateway (microservices with REST)
 * GPU
 * socket
 * paradigme
+* Expressions lambda
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
