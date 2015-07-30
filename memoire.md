@@ -303,52 +303,58 @@ L’arrivée de cette version est attendue de beaucoup de développeurs car il e
 
 Nous remarquerons que toutes ces nouveautés résolvent beaucoup des reproches cités auparavant et fait du JavaScript un langage très moderne utilisable des aujourd'hui. La prochaine version (ES7) est déjà annoncée et proposera elle-aussi son lot de nouveautés. Cette version encore aujourd'hui au stade de proposition. 
 
-#### Des performances plus que correctes		TODDDDDDDDDDDDDDDDDDDDO
+#### Des performances plus que correctes	
 
-Nous avons vu que le web est énormement dependant du langage JavaScript. La performance des moteurs JavaScript est donc cruciale pour l'avancee des applications web. Les developpeurs des navigateurs web l'ont bien compris et fournissent enormement d'effort a l'optimisation de ceux-ci. La concurrence des navigateurs est telle qu'on la surnomme la "guerre des navigateurs". 
+Nous avons vu que le web est énormément dépendant du langage JavaScript. La performance des moteurs JavaScript est donc cruciale pour l’avancée des applications web. Les développeurs des navigateurs web l'ont bien compris et fournissent énormément d'efforts à l'optimisation de ceux-ci. La concurrence des navigateurs est telle qu'on parle de "guerre des navigateurs". 
 
-Avant la deuxieme guerre des navigateurs en 2008-2009, les moteurs JavaScript etaient de simples interpreteurs. Le moteur V8 de Google cree en 2008 marque un nouveau tournant avec l'utilisation du JIT (Just In Time) compilation* (compilation juste a temps). Le fait de compiler le code Javascript en code natif avant de l'executer lui permet d'avoir des performances exceptionnelles. Ce moteur a été créé pour les navigateurs mais aussi en tant que moteur autonome, ce qui a permis la création de projets independants des navigateurs (utilisation serveurs, etc.). 
+##### Des moteurs JavaScript performants, mais est-ce suffisant ?
 
-Le JavaScript etant le support obligatoire pour faire des applications web, il est de plus en plus utilise en temps que langage cible. Les surlangages dynamiques vu auparavant le faisaient deja (CoffeeScript, TypeScript, etc.) mais aussi des langages comme le C/C++. Ceci est possible grace au langage asm.js qui est un sous-ensemble de JavaScript. Cela permet d'avoir des performances proches de celles d'un programme natif, car ce sous-ensemble n'utilise pas toutes les capacités des compilateurs JavaScript actuelles dedies aux langages dynamique (garbage collector*, types dynamiques, etc.) mais uniquement le minimum : strictly-typed integers, floats, arithmetic, function calls, and heap accesses* TODO traduction. Couplé avec la librairie Emscripten, il est possible de compiler des programmes natifs pour le web. C'est un compilateur source-a-source, ou un transpileur, qui transforme du code LLVM en asm.js. LLVM est un intermediaire bien connu et de nombreux compilateurs existants permettent deja le passage des principaux langages en LLVM, dont le C/C++. Cela a permis la transformation.
+Avant la deuxième guerre des navigateurs en 2008-2009, les moteurs JavaScript étaient de simples interpréteurs. Le moteur V8 de Google créé en 2008 marque un nouveau tournant avec l'utilisation du JIT (Just In Time) compilation* (compilation juste à temps). Le fait de compiler le code Javascript en code natif avant de l’exécuter lui permet d'avoir de meilleures performances. Ce moteur a été créé pour les navigateurs mais aussi en tant que moteur autonome, ce qui a permis la création de projets indépendants (utilisation côté serveur, etc.). 
 
-Les langages statiques sont réputes pour avoir des performances plus elevees, ayant une gestion manuelle de la memoire. La possibilite de compiler du code natif dans le monde du web permet d'avoir de meilleures performances seulement 1.5x plus lentes que du natif en plus d'avoir la possibilite de reutiliser du code natif deja existant dans le monde du web. La meilleure demonstration de ces performances est le bien connu moteur de jeu Unreal Engine. Grace a ces technologies, la version 3 de ce moteur de jeu dont le code source est en C++, un portage web a ete cree en 4 jours seulement avec des performances allucinantes. De nombreux autres programmes natifs ont suivi le mouvement (Dosbox, Unity, Vim, SQLite, etc.). 
+Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance. Malgré les optimisations qu'apporte les derniers moteurs JavaScript, ces opérations restent coûteuses. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
 
-Le futur du web veut suivre cette lignée et trouver une solution standardisee et efficace qui peut cohabiter avec le JavaScript. La solution est donc de creer un nouveau format plus bas-niveau (proche de la machine, avec gestion manuelle de la memoire, etc.) et proche du langage C. L'idee est d'avoir une solution comme asm.js, mais geree directement par tous les navigateurs. Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au web. Un projet officiel est commence, et se nomme WebAssembly qui a pour but de gerer le format binaire par les navigateurs. Ce projet a ete officialise le 17 Juin 2015 par Brenden Eich, le createur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officiliaser et repandre ce nouveau format de fichier (qui aura l'extension .wasm). Des performances 20x superieures a asm.js sont annoncees. En effet, asm.js ne reste finalement que du JavaScript simplifie. Il n'y a pas les fonctionnalites bas niveau comme, du multithread, SIMD*, etc. Le but ici n'est pas de remplacer JavaScript (nous avons vu auparavant que c'est pour l'instant impossible), mais d'apporter un nouveau langage alternatif. Le web pourra ainsi profiter de meilleur des deux mondes : langage interprete (JavaScript), et langage compile binaire (WebAssembly). Pour resumer voici ce qu'est et va apporter WebAssembly :
+Le JavaScript étant le support obligatoire pour faire des applications web, il reste la actuellement la cible de tout langage de programmation. Nous avons déjà vu qu'il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais qu'en est-il des langages de plus bas niveau (C/C++) ? 
 
-* Des performances ameliores : Les points critiques de l'application pourront etre ecrit en WebAssembly et etre utilise comme module en JavaScript
+##### Solution actuelle : asm.js
+
+asm.js est un sous-ensemble de JavaScript ne contenant que le nécessaire pour un langage de plus bas-niveau en évitant d'utiliser les fonctionnalités coûteuses de haut-niveau. Le but est d'approcher les performances des applications natives (applications de bureau). Etant un sous-ensemble du JavaScript, il est déjà supporté par tous les navigateurs actuels. Le projet Emscripten permet de compiler du C/C++ en code asm.js (ou tout autre langage pouvant être converti en LLVM*).
+
+La possibilité de compiler du code natif dans le monde du web permet d'avoir de meilleures performances (seulement 1.5x plus lentes que du natif avec asm.js). Ces outils ont permis le portage de code existant dans les applications de bureau dans le monde du web simplement et efficacement. L'exemple le plus impressionnant est le portage en 4 jours seulement du moteur de jeu bien connu Unreal Engine avec des performances impressionnantes. De nombreux autres programmes natifs ont suivi le mouvement (Dosbox, Unity, Vim, SQLite, etc.). 
+
+##### Solution future : WebAssembly
+
+Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d'une structure officielle permettant l'utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly.  Il a pour but de gérer le format binaire par les navigateurs.  Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialise le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l'extension .wasm). Des performances 20 fois supérieures a asm.js sont annoncées.
+
+Le but ici n'est pas de remplacer JavaScript (nous avons vu auparavant que c'est pour l'instant impossible), mais d'apporter un nouveau langage alternatif. Le Web pourra ainsi profiter du meilleur des deux mondes : langage de haut niveau interprété (JavaScript), et un langage de bas niveau compilé en binaire (WebAssembly). Pour résumer voici ce qu'est et va apporter WebAssembly :
+
+* Des performances améliorées : Les points critiques de l'application pourront être écrit en WebAssembly et être utilise comme module en JavaScript
 * Un nouveau langage au format binaire
-* Des navigateurs plus modernes : Ils pourront comprendre un format binaire plus efficace et leger
-* Nouvelle cible de compilation : Les differents langages pourront utiliser ce support. La compilation pour le web sera alors facilitee
+* Des navigateurs plus modernes : Ils pourront comprendre un format binaire plus efficace et plus léger
+* Nouvelle cible de compilation : Les différents langages pourront utiliser ce support. La compilation pour le Web sera alors facilitée
 
-#### Une utilisation etendue
+#### Une utilisation étendue
 
-Comme vu precedemment, le JavaScript evolue enormement. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu precedemment ont fait apparaitre des projets independants des navigateurs web. 
+Comme vu précédemment, le JavaScript évolue énormément. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment ont fait apparaître des projets indépendants des navigateurs web. 
 
-Un projet phare est Node.js, projet open source cree en 2009. C'est un environnement multi-plateforme oriente vers les applications reseaux. Node.js utilise la machine virtuelle V8 et la programmation evenementielle (asynchrone) de JavaScript pour creer des serveurs web ultra-performant pouvant tenir une charge importante, sans avoir besoin d'un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilise par les plus grandes entreprises (Groupon2, SAP3, LinkedIn4,5, Microsoft6,7, Yahoo!8, Walmart, etc) et possede une communaute tres active. Paypal est passe d'un SI entierement en Java a une solution Node.js. Le gestionnaire de paquets de Node.js (npm) est celui possedant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif compare aux autres detronant ainsi Java et son gestionnaire de paquets Maven. 
+Un projet phare est Node.js, projet open source créé en 2009. C'est un environnement multi-plateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra-performants pouvant tenir une charge importante, sans avoir besoin d'un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo!, Walmart, etc) et possède une communauté très active. Paypal est passe d'un solution entièrement écrite en Java a une solution en Node.js. Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven. 
 
-![Modules][npmModules]
+![Nombre de modules pour chaque langage][npmModules]
 
-De nombreux outils et frameworks sont apparus avec Node.js, dont les plus connus sont :
+De nombreux outils et frameworks* sont apparus avec Node.js, dont les plus connus sont :
 
 * Express : Framework web
 * Browserify : Un outil pour utiliser les module Node.js dans le navigateur
 * Babel : Outil pour transpiler du code JavaScript ES5 en ES6
-* Cordova : Plateforme pour creer des application mobiles natives avec du JavaScript
-* Grunt et Gulp : Outils d'automatisations de taches
-* Bower : Gestionnaire de paquet pour le front-end
-* Yeoman : Generateur de fichiers pour accelerer le developpement et la gestion des fichiers
-* Node-webkit (NW.js) : Application basee sur Webkit et Node.js permettant la creation d'applications de bureau en utilisant les technologies web
-* Mocha : Framework de test unitaire
+* Cordova : Plateforme pour créer des application mobiles natives avec du JavaScript
+* Grunt et Gulp : Outils d'automatisation de tâches
+* Bower : Gestionnaire de paquets pour le front-end
+* Yeoman : Générateur de fichiers pour accélérer le développement et la gestion des fichiers dans un projet
+* Node-webkit (NW.js) : Application basée sur le moteur de rendu Webkit et Node.js permettant la création d'applications de bureau en utilisant uniquement les technologies web
+* Mocha : Framework* de tests unitaires
 
-La popularite de Node.js et des applications web ont fait grimpe en fleche l'utilisation du JavaScript et font de celui-ci le langage le plus actif actuellement. Les donnees du tres connu site web github (gestionnaire le plus utilise de modules open source) le demontre bien. Ainsi, en plus de posseder le plus grand nombres de modules, il contient le plus grand nombre de repository actifs sur github.
+La popularité de Node.js et des applications web ont fait grimper en flèche l'utilisation du JavaScript. Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
 
-![Github][repositoryGithub]
-
-conclusion
-
-fini les ria
-parler comme quoi ca trend vraiment avec des chiffres de github
-parler vite fait comme quoi ca s'etend a d'autres utilisations
+![Statistiques des langages de programmation sur Github][repositoryGithub]
 
 # Notes et plan
 
@@ -358,7 +364,8 @@ parler vite fait comme quoi ca s'etend a d'autres utilisations
         * Evolution des navigateurs
         * Apparition et disparition des RIA
         * Evolution du Javascript
-            * Un langage pas si apprécié
+	        * Attributs du langage
+            * Un langage incompris
             * Des alternatives viables mais pas majoritairement adoptées
             * Une version 6 bien evoluée
             * Des performances plus que correctes
@@ -418,6 +425,8 @@ Api gateway (microservices with REST)
 * socket
 * paradigme
 * Expressions lambda
+* LLVM
+* Framework
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
