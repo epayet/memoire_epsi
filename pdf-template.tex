@@ -1,6 +1,5 @@
 \documentclass[12pt]{report}
 
-
 % Fonts and typography
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -44,6 +43,16 @@
 \let\stdsection\section
 \renewcommand\section{\newpage\stdsection}
 
+% Image scale
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % Colors
 
@@ -110,12 +119,6 @@
 %% Don’t use Mono font for URLs
 \urlstyle{same}
 
-
-% Images
-
-\usepackage{graphicx}
-
-
 % Pandoc hacks
 
 %% Normal enumerates processing
@@ -123,8 +126,15 @@
 
 %% Disable section numbers
 %\setcounter{secnumdepth}{0}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 
+% Section styles
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries\sffamily}{\thechapter.}{20pt}{\Huge\centering}
+\titlespacing*{\chapter}{0pt}{-40pt}{20pt}
 
 \begin{document}
 

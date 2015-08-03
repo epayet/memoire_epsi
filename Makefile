@@ -1,7 +1,7 @@
 all: view
 
 memoire.pdf:  memoire.md pdf-template.tex schemas/ancien_schemas.tex
-	pandoc -o memoire.pdf --latex-engine xelatex --listings --template pdf-template.tex memoire.md
+	pandoc -o memoire.pdf --latex-engine xelatex --listings --template pdf-template.tex --chapters memoire.md
 
 schemas/ancien_schemas.tex: schemas/ancien_schemas.dia
 	dia -e schemas/ancien_schemas.tex schemas/ancien_schemas.dia
