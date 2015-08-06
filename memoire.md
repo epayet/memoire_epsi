@@ -354,20 +354,27 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 ![Statistiques des langages de programmation sur Github][repositoryGithub]
 
+# Tendances architecturales actuelles
+
+## Architecture traditionnelle
+
+## Passage aux Single Page Application
+
+## Architecture Front-end
+
+## Architecture Back-end
+
+## Vers une architecture isomorphique
+
+# Technologies actuelles correspondantes
+
 # Notes et plan
 
 * Application Web
     * Description
-    * Evolution des technologies web
-        * Evolution des navigateurs
-        * Apparition et disparition des RIA
-        * Evolution du Javascript
-	        * Attributs du langage
-            * Un langage incompris
-            * Des alternatives viables mais pas majoritairement adoptées
-            * Une version 6 bien evoluée
-            * Des performances plus que correctes
-            * Une utilisation etendue
+    * Evolution des navigateurs
+    * Apparition et disparition des RIA
+    * Evolution du Javascript
 * Tendances Architectures actuelles
     * Passage aux SPA
     * Front 
@@ -383,7 +390,6 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
             * SOAP
             * SOA classique
             * MicroServices
-    * Javascript avancé
 * Technos correspondantes
     * Front
         * Angular
@@ -393,6 +399,7 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
         * Node
         * ...
     * Javascript polyfill
+    * Outils (yeoman, etc)
     * Docker
 * Charte de choix
 * Projet démonstration
