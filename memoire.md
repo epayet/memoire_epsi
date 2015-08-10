@@ -14,7 +14,7 @@ Nous verrons d'abord les besoins de créer une application web et l'évolution a
 
 Developpeur full stack, architecture moderne
 
-# Présentation de l'entreprise
+# Présentation de l'entreprise {-}
 
 Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses
 employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500
@@ -354,11 +354,76 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 ![Statistiques des langages de programmation sur Github][repositoryGithub]
 
-# Tendances architecturales actuelles
+# Tendances architecturales 
+
+Les évolutions récentes du JavaScript ont changé les methodes de developpement d'application web. Nous allons maintenant voir comment cela a impacte l'architecture logicielle des applications web.
 
 ## Architecture traditionnelle
 
+### Description
+
+On dit qu'une application web utilise une architecture traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (server-side rendering). Le principe est le suivant : 
+
+* Un navigateur web envoie une premiere requete lors de l'arrivee sur un site web. 
+* Le serveur va chercher des donnees si necessaire, puis forme la vue entierement (document HTML statique) et repond ce document au navigateur.
+* Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l'operation precedente recommence. Il recoit la page HTML suivant, etc.
+
+Du cote du serveur, une architecture du type MVC* (Modele Vue Controleur) est generalement mise en place pour bien separer les concepts (formation de la vue, des donnees et de la logique metier*). L’HTML étant un document statique, pour rendre l’expérience utilisateur plus intéressante, on utilise du javascript chargé côté client pour modifier la structure de l’HTML courant (via le DOM) et permettre des effets de type animation, etc. Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont chargés à chaque demande de page, car lorsque l’utilisateur demande une autre page (par exemple passage de l’accueil du site à la gestion de son compte), la logique est différente ainsi que l’HTML (le CSS et le Javascript sont souvent mis en cache par le navigateur). Une nouvelle page web correspond à une nouvelle logique qui doit être générée.
+
+![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
+
+### Critiques de l'architecture
+
+Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avances. Nous allons cependant voir les limites de celles-ci.
+
+#### Temps de chargement
+
+Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages où qu’il envoie un formulaire. Les traitements serveur sont exécutés à chaque fois, et le client recharge le javascript côté client à chaque requête, ce qui ralentit beaucoup sa navigation. De plus, la création de la page HTML est a la charge du serveur, ce qui augmente le travail effectue cote serveur.L'avantage est que la page affichée est définitive et allege le client.
+
+#### Limites de l'architecture MVC
+
+Avec cette architecture, le serveur est charge a la fois de gerer les donnees, les vues et la logique metier. L'architecture MVC* a pour but de bien marquer cette separation au niveau du code. Si la couche Model sert d'acces au donnees, la couche Vue sert a generer l'HTML, la partie Controler fait le lien entre les deux. On met tres souvent la logique pure de l'application dans les controleurs, ce qui rend difficile sa reutilisation dans un autre contexte.
+
+#### Un metier difficilement reutilisable (couplage fort)
+
+Le code metier est tres souvent melange avec les controlleurs de l'application web. Le metier est donc dans ce cas fortement couple avec l'application web. Pour creer une application sur un autre support (mobile, bureau, etc.), cette logique est difficilement reutilisable et devra surement etre reimplementee dans une autre technologie (redevelopper l'acces aux donnees, etc.). 
+
+TODO ca c'est peut etre plutot les limites de l'architecture MVC qui a enmene a la creation del'architecture SOA, peut etre que ca a rien a voir avec les limites de l'architecture traditionnelle. 
+
+#### Travail de la vue cote client et cote serveur confus
+
+Le serveur genere les fichiers utilises par le navigateur (HTML/CSS/JavaScript). L'HTML est un langage statique. Nous avons vu precedemment que le JavaScript permet de dynamiser l'application. Le developpeur doit alors gerer l'HTML brut genere pour le client, ainsi que le JavaScript qui permettra de dynamiser le tout. 
+
+#### Une architecture qui pousse au stateful
+
+Une application dite "stateless" est une application qui ne garde aucune information entre les requetes HTTP. A l'inverse, une application dite "stateful" est une application qui a la possibilité de garder des informations entre les requetes (remplissage d'un panier, connexion d'un utilisateur). Il est commun lors du developpement d'application web de stoquer des variables en session pour chaque utilisateur. Si cela peut etre tres pratique, la gestion d'un etat apporte une difficulte supplementaire a l'application. En plus de cela, il est plus difficile de scaler (TODO ca existe comme mot ?) horizontalement (rajouter des serveurs) car le partage de ces informations entre plusieurs machines n'est pas tache aisee.
+
+TODO expliquer ce qu'est la logique metier (business logic)
+
+* Bien pour les applis de types :
+    * Site marchand 
+    * Site web statique
+
 ## Passage aux Single Page Application
+
+* description
+    * Un seul point d'entree
+    * Chargement dynamique de vue
+* avantages
+    * Moins de sollicitation du serveur (grace a AJAX), que du restful
+    * Performance => faire travailler le browser, vachement performant ces derniers temps
+    * Meilleure separation des concerns, le serveur ne fait que servir la donnee (webservices, restful, json, etc.)
+    * Découplage des technologies entre le client et le serveur (couplage faible, communication par donnee)
+    * Force le stateless => bien utilisé, plus scalable
+    * Reutilisation du server Restful pour faire une appli avec un support different
+* Inconvenients
+    * SEO
+    * Utilisation du javascript obligatoire => pas vraiment un probleme today, on peut considerer que tout le monde a javascript
+* Bien pour les applications de type:
+    * Mail (Gmail)
+* Les probleme des spa sont pas vraiment des probleme, c'est juste une facon differente de faire, les browsers s'adaptent
+    * SEO
+    * Analytics
 
 ## Architecture Front-end
 
@@ -366,7 +431,9 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 ## Vers une architecture isomorphique
 
-# Technologies actuelles correspondantes
+# Méthodologie de développement : Extreme Programming
+
+# Technologies correspondantes
 
 # Notes et plan
 
@@ -436,3 +503,4 @@ Api gateway (microservices with REST)
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
 [repositoryGithub]: images/repository_github.png
+[traditionalArchitecture]: images/traditional_architecture.png
