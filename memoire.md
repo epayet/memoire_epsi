@@ -406,9 +406,27 @@ TODO expliquer ce qu'est la logique metier (business logic)
 
 ## Passage aux Single Page Application
 
-* description
-    * Un seul point d'entree
-    * Chargement dynamique de vue
+### Description
+
+Le javascript ayant évolué, permet des interactions plus dynamiques avec un serveur grâce à l’AJAX*. L’AJAX permet au javascript de lancer une requête http non bloquante (asynchrone) et d’avoir le résultat de la requête sans avoir à recharger la page.
+
+Cet atout, combine a la performance des recent moteurs javascript ont permis l’apparition d’un nouveau type d’applications, les Single Page Applications (SPA). C’est une application permettant à l’utilisateur d’avoir une expérience dynamique et non bloquante (proche des applications de bureau). En effet, l’utilisateur ne charge qu’une seule fois les fichiers de l’application (HTML/CSS et surtout Javascript). Le javascript s’occupe ensuite de changer la structure des pages en
+fonction des actions de l’utilisateur. Les communications serveur se font par AJAX et ne
+demandent pas le rechargement de la page. 
+
+Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la gestion de la vue et des donnees est confuse. Le but ici est d'avoir reelement deux applications totalement differentes. L'une est le client (la vue), comprenant toutes les interactions avec l'internaute (HTML/CSS/JavaScript), et l'autre est le serveur, comprenant la logique metier faisant abstraction de tout ce qui est visuel. Le serveur devient ce que l'on appelle commenement un web service, pouvant servir plusieurs types de client.
+
+![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
+
+### Avantages
+
+#### 
+#### 
+#### 
+#### 
+#### 
+#### 
+
 * avantages
     * Moins de sollicitation du serveur (grace a AJAX), que du restful
     * Performance => faire travailler le browser, vachement performant ces derniers temps
@@ -504,3 +522,4 @@ Api gateway (microservices with REST)
 [npmModules]: images/npm_modules.PNG
 [repositoryGithub]: images/repository_github.png
 [traditionalArchitecture]: images/traditional_architecture.png
+[spaArchitecture]: images/spa_architecture.png
