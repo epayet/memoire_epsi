@@ -420,30 +420,95 @@ Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la
 
 ### Avantages
 
-#### 
-#### 
-#### 
-#### 
-#### 
-#### 
+#### Un meilleur découplage
 
-* avantages
-    * Moins de sollicitation du serveur (grace a AJAX), que du restful
-    * Performance => faire travailler le browser, vachement performant ces derniers temps
-    * Meilleure separation des concerns, le serveur ne fait que servir la donnee (webservices, restful, json, etc.)
-    * Découplage des technologies entre le client et le serveur (couplage faible, communication par donnee)
-    * Force le stateless => bien utilisé, plus scalable
-    * Reutilisation du server Restful pour faire une appli avec un support different
-* Inconvenients
-    * SEO
-    * Utilisation du javascript obligatoire => pas vraiment un probleme today, on peut considerer que tout le monde a javascript
+Le fait d'avoir réellement deux applications différentes (serveur et client) rend plus facile le développement (couplage faible*). Il y a plusieurs avantages a cela. 
+
+D'une part, l'architecture globle de l'application est beaucoup plus claire. Il n'y a plus de confusion entre le serveur qui doit s'occuper du chargement de la vue et le client qui doit rendre ce contenu statique plus dynamique. Le serveur ne sert finalement que les donnees.
+
+D'autre part, la communication entre le client et le serveur s'effectuant generalement de maniere textuelle (json, xml, etc.*) via le protocole HTTP (on appelle cela un web service), cela permet d'avoir des technologies independantes. La migration d'un langage ou d'une technologie du cote serveur est alors facilitée. 
+
+De plus, avec cette architecture, il est possible de facilement reutiliser le serveur dans un autre contexte avec un autre client. Il est alors plus aisé de creer un client natif mobile par exemple. Il suffit de refaire l'interface. TODO c'est moche comme phrase. 
+
+#### Des performances améliorées
+
+Le fait que le serveur ne se charge plus de former la vue, mais que des donnees de maniere textuelle soulage grandement la charge des serveurs. L'application web utilise ainsi les ressources du navigateurs pour former la vue. Cela est possible grace aux récentes avancées du JavaScript.
+
+Nous avons vu la difference entre un programme stateful et stateless (TODO c'est vrai ?). Nous avons aussi vu que l'architecture traditionnelle pousse a l'utilisation du stateful du cote du serveur. Sans etre une regle, a l'inverse, l'architecture SPA pousse a l'architecture stateless. Cela facilite grandement la scalabilite horizontale et permet d'avoir des performances grandement ameliorees du cote du serveur aussi.
+
+### Inconvenients
+
+Cette architecture est finalement beaucoup plus evoluee et fonctionne tres differemment de l'architecture traditionnelle. Les standards du web et les navigateurs ont etes concus pour l'architecture traditionnelle et ce changement d'architecture apporte quelques difficultés. Cependant, celle-ci va de plus en plus devenir la norme et les standards ainsi que les navigateurs evoluent dans ce sens. 
+
+TODO dire ca a la fin p e
+
+#### JavaScript obligatoire
+
+Pendant tres longtemps, le JavaScript etait tres peu utilisé et il etait meme facultatif. Les dernieres applications web reposant entierement sur ce dernier, les internautes se doivent de l'avoir activé pour utiliser les appliactions web. Ceci est de moins en moins problématique, car il est généralement activé par défaut. On peut aujourd'hui considérer que tous les internautes ont le JavaScript d'activé. 
+
+#### Outils habituels du web a adapter
+
+Si les applications web changent, les outils gravitant autour se doivent aussi de changer. Par exemple les moteurs de recherche qui indexent les sites web (SEO) n'executent généralement pas de JavaScript, or comme nous l'avons vu, celui-ci est tres souvent essentiel. Recemment, le moteur de recherche le plus utilise Google integre l'utilisation du JavaScript lors de l'indexation des pages.
+
+Les outils d'analyse de trafic Web doivent aussi s'adapter. En effet, ceux-ci se basent beaucoup sur le chargement de nouvelles pages lors de son analyse, ce qui est beaucoup moins pertinant avec une architecture Single Page.
+
+TODO des chiffres p e pour dire que Google est le plus utilise
+
+#### Chargement de l'application un peu plus lourd
+
+L'application n'ayant qu'un seul point d'entree, celle-ci peut etre un peu plus longue a charger au debut. Ceci vient du fait que le navigateur doit completement charger les frameworks dont il est dependant avant de pouvoir debuter l'application. Apres ce chargement initial, l'application est cependant tres fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilises sont tres souvent les memes et sont souvent mis en cache.
+
+Finalement que des habitudes de développement a changer. Mais c'est dans le bon sens. evolution evolution
+TODO conclusion ?
+
 * Bien pour les applications de type:
     * Mail (Gmail)
-* Les probleme des spa sont pas vraiment des probleme, c'est juste une facon differente de faire, les browsers s'adaptent
-    * SEO
-    * Analytics
+* Dire dans quel cas c'est mieux quel archi quelque part avec des exemple p e
 
 ## Architecture Front-end
+
+Nous avons vu que les applications Single Page peuvent etre developpees independemment d'un serveur. Quelles sont donc les possibilités au niveau de l'architecture ? TODO moche
+
+### MVC et ses dérivés
+
+#### MVC classique
+
+Une architecture tres proche de ce que l'on fait generalement avec l'architecture traditionnelle est le MVC et ses dérivés. Le principe avec le MVC de base est que pour chaque page, il y ait un controleur. Le modele contient la logique de l'application ainsi que la couche d'access aux donnees. La vue interagit avec le controlleur et celui-ci interagit avec le modele. 
+
+De cette maniere, le fait de changer de page ne fait finalement que changer de couple MVC. On peut résumer comme cela : TODO c'est pas vrai
+
+* Vue : Affiche et interagie avec les donnees exposes par le controleur
+* Modele : Logique de l'application (regles metiers specifiques, acces aux donnees)
+* Controleur : Contient les methodes d'interaction avec l'utilisateur. Fais le lien entre la vue et le modele
+
+Ceci est la définition théorique du pattern MVC. Cependant, il est souvent utilisé d'une maniere legerement differente. Le modele ne contient finalement généralement pas la logique de l'application. Il n'est utilise qu'en source de donnees. La logique se retrouve alors dans les controleurs. 
+
+![Modèle Vue Contrôleur classique][mvc]
+
+#### Critiques du modele MVC classique
+
+Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
+
+D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il est en charge des regles metiers (delie de tout )
+
+2 Logiques : Application et Domain
+
+TODO Dire quelque part que regle metier, logique metier ca vient de SOA
+finalement inspiration de SOA, MVC et DDD
+
+#### Proposition d'un meilleur modele
+
+### Orienté composants
+
+### Piloté par évènement
+
+* Jquery
+        * MVC/MVVM
+        * Orienté composants
+            * Web components standard, implémentation dans les frameworks
+        * Events
+            * Portes ouvertes au bordel
+            * Des regles pour une bonne communication
 
 ## Architecture Back-end
 
@@ -523,3 +588,4 @@ Api gateway (microservices with REST)
 [repositoryGithub]: images/repository_github.png
 [traditionalArchitecture]: images/traditional_architecture.png
 [spaArchitecture]: images/spa_architecture.png
+[mvc]: images/mvc.png

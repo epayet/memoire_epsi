@@ -17,6 +17,11 @@ https://en.wikipedia.org/wiki/Asm.js
 https://en.wikipedia.org/wiki/LLVM
 https://fr.wikipedia.org/wiki/Node.js
 http://githut.info/
+https://en.wikipedia.org/wiki/Single-page_application
+
+# Livres
+
+Evans DDD
 
 # Images
 
