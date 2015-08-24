@@ -18,10 +18,13 @@ https://en.wikipedia.org/wiki/LLVM
 https://fr.wikipedia.org/wiki/Node.js
 http://githut.info/
 https://en.wikipedia.org/wiki/Single-page_application
+https://msdn.microsoft.com/en-us/library/ee658117.aspx
+https://fr.wikipedia.org/wiki/Architecture_logicielle
 
 # Livres
 
 Evans DDD
+[David Garlan and Mary Shaw, January 1994, CMU-CS-94-166, see "An Introduction to Software Architecture" at http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf]
 
 # Images
 

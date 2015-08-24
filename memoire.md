@@ -358,6 +358,39 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 Les évolutions récentes du JavaScript ont changé les methodes de developpement d'application web. Nous allons maintenant voir comment cela a impacte l'architecture logicielle des applications web.
 
+## Rappel des principaux styles d'architecture
+
+Qu'importe le type d'application (web, bureau, front-end, back-end, etc.), il est essentiel de decider de l'architecture logiciel globale de celle-ci. C'est encore plus crucial pour un SI. Il existe plusieurs styles d'architecture et nous allons voir les principaux utilisés aujourd'hui.
+
+Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une definition de David Garlan and Mary Shaw dans leur livre "An Introduction to Software Architecture" :
+
+"family of systems in terms of a pattern of structural organization. More specifically, an architectural style determines the vocabulary of components and connectors that can be used in instances of that style, together with a set of constraints on how they can be combined. These can include topological constraints on architectural descriptions (e.g., no cycles)."
+
+Ce qui peut etre traduit par : "... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles)."
+
+TODO les citations en anglais faut traduire ou pas ?
+TODO faire des jolis citations
+TODO wikipedia faut citer ou pas ?
+
+Voici un tableau comprenant les principaux styles d'architecture logicielles classés par catégorie.
+
+| Catégorie | Styles d'architectures |
+| --- | --- |
+| Communication | SOA (Service Oriented Architecture), Message Bus |
+| Déploiement | Client/Serveur, N-tiers, 3-tiers |
+| Domaine | DDD (Domain Driven Design) |
+| Structure | Orienté composants, Orienté objet, Architecture en couches |
+
+TODO pas joli tableau
+TODO les microservices, ici ou apres ?
+
+L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. Par exemple, l'architecture SOA est composee de services utilisant une architecture en couches avec un style orienté objet. Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. 
+
+TODO copier coller wiki https://fr.wikipedia.org/wiki/Architecture_logicielle#Les_styles_architecturaux
+insister un peu la dessus, conclusion p e ?
+
+### 
+
 ## Architecture traditionnelle
 
 ### Description
@@ -489,7 +522,7 @@ Ceci est la définition théorique du pattern MVC. Cependant, il est souvent uti
 
 Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
 
-D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il est en charge des regles metiers (delie de tout )
+D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il contient finalement la logique de l'application. Mais finalement, qu'est-ce que la "logique de l'application" ?
 
 2 Logiques : Application et Domain
 
@@ -514,6 +547,8 @@ finalement inspiration de SOA, MVC et DDD
 
 ## Vers une architecture isomorphique
 
+Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
+
 # Méthodologie de développement : Extreme Programming
 
 # Technologies correspondantes
@@ -525,21 +560,23 @@ finalement inspiration de SOA, MVC et DDD
     * Evolution des navigateurs
     * Apparition et disparition des RIA
     * Evolution du Javascript
-* Tendances Architectures actuelles
-    * Passage aux SPA
-    * Front 
-        * MVC/MVVM
-        * Orienté composants
-            * Web components standard, implémentation dans les frameworks
-        * Events
-            * Portes ouvertes au bordel
-            * Des regles pour une bonne communication
+* Tendances Architectures 
+    * Rappel des principaux styles d'architcecture
+        * SOA ramene au monolithe
+    * Front
+        * Architecture traditionnelle
+        * Passage aux SPA
+        * Styles
+            * MVC/MVVM
+            * Orienté composants
+            * Events
     * Back
         * Web Services
             * RESTful
             * SOAP
             * SOA classique
             * MicroServices
+    * Vers une archi isomorphique
 * Technos correspondantes
     * Front
         * Angular
