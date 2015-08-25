@@ -579,6 +579,53 @@ Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des
 
 # Notes et plan
 
+## But
+
+Faire une application web moderne et professionnelle.
+
+Faire les bon choix : architecture, technologie et méthodologie
+
+Démonstration avec projet POC
+
+Mot clés : maintenable, assurance qualité
+
+## Plan
+
+* Application web
+    * Description
+    * Supports
+    * Projet de démonstration : POC
+        * Motivations 
+        * Description
+        * Objectifs
+* Choix d'architecture
+    * Différents styles d'architecture
+        * Description
+        * Résumé des principaux styles
+        * Architecture orienté composants
+        * Architecture orienté évènements
+        * DDD
+        * SOA
+        * Microservices
+    * Spécificités du Front-end
+        * Application traditionnelle
+        * Passage aux SPA
+        * Choix d'un style d'architecture
+            * MVC
+            * Orienté composants
+            * Orienté évènements
+    * Spécificités du Back-end
+* Choix technologiques
+    * Front-end
+    * Back-end
+    * Déploiement ??
+* Méthodologie
+    * Méthode agile : Extreme Programming
+    * Appliqué au POC
+    * Développement d'une fonctionnalité : cheminement réel
+
+## Ancien plan
+
 * Application Web
     * Description
     * Evolution des navigateurs
