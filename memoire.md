@@ -384,12 +384,36 @@ Voici un tableau comprenant les principaux styles d'architecture logicielles cla
 TODO pas joli tableau
 TODO les microservices, ici ou apres ?
 
-L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. Par exemple, l'architecture SOA est composee de services utilisant une architecture en couches avec un style orienté objet. Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. 
+L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. Par exemple, l'architecture SOA est composee de services utilisant une architecture en couches avec un style orienté objet. Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. Genre Microservice c'est un SOA en moins monolithe.
 
 TODO copier coller wiki https://fr.wikipedia.org/wiki/Architecture_logicielle#Les_styles_architecturaux
 insister un peu la dessus, conclusion p e ?
 
-### 
+### Résumé des differents styles
+
+Nous allons d'abord voir un résumé de chaque style cité auparavant, puis détailler les plus importants utilisé dans le monde du web et ceux décris dans ce document. TODO en fait c'est les points clés
+
+| Style d'architecture | Description |
+| --- | --- |
+| Client/Serveur | Sépare le systeme en deux applications distinctes ou le client envoie des requetes au serveur. Tres souvent, le serveur est l'intermediaire avec une base de donnees et contient un peu de logique de l'application. TODO pas joli (originellement il disait que the server is a database with application logic represented as stored procedures)|
+| Architecture orienté composents | Décompose l'application en composants foncionnels réutilisables exposant des interfaces de communication bien défini. |
+| DDD (Domain Driven Design) | Un style d'architecture orienté objet concentré sur la modélisation d'un domaine métier et sur la définition d'objets métiers (TODO y'a un S ?) basés sur des entités en rapport avec le domaine métier. TODO ca veut rien dire nan ? |
+| Architecture en couches | Partitionne l'application en plusieurs couches (groupes logiques) | 
+| Orienté evenements | Style d'architecture utilisant un systeme d'evenements pouvant envoyer et recevoir des messages en utilisant un ou plusieurs canal de communication. De cette maniere, les applications peuvent interagir sans connaitre en detail les autres applications (couplage faible). |
+| N-tiers, 3-tiers | Sépare les fonctionnalités de l'application un plusieurs segments de la meme maniere que l'architecture en couches, a la difference que dans ce cas, chaque segment est situé sur une machine differente. TODO c'est vrai ca ? parler de n+1 ? |
+| Orienté objet | Paradigme bien connu basé sur la division des responsabilités d'une application ou d'un systeme en objets individuels et reutilisables, chacun comprenant les donnees et le comportement relevant a cet objet. |
+| SOA (Service-Oriented Architecture) | Refere aux applications qui exposent et consument des fonctionnalités a travers un service utilisant des contrats et des messages. |
+
+TODO en fait le SPA c'est un client serveur parce que ca separe vraiment du coup
+TODO ca se dit vraiment en francais le systeme ?
+TODO style d'architecture on dit aussi pattern
+TODO Message bus en fait c'est orienté eventements nan ?
+TODO je parle a un moment de kafka tout ca ?
+TODO integrer les microservices dans le tableau ou faire pouf apres y'a eu les microservices
+TODO tableau page entiere en annexe ou integré ?
+TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
+TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
+TODO traduire les noms en anglais genre SOA
 
 ## Architecture traditionnelle
 
