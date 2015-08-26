@@ -594,6 +594,18 @@ Mot clés : maintenable, assurance qualité
 * Application web
     * Description
     * Supports
+        * Navigateurs web
+            * Apparition et disparition des RIA
+            * Evolution du JavaScript
+                Un langage incompris
+                Une version 6 evoluée ??
+                Performance
+                Utilisation étendue (mobile, desktop, etc.)
+                Popularité du JavaScript
+        * Mobile
+            * Mobile Web responsive
+            * Mobile natif
+                Cordova, etc
     * Projet de démonstration : POC
         * Motivations 
         * Description
@@ -601,7 +613,7 @@ Mot clés : maintenable, assurance qualité
 * Choix d'architecture
     * Différents styles d'architecture
         * Description
-        * Résumé des principaux styles
+        * MVC
         * Architecture orienté composants
         * Architecture orienté évènements
         * DDD
@@ -612,17 +624,75 @@ Mot clés : maintenable, assurance qualité
         * Passage aux SPA
         * Choix d'un style d'architecture
             * MVC
+                beaucoup font ca mais pas terrible
             * Orienté composants
+                ca c'est mieux, surtout avec les web components, shadow dom tout ca, mais pas trop parler de techno ici quand meme
             * Orienté évènements
+                ca c'est pas mal aussi, on parle pas de flux de suite, p e un peu l'archi quand meme
     * Spécificités du Back-end
+        * Application traditionnelle
+        * Passage aux web services
+            * Protocole SOAP
+            * Tendance au RESTful
+        * Choix d'un style d'architecture
+            * SOA
+            * Microservices
+    * Ideologie commune
+        * Architecture avant technologie
+        * Inspiration de DDD
+            domaine avant tout, business logic de SOA, 2 types de logique, etc.
 * Choix technologiques
     * Front-end
+        * Choix d'un framework SPA
+            * Angular
+            * ReactJS + Flux architecture
+            * Polymer
+        * Choisir les bons outils
+            * Outil de compilation
+                Gulp
+                Transpilation
+            * Gestionnaire de paquets
+                Bower
+            * Automate
+                Yeoman
+            * Framework Graphique ?
+                Angular material
     * Back-end
-    * Déploiement ??
+        * Choix d'un langage
+            * NodeJS
+                Mais c'est pas tres important
+            * Communication RESTful
+            * Intégration avec l'existant chez Cdiscount
+        * Containers
+            * Docker
 * Méthodologie
     * Méthode agile : Extreme Programming
     * Appliqué au POC
+        * TDD
+            Jasmine, Karma, etc.
+            Protractor
+            Integration test for server
+            Test coverage, etc.
+        * Déploiement continu
+            Jenkins
+        * Planning, retro, dette technique, etat du systeme first (avant fonctionalité), etc.
     * Développement d'une fonctionnalité : cheminement réel
+        * User story
+        * Integration test
+        * E2E test
+        * Nouveau composant : TDD, etc. Idem pour les routes
+        * Validation par le PO
+        * Un bug ? Création d'un test mettant en valeur le bug, puis correction
+* POC, le résultat
+    * Idéologie et architecture respectée
+    * Objectif atteint en 2 mois ?
+        * Pas eu le temps de bien faire les microservices, mais ca viendra
+    * La suite ?
+        On a eu le temps de faire ceci cela en 2 mois, la suite s'annonce bien
+        Quelques challenges quand meme : integrer l'existant, analytics, etc.
+        Financierement c'est cool
+        Une inspiration pour le SI de Cdiscount
+        Tiens d'ailleurs ils sont en train de mettre en place du MicroServices alors que c'était du SOA
 
 ## Ancien plan
 
