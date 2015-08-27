@@ -174,7 +174,6 @@ Une application web, contrairement à une application de bureau, est une applica
 
 Il existe de nombreux autres types d'applications, comme par exemple Google Maps qui permet de consulter des cartes géographiques du monde entier.
 
-
 ## Navigateurs web
 
 Une application Web utilise un ou plusieurs langages de présentation (généralement HTML/CSS) et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur et de son moteur de rendu (interpréteur HTML/CSS et moteur JavaScript). 
@@ -368,19 +367,84 @@ TODO les titres 5, too much ? bullet instead ? ou change style
 
 ## Mobile
 
+* Marché du mobile en explosion, en 2014, la navigation mobile a dépassé la navigation desktop
+* Du coup, toujours connecté = beaucoup de navigation web
+* Sur le mobile il y a donc 2 marchés : le web mobile et le natif, et les 2 sont a prendre
+* Expliquer un peu la différence entre les 2
+
+![Nombre d'internautes mobile et PC][Mobile-web-browsing-vs-desktop-web-browsing]
+
 ### Mobile Web
+
+* Les technologies se sont adaptées : CSS3 media queries => ca s'appelle le responsive
+* Beaucoup d'outils et de frameworks
 
 ### Mobile Natif
 
+* Les applications natives sont quand meme beaucoup utilisées et passent par le market
+* Normalement un peu compliqué, langages différents par plateforme
+* Il est désormais possible de faire des applis natives avec les technos du web, cross plateforme
+* Plein d'outils, cordova, etc. Access aux fonctionnalités natives photos tout ca (webview)
+* Seul probleme : look & feel web et performance, mais ca marche pas mal quand meme et c'est moins cher
+
 TODO Natif mobile ou mobile natif ?
+TODO pousser les avantages et les inconvénients du mobile natif ? dans quel cas faire quoi ?
 
 ## Projet de démonstration : POC
 
-### Motivations
+* Ce projet sera le support et la démonstration de ce mémoire
+* C'est un projet de type POC (Proof of Concept)
+
+TODO dire quelque part que c'est grace aux recherches et a notre savoir faire technique qu'on fait ca
+
+### Contexte et motivations
+
+* Cdiscount possede un site web mobile, un site responsive, une appli native android, une appli native ios
+* Cdiscount paye tres des partenaires pour developper les applis natives 
+* L'expertise de Cdiscount c'est le web, et payer les partenaires ca coute cher, surtout avec l'intertionalisation et la spécificité de certains pays
+* Cdiscount = Cycle en V, mais c'est en train de changer ? voir présentation entreprise ?
+* Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses (citer les faiblesses ?)
+* L'equipe archi travaille sur tout ca et nous l'equipe lab, on fait un travail tres similaire avec nos recherches. Nous on a des ressources dégagées pour faire des projets a part et tester des trucs
+* Donc c'est super, on peut travailler ensemble pour ...
+
+
+TODO Pas trop insister sur l'equipe archi, c'est notre travail quand meme....
 
 ### Description
 
+* Le projet consiste donc a imiter le comportement de l'appli android actuel en utilisant :
+    * Technologies web uniquement
+    * Architecture bien choisie
+    * bonne Méthodologie 
+* Temps : 2 mois, et les limites que ca implique. On peut pas refaire toute l'appli en 2 mois a 3 devs. On verra jusqu'ou on peut aller
+
+TODO donner tout de suite les noms ? microservices, extreme programming, etc.
+
 ### Objectifs
+
+* Démontrer plusieurs choses a plusieurs niveaux :
+    * Au niveau de l'appli : 
+        * Pour faire une appli native, les techno web ca marche bien => expertise de la boite utiliée
+        * Technologies bien choisies = plus testable, plus claire (tres different de ce qu'utilise Cdiscount actuellement)
+    * Au niveau du la méthodo :
+        * Exp > V
+        * Les pizzas team c'est bien, encore une fois
+    * Au niveau de l'architecture :
+        * Démontstration de ce que voulait prouver l'équipe archi, en accord avec nos recherches
+        * Correspond bien avec la méthodo
+* Démontrer que cette facon de faire est prete, utilisable aujourd'hui et industrialisable
+* Nouvelle facon de faire qui correspond bien dans certains cas
+* Résumé de ce qu'on veut prouver que ca va apporter : 
+    * Développement plus rapide et plus fiable et bien adapté => temps = argent
+        Se détacher de la techno, choisir la techno pour un bon contexte = plus adapté, plus facile plus rapide
+    * Réutilisation du savoir web (j'ai pas deja dit ca ?)
+    * Déploiement facilité et assuré (déploiement continu) => contrairement a cycle en V ou c'est compliqué => TODO dire ca dans le contexte comme désavantage
+    * Assurance qualité
+    * Meilleure gestion de la dette technique et des bugs
+* Conclusion : devenir une inspiration pour Cdiscount sur plein de plans, et meme plus que ca => utiliser cette solution dans certains cas
+
+TODO je parle beaucoup de mobile, le titre du memoire c'est application web, bien faire comprendre que c'est du web et que cette méthodo n'est pas bonne uniquement pour du mobile, mais meme si on faisait que du web c'est bien aussi. Le mobile c'est un bonus. C'est du mobile web, mais natif. un peu
+TODO faire gaffe dans les objectifs, pas mélanger avec la conclusion. Voir apres s'ils ont étés atteints. Pas trop en dire au début ?
 
 # Tendances architecturales 
 
@@ -795,3 +859,4 @@ Api gateway (microservices with REST)
 [traditionalArchitecture]: images/traditional_architecture.png
 [spaArchitecture]: images/spa_architecture.png
 [mvc]: images/mvc.png
+[Mobile-web-browsing-vs-desktop-web-browsing]: images/Mobile-web-browsing-vs-desktop-web-browsing.jpg
