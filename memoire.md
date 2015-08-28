@@ -186,14 +186,19 @@ Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un mote
 * Safari (moteur de rendu : **Webkit**, moteur JavaScript : **Nitro**)
 * Opéra (moteur de rendu : **Blink**, moteur JavaScript : **V8**)
 
+TODO pas obligé de nommer tous les moteurs...
+
 Les dernières version d'Opéra utilise le projet Chromium et comme base et utilisent donc les même moteur que Google Chrome, lui même basé sur le projet open source Chromium. Microsoft veut à terme remplacer son navigateur Internet Explorer par leur dernier projet en date : Microsoft Edge utilisant leur nouveau moteur de rendu **EdgeHTML** tout en gardant leur moteur JavaScript Chakra.
+
+TODO ca aussi
 
 ![Pourcentage d'utilisation des navigateurs en 2015][browserMarketShare]
 
+TODO browser market share pas necessaire
+
 Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML*. 
 
-TODO peut etre pas autant parler des navigateurs, des parts de marché, des moteurs, etc.
-TODO l'image en annexe ?
+TODO Le DOM pourquoi pas
 
 ### Apparition et disparition des RIA
 
@@ -211,7 +216,7 @@ Une étude avec Google Trends montre que depuis 2012, ces plugins sont remplacé
 
 L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. Nous allons voir comment l'évolution de ces technologies ont permis de se reposer uniquement sur celles-ci pour faire des applications web.
 
-TODO trop long ?
+TODO trop long, p e juste evoquer les RIA 
 
 ### Évolution du Javascript
 
@@ -361,7 +366,7 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 ![Statistiques des langages de programmation sur Github][repositoryGithub]
 
-TODO trop long certains trucs ?
+TODO trop long certains trucs ? la partie sur utilisation etendue est interessante sinon le reste est un peu trop technique p e
 TODO images trop grandes ? meilleure image possible. annexe ?
 TODO les titres 5, too much ? bullet instead ? ou change style
 
@@ -386,6 +391,7 @@ TODO les titres 5, too much ? bullet instead ? ou change style
 * Il est désormais possible de faire des applis natives avec les technos du web, cross plateforme
 * Plein d'outils, cordova, etc. Access aux fonctionnalités natives photos tout ca (webview)
 * Seul probleme : look & feel web et performance, mais ca marche pas mal quand meme et c'est moins cher
+* Donc au final, quand on fait une appli web, ben on peut faire eventuellement une appli mobile aussi, c'est pour ca qu'on integre ca ici
 
 TODO Natif mobile ou mobile natif ?
 TODO pousser les avantages et les inconvénients du mobile natif ? dans quel cas faire quoi ?
@@ -406,7 +412,6 @@ TODO dire quelque part que c'est grace aux recherches et a notre savoir faire te
 * Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses (citer les faiblesses ?)
 * L'equipe archi travaille sur tout ca et nous l'equipe lab, on fait un travail tres similaire avec nos recherches. Nous on a des ressources dégagées pour faire des projets a part et tester des trucs
 * Donc c'est super, on peut travailler ensemble pour ...
-
 
 TODO Pas trop insister sur l'equipe archi, c'est notre travail quand meme....
 
@@ -759,6 +764,8 @@ TODO isomorphique ou pas ?
 
 ### Passage aux Web services
 
+soap, rest
+
 TODO web services, voir ou mettre les majuscules
 
 ### Choix de styles d'architecture
@@ -773,6 +780,112 @@ domaine avant tout, business logic de SOA, 2 types de logique, etc.
 
 TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
 TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
+
+# Choix technologiques
+
+## Front-end
+
+### Choix d'un framework SPA
+
+#### AngularJS
+
+#### ReactJS + Flux
+
+#### Polymer
+
+TODO tout présenter ou juste angular ? faut bien des comparaisons quand meme
+
+### Choisir les bons outils
+
+#### Outil de compilation
+
+                Gulp
+                Transpilation
+
+#### Gestionnaire de paquets
+
+                Bower
+
+#### Automate
+
+                Yeoman
+
+                TODO meilleur nom ?
+                
+#### Framework Graphique
+
+                Angular material
+ 
+TODO parler vraiment de ca ?
+
+## Back-end
+
+### Choix d'un langage
+
+NodeJS
+communication RESTful
+intégration chez Cdiscount
+
+### Containers 
+
+TODO parler de l'archi de l'appli, de la source de données orchestration tout ca ? je pense pas
+
+# Méthodologie
+
+## Méthode agile : Extreme Programming
+
+## Appliqué au projet
+
+### Différents rituels
+
+TODO meilleur nom ?
+
+### Différents types de tests
+
+TDD, E2E, integration
+pyramide de tests
+protractor
+test coverage, métrique interessante ?
+
+### Déploiement continu
+
+Jenkins
+
+## Démonstration de développement d'une fonctionnalité
+
+        * User story
+        * Integration test
+        * E2E test
+        * Nouveau composant : TDD, etc. Idem pour les routes
+        * Validation par le PO
+        * Un bug ? Création d'un test mettant en valeur le bug, puis correction
+
+TODO meilleur nom ?
+
+# Résultats du projet
+
+## Résultat
+
+jusqu'ou on est allé
+
+## Objectifs atteints ?
+
+Pas eu le temps trop de faire les microservices, mais juste une question de temps c'etait prevu
+
+## Challenges
+
+Integrer l'existant
+analytics
+
+TODO structure des dossiers ? un peu trop technique et long p e
+TODO comment conclure ?
+résultats : on fait tant en 2 mois, on est sur que tout marche, ...
+
+## La suite ? 
+
+SOA to Microservices, mais ca j'ai deja dit nan ?
+
+# Conclusion {-}
 
 # Notes et plan
 
