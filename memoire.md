@@ -446,11 +446,26 @@ TODO donner tout de suite les noms ? microservices, extreme programming, etc.
 TODO je parle beaucoup de mobile, le titre du memoire c'est application web, bien faire comprendre que c'est du web et que cette méthodo n'est pas bonne uniquement pour du mobile, mais meme si on faisait que du web c'est bien aussi. Le mobile c'est un bonus. C'est du mobile web, mais natif. un peu
 TODO faire gaffe dans les objectifs, pas mélanger avec la conclusion. Voir apres s'ils ont étés atteints. Pas trop en dire au début ?
 
-# Tendances architecturales 
+# Choix d'architecture 
 
 Les évolutions récentes du JavaScript ont changé les methodes de developpement d'application web. Nous allons maintenant voir comment cela a impacte l'architecture logicielle des applications web.
 
-## Rappel des principaux styles d'architecture
+TODO vrai intro
+
+brainstorm
+faire un bonne appli commence par choisir une bonne archi
+c'est plus important que choisir des technos
+faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception
+choisir une methodo c'est important aussi, en fait on devrait choisir a peu pres en meme temps, voir methodo avant mais bon
+
+## Différents styles d'architecture
+
+TODO intro
+
+brainstorm
+parler ici de combinaison de styles ?
+
+### Description
 
 Qu'importe le type d'application (web, bureau, front-end, back-end, etc.), il est essentiel de decider de l'architecture logiciel globale de celle-ci. C'est encore plus crucial pour un SI. Il existe plusieurs styles d'architecture et nous allons voir les principaux utilisés aujourd'hui.
 
@@ -480,6 +495,9 @@ L'architecture logiciel ne se limite généralement pas a un seul style d'archit
 
 TODO copier coller wiki https://fr.wikipedia.org/wiki/Architecture_logicielle#Les_styles_architecturaux
 insister un peu la dessus, conclusion p e ?
+TODO refacto
+TODO architecture = pattern ? donc MVC ca passe
+TODO pousser le fait que c'est souvent des combinaisons
 
 ### Résumé des differents styles
 
@@ -506,121 +524,11 @@ TODO tableau page entiere en annexe ou integré ?
 TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
 TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
 TODO traduire les noms en anglais genre SOA
+TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau plan, annexe ?
 
-## Architecture traditionnelle
+### MVC
 
-### Description
-
-On dit qu'une application web utilise une architecture traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (server-side rendering). Le principe est le suivant : 
-
-* Un navigateur web envoie une premiere requete lors de l'arrivee sur un site web. 
-* Le serveur va chercher des donnees si necessaire, puis forme la vue entierement (document HTML statique) et repond ce document au navigateur.
-* Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l'operation precedente recommence. Il recoit la page HTML suivant, etc.
-
-Du cote du serveur, une architecture du type MVC* (Modele Vue Controleur) est generalement mise en place pour bien separer les concepts (formation de la vue, des donnees et de la logique metier*). L’HTML étant un document statique, pour rendre l’expérience utilisateur plus intéressante, on utilise du javascript chargé côté client pour modifier la structure de l’HTML courant (via le DOM) et permettre des effets de type animation, etc. Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont chargés à chaque demande de page, car lorsque l’utilisateur demande une autre page (par exemple passage de l’accueil du site à la gestion de son compte), la logique est différente ainsi que l’HTML (le CSS et le Javascript sont souvent mis en cache par le navigateur). Une nouvelle page web correspond à une nouvelle logique qui doit être générée.
-
-![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
-
-### Critiques de l'architecture
-
-Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avances. Nous allons cependant voir les limites de celles-ci.
-
-#### Temps de chargement
-
-Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages où qu’il envoie un formulaire. Les traitements serveur sont exécutés à chaque fois, et le client recharge le javascript côté client à chaque requête, ce qui ralentit beaucoup sa navigation. De plus, la création de la page HTML est a la charge du serveur, ce qui augmente le travail effectue cote serveur.L'avantage est que la page affichée est définitive et allege le client.
-
-#### Limites de l'architecture MVC
-
-Avec cette architecture, le serveur est charge a la fois de gerer les donnees, les vues et la logique metier. L'architecture MVC* a pour but de bien marquer cette separation au niveau du code. Si la couche Model sert d'acces au donnees, la couche Vue sert a generer l'HTML, la partie Controler fait le lien entre les deux. On met tres souvent la logique pure de l'application dans les controleurs, ce qui rend difficile sa reutilisation dans un autre contexte.
-
-#### Un metier difficilement reutilisable (couplage fort)
-
-Le code metier est tres souvent melange avec les controlleurs de l'application web. Le metier est donc dans ce cas fortement couple avec l'application web. Pour creer une application sur un autre support (mobile, bureau, etc.), cette logique est difficilement reutilisable et devra surement etre reimplementee dans une autre technologie (redevelopper l'acces aux donnees, etc.). 
-
-TODO ca c'est peut etre plutot les limites de l'architecture MVC qui a enmene a la creation del'architecture SOA, peut etre que ca a rien a voir avec les limites de l'architecture traditionnelle. 
-
-#### Travail de la vue cote client et cote serveur confus
-
-Le serveur genere les fichiers utilises par le navigateur (HTML/CSS/JavaScript). L'HTML est un langage statique. Nous avons vu precedemment que le JavaScript permet de dynamiser l'application. Le developpeur doit alors gerer l'HTML brut genere pour le client, ainsi que le JavaScript qui permettra de dynamiser le tout. 
-
-#### Une architecture qui pousse au stateful
-
-Une application dite "stateless" est une application qui ne garde aucune information entre les requetes HTTP. A l'inverse, une application dite "stateful" est une application qui a la possibilité de garder des informations entre les requetes (remplissage d'un panier, connexion d'un utilisateur). Il est commun lors du developpement d'application web de stoquer des variables en session pour chaque utilisateur. Si cela peut etre tres pratique, la gestion d'un etat apporte une difficulte supplementaire a l'application. En plus de cela, il est plus difficile de scaler (TODO ca existe comme mot ?) horizontalement (rajouter des serveurs) car le partage de ces informations entre plusieurs machines n'est pas tache aisee.
-
-TODO expliquer ce qu'est la logique metier (business logic)
-
-* Bien pour les applis de types :
-    * Site marchand 
-    * Site web statique
-
-## Passage aux Single Page Application
-
-### Description
-
-Le javascript ayant évolué, permet des interactions plus dynamiques avec un serveur grâce à l’AJAX*. L’AJAX permet au javascript de lancer une requête http non bloquante (asynchrone) et d’avoir le résultat de la requête sans avoir à recharger la page.
-
-Cet atout, combine a la performance des recent moteurs javascript ont permis l’apparition d’un nouveau type d’applications, les Single Page Applications (SPA). C’est une application permettant à l’utilisateur d’avoir une expérience dynamique et non bloquante (proche des applications de bureau). En effet, l’utilisateur ne charge qu’une seule fois les fichiers de l’application (HTML/CSS et surtout Javascript). Le javascript s’occupe ensuite de changer la structure des pages en
-fonction des actions de l’utilisateur. Les communications serveur se font par AJAX et ne
-demandent pas le rechargement de la page. 
-
-Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la gestion de la vue et des donnees est confuse. Le but ici est d'avoir reelement deux applications totalement differentes. L'une est le client (la vue), comprenant toutes les interactions avec l'internaute (HTML/CSS/JavaScript), et l'autre est le serveur, comprenant la logique metier faisant abstraction de tout ce qui est visuel. Le serveur devient ce que l'on appelle commenement un web service, pouvant servir plusieurs types de client.
-
-![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
-
-### Avantages
-
-#### Un meilleur découplage
-
-Le fait d'avoir réellement deux applications différentes (serveur et client) rend plus facile le développement (couplage faible*). Il y a plusieurs avantages a cela. 
-
-D'une part, l'architecture globle de l'application est beaucoup plus claire. Il n'y a plus de confusion entre le serveur qui doit s'occuper du chargement de la vue et le client qui doit rendre ce contenu statique plus dynamique. Le serveur ne sert finalement que les donnees.
-
-D'autre part, la communication entre le client et le serveur s'effectuant generalement de maniere textuelle (json, xml, etc.*) via le protocole HTTP (on appelle cela un web service), cela permet d'avoir des technologies independantes. La migration d'un langage ou d'une technologie du cote serveur est alors facilitée. 
-
-De plus, avec cette architecture, il est possible de facilement reutiliser le serveur dans un autre contexte avec un autre client. Il est alors plus aisé de creer un client natif mobile par exemple. Il suffit de refaire l'interface. TODO c'est moche comme phrase. 
-
-#### Des performances améliorées
-
-Le fait que le serveur ne se charge plus de former la vue, mais que des donnees de maniere textuelle soulage grandement la charge des serveurs. L'application web utilise ainsi les ressources du navigateurs pour former la vue. Cela est possible grace aux récentes avancées du JavaScript.
-
-Nous avons vu la difference entre un programme stateful et stateless (TODO c'est vrai ?). Nous avons aussi vu que l'architecture traditionnelle pousse a l'utilisation du stateful du cote du serveur. Sans etre une regle, a l'inverse, l'architecture SPA pousse a l'architecture stateless. Cela facilite grandement la scalabilite horizontale et permet d'avoir des performances grandement ameliorees du cote du serveur aussi.
-
-### Inconvenients
-
-Cette architecture est finalement beaucoup plus evoluee et fonctionne tres differemment de l'architecture traditionnelle. Les standards du web et les navigateurs ont etes concus pour l'architecture traditionnelle et ce changement d'architecture apporte quelques difficultés. Cependant, celle-ci va de plus en plus devenir la norme et les standards ainsi que les navigateurs evoluent dans ce sens. 
-
-TODO dire ca a la fin p e
-
-#### JavaScript obligatoire
-
-Pendant tres longtemps, le JavaScript etait tres peu utilisé et il etait meme facultatif. Les dernieres applications web reposant entierement sur ce dernier, les internautes se doivent de l'avoir activé pour utiliser les appliactions web. Ceci est de moins en moins problématique, car il est généralement activé par défaut. On peut aujourd'hui considérer que tous les internautes ont le JavaScript d'activé. 
-
-#### Outils habituels du web a adapter
-
-Si les applications web changent, les outils gravitant autour se doivent aussi de changer. Par exemple les moteurs de recherche qui indexent les sites web (SEO) n'executent généralement pas de JavaScript, or comme nous l'avons vu, celui-ci est tres souvent essentiel. Recemment, le moteur de recherche le plus utilise Google integre l'utilisation du JavaScript lors de l'indexation des pages.
-
-Les outils d'analyse de trafic Web doivent aussi s'adapter. En effet, ceux-ci se basent beaucoup sur le chargement de nouvelles pages lors de son analyse, ce qui est beaucoup moins pertinant avec une architecture Single Page.
-
-TODO des chiffres p e pour dire que Google est le plus utilise
-
-#### Chargement de l'application un peu plus lourd
-
-L'application n'ayant qu'un seul point d'entree, celle-ci peut etre un peu plus longue a charger au debut. Ceci vient du fait que le navigateur doit completement charger les frameworks dont il est dependant avant de pouvoir debuter l'application. Apres ce chargement initial, l'application est cependant tres fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilises sont tres souvent les memes et sont souvent mis en cache.
-
-Finalement que des habitudes de développement a changer. Mais c'est dans le bon sens. evolution evolution
-TODO conclusion ?
-
-* Bien pour les applications de type:
-    * Mail (Gmail)
-* Dire dans quel cas c'est mieux quel archi quelque part avec des exemple p e
-
-## Architecture Front-end
-
-Nous avons vu que les applications Single Page peuvent etre developpees independemment d'un serveur. Quelles sont donc les possibilités au niveau de l'architecture ? TODO moche
-
-### MVC et ses dérivés
-
-#### MVC classique
+#### Description
 
 Une architecture tres proche de ce que l'on fait generalement avec l'architecture traditionnelle est le MVC et ses dérivés. Le principe avec le MVC de base est que pour chaque page, il y ait un controleur. Le modele contient la logique de l'application ainsi que la couche d'access aux donnees. La vue interagit avec le controlleur et celui-ci interagit avec le modele. 
 
@@ -632,9 +540,18 @@ De cette maniere, le fait de changer de page ne fait finalement que changer de c
 
 Ceci est la définition théorique du pattern MVC. Cependant, il est souvent utilisé d'une maniere legerement differente. Le modele ne contient finalement généralement pas la logique de l'application. Il n'est utilise qu'en source de donnees. La logique se retrouve alors dans les controleurs. 
 
+TODO meilleure description, copier coller de l'ancien plan
+
+brainstorm
+mvc c'est pas vraiment un style d'archi mais un pattern bien connu, mais comme c'est beaucoup utilisé et que style d'archi = un peu pattern et que je vais en parler un peu, description et critique nécéssaire
+
 ![Modèle Vue Contrôleur classique][mvc]
 
-#### Critiques du modele MVC classique
+#### Avantages
+
+facile, connu de tous
+
+#### Inconvénients et critiques
 
 Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
 
@@ -644,30 +561,218 @@ D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrat
 
 TODO Dire quelque part que regle metier, logique metier ca vient de SOA
 finalement inspiration de SOA, MVC et DDD
+TODO refaire, copier coller ancien plan
 
-#### Proposition d'un meilleur modele
+#### Bien pour
 
-### Orienté composants
+les trucs simples ?
 
-### Piloté par évènement
+### Architecture orienté composants
 
-* Jquery
-        * MVC/MVVM
-        * Orienté composants
-            * Web components standard, implémentation dans les frameworks
-        * Events
-            * Portes ouvertes au bordel
-            * Des regles pour une bonne communication
+#### Description
 
-## Architecture Back-end
+#### Avantages
 
-## Vers une architecture isomorphique
+#### Inconvénients et critques (et challenges ?)
 
-Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
+#### Bien pour
 
-# Méthodologie de développement : Extreme Programming
+### Architecture orienté évènements
 
-# Technologies correspondantes
+#### Description
+
+#### Avantages
+
+#### Inconvénients et critques (et challenges ?)
+
+#### Bien pour
+
+### Architecture orienté domaine (DDD)
+
+#### Description
+
+#### Avantages
+
+#### Inconvénients et critques (et challenges ?)
+
+#### Bien pour
+
+### Architecture orienté services (SOA)
+
+#### Description
+
+#### Avantages
+
+#### Inconvénients et critques (et challenges ?)
+
+#### Bien pour
+
+### Microservices
+
+#### Description
+
+#### Avantages
+
+#### Inconvénients et critques (et challenges ?)
+
+#### Bien pour
+
+TODO trouver un meilleur titre que "bien pour"
+TODO garder le bien pour ?
+
+## Spécificités du Front-end
+
+TODO expliquer a un moment front-end, back-end
+TODO differencier application traditionnelle et architecture traditionnelle, enfin c'est un peu l'archi quand meme ?
+
+### Architecture traditionnelle
+
+#### Description
+
+On dit qu'une application web utilise une architecture traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (server-side rendering). Le principe est le suivant : 
+
+* Un navigateur web envoie une premiere requete lors de l'arrivee sur un site web. 
+* Le serveur va chercher des donnees si necessaire, puis forme la vue entierement (document HTML statique) et repond ce document au navigateur.
+* Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l'operation precedente recommence. Il recoit la page HTML suivant, etc.
+
+Du cote du serveur, une architecture du type MVC* (Modele Vue Controleur) est generalement mise en place pour bien separer les concepts (formation de la vue, des donnees et de la logique metier*). L’HTML étant un document statique, pour rendre l’expérience utilisateur plus intéressante, on utilise du javascript chargé côté client pour modifier la structure de l’HTML courant (via le DOM) et permettre des effets de type animation, etc. Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont chargés à chaque demande de page, car lorsque l’utilisateur demande une autre page (par exemple passage de l’accueil du site à la gestion de son compte), la logique est différente ainsi que l’HTML (le CSS et le Javascript sont souvent mis en cache par le navigateur). Une nouvelle page web correspond à une nouvelle logique qui doit être générée.
+
+![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
+
+TODO relire
+
+#### Critiques de l'architecture
+
+Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avances. Nous allons cependant voir les limites de celles-ci.
+
+##### Temps de chargement
+
+Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages où qu’il envoie un formulaire. Les traitements serveur sont exécutés à chaque fois, et le client recharge le javascript côté client à chaque requête, ce qui ralentit beaucoup sa navigation. De plus, la création de la page HTML est a la charge du serveur, ce qui augmente le travail effectue cote serveur.L'avantage est que la page affichée est définitive et allege le client.
+
+##### Limites de l'architecture MVC
+
+Avec cette architecture, le serveur est charge a la fois de gerer les donnees, les vues et la logique metier. L'architecture MVC* a pour but de bien marquer cette separation au niveau du code. Si la couche Model sert d'acces au donnees, la couche Vue sert a generer l'HTML, la partie Controler fait le lien entre les deux. On met tres souvent la logique pure de l'application dans les controleurs, ce qui rend difficile sa reutilisation dans un autre contexte.
+
+##### Un metier difficilement reutilisable (couplage fort)
+
+Le code metier est tres souvent melange avec les controlleurs de l'application web. Le metier est donc dans ce cas fortement couple avec l'application web. Pour creer une application sur un autre support (mobile, bureau, etc.), cette logique est difficilement reutilisable et devra surement etre reimplementee dans une autre technologie (redevelopper l'acces aux donnees, etc.). 
+
+TODO ca c'est peut etre plutot les limites de l'architecture MVC qui a enmene a la creation del'architecture SOA, peut etre que ca a rien a voir avec les limites de l'architecture traditionnelle. 
+
+##### Travail de la vue cote client et cote serveur confus
+
+Le serveur genere les fichiers utilises par le navigateur (HTML/CSS/JavaScript). L'HTML est un langage statique. Nous avons vu precedemment que le JavaScript permet de dynamiser l'application. Le developpeur doit alors gerer l'HTML brut genere pour le client, ainsi que le JavaScript qui permettra de dynamiser le tout. 
+
+##### Une architecture qui pousse au stateful
+
+Une application dite "stateless" est une application qui ne garde aucune information entre les requetes HTTP. A l'inverse, une application dite "stateful" est une application qui a la possibilité de garder des informations entre les requetes (remplissage d'un panier, connexion d'un utilisateur). Il est commun lors du developpement d'application web de stoquer des variables en session pour chaque utilisateur. Si cela peut etre tres pratique, la gestion d'un etat apporte une difficulte supplementaire a l'application. En plus de cela, il est plus difficile de scaler (TODO ca existe comme mot ?) horizontalement (rajouter des serveurs) car le partage de ces informations entre plusieurs machines n'est pas tache aisee.
+
+* Bien pour les applis de types :
+    * Site marchand 
+    * Site web statique
+
+TODO expliquer ce qu'est la logique metier (business logic)
+TODO refacto 
+TODO garder le plan : description, avantages, inconvénients/critiques, bien pour ?
+
+### Passage aux Single Page Application
+
+#### Description
+
+Le javascript ayant évolué, permet des interactions plus dynamiques avec un serveur grâce à l’AJAX*. L’AJAX permet au javascript de lancer une requête http non bloquante (asynchrone) et d’avoir le résultat de la requête sans avoir à recharger la page.
+
+Cet atout, combine a la performance des recent moteurs javascript ont permis l’apparition d’un nouveau type d’applications, les Single Page Applications (SPA). C’est une application permettant à l’utilisateur d’avoir une expérience dynamique et non bloquante (proche des applications de bureau). En effet, l’utilisateur ne charge qu’une seule fois les fichiers de l’application (HTML/CSS et surtout Javascript). Le javascript s’occupe ensuite de changer la structure des pages en
+fonction des actions de l’utilisateur. Les communications serveur se font par AJAX et ne
+demandent pas le rechargement de la page. 
+
+Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la gestion de la vue et des donnees est confuse. Le but ici est d'avoir reelement deux applications totalement differentes. L'une est le client (la vue), comprenant toutes les interactions avec l'internaute (HTML/CSS/JavaScript), et l'autre est le serveur, comprenant la logique metier faisant abstraction de tout ce qui est visuel. Le serveur devient ce que l'on appelle commenement un web service, pouvant servir plusieurs types de client.
+
+![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
+
+#### Avantages
+
+##### Un meilleur découplage
+
+Le fait d'avoir réellement deux applications différentes (serveur et client) rend plus facile le développement (couplage faible*). Il y a plusieurs avantages a cela. 
+
+D'une part, l'architecture globle de l'application est beaucoup plus claire. Il n'y a plus de confusion entre le serveur qui doit s'occuper du chargement de la vue et le client qui doit rendre ce contenu statique plus dynamique. Le serveur ne sert finalement que les donnees.
+
+D'autre part, la communication entre le client et le serveur s'effectuant generalement de maniere textuelle (json, xml, etc.*) via le protocole HTTP (on appelle cela un web service), cela permet d'avoir des technologies independantes. La migration d'un langage ou d'une technologie du cote serveur est alors facilitée. 
+
+De plus, avec cette architecture, il est possible de facilement reutiliser le serveur dans un autre contexte avec un autre client. Il est alors plus aisé de creer un client natif mobile par exemple. Il suffit de refaire l'interface. TODO c'est moche comme phrase. 
+
+##### Des performances améliorées
+
+Le fait que le serveur ne se charge plus de former la vue, mais que des donnees de maniere textuelle soulage grandement la charge des serveurs. L'application web utilise ainsi les ressources du navigateurs pour former la vue. Cela est possible grace aux récentes avancées du JavaScript.
+
+Nous avons vu la difference entre un programme stateful et stateless (TODO c'est vrai ?). Nous avons aussi vu que l'architecture traditionnelle pousse a l'utilisation du stateful du cote du serveur. Sans etre une regle, a l'inverse, l'architecture SPA pousse a l'architecture stateless. Cela facilite grandement la scalabilite horizontale et permet d'avoir des performances grandement ameliorees du cote du serveur aussi.
+
+#### Inconvenients
+
+Cette architecture est finalement beaucoup plus evoluee et fonctionne tres differemment de l'architecture traditionnelle. Les standards du web et les navigateurs ont etes concus pour l'architecture traditionnelle et ce changement d'architecture apporte quelques difficultés. Cependant, celle-ci va de plus en plus devenir la norme et les standards ainsi que les navigateurs evoluent dans ce sens. 
+
+TODO dire ca a la fin p e
+
+##### JavaScript obligatoire
+
+Pendant tres longtemps, le JavaScript etait tres peu utilisé et il etait meme facultatif. Les dernieres applications web reposant entierement sur ce dernier, les internautes se doivent de l'avoir activé pour utiliser les appliactions web. Ceci est de moins en moins problématique, car il est généralement activé par défaut. On peut aujourd'hui considérer que tous les internautes ont le JavaScript d'activé. 
+
+##### Outils habituels du web a adapter
+
+Si les applications web changent, les outils gravitant autour se doivent aussi de changer. Par exemple les moteurs de recherche qui indexent les sites web (SEO) n'executent généralement pas de JavaScript, or comme nous l'avons vu, celui-ci est tres souvent essentiel. Recemment, le moteur de recherche le plus utilise Google integre l'utilisation du JavaScript lors de l'indexation des pages.
+
+Les outils d'analyse de trafic Web doivent aussi s'adapter. En effet, ceux-ci se basent beaucoup sur le chargement de nouvelles pages lors de son analyse, ce qui est beaucoup moins pertinant avec une architecture Single Page.
+
+TODO des chiffres p e pour dire que Google est le plus utilise
+
+##### Chargement de l'application un peu plus lourd
+
+L'application n'ayant qu'un seul point d'entree, celle-ci peut etre un peu plus longue a charger au debut. Ceci vient du fait que le navigateur doit completement charger les frameworks dont il est dependant avant de pouvoir debuter l'application. Apres ce chargement initial, l'application est cependant tres fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilises sont tres souvent les memes et sont souvent mis en cache.
+
+Finalement que des habitudes de développement a changer. Mais c'est dans le bon sens. evolution evolution
+TODO conclusion ?
+
+* Bien pour les applications de type:
+    * Mail (Gmail)
+* Dire dans quel cas c'est mieux quel archi quelque part avec des exemple p e
+
+### Choix de styles d'architecture
+
+#### MVC
+
+TODO Au final je prends pas ce style, en parler ou pas ?
+
+#### Architecture orienté composants
+
+Web components
+
+#### Architecture orienté évènements
+
+communication entre les composants
+
+TODO Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
+TODO isomorphique ou pas ?
+
+## Spécificités du Back-end
+
+### Application traditionnelle
+
+### Passage aux Web services
+
+TODO web services, voir ou mettre les majuscules
+
+### Choix de styles d'architecture
+
+TODO choix d'architecture avec S ou pas ?
+
+## Idéologie commune
+
+architecture avant technologie
+grande inspiration de DDD mais pas mal de microservices quand meme
+domaine avant tout, business logic de SOA, 2 types de logique, etc.
+
+TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
+TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
 
 # Notes et plan
 
