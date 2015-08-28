@@ -535,38 +535,46 @@ TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau pla
 
 #### Description
 
-Une architecture tres proche de ce que l'on fait generalement avec l'architecture traditionnelle est le MVC et ses dérivés. Le principe avec le MVC de base est que pour chaque page, il y ait un controleur. Le modele contient la logique de l'application ainsi que la couche d'access aux donnees. La vue interagit avec le controlleur et celui-ci interagit avec le modele. 
-
-De cette maniere, le fait de changer de page ne fait finalement que changer de couple MVC. On peut résumer comme cela : TODO c'est pas vrai
-
-* Vue : Affiche et interagie avec les donnees exposes par le controleur
-* Modele : Logique de l'application (regles metiers specifiques, acces aux donnees)
-* Controleur : Contient les methodes d'interaction avec l'utilisateur. Fais le lien entre la vue et le modele
-
-Ceci est la définition théorique du pattern MVC. Cependant, il est souvent utilisé d'une maniere legerement differente. Le modele ne contient finalement généralement pas la logique de l'application. Il n'est utilise qu'en source de donnees. La logique se retrouve alors dans les controleurs. 
-
-TODO meilleure description, copier coller de l'ancien plan
-
-brainstorm
-mvc c'est pas vraiment un style d'archi mais un pattern bien connu, mais comme c'est beaucoup utilisé et que style d'archi = un peu pattern et que je vais en parler un peu, description et critique nécéssaire
+* Pas vraiment un style d'archi mais plus un design pattern. Mais bon il est tres utilisé dans le monde du web, donc ca vaut la peine d'en parler
+* Ecrire des interfaces graphiques c'est pas facile. L'idée principale est de bien séparer les données, la présentation et les traitements. Il en resulte alors les 3 parties suivantes :
+    * Modele : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
+    * Vue : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
+    * Controlleur : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
+* Flux de traitement :
+    * Chaque action utilisateur est analysée par le controleur (clic de souris, etc.)
+    * Le controleur demande au modele approprié d'effectuer les traitements et notifie a la vue que la requete est traitee
+    * La vue notifiée fait alors une requete au modele pour se mettre a jour (par exemple pour afficher le resultat du traitement fait par le modele)
+* Contient des dérivées (MVP, MVVM, etc.). On appelle ca les archi MV*, c'est a peu pres pareil au final
 
 ![Modèle Vue Contrôleur classique][mvc]
 
 #### Avantages
 
-facile, connu de tous
+* Simplicité et efficacité, clarté
+* rapide a prendre en main
+* Séparation des responsabilité minime mais présente
+* facilite la modification => genre changer un traitement ne modifie pas la vue, et inversement, genre un changement de base de donnees
+* tres repandu
 
 #### Inconvénients et critiques
+
+* Tres souvent pattern utilisé différement : logique dans les controleurs et modele uniquement comme source de donnees.
+* C'est pas tres grave en soi, des variantes du MVC font ca
+* Le vrai probleme c'est que la logique est fortement couplée au controleur. Comme le controleur c'est la techno qui le definit => logique couplé a la techno, ce qui rend le changement de techno difficile. et comme archi > techno...
+* Mieux si la logique est a part. Mais en fait il y a 2 logiques, application et domaine. c'est melangé, fortement couplé. donc faut essayer de separer. Comment ? plusieurs solutions. 
+
+ancien texte : 
+
+Ceci est la définition théorique du pattern MVC. Cependant, il est souvent utilisé d'une maniere legerement differente. Le modele ne contient finalement généralement pas la logique de l'application. Il n'est utilise qu'en source de donnees. La logique se retrouve alors dans les controleurs. 
 
 Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
 
 D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il contient finalement la logique de l'application. Mais finalement, qu'est-ce que la "logique de l'application" ?
 
-2 Logiques : Application et Domain
-
-TODO Dire quelque part que regle metier, logique metier ca vient de SOA
-finalement inspiration de SOA, MVC et DDD
-TODO refaire, copier coller ancien plan
+TODO probleme avec server side rendering, mais ca je le dis apres nan ?
+TODO peut etre parler du MVC apres tous les styles pour avoir les concepts
+TODO archi > techno, dire ca en premier ici, ou c'est dit avant ?
+TODO peut etre pas donner de proposition de remplacement ici, juste des critiques. En conclusion de cette partie p e 
 
 #### Bien pour
 
@@ -576,15 +584,46 @@ les trucs simples ?
 
 #### Description
 
+* focus sur la decomposition en composants individuels (fonctionnel ou logique) exposant des interfaces de communication bien définies comprenant méthodes, proprietes et evenements.
+* niveau d'abstraction plus haut que l'orienté objet 
+* souvent partie d'un design plus grand ??????
+* Attributs:
+    * Reutilisable : Peut etre reutilise dans un autre scenario dans d'autres applications
+    * Remplacable : Peut etre remplacé par des composants similaires
+    * Sans contexte specifique : Les informations spéciques a une application comme des donnees sont passes en variable d'entree au lieu d'etre inclu et gere par le composant
+    * Extensible : Possibilité d'étendre le comportement d'un composant
+    * Encapsulé : Chaque composant expose des interfaces qui permettent a l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
+    * Indépendant : Pensé de maniere a dependre tres peu d'autres composants. Peut etre déployé dans un autre environnement sans affecté les autres composants
+
 #### Avantages
+
+* Facilité de déploiement : Changement de version avec peu d'impact sur le reste du systeme
+* Cout réduit : Utilisation de composants externes permet de réduire le cout de développement et de maintenance
+* Facilité de développement : Les composants exposent des interfaces providant (lol ?) une fonctionnalité bien définie, permettant de développer sans impact avec le reste du systeme. (TODO pas deja dit ca ?)
+* Reutilisable : deja dit... TODO peut etre un avantage plutot qu'un attribut ?
+* Atténuation de la complexité technique : TODO en fait ca je vais pas en parler je pense
 
 #### Inconvénients et critques (et challenges ?)
 
+* niveau un peu plus haut que l'orienté objet, il faut bien comprendre comment ca marche pour utiliser a bon escient
+* ne peut fonctionner tout seul. le style doit etre combiné avec d'autres style pour etre vraiment bien
+* en effet, ce style ne se concentre pas sur les protocoles de communication, gestion d'etat d'une application, etc.
+* pas d'inconvenients en soi. il faut juste bien comprendre et l'utiliser a bon escient en le combinant avec d'autres styles pour en tirer profit. c'est un choix
+
+TODO si c'est un choix, preciser quand est-ce que c'est mieux ? bien pour ?
+
 #### Bien pour
+
+??
 
 ### Architecture orienté évènements
 
 #### Description
+
+* principe : utliser un systeme permettant de recevoir et envoyer des messages en utilisant un ou plusieurs canal de communication. Ainsi, l'application peut interagir sans avoir le besoin de connaitre des details a propos de chacun. 
+* Il y a generalement un bus central et c'est asynchrone
+* couplage faible 
+* TODO relire
 
 #### Avantages
 
@@ -780,6 +819,7 @@ domaine avant tout, business logic de SOA, 2 types de logique, etc.
 
 TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
 TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
+TODO rajouter des references a des livres avec toutes ces archis
 
 # Choix technologiques
 
@@ -887,7 +927,7 @@ SOA to Microservices, mais ca j'ai deja dit nan ?
 
 # Conclusion {-}
 
-# Notes et plan
+# Notes et plan {-}
 
 ## But
 
@@ -898,6 +938,10 @@ Faire les bon choix : architecture, technologie et méthodologie
 Démonstration avec projet POC
 
 Mot clés : maintenable, assurance qualité
+
+## Notes
+
+sur wiki archi logicielle, il y a les criteres d'un bon logiciel, ca peut faire une bonne intro avec la dégradation de logiciel (dette technique ?)
 
 ## Plan
 
@@ -1058,7 +1102,7 @@ Isomorphic app
 Web binary
 Api gateway (microservices with REST)
 
-# Glossaire
+# Glossaire {-}
 
 * Lien hypertexte
 * HTML
