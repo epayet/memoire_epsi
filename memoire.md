@@ -469,6 +469,7 @@ TODO intro
 
 brainstorm
 parler ici de combinaison de styles ?
+dire que ceux que je parle ici c'est parce que c'est ceux utilisés peur le poc, et que la description generale est importante (parce que les styles d'archi c'est général)
 
 ### Description
 
@@ -622,44 +623,148 @@ TODO si c'est un choix, preciser quand est-ce que c'est mieux ? bien pour ?
 
 * principe : utliser un systeme permettant de recevoir et envoyer des messages en utilisant un ou plusieurs canal de communication. Ainsi, l'application peut interagir sans avoir le besoin de connaitre des details a propos de chacun. 
 * Il y a generalement un bus central et c'est asynchrone
-* couplage faible 
-* TODO relire
+* couplage faible et application independantes
+* communication standard ?
 
 #### Avantages
 
+* Extensible : Les appliciations peuvent etre enlevés ou rajouté sans avoir d'impact sur les applis existantes
+* Faible complexité : Les applications ont uniquement besoin de savoir comment communiqer avec le bus et non pas avec le reste du systeme
+* Flexibilité : La combinaison d'applications formant un systeme peut etre changée et manipulée a tout moment tout comme le pattern de communication
+* Faible couplage : Chaque application n'a qu'une seule dependance : le bus. Le comportement interne est independant. ca peut meme etre un autre langage
+* Scalabilité : il peut y avoir plusieurs instances d'une meme appli attachée au bus pour accelerer ou gerer plusieurs requetes a la fois
+
 #### Inconvénients et critques (et challenges ?)
 
+choisir un pattern de communication, c'est pas forcement facile. quoi mettre dans le message, types d'evenements, etc. 
+evolution du message difficile ?
+un peu complexe ?
+
+TODO continuer
+TODO voir l'archi microservices pour voir les inconvenients ?
+TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme c'est mieux. En parler pour le front ca ?
+
 #### Bien pour
+
+??
 
 ### Architecture orienté domaine (DDD)
 
 #### Description
 
+* approche orienté objet qui dit que le design est basé sur le domaine métier, ses elements et comportements
+* toujour en contact avec les specialistes donc (inconvenient => pas facile ?)
+* coeur du logiciel = domain model (modelisation directe du domaine ?)
+* Utilise le vocabulaire proffessionel du domaine plutot que du jargon technique
+* domaine isolé et encapsulé au centre, la technique autour
+
 #### Avantages
+
+* Communication : Toute partie de l'equipe de developpement utilise le domain modele et les entites qu'il definit pour communiquer le business knowledge et le requirements en utilisant un langage metier commun, sans jargon technique
+* Extensible : le domain model est tres souvent modulaire et flexible. Mise a jour et changement simple en fonction des demandes metiers (requirements)
+* Testable : domain model faiblement couplé et cohesive (??) => facilement testable
+* domaine au milieu et technique autour => n'importe quel couche technique va aller, du front, du web service, etc.
+
+TODO traduction domain model
 
 #### Inconvénients et critques (et challenges ?)
 
+langage domaine pas toujours facile a modeliser => communication problems ?
+forte complexite
+
 #### Bien pour
+
+??
+
+TODO sur le site https://msdn.microsoft.com/en-us/library/ee658117.aspx, ils proposent plein de livres pour le DDD
 
 ### Architecture orienté services (SOA)
 
 #### Description
 
+* Les fonctionalites d'une application sont proposées comme un set de services
+* Utilisation d'interface de communication standard permettant l'invocation, la publication et la decouverte
+* different de object oriented et component oriented
+* communication en remote possible
+* Attributs :
+    * Autonomie : Chaque service est maintenu, developpe, et versionné independemment
+    * Distribuable : peut etre n'importe ou sur le reseau tant que le reseau supporte le protcole de communication
+    * Faible couplage : Chaque service est independant des autres. Il peut etre modifie, ou remplacé sans problemes tant l'interface est toujours compatible
+    * partage de schemas et de contrats, pas de classes : pas de communication via classe interne
+
 #### Avantages
+
+* Alignement du domaine (??) : la reutilisation des services avec des interfaces standard augmentent les opportunités business et technique permettant un cout reduit (TODO ca veut pas dire grand chose ?)
+* Abstraction : Les services sont autonomes et accedes via un contrat formel => couplage faible
+* Découvrable : les services exposent une description qui permet aux autres applications et services de les localiser et d'automatiquement determiner l'interface
+* Interoperabilite : Les protocoles et formats de donnees sont bases sur les standards de l'industre. Le provider et le consumer peuvent alors etre construits et deployes sur des plateformes differentes (langages aussi ?)
+* Rationalisation (??) : Les services sont assez granulaires (??) pour fournir une fonctionnalité specifique, plutot que dupliquer la fonctionnalites dans plusieurs applications, ce qui supprime la duplication (TODO titre => reutilisation ??)
 
 #### Inconvénients et critques (et challenges ?)
 
+* monolithe
+    * large code => intimidant => difficile a comprendre et a modifier
+    * IDE, web container overloaded
+    * dev ralenti
+    * petit changement => grand impact 
+        * chaque changement => full rebuild, test and deploy
+        * obstacle pour les changements frequents et les deploiements
+    * changement de techno = tout reecrire
+    * pas de re-write partiel
+    * si fail, tout le monolithe fail
+    * scalabilité difficile
+certains protocoles lourd ?
+
+TODO 
+TODO cdiscount est un monolithe, est-ce que c'est a cause du SOA ?
+TODO SOA = monolithe ?
+
 #### Bien pour
+
+??
+
+Consider the SOA style if you have access to suitable services that you wish to reuse; can purchase suitable services provided by a hosting company; want to build applications that compose a variety of services into a single UI; or you are creating Software plus Services (S+S), Software as a Service (SaaS), or cloud-based applications. The SOA style is suitable when you must support message-based communication between segments of the application and expose functionality in a platform independent way, when you want to take advantage of federated services such as authentication, or you want to expose services that are discoverable through directories and can be used by clients that have no prior knowledge of the interfaces.
+
+TODO un livre sur SOA ?
 
 ### Microservices
 
 #### Description
 
+* d'apres martin fowler : 
+    * "The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
+* c'est du SOA mais avec une approche differente de l'implementation
+    * SOA : integrates different applications as a set of services
+    * MSA : architectu a single application as a set of services
+* SOA : scalabilite horizontale (load balancing) et vertical (grosses machines)
+* MSA : scalabilite fonctionnelle (horizontale ou verticale par fonctionnalité)
+* Scalabilité des equipes : les equipes s'occupent d'un seul composant ?
+* attributs : 
+    * petit et focus sur une seule fonctionalité
+        * facile a comprendre
+        * IDE et déploiment rapide pour un seul service
+    * Independant
+        * Release et déploiement
+        * Scalabilité
+        * Dev
+    * Faible couplage 
+        * a travers des moyens de communication leger
+    * Permet l'essai de nouvelles technos
+    * La reecricture limité a un seul service (des fois ca fait du bien de reecrire)
+    * Limites des modules claires et interface explicite
+    * Donnee decentralisée
+* architecture evolutive (techno changeante, scalabilité, etc.)
+* va tres bien avec le DDD : chaque domain model peut etre un microservice ?
+
+TODO traduire la citation
+
 #### Avantages
 
 #### Inconvénients et critques (et challenges ?)
 
 #### Bien pour
+
+TODO regarder prez : http://fr.slideshare.net/aca_it/micro-services-40695502 et ailleurs pour des images ?
 
 TODO trouver un meilleur titre que "bien pour"
 TODO garder le bien pour ?
@@ -820,6 +925,8 @@ domaine avant tout, business logic de SOA, 2 types de logique, etc.
 TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
 TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
 TODO rajouter des references a des livres avec toutes ces archis
+TODO parler de l'archi en couche parce que cdiscount utilise ca ? critiquer celle de cdiscount ? Si oui comparer au MVC un peu
+TODO mettre une image expliquative par archi ?
 
 # Choix technologiques
 
