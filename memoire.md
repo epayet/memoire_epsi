@@ -657,6 +657,8 @@ TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme 
 * coeur du logiciel = domain model (modelisation directe du domaine ?)
 * Utilise le vocabulaire proffessionel du domaine plutot que du jargon technique
 * domaine isolé et encapsulé au centre, la technique autour
+* Citation de Eric Evans dans son livre DDD : 
+    * "In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
 
 #### Avantages
 
@@ -752,17 +754,31 @@ TODO un livre sur SOA ?
     * Permet l'essai de nouvelles technos
     * La reecricture limité a un seul service (des fois ca fait du bien de reecrire)
     * Limites des modules claires et interface explicite
-    * Donnee decentralisée
+    * Donnee decentralisée et polyglote => chaque microservice a sa base de donnees, technologie independante (changeante)
 * architecture evolutive (techno changeante, scalabilité, etc.)
 * va tres bien avec le DDD : chaque domain model peut etre un microservice ?
+* Le DDD aide a la decomposition fonctionelle
 
 TODO traduire la citation
+TODO refacto description + en resortir les avantages
+TODO parler de l'exemple de netflix ? du monkey je sais plus quoi ?
 
 #### Avantages
 
 #### Inconvénients et critques (et challenges ?)
 
+* la decomposition fonctionnelle c'est dur, si c'est mal fait, fort couplage entre les services et avantage des microservices perdus
+* complexité opérationnelle : ca bouge beaucoup, il faut que ca soit beaucoup automatisé sinon c'est dur a gerer. Pour ca il faut du bon monitoring. La configuration est aussi plus dure
+* Developpement distribué : savoir gerer :
+    * donee decentralisée 
+    * communication entre les services
+    * gerer la failure des composants
+* testing plus complexe
+* technique : commencer doucement ?
+
 #### Bien pour
+
+Les SI complexes ? 
 
 TODO regarder prez : http://fr.slideshare.net/aca_it/micro-services-40695502 et ailleurs pour des images ?
 
@@ -775,6 +791,8 @@ TODO expliquer a un moment front-end, back-end
 TODO differencier application traditionnelle et architecture traditionnelle, enfin c'est un peu l'archi quand meme ?
 
 ### Architecture traditionnelle
+
+TODO remplacer par application traditionnelle ? parce que c'est pas vraiment une archi et sur les images c'est ecrit applciation
 
 #### Description
 
@@ -879,7 +897,9 @@ TODO des chiffres p e pour dire que Google est le plus utilise
 L'application n'ayant qu'un seul point d'entree, celle-ci peut etre un peu plus longue a charger au debut. Ceci vient du fait que le navigateur doit completement charger les frameworks dont il est dependant avant de pouvoir debuter l'application. Apres ce chargement initial, l'application est cependant tres fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilises sont tres souvent les memes et sont souvent mis en cache.
 
 Finalement que des habitudes de développement a changer. Mais c'est dans le bon sens. evolution evolution
+
 TODO conclusion ?
+TODO refacto 
 
 * Bien pour les applications de type:
     * Mail (Gmail)
@@ -889,7 +909,9 @@ TODO conclusion ?
 
 #### MVC
 
-TODO Au final je prends pas ce style, en parler ou pas ?
+* beaucoup de mvc en front mais bon on a vu que c'etait pas terrible
+
+TODO Au final je prends pas ce style, en parler ou pas ? c'est juste que c'est beaucoup utilisé. J'ai deja critiqué nan ?
 
 #### Architecture orienté composants
 
@@ -897,7 +919,7 @@ Web components
 
 #### Architecture orienté évènements
 
-communication entre les composants
+communication entre les composants => messages ou bus d'evenements
 
 TODO Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
 TODO isomorphique ou pas ?
@@ -905,6 +927,10 @@ TODO isomorphique ou pas ?
 ## Spécificités du Back-end
 
 ### Application traditionnelle
+
+le back fait aussi la vue
+
+TODO
 
 ### Passage aux Web services
 
@@ -914,7 +940,17 @@ TODO web services, voir ou mettre les majuscules
 
 ### Choix de styles d'architecture
 
+#### SOA
+
+cdiscount le fait
+
+#### Microservices
+
+cdiscount veut le faire
+c'est ce qu'on veut faire avec le poc
+
 TODO choix d'architecture avec S ou pas ?
+TODO cette partie vraiment interessante ? p e juste les soap rest et encore
 
 ## Idéologie commune
 
@@ -927,8 +963,13 @@ TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste
 TODO rajouter des references a des livres avec toutes ces archis
 TODO parler de l'archi en couche parce que cdiscount utilise ca ? critiquer celle de cdiscount ? Si oui comparer au MVC un peu
 TODO mettre une image expliquative par archi ?
+TODO qu'est-ce qui est appliqué au POC
 
 # Choix technologiques
+
+choix du poc
+
+TODO intro
 
 ## Front-end
 
@@ -936,9 +977,32 @@ TODO mettre une image expliquative par archi ?
 
 #### AngularJS
 
+un peu plus agé
+beaucoup utilisé (voir les stats) et beaucoup de modules open source, beaucoup de reponses dessus
+complet (DI, notions avec les services, possibilité de faire de l'orienté composant)
+testing facile avec protractor (E2E) et karma jasmine and co
+gestion de modules interessant
+si bien utilisé (de facon moderne), passage a la version 2 facile, voir meme une autre techno, surtout si on fait du DDD
+
+problemes
+version 2 qui va sortir, sans retro compabilité, ca veut dire qu'il y avait probleme nan ?
+on peut tres vite faire n'importe quoi avec
+
 #### ReactJS + Flux
 
+tout recent
+pas si standard
+flux interessant
+jsx pas interessant
+server side rendering possible je crois, mais de toute facon dans notre cas on s'en foutait un peu
+virtual dom pas standard ? mais cool quand meme
+
 #### Polymer
+
+encore plus recent, tout juste a la version 1.0
+concept et techno interessantes (shadow dom, etc.) mais
+moins de modules open source
+moins complet, pas de routing, injection de dependance, etc.
 
 TODO tout présenter ou juste angular ? faut bien des comparaisons quand meme
 

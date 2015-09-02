@@ -21,6 +21,7 @@ https://en.wikipedia.org/wiki/Single-page_application
 https://msdn.microsoft.com/en-us/library/ee658117.aspx
 https://fr.wikipedia.org/wiki/Architecture_logicielle
 https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
+http://fr.slideshare.net/aca_it/micro-services-40695502
 
 # Livres
 
