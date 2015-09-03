@@ -22,12 +22,19 @@ https://msdn.microsoft.com/en-us/library/ee658117.aspx
 https://fr.wikipedia.org/wiki/Architecture_logicielle
 https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
 http://fr.slideshare.net/aca_it/micro-services-40695502
+http://martinfowler.com/eaaDev/uiArchs.html
+https://fr.wikipedia.org/wiki/Architecture_logicielle
+
+## En plus
+
+http://programmers.stackexchange.com/questions/218011/how-accurate-is-business-logic-should-be-in-a-service-not-in-a-model
 
 # Livres
 
 Evans DDD
 [David Garlan and Mary Shaw, January 1994, CMU-CS-94-166, see "An Introduction to Software Architecture" at http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf]
 
+Clean code ?
 # Images
 
 browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines

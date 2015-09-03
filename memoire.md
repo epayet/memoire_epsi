@@ -781,6 +781,7 @@ TODO parler de l'exemple de netflix ? du monkey je sais plus quoi ?
 Les SI complexes ? 
 
 TODO regarder prez : http://fr.slideshare.net/aca_it/micro-services-40695502 et ailleurs pour des images ?
+TODO avantages inconvenients sur page officielle : http://martinfowler.com/microservices/
 
 TODO trouver un meilleur titre que "bien pour"
 TODO garder le bien pour ?
@@ -900,6 +901,7 @@ Finalement que des habitudes de développement a changer. Mais c'est dans le bon
 
 TODO conclusion ?
 TODO refacto 
+TODO avantages inconvenients sur http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/
 
 * Bien pour les applications de type:
     * Mail (Gmail)
@@ -916,6 +918,11 @@ TODO Au final je prends pas ce style, en parler ou pas ? c'est juste que c'est b
 #### Architecture orienté composants
 
 Web components
+custom elements and custom properties
+shadow dom with css scoping
+html imports
+but => isolation (comme le style d'origine)
+source http://blogs.windows.com/msedgedev/2015/07/14/bringing-componentization-to-the-web-an-overview-of-web-components/
 
 #### Architecture orienté évènements
 
@@ -968,80 +975,225 @@ TODO qu'est-ce qui est appliqué au POC
 # Choix technologiques
 
 choix du poc
-
-TODO intro
+on a vu que l'archi est plus important que la techno, mais bon on se repose dessus donc faut quand meme choisir des technos qui permettent d'appliquer l'archi. 
+surtout faut pas devenir dependant trop de la techno, le business model doit rester isolé
+donc bien choisir ses technos en fonction des besoins, mais pouvoir en changer facilement selon le composant et sans impacter trop le systeme c'est mieux
 
 ## Front-end
 
 ### Choix d'un framework SPA
 
+c'est difficile a choisir
+framework = structure
+donne : architecture flexible, reusable components et enforce la separation of concerns 
+une autre solution c'est de pas utiliser du tout mais faut un high level et c'etait p e pas ce qui etait bon pour cdiscount
+je presente pas tous les frameworks parce que y'en a beaucoup. Je vais juste présenter ceux entre lesquels j'ai hésité pour le POC
+au final comme ca evolue beaucoup, ca va dependre du moment
+ils sont tous open source
+
 #### AngularJS
 
-un peu plus agé
-beaucoup utilisé (voir les stats) et beaucoup de modules open source, beaucoup de reponses dessus
-complet (DI, notions avec les services, possibilité de faire de l'orienté composant)
-testing facile avec protractor (E2E) et karma jasmine and co
-gestion de modules interessant
-si bien utilisé (de facon moderne), passage a la version 2 facile, voir meme une autre techno, surtout si on fait du DDD
+##### Description
 
-problemes
-version 2 qui va sortir, sans retro compabilité, ca veut dire qu'il y avait probleme nan ?
-on peut tres vite faire n'importe quoi avec
+* créé en 2009 par google
+* propose :
+    * Injection de dépendances
+    * Orienté composants via directives
+    * MVC mais avec notion de "service" qui peut servir pour mettr de la business logic
+    * testing
+        * unit
+        * E2E via protractor
+    * modules
+    * two way data binding
+* Version 2 en cours de développement qui va apporter plus de choses : 
+    * Shadow DOM
+    * Plus de performances
+    * Encore plus orienté composant
+    * Plus simple
+
+##### Avantages
+
+* stable : 1.4
+* beaucoup utilisé (voir les stats) et beaucoup de modules open source, beaucoup de reponses dessus
+* si bien utilisé (de facon moderne), passage a la version 2 facile, voir meme une autre techno, surtout si on fait du DDD
+* eviter la manipulation du DOM
+* bonne séparation pour chaque composant (HTML, JS, CSS) meme si le CSS est pas encore scopé dans la version 1
+
+##### Inconvénients
+
+* pas facile a prendre en main ? surtout s'il faut bien l'utiliser
+* version 2 qui casse tout
+* angular way ?
+* performances ?
 
 #### ReactJS + Flux
 
-tout recent
-pas si standard
-flux interessant
-jsx pas interessant
-server side rendering possible je crois, mais de toute facon dans notre cas on s'en foutait un peu
-virtual dom pas standard ? mais cool quand meme
+##### Description
+
+* React : 
+    * créé en 2013 par Facebook
+    * orienté composants
+    * que la vue (V de MVC)
+    * Utilise le virtual DOM, un peu différent du shadow dom (pas standard) mais tres performant
+* Flux
+    * architecture créé par Facebook qui complémente les composants react qui prone le flow de donnees unidirectionnel (contraire du two-way data binding)
+        * plus perf (le double way ca a des cycles de digestion)
+        * Les donees descendent et les actions remontent
+    * orienté évenements
+
+##### Avantages
+
+* Simple
+* Flux sur la bonne voie de faire les choses bien
+* server side rendering possible pour le SEO
+* performant
+* commence a etre stable et a etre pas mal utilisé, ca commence a etre le chouchoux du moment en fait, surtout a cause de la polémique avec angular 2
+* des outils qui apparaissent autour comme react native, qui permet d'utiliser les composants mobile natifs, mais bon c'est early et y'a pas android
+
+##### Inconvénients
+
+* JSX j'aime pas trop => mélange des fichiers HTML et JS => vue + logique
+* tout recent
+* pas standard : JSX + virtual DOM
+* au final c'est pas vraiment des inconvénients, ca dépend du style de dev
 
 #### Polymer
 
-encore plus recent, tout juste a la version 1.0
-concept et techno interessantes (shadow dom, etc.) mais
-moins de modules open source
-moins complet, pas de routing, injection de dependance, etc.
+##### Description
 
-TODO tout présenter ou juste angular ? faut bien des comparaisons quand meme
+* créé par Google en 2014
+* permet de creer facilement de maniere standard des web components
+* ce n'est pas vrament un framework
+* polyfill
+* utilise les derniers trucs : 
+    * shadow dom
+    * html import
+
+##### Avantages
+
+* permet d'utiliser les web components de maniere standard qui peut marcher partout avec les polyfills
+* perfs ok
+
+##### Inconvénients
+
+* tres early, version 1.0 y'a pas longtemps
+* tres peu de modules open source
+* moins complet que les autres, faut combiner avec d'autres trucs. pas vraiment un inconvenient, plus un choix
+
+#### Aide pour choisir et choix pour le POC
+
+* Il est possible de faire de l'orienté composants avec tous, et sont tous bien. apres c'est juste un choix
+* pour le poc, j'ai choisi angular parce que
+    * mature
+    * style approuvé personnellement, en plus j'ai de l'experience dessus
+    * performances correctes selon moi et dans ce use case la ca va
+    * SEO pas un probleme pour moi (de toute facon c'est quand meme possible)
+    * beaucoup de ressources et de modules existant sur internet
+    * testing trop bien
+    * efficace
+* react c'est bien mais
+    * j'aime pas trop le jsx, je prefere la separation des fichiers d'angular
+    * failli prendre ca, mais bon c'est une histoire de preferance la
+* polymer c'est bien aussi mais
+    * vraiment tres early, la version 1 est sorti alors qu'on etait deja en train de dev le POC, important pour la mise en production
+    * independant, c'est bien mais pour une vrai appli faut le composer avec d'autres trucs, on etait plus efficace avec angular. pour d'autres applis et plus tard si on y passe du temps
+* rajouté un bus d'evenements fait maison pour faire de l'orienté evenements, en plus y'a pas d'origine ca sur angular. inspirations de flux
+* conclusion : la techno choisie (angular + bus evenements) permet de mettre en place l'archi qu'on veut (composants + events). ca permet aussi d'autres trucs qui vont nous servir pour la methodo choisie (on verra plus tard, mais c'est le testing qui est vraiment interressant)
+* au final ils sont tous bien, c'est vraiment un choix
+
+TODO meilleur titre ?
+TODO parler de la structure des fichiers d'un component ? (controller, service, css, etc.)
 
 ### Choisir les bons outils
 
-#### Outil de compilation
+le web est devenu plus complexe, on est loin du bon vieux php qui va en prod en ftp
+maintenant y'a pleeeein d'outils
 
-                Gulp
-                Transpilation
+#### Outils de compilation
+
+##### Gulp
+
+* task runner definition
+* il y en a plusieurs mais moi j'ai pris gulp
+* plusieurs taches :
+    * build web
+    * build mobile
+    * watch
+    * server
+* a la compil il faut transpiler parce qu'on fait du bon javascript qui va rester mais qui est pas encore bien supporté (ES6)
+
+old
+Un « task runner » javascript est très utile du côté du frontend. En effet, lorsque l’on
+développe une application web, il arrive très souvent que certaines tâches se répètent.
+L’utilisation d’un « task runner » permet d’éviter ces répétitions (DRY : Don’t Repeat
+Yourself), et automatiser certains mécanismes (compilation CSS, minification Javascript,
+etc.).
+
+##### Cordova
+
+* anciennement PhoneGap
+* framework de dévepllopemnt mobile
+* permet de faire du natif avec les technos web = application hybride
+* fonctionnalité natives du tel comme photo, GPS, tout ca
+
+TODO pas deja dis ca ?
 
 #### Gestionnaire de paquets
 
-                Bower
+* utliser beaucoup de librairies open source c'est bien mais c'est dur a gerer
+* un gestionnaire de paquets pour ca c'est bien, ca s'utilise commme en backend
+* bower = l'équivalent frontend
+
+#### Gestionnaire de versions
+
+* versionnig est tres important
+* git le plus utilisé
 
 #### Automate
 
-                Yeoman
+* component angular demande beaucoup de fichiers, et la création est longue et répétitive (DRY)
+* du coup j'ai fait un générateur de composants angular (ca existait pas)
+* yeoman : tres connu et fait ca `yo angular-es6-components:component myComponent` pour generer tous les fichiers
 
-                TODO meilleur nom ?
+TODO meilleur nom ?
                 
 #### Framework Graphique
 
-                Angular material
+* le CSS c'est pas facile, des surcouches tres bien existent (SASS, LESS) mais on a pas utilisé ca (on aurait pu mais on a pas intégré ca pour l'instant)
+* Angular material : joli, facile, etc.
+* on aurait pu utiliser bootsrap tres utilisé mais material fait tres moderne et flat (subjectif)
  
-TODO parler vraiment de ca ?
-
 ## Back-end
 
 ### Choix d'un langage
 
-NodeJS
-communication RESTful
-intégration chez Cdiscount
+* comme vu au debut, le js c'est trop fort et pour gerer le backend couplé a l'es6 c'est parfait, et npm c'est cool aussi
+* de toute facon, microservices on peut changer les technos
+* on a pris nodejs mais on aurait pu prendre autre chose (java, c sharp, etc.)
+* le tout c'est que ca soit restful
+
+old 
+Java (avec framework http comme Jersey)
+C# (avec WCF)
+PHP (pas optimisé à la base pour faire du RESTful, mais possible tout de même)
 
 ### Containers 
 
+* la meilleure techno pour mettre en place l'archi des microservices, c'est docker.
+* Docker permet de créer des containers linux isolé. c'est un peu comme une vm mais pas trop et en plus léger
+* Dépend du kernel linux et est parfait pour creer des instances d'applications
+* pour le poc on a commencé par faire une api node dans un seul container.
+* il est ensuite possible de découpler l'api en microservices. par exemple, les routes /api/products ou /api/basket peuvent devenir des microservices tournant dans des containers différents avec un nombre d'instances différentes
+* l'api sera alors une api gateway
+
 TODO parler de l'archi de l'appli, de la source de données orchestration tout ca ? je pense pas
+TODO faire un schéma ? ou 2 ?
 
 # Méthodologie
+
+## Cycle en V
+
+Cdiscount le fait mais essaye de changer 
 
 ## Méthode agile : Extreme Programming
 
@@ -1065,11 +1217,15 @@ Jenkins
 ## Démonstration de développement d'une fonctionnalité
 
         * User story
+        * creation d'une branche
         * Integration test
         * E2E test
         * Nouveau composant : TDD, etc. Idem pour les routes
         * Validation par le PO
         * Un bug ? Création d'un test mettant en valeur le bug, puis correction
+        * code review
+        * integration de la nouvelle branche
+        * tests ok ?
 
 TODO meilleur nom ?
 
