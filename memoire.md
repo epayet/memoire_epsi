@@ -368,7 +368,6 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l'
 
 TODO trop long certains trucs ? la partie sur utilisation etendue est interessante sinon le reste est un peu trop technique p e
 TODO images trop grandes ? meilleure image possible. annexe ?
-TODO les titres 5, too much ? bullet instead ? ou change style
 
 ## Mobile
 
@@ -383,37 +382,49 @@ TODO les titres 5, too much ? bullet instead ? ou change style
 
 * Les technologies se sont adaptées : CSS3 media queries => ca s'appelle le responsive
 * Beaucoup d'outils et de frameworks
+* mais uniquement via navigateur web
 
 ### Mobile Natif
 
-* Les applications natives sont quand meme beaucoup utilisées et passent par le market
+* Les applications natives sont quand meme beaucoup utilisées, plus que le web, enfin ca depend
+* passent par le market
 * Normalement un peu compliqué, langages différents par plateforme
+* look & feel natif => l'utilisateur se retrouve
+* bonnes performances
+
+### Mobile hybride
+
 * Il est désormais possible de faire des applis natives avec les technos du web, cross plateforme
 * Plein d'outils, cordova, etc. Access aux fonctionnalités natives photos tout ca (webview)
 * Seul probleme : look & feel web et performance, mais ca marche pas mal quand meme et c'est moins cher
 * Donc au final, quand on fait une appli web, ben on peut faire eventuellement une appli mobile aussi, c'est pour ca qu'on integre ca ici
-
-TODO Natif mobile ou mobile natif ?
-TODO pousser les avantages et les inconvénients du mobile natif ? dans quel cas faire quoi ?
+* avantages : cross plateforme et techno unique
+* inconvenient : eventuellement perf selon l'appli et look & feel
 
 ## Projet de démonstration : POC
 
 * Ce projet sera le support et la démonstration de ce mémoire
 * C'est un projet de type POC (Proof of Concept)
 
-TODO dire quelque part que c'est grace aux recherches et a notre savoir faire technique qu'on fait ca
-
 ### Contexte et motivations
+
+#### Couts elevés
 
 * Cdiscount possede un site web mobile, un site responsive, une appli native android, une appli native ios
 * Cdiscount paye tres des partenaires pour developper les applis natives 
 * L'expertise de Cdiscount c'est le web, et payer les partenaires ca coute cher, surtout avec l'intertionalisation et la spécificité de certains pays
+* si ou pouvait utiliser notre expertise pour faire des applis mobiles nous meme ca serait cool
+
+#### Recherche de meilleure méthode et architecture
+
 * Cdiscount = Cycle en V, mais c'est en train de changer ? voir présentation entreprise ?
 * Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses (citer les faiblesses ?)
-* L'equipe archi travaille sur tout ca et nous l'equipe lab, on fait un travail tres similaire avec nos recherches. Nous on a des ressources dégagées pour faire des projets a part et tester des trucs
-* Donc c'est super, on peut travailler ensemble pour ...
 
-TODO Pas trop insister sur l'equipe archi, c'est notre travail quand meme....
+#### Utilisation de l'expertise de notre équipe
+
+* utilisation de nos recherches + expertise sur les nouvelles technos
+* collaboration avec l'equipe archi
+* 3 devs
 
 ### Description
 
@@ -423,53 +434,39 @@ TODO Pas trop insister sur l'equipe archi, c'est notre travail quand meme....
     * bonne Méthodologie 
 * Temps : 2 mois, et les limites que ca implique. On peut pas refaire toute l'appli en 2 mois a 3 devs. On verra jusqu'ou on peut aller
 
-TODO donner tout de suite les noms ? microservices, extreme programming, etc.
-
 ### Objectifs
 
-* Démontrer plusieurs choses a plusieurs niveaux :
-    * Au niveau de l'appli : 
-        * Pour faire une appli native, les techno web ca marche bien => expertise de la boite utiliée
-        * Technologies bien choisies = plus testable, plus claire (tres different de ce qu'utilise Cdiscount actuellement)
-    * Au niveau du la méthodo :
-        * Exp > V
-        * Les pizzas team c'est bien, encore une fois
-    * Au niveau de l'architecture :
-        * Démontstration de ce que voulait prouver l'équipe archi, en accord avec nos recherches
-        * Correspond bien avec la méthodo
-* Démontrer que cette facon de faire est prete, utilisable aujourd'hui et industrialisable
-* Nouvelle facon de faire qui correspond bien dans certains cas
-* Résumé de ce qu'on veut prouver que ca va apporter : 
-    * Développement plus rapide et plus fiable et bien adapté => temps = argent
-        Se détacher de la techno, choisir la techno pour un bon contexte = plus adapté, plus facile plus rapide
-    * Réutilisation du savoir web (j'ai pas deja dit ca ?)
-    * Déploiement facilité et assuré (déploiement continu) => contrairement a cycle en V ou c'est compliqué => TODO dire ca dans le contexte comme désavantage
-    * Assurance qualité
-    * Meilleure gestion de la dette technique et des bugs
-* Conclusion : devenir une inspiration pour Cdiscount sur plein de plans, et meme plus que ca => utiliser cette solution dans certains cas
+#### Principal objectif
 
-TODO je parle beaucoup de mobile, le titre du memoire c'est application web, bien faire comprendre que c'est du web et que cette méthodo n'est pas bonne uniquement pour du mobile, mais meme si on faisait que du web c'est bien aussi. Le mobile c'est un bonus. C'est du mobile web, mais natif. un peu
-TODO faire gaffe dans les objectifs, pas mélanger avec la conclusion. Voir apres s'ils ont étés atteints. Pas trop en dire au début ?
+* principal objectif : comprendre la méthodologie pour avoir une application web de qualité. se munir des bons outils pour.
+* qu'est-ce qu'un logiciel de bonne qualité ? un logiciel permettant
+    * développement d'une fonctionnalité rapidement (temps = argent)
+    * etre sur a tout moment que l'application fonctionne en prod
+    * les nouveaux developpements ne regressent pas l'application (assurance qualité ?)
+    * déploiement rapide, fréquent et simple en production
+
+#### Autres objectifs
+
+* démontrer qu'il est possible d'utiliser notre expertise web pour faire des applications mobiles
+* que differentes technos existent et plus adaptées dans certains cas, et permettent plus de choses (meilleure testabilité, etc.), il faut avoir une veille active pour ca
+* mais surtout bien faire comprendre que les technos au final ce n'est pas si essentiel que ca et qu'il faut pas en devenir dépendant
+* proposer une autre facon de faire a Cdiscount et pour ca il faut prouver que c'est bien et industrialable
+* montrer que cette facon de faire est en accord avec ce que veut mettre en place l'equipe archi
+* que les petites equipes s'en sortent mieux avec une méthode agile sur des petits projets (pizzas team comme essaye de faire Cdiscount)
+* Conclusion : devenir une inspiration pour Cdiscount sur plein de plans, et meme plus que ca => utiliser cette solution dans certains cas
 
 # Choix d'architecture 
 
-Les évolutions récentes du JavaScript ont changé les methodes de developpement d'application web. Nous allons maintenant voir comment cela a impacte l'architecture logicielle des applications web.
-
-TODO vrai intro
-
-brainstorm
-faire un bonne appli commence par choisir une bonne archi
-c'est plus important que choisir des technos
-faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception
-choisir une methodo c'est important aussi, en fait on devrait choisir a peu pres en meme temps, voir methodo avant mais bon
+* faire un bonne appli commence par choisir une bonne archi
+* c'est plus important que choisir des technos => si archi est bien choisie, il est possible de choisir et de changer de techno lorsque c'est necessaire
+* faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception
 
 ## Différents styles d'architecture
 
-TODO intro
-
-brainstorm
-parler ici de combinaison de styles ?
-dire que ceux que je parle ici c'est parce que c'est ceux utilisés peur le poc, et que la description generale est importante (parce que les styles d'archi c'est général)
+* il existe de nombreux styles d'archi
+* comme son nom l'indique, il n'y a pas de bonne ou mauvaise archi, juste des avantages et des inconvenients
+* pour ca il faut bien les comprendre et avoir une visu sur les principaux
+* on va donc voir les principaux et leur description générale, ceux qui ont étés pris en considération pour le POC, et utilisé actuellement a Cdiscount
 
 ### Description
 
@@ -481,9 +478,7 @@ Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une definition de 
 
 Ce qui peut etre traduit par : "... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles)."
 
-TODO les citations en anglais faut traduire ou pas ?
 TODO faire des jolis citations
-TODO wikipedia faut citer ou pas ?
 
 Voici un tableau comprenant les principaux styles d'architecture logicielles classés par catégorie.
 
@@ -494,16 +489,13 @@ Voici un tableau comprenant les principaux styles d'architecture logicielles cla
 | Domaine | DDD (Domain Driven Design) |
 | Structure | Orienté composants, Orienté objet, Architecture en couches |
 
+* il y a un dernier qu'on verra apres, c'est les microservices. c'est une combinaison de plusieurs de ces styles
+
 TODO pas joli tableau
-TODO les microservices, ici ou apres ?
 
-L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. Par exemple, l'architecture SOA est composee de services utilisant une architecture en couches avec un style orienté objet. Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. Genre Microservice c'est un SOA en moins monolithe.
-
-TODO copier coller wiki https://fr.wikipedia.org/wiki/Architecture_logicielle#Les_styles_architecturaux
-insister un peu la dessus, conclusion p e ?
-TODO refacto
-TODO architecture = pattern ? donc MVC ca passe
-TODO pousser le fait que c'est souvent des combinaisons
+* L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. 
+* Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. 
+* Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. Genre Microservice c'est un SOA en moins monolithe.
 
 ### Résumé des differents styles
 
@@ -524,9 +516,7 @@ TODO en fait le SPA c'est un client serveur parce que ca separe vraiment du coup
 TODO ca se dit vraiment en francais le systeme ?
 TODO style d'architecture on dit aussi pattern
 TODO Message bus en fait c'est orienté eventements nan ?
-TODO je parle a un moment de kafka tout ca ?
 TODO integrer les microservices dans le tableau ou faire pouf apres y'a eu les microservices
-TODO tableau page entiere en annexe ou integré ?
 TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
 TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
 TODO traduire les noms en anglais genre SOA
