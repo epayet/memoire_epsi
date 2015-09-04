@@ -1135,6 +1135,7 @@ etc.).
 * framework de dévepllopemnt mobile
 * permet de faire du natif avec les technos web = application hybride
 * fonctionnalité natives du tel comme photo, GPS, tout ca
+* acceleration webview avec cocoonjs
 
 TODO pas deja dis ca ?
 
@@ -1193,39 +1194,78 @@ TODO faire un schéma ? ou 2 ?
 
 ## Cycle en V
 
-Cdiscount le fait mais essaye de changer 
+* modele conceptuel de gestion de projet
+* plusieurs étapes (voir image ?)
+* En pratique, il est difficile voire impossible de totalement détacher la phase de conception d'un projet de sa phase de réalisation.
+* C'est souvent au cours de l'implémentation qu'on se rend compte que les spécifications initiales étaient incomplètes, fausses, ou irréalisables, sans compter les ajouts de nouvelles fonctionnalités par les clients 
+* Cdiscount le fait mais essaye de changer, créé des pizzas team plus agile comme vu au debut
+* colle pas trop avec les microservices et le déploiement rapide parce que un cycle en V c'est long
+* une equipe independante et polyvalente devrait etre dédiée par microservice pour s'occuper elle meme des releases, choix techniques tout ca
 
 ## Méthode agile : Extreme Programming
+
+* Extreme Programming (XP) est une méthode agile plus particulièrement orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
+* Son but principal est de réduire les coûts du changement. Dans les méthodes traditionnelles, les besoins sont définis et souvent fixés au départ du projet informatique ce qui accroît les coûts ultérieurs de modifications. XP s'attache à rendre le projet plus flexible et ouvert au changement en introduisant des valeurs de base, des principes et des pratiques.
+* pousser a l'extreme :
+    * puisque la revue de code est une bonne pratique, elle sera faite en permanence (par un binôme)
+    * puisque les tests sont utiles, ils seront faits systématiquement avant chaque mise en œuvre
+    * puisque la conception est importante, elle sera faite tout au long du projet (refactoring)
+    * puisque la simplicité permet d'avancer plus vite, nous choisirons toujours la solution la plus simple
+    * puisque la compréhension est importante, nous définirons et ferons évoluer ensemble des métaphores
+    * puisque l'intégration des modifications est cruciale, nous l'effectuerons plusieurs fois par jour
+    * puisque les besoins évoluent vite, nous ferons des cycles de développement très rapides pour nous adapter au changement
+* cycle de dev pour chaque scenario
+    * une phase d'exploration détermine les scénarios "client" qui seront fournis pendant cette itération
+    * l'équipe transforme les scénarios en tâches à réaliser et en tests fonctionnels
+    * chaque développeur s'attribue des tâches et les réalise avec un binôme
+    * lorsque tous les tests fonctionnels passent, le produit est livré
+* convient parfaitement aux microservices
 
 ## Appliqué au projet
 
 ### Différents rituels
 
-TODO meilleur nom ?
+* pair programming
+* daily standup meeting
+* planning poker
+* code review
+
+TODO vraiment le temps de parler de ca ?
 
 ### Différents types de tests
 
-TDD, E2E, integration
-pyramide de tests
-protractor
-test coverage, métrique interessante ?
+* differents types de tests
+* y'en a qui sont plus importants que d'autres (pyramide de tests)
+* mais si on peut tout faire c'est bien
+* TDD : on fait ca tout le temps, ca aide a la conception et la formation de bon code quelque soit le niveau (front, back, logique, etc.)
+* pour le front, le test de haut niveau c'est du test d'ui. c'est pas facile mais protractor avec angular aide bien (E2E test)
+* pour le serveur, c'est du test d'integration
 
 ### Déploiement continu
 
-Jenkins
+* fait partie de l'extreme programming
+* niveau au dessus de l'integration continue
+* integration continue c'est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier à chaque modification de code source que le résultat des modifications ne produit pas de régression dans l'application développée
+* Le principal but de cette pratique est de détecter les problèmes d'intégration au plus tôt lors du développement. De plus, elle permet d'automatiser l'exécution des suites de tests et de voir l'évolution du développement du logiciel.
+* L'intégration continue est de plus en plus utilisée en entreprise afin d'améliorer la qualité du code et du produit final
+* et donc le déploiement continu, c'est que en plus de tout ca, la mise en production est automatique apres chaque feature développée
+* avec ca on est sur que ca marche en prod avec tous les tests
+* plusieurs outils pour ca. deja il faut un serveur d'integration qui surveille le gestionnaire de version pour que a chaque commit, il lance les tests et tout ca. Nous on a utilisé Jenkins pour ca, mais y'a plein d'autres trucs. Docker aide vachement aussi, parce que faut juste lancer des containers
+
+TODO déploiement a la fin du dev d'une feature ou a la fin d'une release ?
 
 ## Démonstration de développement d'une fonctionnalité
 
-        * User story
-        * creation d'une branche
-        * Integration test
-        * E2E test
-        * Nouveau composant : TDD, etc. Idem pour les routes
-        * Validation par le PO
-        * Un bug ? Création d'un test mettant en valeur le bug, puis correction
-        * code review
-        * integration de la nouvelle branche
-        * tests ok ?
+* User story
+* creation d'une branche
+* Integration test
+* E2E test
+* Nouveau composant : TDD, etc. Idem pour les routes
+* Validation par le PO
+* Un bug ? Création d'un test mettant en valeur le bug, puis correction
+* code review
+* integration de la nouvelle branche
+* tests ok ?
 
 TODO meilleur nom ?
 
@@ -1233,26 +1273,32 @@ TODO meilleur nom ?
 
 ## Résultat
 
-jusqu'ou on est allé
+* appli web qui tourne sur android, ios et web
+* liste produits, acceuil, navigation, fiche produit
+* on a pas fait panier, commentaires, etc.
+* eperience utilisateur ok :)
 
 ## Objectifs atteints ?
 
 Pas eu le temps trop de faire les microservices, mais juste une question de temps c'etait prevu
 
+TODO revoir objectifs de base et regarder si on les a atteint
+
 ## Challenges
 
-Integrer l'existant
-analytics
-
-TODO structure des dossiers ? un peu trop technique et long p e
-TODO comment conclure ?
-résultats : on fait tant en 2 mois, on est sur que tout marche, ...
+* Integrer l'existant, l'archi de cdiscount est pas encore en microservices, mais au final on a fait semblant, ca sera facile a migrer quand Cdiscount sera en microservices
+* analytics et SPA, c'est pas donné, faut adapter, surtout que le systeme de cdiscount est pas fait pour, mais bon pour le poc c'etait pas tres grave
+* penser en microservices c'est pas facile quand on a pas l'habitude mais c'set cool
 
 ## La suite ? 
 
-SOA to Microservices, mais ca j'ai deja dit nan ?
+* on a fait la présentation aux chefs, ils ont trouvé l'idée tres bien, bonne mise en place des microservices sur une appli legerement en dehors des autres trucs. manque un peu de maturité selon eux (pejoratif), enfin ils ont demandé de développer un peu le truc pour que ca soit vraiment industrialisable. on pourra tester ensuite sur des applis petites (sites verticaux) pour verifier que c'est vraiment bien. et si oui, la integrer pour de vrai
+
+TODO conclure sur le projet ici, ou dans la grande conclusion ?
 
 # Conclusion {-}
+
+TODO
 
 # Notes et plan {-}
 
@@ -1431,16 +1477,7 @@ Api gateway (microservices with REST)
 
 # Glossaire {-}
 
-* Lien hypertexte
-* HTML
-* CSS
-* XML
-* GPU
-* socket
-* paradigme
-* Expressions lambda
-* LLVM
-* Framework
+TODO
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
