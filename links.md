@@ -33,6 +33,7 @@ http://programmers.stackexchange.com/questions/218011/how-accurate-is-business-l
 
 Evans DDD
 [David Garlan and Mary Shaw, January 1994, CMU-CS-94-166, see "An Introduction to Software Architecture" at http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf]
+livre sur SOA
 
 Clean code ?
 # Images

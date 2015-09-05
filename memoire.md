@@ -417,8 +417,9 @@ TODO images trop grandes ? meilleure image possible. annexe ?
 
 #### Recherche de meilleure méthode et architecture
 
-* Cdiscount = Cycle en V, mais c'est en train de changer ? voir présentation entreprise ?
-* Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses (citer les faiblesses ?)
+* Cdiscount = Cycle en V, mais c'est en train de changer ? voir présentation entreprise ? prends trop de temps pour faire un fonctionnalité, veut aller plus sur de l'agilité
+* Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses. Elle a un monolithe au niveau des serveurs
+* dépendance forte a l'existant
 
 #### Utilisation de l'expertise de notre équipe
 
@@ -459,7 +460,7 @@ TODO images trop grandes ? meilleure image possible. annexe ?
 
 * faire un bonne appli commence par choisir une bonne archi
 * c'est plus important que choisir des technos => si archi est bien choisie, il est possible de choisir et de changer de techno lorsque c'est necessaire
-* faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception
+* faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception, pour le front-end et le backend, expliquer ce que ce'est ?
 
 ## Différents styles d'architecture
 
@@ -552,7 +553,7 @@ TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau pla
 * Tres souvent pattern utilisé différement : logique dans les controleurs et modele uniquement comme source de donnees.
 * C'est pas tres grave en soi, des variantes du MVC font ca
 * Le vrai probleme c'est que la logique est fortement couplée au controleur. Comme le controleur c'est la techno qui le definit => logique couplé a la techno, ce qui rend le changement de techno difficile. et comme archi > techno...
-* Mieux si la logique est a part. Mais en fait il y a 2 logiques, application et domaine. c'est melangé, fortement couplé. donc faut essayer de separer. Comment ? plusieurs solutions. 
+* Mieux si la logique est a part. Mais en fait il y a 2 logiques, application et domaine. c'est melangé, fortement couplé. donc faut essayer de separer. Comment ? plusieurs solutions. voir les autres styles d'archi
 
 ancien texte : 
 
@@ -561,11 +562,6 @@ Ceci est la définition théorique du pattern MVC. Cependant, il est souvent uti
 Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
 
 D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il contient finalement la logique de l'application. Mais finalement, qu'est-ce que la "logique de l'application" ?
-
-TODO probleme avec server side rendering, mais ca je le dis apres nan ?
-TODO peut etre parler du MVC apres tous les styles pour avoir les concepts
-TODO archi > techno, dire ca en premier ici, ou c'est dit avant ?
-TODO peut etre pas donner de proposition de remplacement ici, juste des critiques. En conclusion de cette partie p e 
 
 #### Bien pour
 
@@ -586,6 +582,8 @@ les trucs simples ?
     * Encapsulé : Chaque composant expose des interfaces qui permettent a l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
     * Indépendant : Pensé de maniere a dependre tres peu d'autres composants. Peut etre déployé dans un autre environnement sans affecté les autres composants
 
+![Architecture orienté composants][componentArchitecture]
+
 #### Avantages
 
 * Facilité de déploiement : Changement de version avec peu d'impact sur le reste du systeme
@@ -601,8 +599,6 @@ les trucs simples ?
 * en effet, ce style ne se concentre pas sur les protocoles de communication, gestion d'etat d'une application, etc.
 * pas d'inconvenients en soi. il faut juste bien comprendre et l'utiliser a bon escient en le combinant avec d'autres styles pour en tirer profit. c'est un choix
 
-TODO si c'est un choix, preciser quand est-ce que c'est mieux ? bien pour ?
-
 #### Bien pour
 
 ??
@@ -611,10 +607,13 @@ TODO si c'est un choix, preciser quand est-ce que c'est mieux ? bien pour ?
 
 #### Description
 
+* en anglais : message bus architecture
 * principe : utliser un systeme permettant de recevoir et envoyer des messages en utilisant un ou plusieurs canal de communication. Ainsi, l'application peut interagir sans avoir le besoin de connaitre des details a propos de chacun. 
 * Il y a generalement un bus central et c'est asynchrone
 * couplage faible et application independantes
 * communication standard ?
+
+![Architecture orienté evenements][messageBusArchitecture]
 
 #### Avantages
 
@@ -626,13 +625,10 @@ TODO si c'est un choix, preciser quand est-ce que c'est mieux ? bien pour ?
 
 #### Inconvénients et critques (et challenges ?)
 
-choisir un pattern de communication, c'est pas forcement facile. quoi mettre dans le message, types d'evenements, etc. 
-evolution du message difficile ?
-un peu complexe ?
-
-TODO continuer
-TODO voir l'archi microservices pour voir les inconvenients ?
-TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme c'est mieux. En parler pour le front ca ?
+* choisir un pattern de communication, c'est pas forcement facile. quoi mettre dans le message, types d'evenements, etc. 
+* pas confondre message et evenement
+* evolution du message difficile ?
+* un peu complexe ? faut pas se perdre, c'est faiblement couplé mais faut pas perdre de vue l'ensemble et les types d'evenements qui existent
 
 #### Bien pour
 
@@ -644,11 +640,14 @@ TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme 
 
 * approche orienté objet qui dit que le design est basé sur le domaine métier, ses elements et comportements
 * toujour en contact avec les specialistes donc (inconvenient => pas facile ?)
-* coeur du logiciel = domain model (modelisation directe du domaine ?)
+* coeur du logiciel = domain model (modelisation directe du domaine ?) = modele du domaine
 * Utilise le vocabulaire proffessionel du domaine plutot que du jargon technique
 * domaine isolé et encapsulé au centre, la technique autour
+* une implementation possible est l'architecture en onion. le domaine au centre, etc.
 * Citation de Eric Evans dans son livre DDD : 
     * "In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
+
+![Architecture en oignon][onionArchitecture]
 
 #### Avantages
 
@@ -657,18 +656,14 @@ TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme 
 * Testable : domain model faiblement couplé et cohesive (??) => facilement testable
 * domaine au milieu et technique autour => n'importe quel couche technique va aller, du front, du web service, etc.
 
-TODO traduction domain model
-
 #### Inconvénients et critques (et challenges ?)
 
-langage domaine pas toujours facile a modeliser => communication problems ?
-forte complexite
+* langage domaine pas toujours facile a modeliser => communication problems ?
+* forte complexite et cout elevé de mise en place
 
 #### Bien pour
 
-??
-
-TODO sur le site https://msdn.microsoft.com/en-us/library/ee658117.aspx, ils proposent plein de livres pour le DDD
+Quand le domaine est complexe
 
 ### Architecture orienté services (SOA)
 
@@ -684,6 +679,8 @@ TODO sur le site https://msdn.microsoft.com/en-us/library/ee658117.aspx, ils pro
     * Faible couplage : Chaque service est independant des autres. Il peut etre modifie, ou remplacé sans problemes tant l'interface est toujours compatible
     * partage de schemas et de contrats, pas de classes : pas de communication via classe interne
 
+![Passage d'un systeme non orienté service a une architecture SOA][soaArchitecture]
+
 #### Avantages
 
 * Alignement du domaine (??) : la reutilisation des services avec des interfaces standard augmentent les opportunités business et technique permettant un cout reduit (TODO ca veut pas dire grand chose ?)
@@ -694,30 +691,21 @@ TODO sur le site https://msdn.microsoft.com/en-us/library/ee658117.aspx, ils pro
 
 #### Inconvénients et critques (et challenges ?)
 
-* monolithe
-    * large code => intimidant => difficile a comprendre et a modifier
-    * IDE, web container overloaded
-    * dev ralenti
-    * petit changement => grand impact 
-        * chaque changement => full rebuild, test and deploy
-        * obstacle pour les changements frequents et les deploiements
-    * changement de techno = tout reecrire
-    * pas de re-write partiel
-    * si fail, tout le monolithe fail
-    * scalabilité difficile
-certains protocoles lourd ?
-
-TODO 
-TODO cdiscount est un monolithe, est-ce que c'est a cause du SOA ?
-TODO SOA = monolithe ?
+* Increased Overhead
+    * Every time a service interacts with another service, complete validation of every input parameter takes place. This increases the response time and machine load, and thereby reduces the overall performance.
+* certains protocoles lourd ? soap
+* meme si le SI est decoupé en services, chaque service est un peu lourd quand meme
 
 #### Bien pour
 
-??
+SOA is not recommended for the following type of applications:
+
+* Homogenous: Implementing SOA for applications that use the technologies of a single vendor will not be cost-effective. For example, if an application is built in Java, then it would be better to use methods of Java rather than using HTTP for inter-component communications.
+* GUI-Based: SOA would not be suitable for applications with GUI functionality, e.g. a map manipulation application. Such applications require heavy data exchange, which in turn would increase the complexity of the application if SOA is used.
+* Real-time: SOA is not desirable to be used with strictly-enforced response times since the services communicate asynchronously.
+* Stand-alone: It would be futile to invest in SOA for stand-alone non-distributed applications, which do not require request and response-based calls.
 
 Consider the SOA style if you have access to suitable services that you wish to reuse; can purchase suitable services provided by a hosting company; want to build applications that compose a variety of services into a single UI; or you are creating Software plus Services (S+S), Software as a Service (SaaS), or cloud-based applications. The SOA style is suitable when you must support message-based communication between segments of the application and expose functionality in a platform independent way, when you want to take advantage of federated services such as authentication, or you want to expose services that are discoverable through directories and can be used by clients that have no prior knowledge of the interfaces.
-
-TODO un livre sur SOA ?
 
 ### Microservices
 
@@ -725,12 +713,10 @@ TODO un livre sur SOA ?
 
 * d'apres martin fowler : 
     * "The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
+* c'est un mix de plusieurs styles d'archit
 * c'est du SOA mais avec une approche differente de l'implementation
     * SOA : integrates different applications as a set of services
     * MSA : architectu a single application as a set of services
-* SOA : scalabilite horizontale (load balancing) et vertical (grosses machines)
-* MSA : scalabilite fonctionnelle (horizontale ou verticale par fonctionnalité)
-* Scalabilité des equipes : les equipes s'occupent d'un seul composant ?
 * attributs : 
     * petit et focus sur une seule fonctionalité
         * facile a comprendre
@@ -749,11 +735,17 @@ TODO un livre sur SOA ?
 * va tres bien avec le DDD : chaque domain model peut etre un microservice ?
 * Le DDD aide a la decomposition fonctionelle
 
+![Differences entre une architecture monolithique et une architecture microservices][microservicesArchitecture]
+
 TODO traduire la citation
-TODO refacto description + en resortir les avantages
 TODO parler de l'exemple de netflix ? du monkey je sais plus quoi ?
 
 #### Avantages
+
+* bonne décomposition des modules (bien pour les grandes equipes)
+* déploiements indépendants
+* diversité technologique
+* scalabilité fonctionnelle et des equipes
 
 #### Inconvénients et critques (et challenges ?)
 
@@ -771,15 +763,13 @@ TODO parler de l'exemple de netflix ? du monkey je sais plus quoi ?
 Les SI complexes ? 
 
 TODO regarder prez : http://fr.slideshare.net/aca_it/micro-services-40695502 et ailleurs pour des images ?
-TODO avantages inconvenients sur page officielle : http://martinfowler.com/microservices/
 
 TODO trouver un meilleur titre que "bien pour"
 TODO garder le bien pour ?
 
 ## Spécificités du Front-end
 
-TODO expliquer a un moment front-end, back-end
-TODO differencier application traditionnelle et architecture traditionnelle, enfin c'est un peu l'archi quand meme ?
+TODO
 
 ### Architecture traditionnelle
 
@@ -829,9 +819,7 @@ Une application dite "stateless" est une application qui ne garde aucune informa
     * Site marchand 
     * Site web statique
 
-TODO expliquer ce qu'est la logique metier (business logic)
 TODO refacto 
-TODO garder le plan : description, avantages, inconvénients/critiques, bien pour ?
 
 ### Passage aux Single Page Application
 
@@ -919,6 +907,7 @@ source http://blogs.windows.com/msedgedev/2015/07/14/bringing-componentization-t
 communication entre les composants => messages ou bus d'evenements
 
 TODO Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
+TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme c'est mieux. difference entre message et evenement
 TODO isomorphique ou pas ?
 
 ## Spécificités du Back-end
@@ -951,6 +940,7 @@ TODO cette partie vraiment interessante ? p e juste les soap rest et encore
 
 ## Idéologie commune
 
+espece de conclusion
 architecture avant technologie
 grande inspiration de DDD mais pas mal de microservices quand meme
 domaine avant tout, business logic de SOA, 2 types de logique, etc.
@@ -1304,7 +1294,19 @@ Mot clés : maintenable, assurance qualité
 
 ## Notes
 
-sur wiki archi logicielle, il y a les criteres d'un bon logiciel, ca peut faire une bonne intro avec la dégradation de logiciel (dette technique ?)
+* problemes du monolithe
+    * large code => intimidant => difficile a comprendre et a modifier
+    * IDE, web container overloaded
+    * dev ralenti
+    * petit changement => grand impact 
+        * chaque changement => full rebuild, test and deploy
+        * obstacle pour les changements frequents et les deploiements
+    * changement de techno = tout reecrire
+    * pas de re-write partiel
+    * si fail, tout le monolithe fail
+    * scalabilité difficile
+
+TODO parler du probleme du monolithe quelque part ?
 
 ## Plan
 
@@ -1476,3 +1478,8 @@ TODO
 [spaArchitecture]: images/spa_architecture.png
 [mvc]: images/mvc.png
 [Mobile-web-browsing-vs-desktop-web-browsing]: images/Mobile-web-browsing-vs-desktop-web-browsing.jpg
+[componentArchitecture]: images/component_architecture.png
+[messageBusArchitecture]: images/message_bus_architecture.png
+[onionArchitecture]: images/onion_architecture.jpg
+[soaArchitecture]: images/soa.png
+[microservicesArchitecture]: images/microservices.png
