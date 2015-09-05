@@ -371,80 +371,81 @@ TODO images trop grandes ? meilleure image possible. annexe ?
 
 ## Mobile
 
-* Marché du mobile en explosion, en 2014, la navigation mobile a dépassé la navigation desktop
-* Du coup, toujours connecté = beaucoup de navigation web
-* Sur le mobile il y a donc 2 marchés : le web mobile et le natif, et les 2 sont a prendre
-* Expliquer un peu la différence entre les 2
+Si la navigation web a ete tres longtemps limité aux ordinateurs personnels, la navigation mobile est de plus en plus forte. En effet, en 2014, le nombre d'internautes utilisant un terminal mobile a depassé celui des ordinateurs personnels.
+
+Il existe en réalité deux marchés sur le mobile : le mobile natif, et le mobile web. Nous allons voir la différence entre les deux et qu'est-ce que cela implique dans le développement de celles-ci.
 
 ![Nombre d'internautes mobile et PC][Mobile-web-browsing-vs-desktop-web-browsing]
 
 ### Mobile Web
 
-* Les technologies se sont adaptées : CSS3 media queries => ca s'appelle le responsive
-* Beaucoup d'outils et de frameworks
-* mais uniquement via navigateur web
+Le mobile web est en fait tout ce qui passe par les navigateurs web installés sur un terminal mobile. Les technologies utilisées sont donc les memes que les navigateurs de bureau. Ces dernieres ont donc beaucoup evolué pour permettre l'interaction avec les terminaux mobiles (en plus de s'adapter aux écrans de ces derniers). 
+
+Il est donc necessaire qu'un meme site web soit disponible pour n'importe quel terminal. Si cela propose un challenge au niveau de la gestion de la taille des ecrans et des interactions avec l'utilisateur, il est désormais beaucoup plus facile grace aux technologies récentes. Le responsive web design permet de fairce cela facilement (grace aux media query du CSS3). Les frameworks sont nombreux. L'application n'est cependant pas installable sur le terminal, et l'utilisateur se doit d'etre connecté a internet pour l'utiliser.
 
 ### Mobile Natif
 
-* Les applications natives sont quand meme beaucoup utilisées, plus que le web, enfin ca depend
-* passent par le market
-* Normalement un peu compliqué, langages différents par plateforme
-* look & feel natif => l'utilisateur se retrouve
-* bonnes performances
+On appelle le mobile natif, les applications pour lesquelles il est possible d'installer sur le terminal. Au contraire des applications web, qui sont dépendantes d'un navigateur web. Elles permettent l'acces generalement a plus de fonctionnalités propres au telephone (notifications, appareil photo, GPS, etc.). Elle utilise mieux les ressources du telephone (directement), comme les applications de bureau, et ont ainsi de meilleures performances.
+
+Les applications réutilisent la charte graphique (look & feel) du téléphone, ce qui permet d'avoir un ensemble cohérent. Le langage de développement de ces applications dépend du systeme d'exploitation. Il est ainsi complexe de créer une application sur plusieurs plateformes de maniere native, car les technologies et l'interface a realiser sont differentes. Maintenir une application mobile native pour chaque terminal, consiste finalement a maintenir plusieurs applications avec des technologies differentes, ce qui peut avoir un cout elevé, en plus de devoir posséder les compétences de tous les terminaux.
 
 ### Mobile hybride
 
-* Il est désormais possible de faire des applis natives avec les technos du web, cross plateforme
-* Plein d'outils, cordova, etc. Access aux fonctionnalités natives photos tout ca (webview)
-* Seul probleme : look & feel web et performance, mais ca marche pas mal quand meme et c'est moins cher
-* Donc au final, quand on fait une appli web, ben on peut faire eventuellement une appli mobile aussi, c'est pour ca qu'on integre ca ici
-* avantages : cross plateforme et techno unique
-* inconvenient : eventuellement perf selon l'appli et look & feel
+Une approche plus récente alliant un peu les deux monde est ce que l'on appelle le mobile hybride. L'idée est de créer des applications mobiles en utilisant les technologies du web. Le but est d'avoir un seul code sur un seul type de technologie, mais installable sur plusieurs terminaux, meme possédant des systemes d'exploitation differents. De nombreux outils sont disponibles et permettent cette possibilité. Les couts de développement sont donc énormement diminués.
+
+L'idée est d'utiliser ce que l'on appelle une webview a l'interieure d'une application native. Celle-ci interpretera l'application comme un navigateur web le ferait, permettant en plus l'utilisation des fonctionnalités natives du téléphone comme l'appareil photo, le GPS, etc.
+
+Les seuls inconvénients sont que le look & feel sera similaire sur tous les terminaux, utilisant beaucoup moins la charte graphique native du téléphone. Les performances sont aussi beaucoup plus faibles qu'une vraie application native. Cela ne se ressent que dans certains cas, ou les performances sont critiques pour une application (des jeux vidéos par exemple).
+
+Finalement, cela permet d'avoir une autre alternative moins couteuse pour créer des applications mobiles natives. Si les inconvénients ne sont pas dérangeant pour le cas d'utilisation, cette alternative est alors tres viable.
 
 ## Projet de démonstration : POC
 
-* Ce projet sera le support et la démonstration de ce mémoire
-* C'est un projet de type POC (Proof of Concept)
+Le projet décrit dans cette partie sera le projet utilisé comme support et démonstration de ce mémoire. C'est un projet réalisé avec mon équipe de type POC (Proof Of Concept). Nous l'avons d'ailleurs nommé ainsi : le POC.
 
 ### Contexte et motivations
 
 #### Couts elevés
 
-* Cdiscount possede un site web mobile, un site responsive, une appli native android, une appli native ios
-* Cdiscount paye tres des partenaires pour developper les applis natives 
-* L'expertise de Cdiscount c'est le web, et payer les partenaires ca coute cher, surtout avec l'intertionalisation et la spécificité de certains pays
-* si ou pouvait utiliser notre expertise pour faire des applis mobiles nous meme ca serait cool
+Cdiscount possede actuellement un site web responsive, une application mobile native sur les deux principaux systemes d'exploitation du marché (android et ios). La société a préféré faire sous-traiter le dévelopeement de ces deux dernieres par une entreprise plutot que de former et recruter des personnes sachant développer du natif pour chaque terminal. Il en est de meme pour les autres applications mobiles de le société (a cause de l'intertionalisation de l'entreprise). Les modifications faites aux applications sont frequentes. Cela est tres couteux pour eux.
+
+L'expertise technique de la société est les technologies web. Ne serait-il pas mieux pour elle d'utiliser ces compétences lorsque cela est possible ?
 
 #### Recherche de meilleure méthode et architecture
 
-* Cdiscount = Cycle en V, mais c'est en train de changer ? voir présentation entreprise ? prends trop de temps pour faire un fonctionnalité, veut aller plus sur de l'agilité
-* Cdiscount en pleine reflexion sur l'architecture de son SI et se rend compte de ses faiblesses. Elle a un monolithe au niveau des serveurs
-* dépendance forte a l'existant
+Cdiscount possede une grande base de code accumulée avec le temps. Ayant gardé la meme architecture et la meme méthodologie pendant tres longtemps, elle a accumulé une dette technique importante. Se rendant compte de ses faiblesses (trop de temps pris pour ajouter des fonctionnalités), elle est récemment en recherche de meilleure méthodologie et architecture. C'est pour cette raison que pour certaines parties du SI, ce n'est plus la méthodologie du cycle en V qui est utilisée, mais tend plus vers des méthodes plus agile. C'est pour cela qu'ont ete créé des pizzas team. 
+
+Cdiscount essaye d'employer d'autres méthodes pour ses nouvelles applications pour ensuite les integrer de plus en plus dans le SI. Une nouvelle application utilisant une méthode agile et une architecture et des technologies récentes serait alors une grande inspiration pour son SI.
 
 #### Utilisation de l'expertise de notre équipe
 
-* utilisation de nos recherches + expertise sur les nouvelles technos
-* collaboration avec l'equipe archi
-* 3 devs
+Notre équipe est spécialisée dans la veille technologique et la mise en place de nouvelles technologies. Nous avons mis en place plusieurs applications internes utilisant au maximum les dernieres technologies avec une architecture solide. L'equipe architecture travaille actuellement sur le changement de l'architecture globale de son SI et est a la recherche d'applications les appliquant et prouvant leur interet. 
+
+Ainsi, en utilisant notre expertise et en collaboration avec l'équipe architecture, nous avons proposé de mettre en place un projet de type POC (Proof Of Concept) qui permettra de prouver l'interet de cette nouvelle architecutre combinée avec les nouvelles technologies.
 
 ### Description
 
-* Le projet consiste donc a imiter le comportement de l'appli android actuel en utilisant :
-    * Technologies web uniquement
-    * Architecture bien choisie
-    * bonne Méthodologie 
-* Temps : 2 mois, et les limites que ca implique. On peut pas refaire toute l'appli en 2 mois a 3 devs. On verra jusqu'ou on peut aller
+La proposition que nous faisons est donc la suivante. Nous allons reproduire le comportement de l'application android actuelle, mais en utilisant :
+
+* Technologies web uniquement
+* Architecture bien choisie (en correspondance avec l'équipe architecture)
+* Méthodologie agile
+
+Nous avons une limite de 2 mois, et nous sommes 3 développeurs. L'idée est de réaliser le maximum et de démontrer que cette facon de faire est prete pour creer une vraie application mobile.
 
 ### Objectifs
 
 #### Principal objectif
 
-* principal objectif : comprendre la méthodologie pour avoir une application web de qualité. se munir des bons outils pour.
-* qu'est-ce qu'un logiciel de bonne qualité ? un logiciel permettant
-    * développement d'une fonctionnalité rapidement (temps = argent)
-    * etre sur a tout moment que l'application fonctionne en prod
-    * les nouveaux developpements ne regressent pas l'application (assurance qualité ?)
-    * déploiement rapide, fréquent et simple en production
+Le principal objectif de ce projet démonstration est le suivant : faire une application web de qualité et se munir de tout ce qu'il faut pour. Mais finalement qu'est-ce qu'un logiciel de qualité ? C'est selon moi un logiciel qui :
+
+* Développement de fonctionnalité rapide (temps = argent)
+* Développement de nouvelle fonctionnalité sans impact sur l'existant (non régression)
+* Déploiement fréquent et rapide en production
+* S'assurer que l'application fonctionne toujours en production
+
+TODO inserer titre du mémoire ? meilleur objectif ?
+TODO vraiment important cette partie, vérifier que c'est vraiment ca les qualités d'un bon logiciel
 
 #### Autres objectifs
 
@@ -455,6 +456,8 @@ TODO images trop grandes ? meilleure image possible. annexe ?
 * montrer que cette facon de faire est en accord avec ce que veut mettre en place l'equipe archi
 * que les petites equipes s'en sortent mieux avec une méthode agile sur des petits projets (pizzas team comme essaye de faire Cdiscount)
 * Conclusion : devenir une inspiration pour Cdiscount sur plein de plans, et meme plus que ca => utiliser cette solution dans certains cas
+
+TODO peut etre pas interessant au final
 
 # Choix d'architecture 
 
