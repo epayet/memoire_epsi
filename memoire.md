@@ -461,20 +461,13 @@ TODO peut etre pas interessant au final
 
 # Choix d'architecture 
 
-* faire un bonne appli commence par choisir une bonne archi
-* c'est plus important que choisir des technos => si archi est bien choisie, il est possible de choisir et de changer de techno lorsque c'est necessaire
-* faire la transition avce le poc, dire ben on va faire au fur et a mesure la conception, pour le front-end et le backend, expliquer ce que ce'est ?
+Créer une bonne application commence par choisir une bonne architecture logicielle. Ceci est même plus important que de choisir une bonne technologie, car il ne faut pas devenir dépendant de celle-ci. En effet, les technologies évoluent rapidement, et il n'est pas rare de vouloir profiter du changement de technologie, surtout dans le monde du web. Ainsi, il est nécessaire d'avoir une bonne architecture permettant cela, en plus de permettre de créer un logiciel de qualité. Nous allons donc d'abord voir les différents styles d'architecture existant, et voir les choix effectués pour le projet de démonstration.
 
 ## Différents styles d'architecture
 
-* il existe de nombreux styles d'archi
-* comme son nom l'indique, il n'y a pas de bonne ou mauvaise archi, juste des avantages et des inconvenients
-* pour ca il faut bien les comprendre et avoir une visu sur les principaux
-* on va donc voir les principaux et leur description générale, ceux qui ont étés pris en considération pour le POC, et utilisé actuellement a Cdiscount
+Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mauvais style d'architecture, juste des avantages et des inconvénients. Il faut bien les comprendre et choisir correctement en fonction du besoin. Nous n'allons pas tous les décrire dans ce mémoire, mais juste ceux pris en considération pour le POC (ou pour toute autre application web que l'on voudrait créer actuellement) et aussi ceux utilisés actuellement à Cdiscount.
 
 ### Description
-
-Qu'importe le type d'application (web, bureau, front-end, back-end, etc.), il est essentiel de decider de l'architecture logiciel globale de celle-ci. C'est encore plus crucial pour un SI. Il existe plusieurs styles d'architecture et nous allons voir les principaux utilisés aujourd'hui.
 
 Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une definition de David Garlan and Mary Shaw dans leur livre "An Introduction to Software Architecture" :
 
@@ -493,13 +486,11 @@ Voici un tableau comprenant les principaux styles d'architecture logicielles cla
 | Domaine | DDD (Domain Driven Design) |
 | Structure | Orienté composants, Orienté objet, Architecture en couches |
 
-* il y a un dernier qu'on verra apres, c'est les microservices. c'est une combinaison de plusieurs de ces styles
-
 TODO pas joli tableau
 
-* L'architecture logiciel ne se limite généralement pas a un seul style d'architecture. C'est tres souvent une combinaison de plusieurs styles qui vont faire un systeme complet. TODO pas joli. 
-* Ainsi un SI peut utiliser plusieurs styles selon le niveau de granularite ou l'aspect du systeme decrit. 
-* Nous ferons remarquer que, comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. Genre Microservice c'est un SOA en moins monolithe.
+Il existe un dernier style que l'on décrira en dernier, qui se nomme les Microservices. Comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. L'architecture logicielle ne se limite généralement pas à un seul style d'architecture, c'est très souvent une combinaisons de plusieurs styles qui formeront un système logiciel complet.
+
+C'est aussi une question de granularité. Un ou plusieurs styles d'architecture peuvent être choisis à différents niveaux du système d'information. Cela peut aller du système d'information en lui-même jusqu'au plus petit des composants. 
 
 ### Résumé des differents styles
 
@@ -530,41 +521,36 @@ TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau pla
 
 #### Description
 
-* Pas vraiment un style d'archi mais plus un design pattern. Mais bon il est tres utilisé dans le monde du web, donc ca vaut la peine d'en parler
-* Ecrire des interfaces graphiques c'est pas facile. L'idée principale est de bien séparer les données, la présentation et les traitements. Il en resulte alors les 3 parties suivantes :
-    * Modele : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
-    * Vue : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
-    * Controlleur : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
-* Flux de traitement :
-    * Chaque action utilisateur est analysée par le controleur (clic de souris, etc.)
-    * Le controleur demande au modele approprié d'effectuer les traitements et notifie a la vue que la requete est traitee
-    * La vue notifiée fait alors une requete au modele pour se mettre a jour (par exemple pour afficher le resultat du traitement fait par le modele)
-* Contient des dérivées (MVP, MVVM, etc.). On appelle ca les archi MV*, c'est a peu pres pareil au final
+Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais un design pattern. Il est pris en considération ici car très utilisé dans le monde du web. Il est généralement utilisé pour les logiciels avec interface graphique. Il a plur but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
+
+* Modele : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
+* Vue : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
+* Controlleur : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
+
+Voici donc à quoi ressemble le flux de traitement :
+
+* Chaque action utilisateur est analysée par le controleur (clic de souris, etc.)
+* Le controleur demande au modele approprié d'effectuer les traitements et notifie a la vue que la requete est traitee
+* La vue notifiée fait alors une requete au modele pour se mettre a jour (par exemple pour afficher le resultat du traitement fait par le modele)
+
+Il existe de nombreux dérivés à ce modèle (MVP, MVVM, MV*), mais restent finalement très similaires à ce modèle.
 
 ![Modèle Vue Contrôleur classique][mvc]
 
 #### Avantages
 
-* Simplicité et efficacité, clarté
-* rapide a prendre en main
-* Séparation des responsabilité minime mais présente
-* facilite la modification => genre changer un traitement ne modifie pas la vue, et inversement, genre un changement de base de donnees
-* tres repandu
+* Simplicité, efficacité et clarté : La prise en main avec une telle architecture est rapide est peu couteuse sur des petites ou moyennes applications
+* Séparation des responsabilités minimale, mais efficace
+* La modification d'une des parties n'impacte pas ou peu les autres
+* Très répandu
 
 #### Inconvénients et critiques
 
-* Tres souvent pattern utilisé différement : logique dans les controleurs et modele uniquement comme source de donnees.
-* C'est pas tres grave en soi, des variantes du MVC font ca
-* Le vrai probleme c'est que la logique est fortement couplée au controleur. Comme le controleur c'est la techno qui le definit => logique couplé a la techno, ce qui rend le changement de techno difficile. et comme archi > techno...
-* Mieux si la logique est a part. Mais en fait il y a 2 logiques, application et domaine. c'est melangé, fortement couplé. donc faut essayer de separer. Comment ? plusieurs solutions. voir les autres styles d'archi
+Très souvent (généralement avec les variantes de ce modèle), la logique de l'application ne se trouve pas dans le modèle, mais dans le contrôleur, le modèle ne servant uniquement que de source de données. Ceci n'est pas vraiment un inconvénient, mais un choix. Que la logique soit dans le contrôleur ou le modèle, elle se retrouve finalement fortement couplée à celle-ci. La technologie choisie définit généralement une façon spécifique d'écrire un contrôleur ou un modèle. Ainsi, avec ce modèle, la logique de l'application se retrouve finalement fortement couplée avec la technologie choisie, ce qui rend le changement de technologie difficile.
 
-ancien texte : 
+Nous verrons avec les autres styles d'architecture qu'il existe finalement deux types de logiques dans une application. La logique spécifique au domaine de l'application (banque, finances, etc.), et la logique spécifique à l'application (contrôleur, service, etc.) et qu'il est généralement mieux de les séparer. 
 
-Ceci est la définition théorique du pattern MVC. Cependant, il est souvent utilisé d'une maniere legerement differente. Le modele ne contient finalement généralement pas la logique de l'application. Il n'est utilise qu'en source de donnees. La logique se retrouve alors dans les controleurs. 
-
-Le probleme majeur de ce pattern est que la logique metier est fortement couple au controleur. Généralement, la définition d'un controleur est differente selon la technologie et le framework utilise. Ainsi, si la logique de l'application est dans le controleur, celle-ci devient fortement couple a la technologie utilisee. Si pour une certaine raison, un changement de technologie doit s'effectuer, il sera alors obligatoire de reimplementer la logique.
-
-D'apres la definition du pattern MVC, les controleurs ne sont que des orchestrateurs. Meme si la logique se situe dans le modele, ce dernier contient de nombreux roles. Il contient finalement la logique de l'application. Mais finalement, qu'est-ce que la "logique de l'application" ?
+TODO trop tôt pour dire ça ?
 
 #### Bien pour
 
@@ -574,16 +560,14 @@ les trucs simples ?
 
 #### Description
 
-* focus sur la decomposition en composants individuels (fonctionnel ou logique) exposant des interfaces de communication bien définies comprenant méthodes, proprietes et evenements.
-* niveau d'abstraction plus haut que l'orienté objet 
-* souvent partie d'un design plus grand ??????
-* Attributs:
-    * Reutilisable : Peut etre reutilise dans un autre scenario dans d'autres applications
-    * Remplacable : Peut etre remplacé par des composants similaires
-    * Sans contexte specifique : Les informations spéciques a une application comme des donnees sont passes en variable d'entree au lieu d'etre inclu et gere par le composant
-    * Extensible : Possibilité d'étendre le comportement d'un composant
-    * Encapsulé : Chaque composant expose des interfaces qui permettent a l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
-    * Indépendant : Pensé de maniere a dependre tres peu d'autres composants. Peut etre déployé dans un autre environnement sans affecté les autres composants
+L'architecture orienté composants se concentre sur la décomposition en composants individuels (fonctionnels ou logiques) exposant des interfaces de communication bien définies comporenant méthodes, propriétés et évènements. Elle utilise un niveau d'abstraction plus haut que l'orienté objet. Voici une liste de ses principaux attributs:
+
+* Reutilisable : Peut etre reutilise dans un autre scenario dans d'autres applications
+* Remplacable : Peut etre remplacé par des composants similaires
+* Sans contexte specifique : Les informations spéciques a une application comme des donnees sont passes en variable d'entree au lieu d'etre inclu et gere par le composant
+* Extensible : Possibilité d'étendre le comportement d'un composant
+* Encapsulé : Chaque composant expose des interfaces qui permettent a l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
+* Indépendant : Pensé de maniere a dependre tres peu d'autres composants. Peut etre déployé dans un autre environnement sans affecté les autres composants
 
 ![Architecture orienté composants][componentArchitecture]
 
@@ -591,9 +575,8 @@ les trucs simples ?
 
 * Facilité de déploiement : Changement de version avec peu d'impact sur le reste du systeme
 * Cout réduit : Utilisation de composants externes permet de réduire le cout de développement et de maintenance
-* Facilité de développement : Les composants exposent des interfaces providant (lol ?) une fonctionnalité bien définie, permettant de développer sans impact avec le reste du systeme. (TODO pas deja dit ca ?)
-* Reutilisable : deja dit... TODO peut etre un avantage plutot qu'un attribut ?
-* Atténuation de la complexité technique : TODO en fait ca je vais pas en parler je pense
+* Facilité de développement : Les composants exposent des interfaces définissant une certaine fonctionnalité permettant de développer sans impact avec le reste du systeme. 
+* Reutilisable : Comme nous l'avons vu, les composants peuvent être réutilisés dans un scenario ou d'autres applications
 
 #### Inconvénients et critques (et challenges ?)
 
