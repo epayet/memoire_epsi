@@ -580,10 +580,7 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 
 #### Inconvénients et critques (et challenges ?)
 
-* niveau un peu plus haut que l'orienté objet, il faut bien comprendre comment ca marche pour utiliser a bon escient
-* ne peut fonctionner tout seul. le style doit etre combiné avec d'autres style pour etre vraiment bien
-* en effet, ce style ne se concentre pas sur les protocoles de communication, gestion d'etat d'une application, etc.
-* pas d'inconvenients en soi. il faut juste bien comprendre et l'utiliser a bon escient en le combinant avec d'autres styles pour en tirer profit. c'est un choix
+Le niveau d'abstraction étant un peu plus eleve que l'orienté objet, ce style peut etre un peu plus complexe a utiliser. De plus, il n'est généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un systeme complet. En effet, ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et l'utiliser.
 
 #### Bien pour
 
@@ -593,11 +590,7 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 
 #### Description
 
-* en anglais : message bus architecture
-* principe : utliser un systeme permettant de recevoir et envoyer des messages en utilisant un ou plusieurs canal de communication. Ainsi, l'application peut interagir sans avoir le besoin de connaitre des details a propos de chacun. 
-* Il y a generalement un bus central et c'est asynchrone
-* couplage faible et application independantes
-* communication standard ?
+L'architecture orienté evenements (en anglais "Message Bus Architecture"), utilise un systeme permettant de recevoir et d'envoyer des messages en utilisant un ou plusieurs canaux de communication. On parle généralement un bus de message central, et les communications se font tres souvent de maniere asynchrone. Ainsi, l'application peut interagir sans avoir le besoin de connaitre les détails des autres applications du systeme (couplage faible).
 
 ![Architecture orienté evenements][messageBusArchitecture]
 
@@ -611,10 +604,9 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 
 #### Inconvénients et critques (et challenges ?)
 
-* choisir un pattern de communication, c'est pas forcement facile. quoi mettre dans le message, types d'evenements, etc. 
-* pas confondre message et evenement
-* evolution du message difficile ?
-* un peu complexe ? faut pas se perdre, c'est faiblement couplé mais faut pas perdre de vue l'ensemble et les types d'evenements qui existent
+Il n'est pas aisé de choisir un pattern de communication. Il ne fait pas confondre "message" et "evenement". Un évenement est lorsque qu'il s'est passé quelque chose, tandis qu'un message peut etre tout autre chose. Par exemple, un message peut contenir une demande d'action a un autre composant, ce peut augmenter le couplage des applications. Il est recommendé d'utiliser uniquement des evenements.
+
+L'evolution des evenements peut etre difficile si un changement s'opere sur les proprietés de celles-ci. Un ajout ne devrait pas comporter de soucis, mais la modification ou la suppression d'un champ peut potentiellement avoir des repercussions sur le reste du systeme. C'est pour cela que choisir un bon pattern de communication permettant les evolutions est important.
 
 #### Bien pour
 
@@ -624,28 +616,37 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 
 #### Description
 
-* approche orienté objet qui dit que le design est basé sur le domaine métier, ses elements et comportements
-* toujour en contact avec les specialistes donc (inconvenient => pas facile ?)
-* coeur du logiciel = domain model (modelisation directe du domaine ?) = modele du domaine
-* Utilise le vocabulaire proffessionel du domaine plutot que du jargon technique
-* domaine isolé et encapsulé au centre, la technique autour
-* une implementation possible est l'architecture en onion. le domaine au centre, etc.
-* Citation de Eric Evans dans son livre DDD : 
-    * "In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
+L'architecture orienté domaine (Domaine Driven Design) est une approche orienté objet se concentrant sur le domaine métier de l'application, ses elements et ses comportements. Le coeur du logiciel est donc la modelisation directe du domaine, on appelle cela le modele du domaine. Le vocabulaire professionnel du domaine est préféré au jargon technique, et pour cela, la communication avec les specialistes du métier est primordiale.
+
+Eric Evans, l'auteur du lire Domain Driven Design écrit :
+
+"In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
+
+Il y a 4 concepts a retenir :
+
+* Contexte borné (Bounded Context) : Stratégie du DDD pour traiter les gros systemes en les divisant en differents contextes en etant explicites sur leur relation.
+* Domaine : Sphere de connaissance, domaine de l'application (exemple : banque, finances, etc.)
+* Modele : Systeme d'abstractions qui décrivent les aspects d'un domaine et qui peuvent etre utilisés pour résoudre un probleme en lien avec ce domaine
+* Langage omniprésent (Ubiquitous Language) : Langage structuré autour du domaine du modele et utilisé par tous les membres de l'equipe pour connecter toutes les activités avec le logiciel
+
+Une implémentation possible de cette philosophie est l'architecture en oignon. Le domaine est isolé et encapsulé au centre, et la technique se forme autour. Cela permet de séparer concretement la logique du domaine et la logique de l'application. Les couches techniques autour du centre sont facilement interchangeables.
 
 ![Architecture en oignon][onionArchitecture]
+
+TODO citation
 
 #### Avantages
 
 * Communication : Toute partie de l'equipe de developpement utilise le domain modele et les entites qu'il definit pour communiquer le business knowledge et le requirements en utilisant un langage metier commun, sans jargon technique
-* Extensible : le domain model est tres souvent modulaire et flexible. Mise a jour et changement simple en fonction des demandes metiers (requirements)
-* Testable : domain model faiblement couplé et cohesive (??) => facilement testable
-* domaine au milieu et technique autour => n'importe quel couche technique va aller, du front, du web service, etc.
+* Extensible : le domaine du modele est tres souvent modulaire et flexible. Les améliorations sont simples a implementer en fonction des demandes metiers 
+* Testable : Le domaine du modele etant faiblement couplé, il est facilement testable.
+* Qu'importe la technologie utilisée (web service, interface graphique, etc.), le domaine métier etant central, il est facile de changer de technologies si le besoin se ressent, le coeur meme du logiciel restera idementique.
 
 #### Inconvénients et critques (et challenges ?)
 
-* langage domaine pas toujours facile a modeliser => communication problems ?
-* forte complexite et cout elevé de mise en place
+Le langage du domaine n'est pas forcement facile a utiliser, et le jargon doit etre compris de toute l'equipe. La communication est vitale et pas forcement facile a maintenir. Un mauvaise communication peut amener une mauvaise implementation du logiciel.
+
+Cette architecture possede une forte complexité et un cout plus elevé de mise en place. Il conviendra aux applications ayant un domaine complexe, mais sera beaucoup moins utile avec les applications plus simples.
 
 #### Bien pour
 
@@ -655,32 +656,29 @@ Quand le domaine est complexe
 
 #### Description
 
-* Les fonctionalites d'une application sont proposées comme un set de services
-* Utilisation d'interface de communication standard permettant l'invocation, la publication et la decouverte
-* different de object oriented et component oriented
-* communication en remote possible
-* Attributs :
-    * Autonomie : Chaque service est maintenu, developpe, et versionné independemment
-    * Distribuable : peut etre n'importe ou sur le reseau tant que le reseau supporte le protcole de communication
-    * Faible couplage : Chaque service est independant des autres. Il peut etre modifie, ou remplacé sans problemes tant l'interface est toujours compatible
-    * partage de schemas et de contrats, pas de classes : pas de communication via classe interne
+L'architecture orienté services (Service Orienté Architecture) a pour principe de proposer les fonctionnalités d'une application comme un ensemble de services. Les services possedent une interface de communication standard permettant l'invocation, la publication et la decouverte des autres services. La communication peut etre distante (réseau local ou global). 
+
+Voici ses principaux attributs :
+
+* Autonomie : Chaque service est maintenu, developpe, et versionné independemment
+* Distribuable : peut etre n'importe ou sur le reseau tant que le reseau supporte le protcole de communication
+* Faible couplage : Chaque service est independant des autres. Il peut etre modifie, ou remplacé sans problemes tant l'interface est toujours compatible
+* partage de schemas et de contrats, pas de classes : pas de communication via classe interne
 
 ![Passage d'un systeme non orienté service a une architecture SOA][soaArchitecture]
 
 #### Avantages
 
-* Alignement du domaine (??) : la reutilisation des services avec des interfaces standard augmentent les opportunités business et technique permettant un cout reduit (TODO ca veut pas dire grand chose ?)
-* Abstraction : Les services sont autonomes et accedes via un contrat formel => couplage faible
+* Abstraction : Les services sont autonomes et accedes via un contrat formel (couplage faible)
 * Découvrable : les services exposent une description qui permet aux autres applications et services de les localiser et d'automatiquement determiner l'interface
-* Interoperabilite : Les protocoles et formats de donnees sont bases sur les standards de l'industre. Le provider et le consumer peuvent alors etre construits et deployes sur des plateformes differentes (langages aussi ?)
-* Rationalisation (??) : Les services sont assez granulaires (??) pour fournir une fonctionnalité specifique, plutot que dupliquer la fonctionnalites dans plusieurs applications, ce qui supprime la duplication (TODO titre => reutilisation ??)
+* Interoperabilite : Les protocoles et formats de donnees sont bases sur les standards de l'industre. Le fournisseur et le consommateur peuvent alors etre construits et deployes sur des plateformes differentes (utilisation de langages differents possibles)
+* Réutilisation : Les services sont assez découpés pour fournir une fonctionnalité specifique, plutot que dupliquer la fonctionnalites dans plusieurs applications, ce qui supprime la duplication 
 
 #### Inconvénients et critques (et challenges ?)
 
-* Increased Overhead
-    * Every time a service interacts with another service, complete validation of every input parameter takes place. This increases the response time and machine load, and thereby reduces the overall performance.
-* certains protocoles lourd ? soap
-* meme si le SI est decoupé en services, chaque service est un peu lourd quand meme
+A chaque fois qu'un service interagit avec un autre service, la validation de chaque parametre d'entree prend place. Ceci augmente le temps de réponse et la charge de la machine, ce qui réduit la performance globale. De plus certains protocoles de communication sont plus lourds que d'autres (exemple : SOAP).
+
+Meme si un SI est decoupe en services, au fil du temps, chaque service peut devenir tres large, et peut-etre meme effectuer plus de traitements qu'il devrait faire.
 
 #### Bien pour
 
@@ -697,69 +695,64 @@ Consider the SOA style if you have access to suitable services that you wish to 
 
 #### Description
 
-* d'apres martin fowler : 
-    * "The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
-* c'est un mix de plusieurs styles d'archit
-* c'est du SOA mais avec une approche differente de l'implementation
-    * SOA : integrates different applications as a set of services
-    * MSA : architectu a single application as a set of services
-* attributs : 
-    * petit et focus sur une seule fonctionalité
-        * facile a comprendre
-        * IDE et déploiment rapide pour un seul service
-    * Independant
-        * Release et déploiement
-        * Scalabilité
-        * Dev
-    * Faible couplage 
-        * a travers des moyens de communication leger
-    * Permet l'essai de nouvelles technos
-    * La reecricture limité a un seul service (des fois ca fait du bien de reecrire)
-    * Limites des modules claires et interface explicite
-    * Donnee decentralisée et polyglote => chaque microservice a sa base de donnees, technologie independante (changeante)
-* architecture evolutive (techno changeante, scalabilité, etc.)
-* va tres bien avec le DDD : chaque domain model peut etre un microservice ?
-* Le DDD aide a la decomposition fonctionelle
+Le style d'architecture Microservices est plus récent que les autres et tirent beaucoup d'inspiration de certains d'entre eux, en evitant les inconvenients de ces derniers. Voici la définition de Martin Fowler dans son article définissant les microservices :
+
+"The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
+
+Les microservices se rapprochent beaucoup de l'architecture SOA (Service Oriented Architecture), mais avec une approche differente au niveau de l'implementation :
+
+* SOA : Integre differentes applications comme un ensemble de services 
+* Microservices : architecture chaque application comme un ensemble de services
+
+La majeure difference se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : "Faire une seule chose, mais la faire bien" ("Do one thing and do it well"). Voici une liste des differents attributs de cette architecture :
+
+* Independant : Chaque microservice a son propre cycle de release et de déploiement. Il y a généralement une equipe de développement aux competences diverses par microservice (scalabilité des equipes). 
+* Faible couplage : Moyens de communication légers
+* Limites des modules claires et interface explicite
+* Donnee decentralisée et polyglote : chaque microservice a sa base de donnees sur une technologie independante
 
 ![Differences entre une architecture monolithique et une architecture microservices][microservicesArchitecture]
 
 TODO traduire la citation
-TODO parler de l'exemple de netflix ? du monkey je sais plus quoi ?
 
 #### Avantages
 
-* bonne décomposition des modules (bien pour les grandes equipes)
-* déploiements indépendants
-* diversité technologique
-* scalabilité fonctionnelle et des equipes
+* Petit et focus sur une seule fonctionalité : Facile a comprendre, IDE plus facile a charger et déploiement
+* Bonne décomposition des modules (bien pour les grandes equipes)
+* Déploiements indépendants
+* Diversité technologique et architecture evolutive 
+* Scalabilité fonctionnelle : Possibilité de dupliquer les microservices la ou c'est critique (fonctionnalités les plus demandées)
+* La reecricture limité a un seul service : il est parfois bénéfique de réécrire tout ou partie du code existant, les microservices permettent de limiter ces changements, ou du moins les permettre sans grand impact sur la totalité du systeme.
 
 #### Inconvénients et critques (et challenges ?)
 
-* la decomposition fonctionnelle c'est dur, si c'est mal fait, fort couplage entre les services et avantage des microservices perdus
-* complexité opérationnelle : ca bouge beaucoup, il faut que ca soit beaucoup automatisé sinon c'est dur a gerer. Pour ca il faut du bon monitoring. La configuration est aussi plus dure
-* Developpement distribué : savoir gerer :
-    * donee decentralisée 
-    * communication entre les services
-    * gerer la failure des composants
-* testing plus complexe
-* technique : commencer doucement ?
+La décomposititon fonctionnelle d'une application en microservices n'est pas tache aisée. Un mauvais découpage peut faire perdre tous les avantages qu'apporte l'architecture et fait se rapprocher du monolithe. Selon Eric Evans, l'architecture DDD aiderait a la decomposition fonctionnelle grace a la notion de contexte borné du DDD.
+
+Cette architecture impose une forte complexité opérationnelle (configuration, déploiement, etc.). Une automatisation des taches de déploiement (déploiement continu) devient nécessaire. Il faut rajouter a cela une bonne surveillance (monitoring).
+
+Cette architecture permet une scalabilité tres précise, mais impose le développement distribué. Ainsi il faut savoir gérer : 
+
+* Donnee decentralisée
+* Communication entre les services
+* Gérer l'echec d'un microservice
+* Testing
+
+Cette architecture propose donc de nombreux avantage mais aussi un challenge elevé. Il n'est pas aisé de réussir a implementer correctement cette architecture du premier coup. Il est préférable de commencer doucement avec une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices lorsque le besoin se fait ressentir. Attention cependant a ne pas trop attendre pour le faire, ou ce sera trop complexe et il sera nécessaire de tout recommencer.
+
+TODO parlé du monolithe avant ?
 
 #### Bien pour
 
 Les SI complexes ? 
-
-TODO regarder prez : http://fr.slideshare.net/aca_it/micro-services-40695502 et ailleurs pour des images ?
 
 TODO trouver un meilleur titre que "bien pour"
 TODO garder le bien pour ?
 
 ## Spécificités du Front-end
 
-TODO
+Maintenant que nous avons vu globalement les principaux styles d'architecture, nous allons voir les spécificités des applications web en commencant par le front-end. Nous allons ensuite choisir les styles d'architecture pour le POC.
 
-### Architecture traditionnelle
-
-TODO remplacer par application traditionnelle ? parce que c'est pas vraiment une archi et sur les images c'est ecrit applciation
+### Application traditionnelle
 
 #### Description
 
@@ -773,7 +766,7 @@ Du cote du serveur, une architecture du type MVC* (Modele Vue Controleur) est ge
 
 ![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
 
-TODO relire
+TODO relire et remplacer architecture par application traditionnelle
 
 #### Critiques de l'architecture
 
@@ -820,6 +813,8 @@ demandent pas le rechargement de la page.
 Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la gestion de la vue et des donnees est confuse. Le but ici est d'avoir reelement deux applications totalement differentes. L'une est le client (la vue), comprenant toutes les interactions avec l'internaute (HTML/CSS/JavaScript), et l'autre est le serveur, comprenant la logique metier faisant abstraction de tout ce qui est visuel. Le serveur devient ce que l'on appelle commenement un web service, pouvant servir plusieurs types de client.
 
 ![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
+
+TODO refacto + archit ttradi
 
 #### Avantages
 
@@ -873,56 +868,54 @@ TODO avantages inconvenients sur http://nerds.airbnb.com/isomorphic-javascript-f
 
 ### Choix de styles d'architecture
 
-#### MVC
-
-* beaucoup de mvc en front mais bon on a vu que c'etait pas terrible
-
-TODO Au final je prends pas ce style, en parler ou pas ? c'est juste que c'est beaucoup utilisé. J'ai deja critiqué nan ?
+Au niveau du front-end, l'architecture MVC est tres répendue. Nous avons vu les avantages et les inconvenients de celui-ci. Nous allons voir que d'autres possibilités apparaissent avec les derniers standards du web.
 
 #### Architecture orienté composants
 
-Web components
-custom elements and custom properties
-shadow dom with css scoping
-html imports
-but => isolation (comme le style d'origine)
-source http://blogs.windows.com/msedgedev/2015/07/14/bringing-componentization-to-the-web-an-overview-of-web-components/
+Cette architecture devient de plus en plus répandue et le web evolue de plus en plus sur cette solution. L'implémentation de cette architecture au niveau du front-end est disponible avec ce que l'on appelle des web components (composants web). Cela permet l'encapsulation et l'interopérabilité d'un element HTML individuel. Voici les propriétés d'un composant web standard :
+
+* Elements et proprietes personnalisées : Permet la création d'element HTML autres que ceux standards (p, a, h1, h2, etc.) avec des proprietés propres
+* Shadow DOM et CSS scopé : Isolation du CSS et du DOM par composant web (le CSS d'un composant n'affectera pas le reste de la page) 
+* Imports HTML : Permet l'import d'autres composants via le code HTML
+* HTML Templates : Un composant s'écrit via un fichier HTML
+
+Si les navigateurs aujourd'hui n'implementent pas tous encore ces prochains standards du web, celui-ci tend sur cette lignée. Il est possible d'utiliser des aujourd'hui les composants web grace a des polyfills ou des frameworks definissant leur propre maniere de creer des composants web.
 
 #### Architecture orienté évènements
 
-communication entre les composants => messages ou bus d'evenements
+Les composants etant independants et autonomes, une facon de relier le tout est d'utiliser un bus d'evenements central, et donc l'architecture orienté evenements. Il est aisé d'en creer un en JavaScript, et certains frameworks le proposent. Cela permet de profiter des avantages de ces deux architectures.
 
-TODO Dire que y'a plein de trucs et que finalment ca depend beaucoup des projets, des equipes, etc.
-TODO 2 types d'evenements : fais quelque chose et a fait quelque chose, le 2eme c'est mieux. difference entre message et evenement
-TODO isomorphique ou pas ?
+Les facons de faire sont nombreuses et le choix dependra finalement beaucoup des projets, du styles de developpement des equipes, etc. 
 
 ## Spécificités du Back-end
 
-### Application traditionnelle
-
-le back fait aussi la vue
-
-TODO
+Nous avons vu qu'il y a deux manieres de creer des applications web, la maniere traditionnelle et avec les SPA. De la maniere traditionnelle, le serveur s'occupe de gerer les donnees en arriere plan (back-end), mais aussi de former la vue. Les SPA sépare ces deux responsabilités en deux applications differentes. Le back-end expose donc generalement des web services qui font l'interface avec des bases de donnees, communication avec d'autres web services, etc.
 
 ### Passage aux Web services
 
-soap, rest
+Un service web permet la communication et l'echange de donnees entre deux applications. Le protocole généralement utilisé est l'HTTP. Il existe majoritairement 2 types de web services : SOAP et REST. 
 
-TODO web services, voir ou mettre les majuscules
+#### SOAP
+
+TODO
+
+#### REST
+
+TODO
 
 ### Choix de styles d'architecture
 
-#### SOA
+#### SOA + architecture en couches
 
 cdiscount le fait
 
 #### Microservices
 
 cdiscount veut le faire
-c'est ce qu'on veut faire avec le poc
+c'est ce qu'on veut faire avec le poc mais pas d'un coup c'est trop dur, au fur et a mesure
 
 TODO choix d'architecture avec S ou pas ?
-TODO cette partie vraiment interessante ? p e juste les soap rest et encore
+TODO isomorphique ??
 
 ## Idéologie commune
 
@@ -930,6 +923,9 @@ espece de conclusion
 architecture avant technologie
 grande inspiration de DDD mais pas mal de microservices quand meme
 domaine avant tout, business logic de SOA, 2 types de logique, etc.
+ne pas arriver a un monolithe (microservices c'est l'inverse donc c'est bien)
+pourquoi les monolithes c'est pas bien (voir notes)
+separer le client et server ca casse deja le monolithe, mais on peut avoir un monolithe juste du cote serveur aussi, surtout avec une architecture en couches
 
 TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
 TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
@@ -937,6 +933,7 @@ TODO rajouter des references a des livres avec toutes ces archis
 TODO parler de l'archi en couche parce que cdiscount utilise ca ? critiquer celle de cdiscount ? Si oui comparer au MVC un peu
 TODO mettre une image expliquative par archi ?
 TODO qu'est-ce qui est appliqué au POC
+TODO parler de l'archi en couches ?
 
 # Choix technologiques
 
@@ -1264,6 +1261,10 @@ TODO conclure sur le projet ici, ou dans la grande conclusion ?
 
 # Conclusion {-}
 
+brain
+monolith is dead
+c'est pas the choix mais les choix qu'on a fait, du style, du style. on a juste essayé de bien choisir pour avoir comme resultat un logiciel de bonne qualité, maintenable, etc.
+
 TODO
 
 # Notes et plan {-}
@@ -1293,6 +1294,8 @@ Mot clés : maintenable, assurance qualité
     * scalabilité difficile
 
 TODO parler du probleme du monolithe quelque part ?
+
+isomorphique ?
 
 ## Plan
 

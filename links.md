@@ -23,7 +23,9 @@ https://fr.wikipedia.org/wiki/Architecture_logicielle
 https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
 http://fr.slideshare.net/aca_it/micro-services-40695502
 http://martinfowler.com/eaaDev/uiArchs.html
-https://fr.wikipedia.org/wiki/Architecture_logicielle
+http://martinfowler.com/articles/microservices.html
+https://en.wikipedia.org/wiki/Domain-driven_design
+http://martinfowler.com/bliki/BoundedContext.html
 
 ## En plus
 
@@ -31,11 +33,17 @@ http://programmers.stackexchange.com/questions/218011/how-accurate-is-business-l
 
 # Livres
 
-Evans DDD
-[David Garlan and Mary Shaw, January 1994, CMU-CS-94-166, see "An Introduction to Software Architecture" at http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf]
-livre sur SOA
+* Evans DDD
+* DDD vite fait : http://blog.infosaurus.fr/public/docs/DDDViteFait.pdf
+* [David Garlan and Mary Shaw, January 1994, CMU-CS-94-166, see "An Introduction to Software Architecture" at http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf]
+* livre sur SOA
+* Clean code ?
+* Philosophie unix ? do one thing and do it well
 
-Clean code ?
+# Conferences
+
+* Eric evans sur DDD et les microservices : https://skillsmatter.com/skillscasts/6259-ddd-and-microservices-at-last-some-bounderies<F37>
+
 # Images
 
 browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines
