@@ -26,6 +26,9 @@ http://martinfowler.com/eaaDev/uiArchs.html
 http://martinfowler.com/articles/microservices.html
 https://en.wikipedia.org/wiki/Domain-driven_design
 http://martinfowler.com/bliki/BoundedContext.html
+https://fr.wikipedia.org/wiki/SOAP
+https://fr.wikipedia.org/wiki/Representational_State_Transfer
+http://www.journaldunet.com/developpeur/outils/angular-js.shtml
 
 ## En plus
 
@@ -39,6 +42,7 @@ http://programmers.stackexchange.com/questions/218011/how-accurate-is-business-l
 * livre sur SOA
 * Clean code ?
 * Philosophie unix ? do one thing and do it well
+* RESTful ?
 
 # Conferences
 

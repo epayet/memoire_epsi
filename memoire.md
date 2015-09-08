@@ -897,200 +897,189 @@ Un service web permet la communication et l'echange de donnees entre deux applic
 
 #### SOAP
 
-TODO
+D’après Wikipédia :
+
+"SOAP (Simple Object Access Protocol) est un protocole de RPC (Remote Procedure Call) orienté objet bâti sur XML. Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer des méthodes d'objets physiquement situés sur un autre serveur. Le protocole SOAP est composé de deux parties :
+
+* une enveloppe, contenant des informations sur le message lui-même afin de permettre son acheminement et son traitement
+* un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre (appelé WSDL)."
+
+![Représentation de l’enveloppe SOAP][soap]
+
+SOAP décrit la manière dont les applications doivent communiquer entre elles, ce qui peut augmenter le couplage entre le serveur et les clients. Une évolution du coté du serveur demande une mise a jour des clients. 
+
+SOAP permet l'utilisation de plusieurs protocoles autres que l'HTTP tel que le SMTP, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le XML alourdit grandement les echanges. 
+
+SOAP a été utilisé pendant tres longtemps et de nombreux web services ecrits en SOAP existent encore actuellement (de nombreux web services sont ecrits en SOAP chez Cdiscount). Cependant, des solutions plus légeres sont de plus en plus preferées telle que REST. SOAP est generalement utilisé pour mettre en place une architecture orientée services (SOA).
+
+TODO wiki ?
 
 #### REST
 
-TODO
+Contrairement a SOAP, qui est un protocole a part entiere, REST (Representational State Transfer) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. C'est généralement le protocole HTTP (tres leger) qui est utilisé. Il est tres simple a utiliser et permet de respecter tous les principes de l'architecture. 
+
+REST est une architecture orientée ressource (contrairement a SOAP qui est orienté méthodes). Par exemple, une API web representera un client comme une ressource, et sera manipulable a cette adresse (ajout, modification, suppresion, etc.): `http://www.foo.com/Clients`. 
+
+REST est une architecture dite sans etat (stateless).
+
+TODO Texte wiki : L'absence de gestion d’état du client sur le serveur conduit à une plus grande indépendance entre le client et le serveur. Elle permet également de ne pas avoir à maintenir une connexion permanente entre le client et le serveur. Le serveur peut ainsi répondre à d'autres requêtes venant d'autres clients sans saturer l'ensemble de ses ports de communication. Cela devient essentiel dans un système distribué.
+
+REST est généralement utilisé lors d'une mise en place d'une mise en place des microservices grace a sa legereté.
+
+TODO deja parlé de stateless ?
 
 ### Choix de styles d'architecture
 
 #### SOA + architecture en couches
 
-cdiscount le fait
+Cdiscount utilise actuellement une architecture orientée service. Chaque service utilise une architecture en couches. Nous avons vu les avantages et les inconvenients de chacun. Si la séparation fonctionnelle etait claire au debut, aujourd'hui chaque service s'apparente de plus en plus a un monolithe. La société est en pleine reflexion pour casser ses monolithes et avoir une architecture plus souple.
 
 #### Microservices
 
-cdiscount veut le faire
-c'est ce qu'on veut faire avec le poc mais pas d'un coup c'est trop dur, au fur et a mesure
+C'est l'architecture vers laquelle Cdiscount veut tendre. Elle etudie actuellement une strategie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tache aisée et nous allons proceder au fur et a mesure.
 
 TODO choix d'architecture avec S ou pas ?
 TODO isomorphique ??
 
-## Idéologie commune
+## Idéologie commune (ce qu'il faut retenir)
 
-espece de conclusion
-architecture avant technologie
-grande inspiration de DDD mais pas mal de microservices quand meme
-domaine avant tout, business logic de SOA, 2 types de logique, etc.
-ne pas arriver a un monolithe (microservices c'est l'inverse donc c'est bien)
-pourquoi les monolithes c'est pas bien (voir notes)
-separer le client et server ca casse deja le monolithe, mais on peut avoir un monolithe juste du cote serveur aussi, surtout avec une architecture en couches
+* vu plein de choses mais ce qu'il faut retenir
+* le monolithe c'est pas bien
+* le fait de separer client serveur ca casse deja un peu, mais c'est possible d'avoir un cote serveur aussi
+* l'archi microservices ca casse encore plus
+* architecture > techno
+* 2 types de logiques et que c'est bien de les separer
+* donc grande inspiration du DDD au moins pour ca
+* donc separer la logique du domaine de la logique de l'appli ca decouple bien. et les microservices encore plus => diversité technologique et efficace, bon decoupage fonctionnel et deploiements faciles, facile a comprendre
+* c'est pas forcement facile a implementer bien d'un coup mais faut faire au fur et a mesure, mais faut bien avoir ca en tete. choisir une methodo qui permet de faire ca aussi, aller sur la mauvaise pente c'est rapide et beaucoup de dette technique apres.
 
-TODO mettre le contenu de cette partie ici ou en intro ? c'est une conclusion ? ce qu'il faut retenir ? 
 TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
-TODO rajouter des references a des livres avec toutes ces archis
 TODO parler de l'archi en couche parce que cdiscount utilise ca ? critiquer celle de cdiscount ? Si oui comparer au MVC un peu
-TODO mettre une image expliquative par archi ?
-TODO qu'est-ce qui est appliqué au POC
-TODO parler de l'archi en couches ?
+TODO qu'est-ce qui est appliqué au POC, c'est assez clair ?
+TODO monolithe
 
 # Choix technologiques
 
-choix du poc
-on a vu que l'archi est plus important que la techno, mais bon on se repose dessus donc faut quand meme choisir des technos qui permettent d'appliquer l'archi. 
-surtout faut pas devenir dependant trop de la techno, le business model doit rester isolé
-donc bien choisir ses technos en fonction des besoins, mais pouvoir en changer facilement selon le composant et sans impacter trop le systeme c'est mieux
+Maintenant que nous avons decidé quelle architecture mettre en place pour note projet, ainsi que les differents principes a retenir, l'étape suivante est de choisir des technologies permettant de les appliquer. Meme si nous avons retenu que les choix d'architecture sont plus important que les choix techniques, et qu'il ne faut pas en devenir dependant, il faut tout de meme choisir les bonnes technologies pour concretiser le tout.
 
-## Front-end
+Pour rappel, nous allons essayer de separer au maximum la logique du domaine de la logique de l'application. Ceci nous permettra de choisir la technologie la plus adaptée pour chaque composant et de pouvoir la changer facilement si le besoin s'en ressent.
 
-### Choix d'un framework SPA
+## Choix d'un framework SPA
 
-c'est difficile a choisir
-framework = structure
-donne : architecture flexible, reusable components et enforce la separation of concerns 
-une autre solution c'est de pas utiliser du tout mais faut un high level et c'etait p e pas ce qui etait bon pour cdiscount
-je presente pas tous les frameworks parce que y'en a beaucoup. Je vais juste présenter ceux entre lesquels j'ai hésité pour le POC
-au final comme ca evolue beaucoup, ca va dependre du moment
-ils sont tous open source
+C'est surement le choix le plus difficile a effectuer. Il existe de nombreux frameworks pour creer des SPA. Il est aussi possible de ne pas utiliser de frameworks, mais d'effectuer a la place une combinaison de librairies. Cependant, un framework apporte de la structure a l'application, une architecture flexible et renforce la separation des responsabilités. 
 
-#### AngularJS
+Nous ne presenterons pas tous les frameworks SPA ici, car il en existe beaucoup. Nous allons alors presenter ceux qui ont etes pris en compte pour le projet de demonstration. Au final, ils evoluent tres vite, et il est interessant de passer de l'un a l'autre selon les applications et les composants.
 
-##### Description
+### AngularJS
 
-* créé en 2009 par google
-* propose :
-    * Injection de dépendances
-    * Orienté composants via directives
-    * MVC mais avec notion de "service" qui peut servir pour mettr de la business logic
-    * testing
-        * unit
-        * E2E via protractor
-    * modules
-    * two way data binding
-* Version 2 en cours de développement qui va apporter plus de choses : 
-    * Shadow DOM
-    * Plus de performances
-    * Encore plus orienté composant
-    * Plus simple
+#### Description
 
-##### Avantages
+AngularJS est un framework créé en 2009 par Google. Il propose :
 
-* stable : 1.4
-* beaucoup utilisé (voir les stats) et beaucoup de modules open source, beaucoup de reponses dessus
-* si bien utilisé (de facon moderne), passage a la version 2 facile, voir meme une autre techno, surtout si on fait du DDD
-* eviter la manipulation du DOM
-* bonne séparation pour chaque composant (HTML, JS, CSS) meme si le CSS est pas encore scopé dans la version 1
+* Injection de dépendances
+* Pattern MVVM utilisé mais avec notion de "service" qui peut servir pour mettr de la business logic
+* Orienté composants possible (via directives)
+* Testing avancé et facilité:
+    * Tests unitaires
+    * Tests UI (E2E) via protractor
+* Découpage fonctionnel sous forme de modules
+* Two way data binding : passage des donnes du controleur a la vue automatique au niveau du code
 
-##### Inconvénients
+Une version 2 est en cours de développement et va apporter de nombreuses choses :
 
-* pas facile a prendre en main ? surtout s'il faut bien l'utiliser
-* version 2 qui casse tout
-* angular way ?
-* performances ?
+* Shadow DOM
+* Meilleurs performances
+* Encore plus orienté composant
+* Plus simple
 
-#### ReactJS + Flux
+#### Avantages
 
-##### Description
+* Stable et production-ready 
+* Large communauté : framework le plus utilisé, de nombreux modules open source
+* Two-way data binding facilite grandement le développement et permet d'eviter la manipulation du DOM
+* Séparation des fichiers claire pour chaque composant (HTML, JS, CSS)
 
-* React : 
-    * créé en 2013 par Facebook
-    * orienté composants
-    * que la vue (V de MVC)
-    * Utilise le virtual DOM, un peu différent du shadow dom (pas standard) mais tres performant
-* Flux
-    * architecture créé par Facebook qui complémente les composants react qui prone le flow de donnees unidirectionnel (contraire du two-way data binding)
-        * plus perf (le double way ca a des cycles de digestion)
-        * Les donees descendent et les actions remontent
-    * orienté évenements
+#### Inconvénients
 
-##### Avantages
+* Prise en main difficile
+* Version 2 non rétro-compatible (si utilisé en orienté composants, migration facilitée)
+* Performances (le two-way data-binding a un impact sur la performance générale de l'application)
 
-* Simple
-* Flux sur la bonne voie de faire les choses bien
-* server side rendering possible pour le SEO
-* performant
-* commence a etre stable et a etre pas mal utilisé, ca commence a etre le chouchoux du moment en fait, surtout a cause de la polémique avec angular 2
-* des outils qui apparaissent autour comme react native, qui permet d'utiliser les composants mobile natifs, mais bon c'est early et y'a pas android
+TODO comment ecrire 2 way data binding
 
-##### Inconvénients
+![Tendance des recherches d’après Google Trends][spaFrameworks]
 
-* JSX j'aime pas trop => mélange des fichiers HTML et JS => vue + logique
-* tout recent
-* pas standard : JSX + virtual DOM
-* au final c'est pas vraiment des inconvénients, ca dépend du style de dev
+### ReactJS + Flux
 
-#### Polymer
+#### Description
 
-##### Description
+ReactJS est un framework créé en 2013 par Facebook. Il est par conception orienté composants et utilise le virtual DOM, implémentation differente du shadow dom (non standard), aillant de tres bonnes performances. Par conception, ce framework s'occupe unique de la vue et doit etre utilisé avec un autre framework pour etre complet. 
 
-* créé par Google en 2014
-* permet de creer facilement de maniere standard des web components
-* ce n'est pas vrament un framework
-* polyfill
-* utilise les derniers trucs : 
-    * shadow dom
-    * html import
+Facebook a créé une architecture se nommant Flux pour complementer ReactJS. C'est une architecture orienté evenements pronant le flux de donnees unidirectionnel (contraire du two-way data binding). Bien utilisé, il est beaucoup plus clair et performant. Ce qu'il faut retenir c'est : les donnees descendent, et les actions remontent, chacun dans un sens. 
 
-##### Avantages
+#### Avantages
 
-* permet d'utiliser les web components de maniere standard qui peut marcher partout avec les polyfills
-* perfs ok
+* Simple et rapide a mettre en place
+* Architecture Flux claire et efficace
+* SEO : possibilité de faire du server-side rendering
+* Performances
+* Communauté grandissante
 
-##### Inconvénients
+#### Inconvénients
 
-* tres early, version 1.0 y'a pas longtemps
-* tres peu de modules open source
-* moins complet que les autres, faut combiner avec d'autres trucs. pas vraiment un inconvenient, plus un choix
+* Utilisation du JSX : JSX mélange l'HTML et le JavaScript dans un meme fichier par souci de simplicité. C'est un choix personnel, mais je prefere avoir les avoir séparé (melange de vue et de logique)
+* JSX et virtual DOM non standards, malgré leur efficacité
 
-#### Aide pour choisir et choix pour le POC
+### Polymer
 
-* Il est possible de faire de l'orienté composants avec tous, et sont tous bien. apres c'est juste un choix
-* pour le poc, j'ai choisi angular parce que
-    * mature
-    * style approuvé personnellement, en plus j'ai de l'experience dessus
-    * performances correctes selon moi et dans ce use case la ca va
-    * SEO pas un probleme pour moi (de toute facon c'est quand meme possible)
-    * beaucoup de ressources et de modules existant sur internet
-    * testing trop bien
-    * efficace
-* react c'est bien mais
-    * j'aime pas trop le jsx, je prefere la separation des fichiers d'angular
-    * failli prendre ca, mais bon c'est une histoire de preferance la
-* polymer c'est bien aussi mais
-    * vraiment tres early, la version 1 est sorti alors qu'on etait deja en train de dev le POC, important pour la mise en production
-    * independant, c'est bien mais pour une vrai appli faut le composer avec d'autres trucs, on etait plus efficace avec angular. pour d'autres applis et plus tard si on y passe du temps
-* rajouté un bus d'evenements fait maison pour faire de l'orienté evenements, en plus y'a pas d'origine ca sur angular. inspirations de flux
-* conclusion : la techno choisie (angular + bus evenements) permet de mettre en place l'archi qu'on veut (composants + events). ca permet aussi d'autres trucs qui vont nous servir pour la methodo choisie (on verra plus tard, mais c'est le testing qui est vraiment interressant)
-* au final ils sont tous bien, c'est vraiment un choix
+#### Description
 
-TODO meilleur titre ?
+Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un framework, car il est beaucoup moins complet que les autres. Les web components, tels qu'ils sont definis par le W3C ne sont pas encore supportés par tous les navigateurs. Polymer propose donc un systeme de polyfill pour creer des composants web se rapprochant plus du standard, comprenant le Shadow DOM, l'import HTML, etc.
+
+#### Avantages
+
+* Les composants créés se rapprochent plus du futur standard que les autres frameworks
+* Peut etre combiné avec d'autres librairies
+
+#### Inconvénients
+
+* Tres recent, version 1.0 sortie il y a peu de temps
+* Tres peu de modules open source
+* Pas un framework, moins complet mais si le choix est de faire une combinaison de librairies, pourra convenir
+
+### Un choix difficile
+
+Le choix est difficile a effectuer car les technologies présentées sont toutes bien (permettant l'orienté composants et l'orienté evenements) et sont a la pointe des technologies web. Le choix dependra finalement du projet et du style des equipes de developpement. 
+
+Pour ce qu'il est de notre projet, nous avons choisi angular pour les raisonts suivantes. Il est le framework le plus mature et possedant la plus grande communauté dans sa catégorie. Les ressources a disposition sont alors importantes. Il met beaucoup en avant le testing, et c'est un facteur tres important pour notre projet. De plus, notre equipe a de l'experience avec ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 moins, c'est a prendre en compte.
+
+Nous aurions pu choisir ReactJS pour ses performances et sa philosophie, mais finalement les performances d'AngularJS sont tres correctes pour notre besoin, et nous préférons le style de developpement d'angularJS (preferance pour la structure des fichiers d'angular par rapport au JSX de ReactJS). C'est donc vraiment une preferance finalement.
+
+Polymer est selon moi trop jeune, la version 1.0 etant sortie alors que nous avions deja commencé le projet. Avec une bonne combinaison de librairies, il peut cependant devenir une alternative tres interessante. 
+
+Nous avons rajouté a notre choix d'angular un bus d'evenements central pour profiter de l'architecture orienté evenements. N'etant pas fourni avec AngularJS, nous avons créé notre bus d'evenements en JavaScript.
+
 TODO parler de la structure des fichiers d'un component ? (controller, service, css, etc.)
+TODO faire des phrases des fois
 
-### Choisir les bons outils
+## Choisir les bons outils
 
-le web est devenu plus complexe, on est loin du bon vieux php qui va en prod en ftp
-maintenant y'a pleeeein d'outils
+De nombreux outils sont a disposition pour faciliter le developpement d'applications web. Certains sont meme necessaire pour le developpement mobile ou pour les methodes agiles. 
 
-#### Outils de compilation
+### Outils de compilation
 
-##### Gulp
+#### Gulp
 
-* task runner definition
-* il y en a plusieurs mais moi j'ai pris gulp
-* plusieurs taches :
-    * build web
-    * build mobile
-    * watch
-    * server
-* a la compil il faut transpiler parce qu'on fait du bon javascript qui va rester mais qui est pas encore bien supporté (ES6)
+Gulp est un task runner. Son but est limiter les actions repetitives et d'automatiser certaines taches. Il est tres comparable a Maven dans le monde Java. Il en existe plusieurs dans le monde du JavaScript, mais nous avons choisi celui-ci pour sa simplicité.
 
-old
-Un « task runner » javascript est très utile du côté du frontend. En effet, lorsque l’on
-développe une application web, il arrive très souvent que certaines tâches se répètent.
-L’utilisation d’un « task runner » permet d’éviter ces répétitions (DRY : Don’t Repeat
-Yourself), et automatiser certains mécanismes (compilation CSS, minification Javascript,
-etc.).
+Nous avons plusieurs taches et les principales sont :
+
+* "build:web" : C'est la tache principale, elle compile les fichiers sources et les prepare le resultat final dans un dossier different
+* "build:mobile" : Effectue la meme chose pour le mobile
+* "watch" : Relance automatiquement la compilation des fichiers a chaque sauvegarde d'un des fichiers sources, recharge aussi le navigateur web
+* "server" : Lance un serveur de developpement lisant les fichiers compilés par la tache de compilation
+
+La plus grosse tache est la compilation pour le web. Comme nous utilisons la derniere version de JavaScript, mais qu'elle n'est pas encore supportée par tous navigateurs, nous devons la transpiler (passage a une version anterieure compatible). D'autres astuces sont aussi utilisées comme la minification des fichiers pour prendre moins de place, etc.
 
 ##### Cordova
 
@@ -1102,56 +1091,60 @@ etc.).
 
 TODO pas deja dis ca ?
 
-#### Gestionnaire de paquets
+### Automate
 
-* utliser beaucoup de librairies open source c'est bien mais c'est dur a gerer
-* un gestionnaire de paquets pour ca c'est bien, ca s'utilise commme en backend
-* bower = l'équivalent frontend
+Dans la meme lignée que les tasks runners, nous utilisons un automate appelé Yeoman. C'est un outil permettant d'automatiser la creation de fichiers lorsque c'est redondant. Par exemple avec AngularJS, la création d'un composant est longue parce qu'il y a de nombreux fichiers. Nous avons alors créé notre propre générateur avec cet outil pour générer les bons fichiers.
 
-#### Gestionnaire de versions
+TODO exemple avec `yo angular-es6-components:component myComponent` et montrer les fichiers créés ?
+
+### Gestionnaire de versions
+
+Un gestionnaire de versions est fortement recommandé, surtout avec les méthodes agiles.
 
 * versionnig est tres important
 * git le plus utilisé
 
-#### Automate
+TODO c'est vraiment interressant d'ecrire la dessus ?
 
-* component angular demande beaucoup de fichiers, et la création est longue et répétitive (DRY)
-* du coup j'ai fait un générateur de composants angular (ca existait pas)
-* yeoman : tres connu et fait ca `yo angular-es6-components:component myComponent` pour generer tous les fichiers
+### Gestionnaire de paquets
 
-TODO meilleur nom ?
+Nous utilisons beaucoup de librairies open source, que ce soit du coté du front-end ou du back-end. Chacune d'elles a sa propre version et il devient complexe de s'en sortir lorsqu'elles sont nombreuses. De plus, c'est une mauvaise pratique de melanger les librairie tierces avec le code source sur le gestionnaire de versions. 
+
+L'interet d'un gestionnaire de paquets est que grace a un fichier descriptif comprenant la liste des librairie tierces avec une version spécifique, chaque developpeur (ou machine de deploiement) est capable de telecharger la correcte version. Au niveau du front-end, nous utilisons Bower.
+
+TODO DRY ?
                 
-#### Framework Graphique
+### Framework Graphique
 
-* le CSS c'est pas facile, des surcouches tres bien existent (SASS, LESS) mais on a pas utilisé ca (on aurait pu mais on a pas intégré ca pour l'instant)
-* Angular material : joli, facile, etc.
-* on aurait pu utiliser bootsrap tres utilisé mais material fait tres moderne et flat (subjectif)
- 
-## Back-end
+Il n'est pas aisé de faire du CSS, et de nombreuses surcouches existent pour ameliorer son comportement de base (SASS, LESS, etc.). Nous avons préféré utiliser un framework graphique tout fait avec quelques legeres modifications en CSS par souci de rapidité. 
 
-### Choix d'un langage
+Si Bootstrap est le plus connu, nous avons utilisé un plus récent : Angular Material. Il propose d'utiliser le Material Design de Google adapté pour AngularJS. Il est selon nous tres agreable a utiliser et a voir.
 
-* comme vu au debut, le js c'est trop fort et pour gerer le backend couplé a l'es6 c'est parfait, et npm c'est cool aussi
-* de toute facon, microservices on peut changer les technos
-* on a pris nodejs mais on aurait pu prendre autre chose (java, c sharp, etc.)
-* le tout c'est que ca soit restful
+## Choix d'un langage serveur
 
-old 
-Java (avec framework http comme Jersey)
-C# (avec WCF)
-PHP (pas optimisé à la base pour faire du RESTful, mais possible tout de même)
+Il existe de nombreuses solutions pour creer des serveurs RESTful. Les plus communes sont : 
 
-### Containers 
+* Java (avec framework http comme Jersey)
+* C# (avec WCF)
+* PHP (pas optimisé à la base pour faire du RESTful, mais possible tout de même)
 
-* la meilleure techno pour mettre en place l'archi des microservices, c'est docker.
-* Docker permet de créer des containers linux isolé. c'est un peu comme une vm mais pas trop et en plus léger
-* Dépend du kernel linux et est parfait pour creer des instances d'applications
-* pour le poc on a commencé par faire une api node dans un seul container.
-* il est ensuite possible de découpler l'api en microservices. par exemple, les routes /api/products ou /api/basket peuvent devenir des microservices tournant dans des containers différents avec un nombre d'instances différentes
-* l'api sera alors une api gateway
+Nous avons choisi le NodeJS comme solution. Comme vu précédemment, le JavaScript est un langage tres adapté pour le back-end, d'autant plus avec la derniere version. NodeJS comporte le plus grand nombres de modules open sources avec son gestionnaire de paquets npm. Utilisant l'architecture des microservices, nous pourront créer certains services dans d'autres technologies si nous trouvons cela necessaire. Nous voulons pour l'instant tirer parti du fait que nous utilisons le meme langage de developpement des deux cotés et sommes tres efficaces de cette maniere. 
 
-TODO parler de l'archi de l'appli, de la source de données orchestration tout ca ? je pense pas
-TODO faire un schéma ? ou 2 ?
+TODO deja dit plus grand nombre de modules open source
+TODO detailler un peu pourquoi node ?
+
+## Containers 
+
+La meilleure facon de creer et gerer des microservices actuellement est de passer via des containeurs grace a la technologie Docker. Un containeur est un espace linux isolé pouvant interagir avec d'autres containeurs. Le principe est tres similaire a une machine virtuelle, mais en beaucoup plus leger et efficace. Il est parfait pour creer une ou plusieurs instances d'une meme application aisément.
+
+Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container. Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
+
+TODO schema
+
+Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel).
+
+TODO schema
+TODO bien parler de l'api gateway
 
 # Méthodologie
 
@@ -1472,3 +1465,5 @@ TODO
 [onionArchitecture]: images/onion_architecture.jpg
 [soaArchitecture]: images/soa.png
 [microservicesArchitecture]: images/microservices.png
+[soap]: images/soap.png
+[spaFrameworks]: images/spa_frameworks.jpg
