@@ -29,6 +29,10 @@ http://martinfowler.com/bliki/BoundedContext.html
 https://fr.wikipedia.org/wiki/SOAP
 https://fr.wikipedia.org/wiki/Representational_State_Transfer
 http://www.journaldunet.com/developpeur/outils/angular-js.shtml
+https://fr.wikipedia.org/wiki/Cycle_en_V
+https://fr.wikipedia.org/wiki/Extreme_programming
+https://en.wikipedia.org/wiki/Scrum_(software_development)
+http://www.slideshare.net/abagmar/anand-bagmar-behavior-driven-testing-bdt-in-agile
 
 ## En plus
 

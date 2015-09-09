@@ -1148,54 +1148,131 @@ TODO bien parler de l'api gateway
 
 # Méthodologie
 
+Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle considere fortement les methodes agiles et laisse le champ libre aux pizzas team recemment formées. Pour notre projet, nous allons appliquer la methode de l'extreme Programming que nous allons definir.
+
 ## Cycle en V
 
-* modele conceptuel de gestion de projet
-* plusieurs étapes (voir image ?)
-* En pratique, il est difficile voire impossible de totalement détacher la phase de conception d'un projet de sa phase de réalisation.
-* C'est souvent au cours de l'implémentation qu'on se rend compte que les spécifications initiales étaient incomplètes, fausses, ou irréalisables, sans compter les ajouts de nouvelles fonctionnalités par les clients 
-* Cdiscount le fait mais essaye de changer, créé des pizzas team plus agile comme vu au debut
-* colle pas trop avec les microservices et le déploiement rapide parce que un cycle en V c'est long
-* une equipe independante et polyvalente devrait etre dédiée par microservice pour s'occuper elle meme des releases, choix techniques tout ca
+Le cycle en V est un modele conceptuel de gestion de projet. Il est constitué en plusieurs etapes et sont découpées ainsi :
+
+* Analyse des besoins et création des spécifications
+* Conception
+* Developpement
+* Tests (unitaires, intégration, etc.)
+* Recette
+
+![Étapes du cycle en V][cycleV]
+
+Le but de cette méthode est de limiter les retours aux etapes précédentes. En pratique, il est difficile voire impossible de totalement détacher la phase de conception d'un projet de sa phase de réalisation. C'est souvent au cours de l'implémentation qu'on se rend compte que les spécifications initiales étaient incomplètes, fausses, ou irréalisables, sans compter les ajouts de nouvelles fonctionnalités par les clients.
+
+Il est difficile d'appliquer l'architecture des microservices avec cette méthodologie, ainsi que le déploiement rapide en production. Le cycle en V comporte beaucoup d'étapes impliquand de nombreuses equipes, limitant la vitesse de passage en production. Une seule equipe independante et polyvalente dédiée a chaque microservices serait plus efficace, gérant elle meme son cycle de releases, ses propres choix techniques, etc.
+
+TODO l'image est assez descriptive des etapes nan ?
+
+## Méthode agile : SCRUM
+
+* Méthode agile iterative et incrementale pour gerer le developpement d'un produit
+* encourage l'equipe a etre auto organisée en encouragent le fait qu'il faut etre proche et communiquer souvent (tous les jours), au moins par l'equipe, quelque soit la discipline
+* le principe principal est que le client peut souvent changer d'avis, et que les imprevus ca arrive souvent
+* donc approche empirique : accepte que le projet ne peut totalement compris et défini, mais se concentre plutot sur maximiser le fait de mettre souvent en production, et repondre aux demandes emergentes
+* Les 3 roles principaux de l'equipe SCRUM sont :
+    * Product owner : Représentes les parties prenantes et est la voix du client. Son role est de s'assurer que l'equipe apporte de la valeur ajoutée au produit.
+    * Equipe de developpement : Equipe responsable d'ajouter de la valeur au produit a la fin de chaque iteration
+    * Scrum Master : Facilitateur, celui qui s'occupe de ce qui ralentit l'equipe de dev. Il s'assure aussi que les rituels sont bien respectés
+* Les differents rituels et evenements sont : 
+    * Sprint : Iteration avec une duree specifique (time-box)
+    * Sprint Planning : Se deroule au debut de chaque sprint, le but est d'estimer les taches a effectuer et d'assigner des taches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l'equipe de developpement (velocité)
+    * Daily Scrum : Rencontre journaliere de toute l'equipe SCRUM, ou chaque membre dit le travail effectué la veille, le travaille qu'il effectuera ce jour et les problemes rencontrés
+    * Sprint review : Presentation du resultat aux parties prenantes, et revue du travail effectué et non effectué
+    * sprint retrospective : Reflexion sur le dernier sprint, identification de ce qu'il s'est bien passé, mal passé et comment le processus pourrait etre amélioré. Permet aussi d'ajuster la vélocité de l'equipe
+* Respecter ces rituels et le role de chacun permet d'optimiser l'efficacité de l'equipe de dev, avec une bonne communication ce qui donne un produit de plus en plus raffiné, et satisfaisant le client.
+
+TODO parler du product backlog
 
 ## Méthode agile : Extreme Programming
 
-* Extreme Programming (XP) est une méthode agile plus particulièrement orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
-* Son but principal est de réduire les coûts du changement. Dans les méthodes traditionnelles, les besoins sont définis et souvent fixés au départ du projet informatique ce qui accroît les coûts ultérieurs de modifications. XP s'attache à rendre le projet plus flexible et ouvert au changement en introduisant des valeurs de base, des principes et des pratiques.
-* pousser a l'extreme :
-    * puisque la revue de code est une bonne pratique, elle sera faite en permanence (par un binôme)
-    * puisque les tests sont utiles, ils seront faits systématiquement avant chaque mise en œuvre
-    * puisque la conception est importante, elle sera faite tout au long du projet (refactoring)
-    * puisque la simplicité permet d'avancer plus vite, nous choisirons toujours la solution la plus simple
-    * puisque la compréhension est importante, nous définirons et ferons évoluer ensemble des métaphores
-    * puisque l'intégration des modifications est cruciale, nous l'effectuerons plusieurs fois par jour
-    * puisque les besoins évoluent vite, nous ferons des cycles de développement très rapides pour nous adapter au changement
-* cycle de dev pour chaque scenario
-    * une phase d'exploration détermine les scénarios "client" qui seront fournis pendant cette itération
-    * l'équipe transforme les scénarios en tâches à réaliser et en tests fonctionnels
-    * chaque développeur s'attribue des tâches et les réalise avec un binôme
-    * lorsque tous les tests fonctionnels passent, le produit est livré
-* convient parfaitement aux microservices
+* from wiki : La méthode scrum ne couvre aucune technique d'ingénierie du logiciel. Dans le cas d'un développement d'application, il est nécessaire de la compléter avec des pratiques de qualité du logiciel. Par exemple, on pourra utiliser des pratiques issues de l'extreme programming
+
+Extreme Programming (XP) est une méthode agile plus particulièrement orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
+
+Son but principal est de réduire les coûts du changement. Dans les méthodes traditionnelles, les besoins sont définis et souvent fixés au départ du projet informatique ce qui accroît les coûts ultérieurs de modifications. XP s'attache à rendre le projet plus flexible et ouvert au changement en introduisant des valeurs de base, des principes et des pratiques.
+
+Voici les pratiques poussees a l'extreme :
+
+* puisque la revue de code est une bonne pratique, elle sera faite en permanence (par un binôme)
+* puisque les tests sont utiles, ils seront faits systématiquement avant chaque mise en œuvre
+* puisque la conception est importante, elle sera faite tout au long du projet (refactoring)
+* puisque la simplicité permet d'avancer plus vite, nous choisirons toujours la solution la plus simple
+* puisque la compréhension est importante, nous définirons et ferons évoluer ensemble des métaphores
+* puisque l'intégration des modifications est cruciale, nous l'effectuerons plusieurs fois par jour
+* puisque les besoins évoluent vite, nous ferons des cycles de développement très rapides pour nous adapter au changement
+
+Voici le cycle de développement pour chaque scenario (fonctinnalité a developper) :
+
+* une phase d'exploration détermine les scénarios "client" qui seront fournis pendant cette itération
+* l'équipe transforme les scénarios en tâches à réaliser et en tests fonctionnels
+* chaque développeur s'attribue des tâches et les réalise avec un binôme
+* lorsque tous les tests fonctionnels passent, le produit est livré
+
+![Cycle de l'Extreme Programming][xp]
+
+XP decrit 12 pratiques, regroupées en 4 categories.
+
+### Retour d'information (feedback)
+
+* Pair Programming : Programmer avec un partenaire
+* Planning Game : Similaire au sprint planning de SCRUM
+* TDD (Test Driven Developement) : Coder le test avant la fonctionnalité
+* Equipe complete : Le client fait partie de l'equipe et se doit d'etre disponible a tout moment
+
+### Process continu
+
+* Integration continue : Lancer les tests unitaire a chaque code rajouté par un developpeur sur le gestionnaire de versions
+* Refactoring : S'assurer que le code est efficace et sans duplication (bonne architecture)
+* Petites releases : Mise en production fréquente
+
+### Compréhension commune
+
+* Standards de code : Avoir un style de code convenant a toute l'equipe
+* Possession commune de code : Le code n'appartien a personne, mais a toute l'equipe
+* Architecture simple : La philosophie de l'équipe est "Simple est mieux" (KISS : Keep It Simple Stupid). L'equipe doit toujours se demander "N'y a t il pas un moyen plus simple d'implementer cette fonctionnalité ?".
+* Métaphore du systeme : Toute l'equipe (client, manager, developpeur, etc.) est capable de decrire comment le systeme fonctionne avec des mots simples. 
+
+### Bien etre du programmeur
+
+Le dernier principe est "Rythme tenable". Les programmeurs ne devrait pas faire d'heures supplémentaires pour realiser le travail. Un programmeur fatigué n'est pas un programmeur efficace et creatif, et la qualité du code sera moindre. 
+
+TODO attention ca vient beaucoup de wikipedia
 
 ## Appliqué au projet
 
-### Différents rituels
+### Ce que nous retenons des méthodes agiles
 
-* pair programming
-* daily standup meeting
-* planning poker
-* code review
+* prend inspiration des deux methodes agiles. scrum a des bon rituels, et extreme programming a des bonnes pratiques. au final on melange un peu les deux pour aller a note equipe de developpement. mais faut faire attention a pas perdre les interets des 2
+* Le mot "extreme" peut paraitre péjoratif, mais ce n'est finalement qu'une liste de bonnes pratiques a respecter. Faut pas tout faire betement
 
-TODO vraiment le temps de parler de ca ?
+* Donc on va garder les rituels de scrum (daily scrum, sprint planning et retro) parce qu'ils ont un reel interet pour avoir du feedback rapidement et efficacement. 
+* Et en plus les bonne pratiques d'xp. Les points clés qu'ont retient vraiment c'est : 
+
+* Le testing c'est important (surtout le TDD, mais les autres tests aussi)
+* La revue de code par quelqu'un d'autre est important, pas forcement tout le temps. 
+* Jamais de dette technique, le refacto est a faire instantanement, etre satisfait du code checkiné, jamais de "ah je reglerai ca plus tard" => boy scoot rule, surtout avec un existant legacy
+* déploiements fréquents
+* avoir le temps de faire de la veille et etre afuté techniquement (un peu tous les jours, et au moins une apres midi par semaine dans les periodes creuses) ca enforce la creativité techinque et l'affut de l'esprit programmeur (competence technique) et l'interet pour le job. ca peut paraitre sans valeur pour une boite, mais reelement le dev sera plus heureux et aura plus d'idees pour l'entreprise
+* no overtime pour le bien des gens. Un systeme bien testé avec un code de qualité diminue les risques de failure en prod, et donc d'overtime non prévu.
+* les plannings et la velocité aident vachement, s'adapter a la capacité des devs pour le trtavail a faire c'est cool. c'est important
+* respecter les roles de chacun et avoir une bonne communication
 
 ### Différents types de tests
 
-* differents types de tests
+* differents types de tests (couts et efforts differents)
 * y'en a qui sont plus importants que d'autres (pyramide de tests)
 * mais si on peut tout faire c'est bien
 * TDD : on fait ca tout le temps, ca aide a la conception et la formation de bon code quelque soit le niveau (front, back, logique, etc.)
+* bdd given when then, c'est pas mal aussi
 * pour le front, le test de haut niveau c'est du test d'ui. c'est pas facile mais protractor avec angular aide bien (E2E test)
 * pour le serveur, c'est du test d'integration
+
+![Pyramide des tests][testPyramid]
 
 ### Déploiement continu
 
@@ -1467,3 +1544,6 @@ TODO
 [microservicesArchitecture]: images/microservices.png
 [soap]: images/soap.png
 [spaFrameworks]: images/spa_frameworks.jpg
+[cycleV]: images/cycle_en_v.png
+[xp]: images/xp.png
+[testPyramid]: images/test_pyramid.jpg
