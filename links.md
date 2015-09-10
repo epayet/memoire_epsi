@@ -33,6 +33,7 @@ https://fr.wikipedia.org/wiki/Cycle_en_V
 https://fr.wikipedia.org/wiki/Extreme_programming
 https://en.wikipedia.org/wiki/Scrum_(software_development)
 http://www.slideshare.net/abagmar/anand-bagmar-behavior-driven-testing-bdt-in-agile
+https://en.wikipedia.org/wiki/Test-driven_development#Benefits
 
 ## En plus
 
@@ -47,6 +48,8 @@ http://programmers.stackexchange.com/questions/218011/how-accurate-is-business-l
 * Clean code ?
 * Philosophie unix ? do one thing and do it well
 * RESTful ?
+* la ou il y a la pyramide de tests : http://www.amazon.com/gp/product/0321579364?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321579364
+* kent beck TDD : http://www.amazon.fr/Test-Driven-Development-By-Example/dp/0321146530
 
 # Conferences
 

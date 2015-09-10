@@ -1137,7 +1137,7 @@ TODO detailler un peu pourquoi node ?
 
 La meilleure facon de creer et gerer des microservices actuellement est de passer via des containeurs grace a la technologie Docker. Un containeur est un espace linux isolé pouvant interagir avec d'autres containeurs. Le principe est tres similaire a une machine virtuelle, mais en beaucoup plus leger et efficace. Il est parfait pour creer une ou plusieurs instances d'une meme application aisément.
 
-Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container. Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
+Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
 
 TODO schema
 
@@ -1170,27 +1170,29 @@ TODO l'image est assez descriptive des etapes nan ?
 
 ## Méthode agile : SCRUM
 
-* Méthode agile iterative et incrementale pour gerer le developpement d'un produit
-* encourage l'equipe a etre auto organisée en encouragent le fait qu'il faut etre proche et communiquer souvent (tous les jours), au moins par l'equipe, quelque soit la discipline
-* le principe principal est que le client peut souvent changer d'avis, et que les imprevus ca arrive souvent
-* donc approche empirique : accepte que le projet ne peut totalement compris et défini, mais se concentre plutot sur maximiser le fait de mettre souvent en production, et repondre aux demandes emergentes
-* Les 3 roles principaux de l'equipe SCRUM sont :
-    * Product owner : Représentes les parties prenantes et est la voix du client. Son role est de s'assurer que l'equipe apporte de la valeur ajoutée au produit.
-    * Equipe de developpement : Equipe responsable d'ajouter de la valeur au produit a la fin de chaque iteration
-    * Scrum Master : Facilitateur, celui qui s'occupe de ce qui ralentit l'equipe de dev. Il s'assure aussi que les rituels sont bien respectés
-* Les differents rituels et evenements sont : 
-    * Sprint : Iteration avec une duree specifique (time-box)
-    * Sprint Planning : Se deroule au debut de chaque sprint, le but est d'estimer les taches a effectuer et d'assigner des taches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l'equipe de developpement (velocité)
-    * Daily Scrum : Rencontre journaliere de toute l'equipe SCRUM, ou chaque membre dit le travail effectué la veille, le travaille qu'il effectuera ce jour et les problemes rencontrés
-    * Sprint review : Presentation du resultat aux parties prenantes, et revue du travail effectué et non effectué
-    * sprint retrospective : Reflexion sur le dernier sprint, identification de ce qu'il s'est bien passé, mal passé et comment le processus pourrait etre amélioré. Permet aussi d'ajuster la vélocité de l'equipe
-* Respecter ces rituels et le role de chacun permet d'optimiser l'efficacité de l'equipe de dev, avec une bonne communication ce qui donne un produit de plus en plus raffiné, et satisfaisant le client.
+SCRUM est une méthode agile iterative et incrementale pour gerer le developpemnt d'un produit. Elle a pour but d'encourager l'equipe a s'auto-organiser en mettant en avant une forte communication par tous les membres de l'equipe, quelque soit sa discipline. 
+
+Cette méthode prend en compte le fait que le client change souvent d'avis, et que des imprévus peuvent arriver. Elle a pour cela une approche empirique, c'est a dire qu'elle accepte qu'un projet ne peut totalement etre compris et bien défini. Pour cela, le fait de modifier souvent le produit permet de repondre rapidement aux satisfactions du client en s'adaptant a ses demandes emergentes. 
+
+Une equipe SCRUM possede trois roles principaux :
+
+* Product owner : Représentes les parties prenantes et est la voix du client. Son role est de s'assurer que l'equipe apporte de la valeur ajoutée au produit.
+* Equipe de developpement : Equipe responsable d'ajouter de la valeur au produit a la fin de chaque iteration
+* Scrum Master : Facilitateur, celui qui s'occupe de ce qui ralentit l'equipe de dev. Il s'assure aussi que les rituels sont bien respectés
+
+La methode est constituée de differents evenements et rituels important a respecter. En effet, les respecter permet d'optimiser l'efficacité de chaque membre de l'equipe grace a une bonne communication. Le resultat est que le produit est de bonne qualité, respectant les demandes du client. Voici les principaux evenements et rituels :
+
+* Sprint : Iteration avec une duree specifique (time-box)
+* Sprint Planning : Se deroule au debut de chaque sprint, le but est d'estimer les taches a effectuer et d'assigner des taches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l'equipe de developpement (velocité)
+* Daily Scrum : Rencontre journaliere de toute l'equipe SCRUM, ou chaque membre dit le travail effectué la veille, le travaille qu'il effectuera ce jour et les problemes rencontrés
+* Sprint review : Presentation du resultat aux parties prenantes, et revue du travail effectué et non effectué
+* sprint retrospective : Reflexion sur le dernier sprint, identification de ce qu'il s'est bien passé, mal passé et comment le processus pourrait etre amélioré. Permet aussi d'ajuster la vélocité de l'equipe
 
 TODO parler du product backlog
 
 ## Méthode agile : Extreme Programming
 
-* from wiki : La méthode scrum ne couvre aucune technique d'ingénierie du logiciel. Dans le cas d'un développement d'application, il est nécessaire de la compléter avec des pratiques de qualité du logiciel. Par exemple, on pourra utiliser des pratiques issues de l'extreme programming
+La méthode SCRUM ne couvre aucune technique d'ingénierie logicielle. Dans le cas d'un developpement d'application, il est necessaire de la completer avec des pratiques de qualité logicielle.
 
 Extreme Programming (XP) est une méthode agile plus particulièrement orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
 
@@ -1247,32 +1249,82 @@ TODO attention ca vient beaucoup de wikipedia
 
 ### Ce que nous retenons des méthodes agiles
 
-* prend inspiration des deux methodes agiles. scrum a des bon rituels, et extreme programming a des bonnes pratiques. au final on melange un peu les deux pour aller a note equipe de developpement. mais faut faire attention a pas perdre les interets des 2
-* Le mot "extreme" peut paraitre péjoratif, mais ce n'est finalement qu'une liste de bonnes pratiques a respecter. Faut pas tout faire betement
+Pour notre equipe et notre projet, nous prenons inspiration de ces methodes agiles. SCRUM definit de bonnes méthodes de gestion de projet, tandis que l'extreme programming definit de nombreuses bonnes pratiques logicielles. Il faut faire tres attention a ne pas perdre l'interet d'une des deux methodes en ne l'implementant pas totalement.
 
-* Donc on va garder les rituels de scrum (daily scrum, sprint planning et retro) parce qu'ils ont un reel interet pour avoir du feedback rapidement et efficacement. 
-* Et en plus les bonne pratiques d'xp. Les points clés qu'ont retient vraiment c'est : 
+Le mot "extreme" d'extreme programming peut paraitre comme un mot pejoratif, mais ce n'est finalement qu'une liste simple de bonnes pratiques a respecter pour avoir un logiciel de qualité. Pour notre projot, nous allons donc utiliser ces bonnes pratiques, en plus d'utiliser les rituels et artefacts de SCRUM. Ce que nous retenons vraiment de ces deux methodes et ce que nous prenons comme philosophie sont les points suivants :
 
-* Le testing c'est important (surtout le TDD, mais les autres tests aussi)
-* La revue de code par quelqu'un d'autre est important, pas forcement tout le temps. 
-* Jamais de dette technique, le refacto est a faire instantanement, etre satisfait du code checkiné, jamais de "ah je reglerai ca plus tard" => boy scoot rule, surtout avec un existant legacy
-* déploiements fréquents
-* avoir le temps de faire de la veille et etre afuté techniquement (un peu tous les jours, et au moins une apres midi par semaine dans les periodes creuses) ca enforce la creativité techinque et l'affut de l'esprit programmeur (competence technique) et l'interet pour le job. ca peut paraitre sans valeur pour une boite, mais reelement le dev sera plus heureux et aura plus d'idees pour l'entreprise
-* no overtime pour le bien des gens. Un systeme bien testé avec un code de qualité diminue les risques de failure en prod, et donc d'overtime non prévu.
-* les plannings et la velocité aident vachement, s'adapter a la capacité des devs pour le trtavail a faire c'est cool. c'est important
-* respecter les roles de chacun et avoir une bonne communication
+#### Testing 
+
+Une des pratiques les plus importantes. Un logiciel testé permet de s'assurer que toute nouvelle fonctionnalité n'affecte pas le reste du systeme. Le fait d'ecire le test en premier (TDD) force le refactoring et assure une bonne conception des le depart, limitant la dette technique.
+
+#### Code Review 
+
+La revue de code par un autre collegue permet de s'assurer de la qualité de celui-ci. Cela donne du recul a celui qui l'a developpé et lui permet de s'ameliorer. Cela limite par la meme occasion la possesion du code par une seule personne. Si c'est difficile de faire du pair programming constamment, nous pensons qu'il est necessaire qu'un code sur la branche principale soit revu par au moins deux personnes. 
+
+#### Pas de dette technique
+
+La dette technique ralentit le developpement et renforce la possibilité d'avoir des bugs dans le systeme. Nous faisons tout ce que nous pouvons pour l'eviter. Pour cela, il est important de respecter les bonnes pratiques de l'extreme programming (TDD, code review, etc.). Les developpeurs doivent toujours etres satisfait du code sur la branche principale, et ne jamais penser que le probleme pourra etre reglé plus tard. 
+
+Si le travail est effectué sur un code existant de type legacy (code non testé comportant généralement une forte dette technique), nous appliquons la *boy scoot rule*. Celle-ci definit qu'un developpeur qui touche a un morceau de code, doit forcement le rendre plus propre qu'il l'a laissé. Cela permet de reduire petit a petit la dette technique lorsque celle-ci est trop elevé.
+
+#### Déploiments rapides, faciles, et fréquents
+
+La procédure de déploiement en production doit etre automatisée, et fréquente. Si cette procedure est rapide, les developpeurs auront la possibilité d'ajouter des fonctionnalités et corriger des bugs facilement. L'automatisation est un énorme gain de temps. La présences de nombreux tests permet aussi de s'assurer que le déploiment s'est effectué sans problemes avec l'integration continue. 
+
+#### Utiliser les bons outils
+
+Tout outil permettant de gagner du temps doit etre utilisé (environnement de developpement, etc.). Il en est de meme des artefacts de SCRUM tels que la vélocité. Etre capable de mesurer la capacité de travail de l'equipe est tres important.
+
+#### Une bonne communication
+
+Une bonne communication tous les jours avec les autres membres de l'equipe permet de ne pas avoir un membre bloqué sur une problematiques pendant plusieurs jours.
+
+#### Bien etre des membres de l'equipe
+
+Une equipe bien dans sa peau, bien reposée, et ayant de l'interet pour le travail effectué est une equipe efficace. Pour cela, il ne faut pas que les membres ait de nombreuses heures supplémentaires a effectuer. La vélocité de l'equipe est présente pour mesurer sa capacité a travailler. Elle est plus facile a mesurer sur des intervalles de tempes courts (contrairement au cycle en V possedant de nombreuses etapes). L'equipe ne devrait donc pas travailler en plus de sa velocité. De plus, un systeme bien testé limites les problemes en production et les besoins d'effectuer des heures supplementaires.
+
+Pour les developpeurs, avoir du temps dégagé pour effectuer de la veille technologique est tres important. Cela permet d'avoir des developpeurs toujours afutés techniquement et enforce leur creativité et compétence technique, ainsi que l'interet pour le travail effectué. Cela peut paraitre sans valeur ajoutée pour le produit, mais c'est en realité ce qui pourra faire la difference dans la realisation de celui-ci, plus originale et moderne. Un peu de veille tous les jours ou meme une apres midi par semaine dans les periodes creuses ont de grands benefices. Il est encore mieux lorsque des ateliers de partage de connaissance sont organisés de temps en temps, qui affute en meme temps les talents de communication des membres.
 
 ### Différents types de tests
 
-* differents types de tests (couts et efforts differents)
-* y'en a qui sont plus importants que d'autres (pyramide de tests)
-* mais si on peut tout faire c'est bien
-* TDD : on fait ca tout le temps, ca aide a la conception et la formation de bon code quelque soit le niveau (front, back, logique, etc.)
-* bdd given when then, c'est pas mal aussi
-* pour le front, le test de haut niveau c'est du test d'ui. c'est pas facile mais protractor avec angular aide bien (E2E test)
-* pour le serveur, c'est du test d'integration
+Nous avons vu que le testing est tres important dans la realisation d'un logiciel. Il existe cependant plusieurs types de tests possedant un interet et un cout differents.
+
+#### Pyramide des tests
+
+La pyramide de tests est un concept créé par  Mike Cohn, described in his book Succeeding with Agile. Le point clé qu'il essaye de demontrer est qu'un logiciel devrait avoir beaucoup plus de tests unitaires de bas niveau (faciles a ecrire et beaucoup d'interet), que de tests d'interface graphique de haut niveau (difficiles a ecrire et moins d'interet). Attentien, il ne dit pas que les tests de haut niveau sont sans interet, il dit que l'on devrait ecrire plus de tests faciles a ecrire que de tests difficiles a ecrire (temps perdu).
+
+Les tests de haut niveau sont differents selon la partie technique implementée, dans tous les cas on parle souvent de tests fonctionnels, ceux qui sont le plus proche du resultat final, representant une fonctionnalité de l'application. Ce sont généralement les tests que l'on ecrit en premier. 
+
+Dans le cas du front-end, ce sont généralement des tests d'interface graphique (UI). Ils ne sont généralement pas faciles a ecrire mais dans notre cas, grace a la technologie choisie (AngularJS), des outils spécifiques facilitent l'ecriture de ceux-ci (Protractor). On enclenche par exemple une action (clic sur un bouton) et on verifie qu'il se passe le comportement voulu, comme l'apparition d'une pop-up, etc.
+
+Dans le cas du back-end, on parle généralement de test d'API ou de test d'integration. On ecrit un test qui appelle diretctemment l'API et qui va verifier que le resultat obtenu (généralement une donée) est correct. Il peut s'averer complexe d'effectuer ce genre de tests lorsqu'une base de donnée est impliquée, car la donnée n'est peut etre pas consistante. Généralement, une base de données de tests différente de celle de production est utilisée. 
+
+Cela signifie qu'un test peut avoir un résultat different selon le contexte (non idempotent). Ce n'est pas le cas des tests unitaires qui vont substituer les parties externes de la methode testée pour avoir toujours le meme resultat. C'est pour cette raisons qu'ils sont beaucoup plus faciles a ecrire, mais ils ne mettront pas en valeurs certains aspects. 
+
+Il faut retenir ceci : Un test unitaire permet de verifier qu'une methode est capable de gerer plusieurs cas, et un test de haut niveau verifie qu'une fois le tout relié, l'ensemble fonctionne. Les tests unitaires forcent aussi une bonne separation des responsabilités.
 
 ![Pyramide des tests][testPyramid]
+
+#### TDD (Test Driven Developement)
+
+Le TDD (Test Driven Development) ou developpment piloté par les tests est une méthode de développement pronant la repetition et les cycles de developpement courts. Si au depart le TDD etait une pratique de l'extreme programming, c'est aujourd'hui une pratique plus generalement adoptée. Le principe est le suivant :
+
+* Rouge : Le developpeur ecrit un test qui va definir l'amelioration ou la creation d'une fonction (le test va automatiquement echouer, on dit que le test est rouge)
+* Vert : Le developpeur ecrit ensuite le code minimum faisant reussir le test
+* Refacto : Il va ensuite refactorer le code jusqu'a ce qu'il soit satisfaisant (standards acceptables par l'equipe). Il verifie que ces changement n'ont impacté aucun test
+
+Selon Kent Beck, connu pour avoir défini cette technique dans son livre Test Driven Development: By Example, le TDD encourage une architecture simple et efficace. Cette technique parait etrange pour beaucoup de developpeurs, car ce n'est pas l'ecriture de la solution du probleme qui est ecrite en premier. C'est plutot un test mettant en valeur ce qui manque au systeme.
+
+Dans le cas d'une nouvelle fonctionnalité a implementer, resoudre le test signifie que la fonctionnalité a été rajoutée. Dans le cas d'un bug, il faut ecrire un test mettant en valeur le cas ou la fonction echoue, et faire passer le test signifie que le bug est corrigé. Dans tous les cas, la derniere etape permet de s'assurer que le code rajouté est de qualité et de ce fait, est une étape tres importante. 
+
+De plus, ne pas casser un autre test que le nouveau ecrit signifie qu'aucune regression n'a ete faite au systeme. Ainsi, la presence de nombreux tests permet de s'assurer que le systeme evolue et ne regresse pas (apparition de bugs). On parle de tests de non régression.
+
+Nous utilisons une variante du TDD se nommant le BDD (Behavior Driven Development), developpement piloté par le comportement. C'est le meme principe que TDD mais avec une description du test un peu plus claire. C'est tres utile pour les tests de haut niveau (tests fonctionnels) car l'implementation du test ressemble fortement a une phrase ecrite en langage commun (francais, anglais, etc.). La convention est la suivante :
+
+* Given : Etant donné que ...
+* When : Si ...
+* Then : Alors ...
+
 
 ### Déploiement continu
 
@@ -1286,34 +1338,46 @@ TODO attention ca vient beaucoup de wikipedia
 * plusieurs outils pour ca. deja il faut un serveur d'integration qui surveille le gestionnaire de version pour que a chaque commit, il lance les tests et tout ca. Nous on a utilisé Jenkins pour ca, mais y'a plein d'autres trucs. Docker aide vachement aussi, parce que faut juste lancer des containers
 
 TODO déploiement a la fin du dev d'une feature ou a la fin d'une release ?
+TODO parler de ca ? si pas ici, parler d'integration continue et de jenkins quelque part
 
 ## Démonstration de développement d'une fonctionnalité
 
-* User story
-* creation d'une branche
-* Integration test
-* E2E test
-* Nouveau composant : TDD, etc. Idem pour les routes
-* Validation par le PO
+Un sprint contient généralement l'implementation de plusieurs fonctionnalités. Une fonctionnalité est definie via une User Story ecrite au Sprint Planning. Voici notre méthodologie concrete pour ajouter une fonctionnalité au produit.
+
+* Creation d'une nouvelle branche
+* Ecriture de tests de haut niveau (Integration test, E2E test)
+* Ecriture de la fonctionnalité en TDD
 * Un bug ? Création d'un test mettant en valeur le bug, puis correction
-* code review
-* integration de la nouvelle branche
-* tests ok ?
+* Code review par un autre membre de l'équipe
+* Integration de la nouvelle branche sur la branche principale
+* Verification que tous les tests passent grace a l'integration continue
+
+La création d'une nouvelle branche permet au developpeur s'etant assigné une user story d'implementer son code sans interagir avec les autres membres de l'equipe, et ne pas avoir des conflits de code fréquemment. Une branche n'est reintegrée que si elle est validée par un autre membre de l'equipe. Une branche ne devrait pas etre longtemps eloignée de la branche principale, sinon le travail de merge devient plus complexe.
 
 TODO meilleur nom ?
+TODO deja defini quelque part ce qu'est une user story
+TODO deja defini quelque part integration continue ?
 
 # Résultats du projet
 
+Ayant appliqué ces principes (architecture, méthodologies, technologies) sur notre projet durant 2 mois avec notre équipe de 3 développeurs, nous sommes arrivés a un resultat satisfaisant. Nous allons maintenant voir jusqu'ou le developpement est allé et les objectifs ont étés atteints.
+
 ## Résultat
 
-* appli web qui tourne sur android, ios et web
-* liste produits, acceuil, navigation, fiche produit
-* on a pas fait panier, commentaires, etc.
-* eperience utilisateur ok :)
+Grace a la technologie cordova, nous avons créé une application fonctionnant sur plusieurs terminaux mobiles (ios, android) ainsi que sur les navigateurs web. En voulant imiter le fonctionnement de l'application android, nous avons eu le temps d'implémenter les fonctionnalités suivantes :
+
+* Acceuil : Contient les derniers offres du moment
+* Navigation : Navigation par catégorie (Informatique, Immobilier, etc.)
+* Fiche produit : Fiche déthaillée d'un produit
+
+Nous n'avons pas eu le temps d'implementer la gestion du panier, des commentaires, etc. C'etait les prochaines fonctionnalités a implementer. Le tout utilise bien evidemment les donnees reelles de Cdiscount, ayant ainsi un comportement similaire a tout moment des applications actuelles.
+
+Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons meme tenté d'innover un peu et de faire certaines choses differemment que l'application de base.
 
 ## Objectifs atteints ?
 
 Pas eu le temps trop de faire les microservices, mais juste une question de temps c'etait prevu
+c'est pas vraiment ce que fait l'appli qui est interessant mais est-ce que notre methodo est bonne et le support est bon pour d'autres applis
 
 TODO revoir objectifs de base et regarder si on les a atteint
 
@@ -1366,6 +1430,8 @@ Mot clés : maintenable, assurance qualité
 TODO parler du probleme du monolithe quelque part ?
 
 isomorphique ?
+
+si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
 
 ## Plan
 
