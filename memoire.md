@@ -154,11 +154,11 @@ Il existe 3 grandes familles d'applications informatique (logiciels) :
 
 Ce qui différencie finalement ces 3 types d'applications est le support sur lequel elles sont accessibles. Ceci implique généralement des technologies et langages différents. Les avancées récentes des navigateurs web ont fait des applications web des applications complètes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript).
 
-La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web à un tout autre niveau, dépassant même les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web (JavaScript, HTML/CSS, etc) approchant les performances des applications natives. Cela permet d'avoir un coût de développement moindre grâce à la réutilisation de code pour les différentes plateformes. Le web est maintenant la cible de toutes les applications.
+La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web à un tout autre niveau, dépassant même les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web approchant les performances des applications natives. Cela permet d'avoir un coût de développement moindre grâce à la réutilisation de code pour les différentes plateformes. Le web est désormais la cible de toutes les applications.
 
 ## Description
 
-Une application web, contrairement à une application de bureau, est une application uniquement manipulable via un navigateur web. L'application est généralement installée sur un serveur et est accessible via un réseau (internet, réseau local, etc.). On a ici une architecture client/serveur où le navigateur web est le client. À la différence d'un site web statique, une application web est constituée de liens hypertextes* provoquant l'envoi de nouvelles requêtes utilisant généralement le protocole HTTP. Voici des exemples d'applications web les plus courantes :
+Une application web, contrairement à une application de bureau, est une application uniquement manipulable via un navigateur web. L'application est généralement installée sur un serveur et est accessible via un réseau (internet, réseau local, etc.). On a ici une architecture client/serveur où le navigateur web est le client. À la différence d'un site web statique, une application web est constituée de liens hypertextes* provoquant l'envoi de nouvelles requêtes utilisant généralement le protocole HTTP*. Voici des exemples d'applications web les plus courantes :
 
 * Moteur de recherche : Application qui recherche des documents (Ex : Google, Bing, Yahoo, etc.)
 * WebMail : Application qui permet d'envoyer et de recevoir des courriers électroniques (Ex : Gmail, Outlook, etc.)
@@ -172,25 +172,15 @@ Une application web, contrairement à une application de bureau, est une applica
 
 Il existe de nombreux autres types d'applications, comme par exemple Google Maps qui permet de consulter des cartes géographiques du monde entier.
 
-## Navigateurs web
+## Utilisation massive du JavaScript
 
-Une application Web utilise un ou plusieurs langages de présentation et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur.
-
-Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. Voici actuellement les principaux navigateurs web ainsi que les moteurs utilisés :
-
-* Google Chrome (moteur de rendu : **Blink**, moteur JavaScript : **V8**)		
-* Firefox (moteur de rendu : **Gecko**, moteur JavaScript : **Spidermonkey**)		
-* Internet Explorer (moteur de rendu : **Trident**, moteur JavaScript : **Chakra**)		
-* Safari (moteur de rendu : **Webkit**, moteur JavaScript : **Nitro**)		
-* Opéra (moteur de rendu : **Blink**, moteur JavaScript : **V8**)
-
-Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML*. 
+Aujourd'hui, les applications web dépendent énormément (si ce n'est uniquement) du langage de programmation JavaScript, mais ce n'était pas toujours le cas.
 
 ### Apparition et disparition des RIA
 
 « *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* », définition de Wikipédia.
 
-Les applications web souffraient d'un manque de performance notoire, très souvent à cause de la manipulation du DOM très coûteuse. Le principe d'une RIA est d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était désormais possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU* pour du jeu video plus performant.
+Le principe d'une RIA est d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU* pour du jeu video plus performant.
 
 Les plus utilisés et installés sont les suivants :
 
@@ -208,152 +198,94 @@ Une étude avec Google Trends montre que depuis 2012, ces plugins sont remplacé
 
 L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. 
 
-### Évolution du Javascript
+### Attributs du langage
 
-JavaScript, aussi appelé ECMAScript est un langage de scripts. Il a été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est à ce jour à la version 6 (on parle d'ECMAScript 6 ou encore d'ECMAScript2015.). Nous allons voir comment celui-ci a beaucoup évolué, et pourquoi ce langage est devenu l'un des langages les plus utilisés actuellement.
+JavaScript, aussi appelé ECMAScript est un langage de scripts. Il a été créé en 1995 par Brendan Eich. Il a connu depuis de nombreuses améliorations et est à ce jour à la version 6 (on parle d’ECMAScript 6 ou encore d’ECMAScript2015.). 
 
-#### Attributs du langage JavaScript
+Contrairement à ce que l’on pourrait croire, le JavaScript n’a rien en commun avec le Java. En effet, ces deux langages possèdent des sémantiques et des attributs très différents. Le JavaScript est un langage *orienté prototype** qui utilise des *fonctions de première classe**. Ce mélange de caractéristiques permet au JavaScript d’être un langage multi-paradigme* permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel).
 
-* **Programmation dynamique**
+On dit souvent que le JavaScript est un langage incompris. Il ressemble beaucoup au Java, mais en est très différent. L'utilisation abusive de callbacks complexifie le code. On parle même de "l'enfer du callback" (*callback hell*). 
 
-Le JavaScript est un langage de programmation dit dynamique ou interprété. C'est donc un langage qui exécute au lancement du programme beaucoup de comportements que les langages dits statiques exécutent durant la compilation. 
+### Des alternatives viables mais pas majoritairement adoptées
 
-* **Langage de scripts**
-
-Le JavaScript est aussi un langage de scripts. Un moteur interprète directement le code source à la volée plutôt que d'exécuter du code machine pré-compilé.
-
-* **Langage orienté prototype**
-
-L'orienté prototype est une forme d'orienté objet sans classe, basée sur la notion de prototype. Un prototype est un objet à partir duquel on crée de nouveaux objets.
-
-* **First-class function**
-
-Les fonctions sont des objets de première classe, c'est-à-dire pouvant être utilisés sans restriction. Ce langage permet donc l'utilisation des fonctions comme tout autre variable, ce qui les rend utilisable dans différents contexte (arguments pour d'autres fonctions, retour de fonctions, stockage dans des structures de données, fonctions anonymes, etc.).
-
-Ce mélange de caractéristiques permet au JavaScript d'êtres un langage multi-paradigme* permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel). C'est une fonction qui est passée en argument à une autre fonction. Cette dernière peut alors faire usage de cette fonction de rappel comme de n'importe quelle autre fonction, alors qu'elle ne la connaît pas par avance.
-
-#### Un langage incompris
-
-Le langage JavaScript a souvent été un langage de programmation déprécié de beaucoup de développeurs, surtout de ceux ayant l'habitude de programmer avec des langages fortement typés comme Java ou C#. En effet, contrairement à ce que l'on pourrait croire, le JavaScript n'a rien en commun avec le Java, ayant des sémantiques très différentes.
-
-De plus le langage JavaScript a très longtemps été associe aux navigateurs web et à la manipulation du DOM* (Document Object Model). Etant donné que celui-ci a plusieurs implémentations différentes selon le navigateur et le moteur de rendu, devoir manipuler le DOM est alors souvent associé a manipuler le JavaScript avec des méthodes très différentes. Cela est de moins en moins grâce à la standardisation du W3C. Malgré l'apparition de la librairie très connue jQuery pour consolider ces différences, le fond du problème reste inchangé. On devient alors très dépendant de cette librairie que l'on inclut sur toutes les pages web, ce qui apporte son autre lot de problématiques (taille du site web augmentée, une nouvelle librairie tierce à maintenir à jour, etc.). 
-
-Apres plusieurs sondages, voici une liste des reproches les plus accusés au langage JavaScript, le rendant souvent déroutant :
-
-* Ressemblance forte au Java, mais tellement si différent
-* Variables non limités par un scope (bloc de code), permettant ainsi l'utilisation de variables globales (difficile à déboguer et à maintenir)
-* Le mot-clé "this" a une signification et une référence différente selon le contexte, contrairement aux autres langages ou il a une signification et une valeur fixe
-* Les fonctions sont des objets et non des classes (on parle ici d'objet de première classe)
-* Les point-virgules sont optionnels
-* Les fonctions retournent forcément une valeur (si rien n'est retourné, on récupère la valeur "undefined")
-* Compatibilité entre les navigateurs
-* Code asynchrone difficile à maintenir, dû à la gestion de nombreuses callbacks (fonction de rappel). L’enchaînement d'instructions asynchrone n'est pas aisé et complexifie le code. On parle même "d'enfer de callback" (callback hell)
-
-Pour combler les manques du langage et ses incompréhensions, de nombreux sur-langages sont apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d’être directement interprété par le navigateur, soit la possibilité de se transcrire en JavaScript.
-
-#### Des alternatives viables mais pas majoritairement adoptées
-
-Les sur-langages les plus utilisés sont les suivants :
+Pour combler les manques du langage et ses incompréhensions, de nombreux sur-langages sont
+apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d’être directement
+interprété par le navigateur, soit la possibilité de se transcrire en JavaScript. Les sur-langages les plus utilisés sont les suivants :
 
 * **CoffeeScript** : Créé en 2009, inspiré par le Python, Ruby, et le Haskell
-* **TypeScript** : Créé par Microsoft en 2012, ajoute la possibilité d'ajouter des variables fortement typées et d'utiliser des classes pour un orienté objet plus "classique"
-* **Dart** : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc. Possède aussi un interpréteur directement intégré au navigateur Google Chrome. Le JavaScript est utilisé pour les autres navigateurs.
+* **TypeScript**: Créé par Microsoft en 2012, ajoute la possibilité d’ajouter des variables fortement typées et d’utiliser des classes pour un orienté objet plus “classique”
+* **Dart** : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc. Possède aussi un interpréteur directement intégré au navigateur Google Chrome. Le JavaScript est utilisé pour les autres navigateurs
 
-Ces surcouches ont toutes le même but : ajouter des fonctionnalités, faciliter le développement web, et apporter des évolutions qui apparaîtront plus vite que les nouveaux standards ECMAScript grace au support de la communauté. Cependant, aucun d'eux n'a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d'alternatives viables mais pas majoritairement adoptées. Cela s'explique par plusieurs raisons.
+Ces surcouches ont toutes le même but : ajouter des fonctionnalités, faciliter le développement web, et apporter des évolutions qui apparaîtront plus vite que les nouveaux standards ECMAScript grace au support de la communauté. Cependant, aucun d’eux n’a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d’alternatives viables mais pas majoritairement adoptées.
 
-D'une part, le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. On reste énormément dépendant de ce langage, étant le seul ayant un interpréteur de bonne qualité et standardisé sur tous les navigateurs.
+### JavaScript, actuellement la seule solution
 
-Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l'adoptent pas forcément. Beaucoup de développeurs connaissent déjà très bien le JavaScript et ne veulent pas s'en défaire pour apprendre un nouveau langage. Le fait qu'il existe de nombreuses surcouches montre bien qu'il est difficile de n'avoir qu'un seul standard de développement satisfaisant tous les développeurs. Il est cependant agréable d'avoir le choix.
- 
-Voici une citation de Brendan Eich, le créateur du langage Javascript : « *You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail* », qui peut être traduit par : « *On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera* ». Selon lui, il n'est pas possible refaire le web, la seule solution est de l'améliorer.
+Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l’adoptent pas forcément. Beaucoup de développeurs connaissent déjà très bien le JavaScript et ne veulent pas s’en défaire pour apprendre un nouveau langage. Le fait qu’il existe de nombreuses surcouches montre bien qu’il est difficile de n’avoir qu’un seul standard de développement satisfaisant tous les développeurs. Il est cependant agréable d’avoir le choix.
 
-Le langage Javascript est trop omniprésent et il est difficile de s'en défaire. Est-on vraiment obligé de dépendre d'une librairie tierce, ou un sur-langage pour avoir un langage de programmation correct ? Nous allons voir que la version 6 sortie récemment permet de répondre a beaucoup des problématiques posées. 
+Le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. Voici une citation de Brendan Eich, le créateur du langage JavaScript : « You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail », qui peut être traduit par : « On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera ». Selon lui, il n’est pas possible refaire le web, la seule solution est de l’améliorer.
 
-TODO partie peut etre pas utile ?
+TODO citation
 
-#### Une version 6 bien évoluée
+### Une version 6 bien évoluée
 
-On dit souvent que c'est que le JavaScript est à la fois adoré et détesté. C'est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives open source, la récente version 6 fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. Même si aujourd'hui, cette version n'est pas prise en charge par tous les navigateurs, il est possible d'écrire du code en ES6, et le transformer en ES5 grâce à des transpileur (transforme un code source en un équivalent dans un autre langage). Le code écris est alors plus moderne et fonctionne malgré tout sur les différents navigateurs dès aujourd'hui. Le but est d'utiliser au plus tôt les derniers standards et avoir une application plus facile à maintenir et profiter rapidement des dernières évolutions.
+On dit souvent que c’est que le JavaScript est à la fois adoré et détesté. C’est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives open source, la récente version 6 fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. 
 
-Voici donc les principales nouvelles fonctionnalités accessibles avec cette nouvelle version :
+Même si aujourd’hui, cette version n’est pas prise en charge par tous les navigateurs, il est possible d’écrire du code en ES6, et le transformer en ES5 grâce à des transpileurs (transforme un code source en un équivalent dans un autre langage). Le code écris est alors plus moderne et fonctionne malgré tout sur les différents navigateurs dès aujourd’hui. Le but est d’utiliser au plus tôt les derniers standards et avoir une application plus facile à maintenir et profiter rapidement des dernières évolutions.
 
-* **Les Promesses (Promises)**
+### Une future alternative ?
 
-Le concept n'est pas nouveau des développeurs JavaScript, mais n'a jamais été standard car toujours implémenté via des librairies tierces. L'utilisation des promesses est désormais intégré avec le langage lui-même. Le but est d'éviter d'avoir "l'enfer du callback*" en ayant la possibilité d’enchaîner simplement des fonctions asynchrones.
+Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance. Malgré les optimisations qu’apporte les derniers moteurs JavaScript, ces opérations restent coûteuses. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
 
-* **Des variables plus scopées**
+Le JavaScript étant le support obligatoire pour faire des applications web, il reste la actuellement la cible de tout langage de programmation. Nous avons déjà vu qu’il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais qu’en est-il des langages de plus bas niveau (C/C++) ?
 
-Le mot clé "var" permet de définir une nouvelle variable en Javascript. Cependant, celui-ci n'assurait pas que la variable reste dans le scope (bloc de code) ou elle est déclarée. Ceci peut porter à confusion et amener à avoir des variables globales sans s'en rendre compte ou d'avoir une variable déjà utilisée dans un scope précédent. La nouvelle version propose deux nouveaux mot-clés : "let" et "const", qui permettent de s'assurer que les variables restent bien le scope où elles sont déclarées.
+#### Solution actuelle : asm.js
 
-* **Arrow functions**
+asm.js est un sous-ensemble de JavaScript ne contenant que le nécessaire pour un langage de plus bas-niveau en évitant d’utiliser les fonctionnalités coûteuses de haut-niveau. Le but est d’approcher les performances des applications natives (applications de bureau). Etant un sous-ensemble du JavaScript, il est déjà supporté par tous les navigateurs actuels. Le projet Emscripten permet de compiler du C/C++ en code asm.js (ou tout autre langage pouvant être converti en LLVM*).
 
-Cela permet d'utiliser des fonctions de rappel (callback) tout en gardant la même référence du mot-clé "this". Comme vu précédemment, cela a toujours été très confus pour les développeurs, ayant l'habitude que ce mot-clé ait toujours la même référence. De plus, elle permettent l'utilisation plus classique des fonctions anonymes (lambda expression*).
+La possibilité de compiler du code natif dans le monde du web permet d’avoir de meilleures performances (seulement 1.5x plus lentes que du natif avec asm.js). Ces outils ont permis le portage de code existant dans les applications de bureau dans le monde du web simplement et efficacement. L’exemple le plus impressionnant est le portage en 4 jours seulement du moteur de jeu bien connu Unreal Engine avec des performances impressionnantes. De nombreux autres programmes natifs ont suivi le mouvement (Dosbox, Unity, Vim, SQLite, etc.).
 
-* **Les Générateurs**
+#### Solution future : WebAssembly
 
-C'est un type de fonction qui permet de suspendre l'activité du bloc où elle est appelée et d'attendre le résultat de celui-ci (programmation synchrone). Il est désormais possible d'exécuter facilement du code asynchrone dans une boucle, permettant d'éviter encore une fois l'enfer du callback.
+Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d’une structure officielle permettant l’utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly. Il a pour but de gérer le format binaire par les navigateurs. Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialise le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l’extension .wasm). Des performances 20 fois supérieures a asm.js sont annoncées.
 
-* **Les Modules**
+Le but ici n’est pas de remplacer JavaScript (nous avons vu auparavant que c’est pour l’instant impossible), mais d’apporter un nouveau langage alternatif. Le Web pourra ainsi profiter du meilleur des deux mondes : langage de haut niveau interprété (JavaScript), et un langage de bas niveau compilé en binaire (WebAssembly). Pour résumer voici ce qu’est et va apporter WebAssembly :
 
-La gestion des modules en JavaScript n'a jamais eu de définition claire et précise. Deux standards non officiels existent : AMD et CommonJS. Le but ici est de les rallier ces deux patterns* et d'en faire un standard officiel.
+• Des performances améliorées : Les points critiques de l’application pourront être écrit en WebAssembly et être utilise comme module en JavaScript
+• Un nouveau langage au format binaire
+• Des navigateurs plus modernes : Ils pourront comprendre un format binaire plus efficace et plus léger
+• Nouvelle cible de compilation : Les différents langages pourront utiliser ce support. La com-
+pilation pour le Web sera alors facilitée
 
-* **Classes**
+assembleur meilleure cible que js
+c'est bien beau tout ça mais en attendent c'est du js
+de toute façon c'est pas si mal
 
-L’arrivée de cette version est attendue de beaucoup de développeurs car il est désormais possible de créer des classes avec le pattern* orienté objet classique grâce au mot-clé "class". Il est cependant toujours possible d'utiliser l'orienté objet de type prototype.
+### Une utilisation étendue
 
-Nous remarquerons que toutes ces nouveautés résolvent beaucoup des reproches cités auparavant et fait du JavaScript un langage très moderne utilisable des aujourd'hui. La prochaine version (ES7) est déjà annoncée et proposera elle-aussi son lot de nouveautés. Cette version encore aujourd'hui au stade de proposition. 
+Comme vu précédemment, le JavaScript évolue énormément. Ses per-
+formances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment
+ont fait apparaître des projets indépendants des navigateurs web.
+Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multi-
+plateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la
+programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra-
+performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme
+Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon,
+SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal
+est passe d’un solution entièrement écrite en Java a une solution en Node.js. Le gestionnaire de
+paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000
+en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de
+paquets Maven.
 
-#### Des performances plus que correctes	
+La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript.
+Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web
+Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
 
-Nous avons vu que le web est énormément dépendant du langage JavaScript. La performance des moteurs JavaScript est donc cruciale pour l’avancée des applications web. Les développeurs des navigateurs web l'ont bien compris et fournissent énormément d'efforts à l'optimisation de ceux-ci. La concurrence des navigateurs est telle qu'on parle de "guerre des navigateurs". 
+* Conclusion : aujourd'hui, c'est concrètement la seule technologie disponible pour créer des applications web.
 
-##### Des moteurs JavaScript performants, mais est-ce suffisant ?
+TODO revoir les titres
 
-Avant la deuxième guerre des navigateurs en 2008-2009, les moteurs JavaScript étaient de simples interpréteurs. Le moteur V8 de Google créé en 2008 marque un nouveau tournant avec l'utilisation du JIT (Just In Time) compilation* (compilation juste à temps). Le fait de compiler le code Javascript en code natif avant de l’exécuter lui permet d'avoir de meilleures performances. Ce moteur a été créé pour les navigateurs mais aussi en tant que moteur autonome, ce qui a permis la création de projets indépendants (utilisation côté serveur, etc.). 
-
-Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance. Malgré les optimisations qu'apporte les derniers moteurs JavaScript, ces opérations restent coûteuses. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
-
-Le JavaScript étant le support obligatoire pour faire des applications web, il reste la actuellement la cible de tout langage de programmation. Nous avons déjà vu qu'il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais qu'en est-il des langages de plus bas niveau (C/C++) ? 
-
-##### Solution actuelle : asm.js
-
-asm.js est un sous-ensemble de JavaScript ne contenant que le nécessaire pour un langage de plus bas-niveau en évitant d'utiliser les fonctionnalités coûteuses de haut-niveau. Le but est d'approcher les performances des applications natives (applications de bureau). Etant un sous-ensemble du JavaScript, il est déjà supporté par tous les navigateurs actuels. Le projet Emscripten permet de compiler du C/C++ en code asm.js (ou tout autre langage pouvant être converti en LLVM*).
-
-La possibilité de compiler du code natif dans le monde du web permet d'avoir de meilleures performances (seulement 1.5x plus lentes que du natif avec asm.js). Ces outils ont permis le portage de code existant dans les applications de bureau dans le monde du web simplement et efficacement. L'exemple le plus impressionnant est le portage en 4 jours seulement du moteur de jeu bien connu Unreal Engine avec des performances impressionnantes. De nombreux autres programmes natifs ont suivi le mouvement (Dosbox, Unity, Vim, SQLite, etc.). 
-
-##### Solution future : WebAssembly
-
-Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d'une structure officielle permettant l'utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly.  Il a pour but de gérer le format binaire par les navigateurs.  Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialise le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l'extension .wasm). Des performances 20 fois supérieures a asm.js sont annoncées.
-
-Le but ici n'est pas de remplacer JavaScript (nous avons vu auparavant que c'est pour l'instant impossible), mais d'apporter un nouveau langage alternatif. Le Web pourra ainsi profiter du meilleur des deux mondes : langage de haut niveau interprété (JavaScript), et un langage de bas niveau compilé en binaire (WebAssembly). Pour résumer voici ce qu'est et va apporter WebAssembly :
-
-* Des performances améliorées : Les points critiques de l'application pourront être écrit en WebAssembly et être utilise comme module en JavaScript
-* Un nouveau langage au format binaire
-* Des navigateurs plus modernes : Ils pourront comprendre un format binaire plus efficace et plus léger
-* Nouvelle cible de compilation : Les différents langages pourront utiliser ce support. La compilation pour le Web sera alors facilitée
-
-##### Une utilisation étendue
-
-Comme vu précédemment, le JavaScript évolue énormément. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment ont fait apparaître des projets indépendants des navigateurs web. 
-
-Un projet phare est Node.js, projet open source créé en 2009. C'est un environnement multi-plateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra-performants pouvant tenir une charge importante, sans avoir besoin d'un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo!, Walmart, etc) et possède une communauté très active. Paypal est passe d'un solution entièrement écrite en Java a une solution en Node.js. Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven. 
 
 ![Nombre de modules pour chaque langage][npmModules]
-
-De nombreux outils et frameworks* sont apparus avec Node.js, dont les plus connus sont :
-
-* Express : Framework web
-* Browserify : Un outil pour utiliser les module Node.js dans le navigateur
-* Babel : Outil pour transpiler du code JavaScript ES5 en ES6
-* Cordova : Plateforme pour créer des application mobiles natives avec du JavaScript
-* Grunt et Gulp : Outils d'automatisation de tâches
-* Bower : Gestionnaire de paquets pour le front-end
-* Yeoman : Générateur de fichiers pour accélérer le développement et la gestion des fichiers dans un projet
-* Node-webkit (NW.js) : Application basée sur le moteur de rendu Webkit et Node.js permettant la création d'applications de bureau en utilisant uniquement les technologies web
-* Mocha : Framework* de tests unitaires
-
-La popularité de Node.js et des applications web ont fait grimper en flèche l'utilisation du JavaScript. Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
-
 ![Statistiques des langages de programmation sur Github][repositoryGithub]
 
 TODO trop long certains trucs ? la partie sur utilisation etendue est interessante sinon le reste est un peu trop technique p e
@@ -1428,168 +1360,13 @@ tourner l'implementation des microservices sous forme d'etapes, la derniere c'es
 
 dans la presentation du projet, dire que la deadline c'est la presentation
 
-## Plan
-
-* Application web
-    * Description
-    * Navigateurs web
-        * Apparition et disparition des RIA
-        * Evolution du JavaScript
-            Attributs du langage
-            Un langage incompris
-            Une version 6 evoluée ??
-            Performance
-            Utilisation étendue (mobile, desktop, etc.)
-            Popularité du JavaScript
-    * Mobile
-        * Mobile Web responsive
-        * Mobile natif
-            Cordova, etc
-    * Projet de démonstration : POC
-        * Motivations 
-        * Description
-        * Objectifs
-* Choix d'architecture
-    * Différents styles d'architecture
-        * Description
-        * MVC
-        * Architecture orienté composants
-        * Architecture orienté évènements
-        * DDD
-        * SOA
-        * Microservices
-    * Spécificités du Front-end
-        * Application traditionnelle
-        * Passage aux SPA
-        * Choix d'un style d'architecture
-            * MVC
-                beaucoup font ca mais pas terrible
-            * Orienté composants
-                ca c'est mieux, surtout avec les web components, shadow dom tout ca, mais pas trop parler de techno ici quand meme
-            * Orienté évènements
-                ca c'est pas mal aussi, on parle pas de flux de suite, p e un peu l'archi quand meme
-    * Spécificités du Back-end
-        * Application traditionnelle
-        * Passage aux web services
-            * Protocole SOAP
-            * Tendance au RESTful
-        * Choix d'un style d'architecture
-            * SOA
-            * Microservices
-    * Ideologie commune
-        * Architecture avant technologie
-        * Inspiration de DDD
-            domaine avant tout, business logic de SOA, 2 types de logique, etc.
-* Choix technologiques
-    * Front-end
-        * Choix d'un framework SPA
-            * Angular
-            * ReactJS + Flux architecture
-            * Polymer
-        * Choisir les bons outils
-            * Outil de compilation
-                Gulp
-                Transpilation
-            * Gestionnaire de paquets
-                Bower
-            * Automate
-                Yeoman
-            * Framework Graphique ?
-                Angular material
-    * Back-end
-        * Choix d'un langage
-            * NodeJS
-                Mais c'est pas tres important
-            * Communication RESTful
-            * Intégration avec l'existant chez Cdiscount
-        * Containers
-            * Docker
-* Méthodologie
-    * Méthode agile : Extreme Programming
-    * Appliqué au POC
-        * TDD
-            Jasmine, Karma, etc.
-            Protractor
-            Integration test for server
-            Test coverage, etc.
-        * Déploiement continu
-            Jenkins
-        * Planning, retro, dette technique, etat du systeme first (avant fonctionalité), etc.
-    * Développement d'une fonctionnalité : cheminement réel
-        * User story
-        * Integration test
-        * E2E test
-        * Nouveau composant : TDD, etc. Idem pour les routes
-        * Validation par le PO
-        * Un bug ? Création d'un test mettant en valeur le bug, puis correction
-* POC, le résultat
-    * Idéologie et architecture respectée
-    * Objectif atteint en 2 mois ?
-        * Pas eu le temps de bien faire les microservices, mais ca viendra
-    * La suite ?
-        On a eu le temps de faire ceci cela en 2 mois, la suite s'annonce bien
-        Quelques challenges quand meme : integrer l'existant, analytics, etc.
-        Financierement c'est cool
-        Une inspiration pour le SI de Cdiscount
-        Tiens d'ailleurs ils sont en train de mettre en place du MicroServices alors que c'était du SOA
-
-## Ancien plan
-
-* Application Web
-    * Description
-    * Evolution des navigateurs
-    * Apparition et disparition des RIA
-    * Evolution du Javascript
-* Tendances Architectures 
-    * Rappel des principaux styles d'architcecture
-        * SOA ramene au monolithe
-    * Front
-        * Architecture traditionnelle
-        * Passage aux SPA
-        * Styles
-            * MVC/MVVM
-            * Orienté composants
-            * Events
-    * Back
-        * Web Services
-            * RESTful
-            * SOAP
-            * SOA classique
-            * MicroServices
-    * Vers une archi isomorphique
-* Technos correspondantes
-    * Front
-        * Angular
-        * React + Flux
-        * Polymer
-    * Back
-        * Node
-        * ...
-    * Javascript polyfill
-    * Outils (yeoman, etc)
-    * Docker
-* Charte de choix
-* Projet démonstration
-    * Choix technique et implémentation
-        * Generator
-    * Limites
-    * Aller plus loin
-    * Methodos: Extreme programming
-        * Testing
-        * Déploiement continu
-* Aspect Financier
-    * Un seul code
-
-* Full stack / Devops
-* Veille
-* Mobile
-Isomorphic app
-Web binary
-Api gateway (microservices with REST)
-
 # Glossaire {-}
 
-TODO
+* lien hypertexte
+* HTTP
+* orienté prototype
+* fonction de première classe
+* multi-paradigme
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
