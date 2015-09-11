@@ -441,7 +441,7 @@ Le principal objectif de ce projet démonstration est le suivant : faire une app
 
 * Développement de fonctionnalité rapide (temps = argent)
 * Développement de nouvelle fonctionnalité sans impact sur l'existant (non régression)
-* Déploiement fréquent et rapide en production
+* Déploiement fréquent et rapide en production, permettant de satisfaire la demande du client
 * S'assurer que l'application fonctionne toujours en production
 
 TODO inserer titre du mémoire ? meilleur objectif ?
@@ -449,15 +449,17 @@ TODO vraiment important cette partie, vérifier que c'est vraiment ca les qualit
 
 #### Autres objectifs
 
-* démontrer qu'il est possible d'utiliser notre expertise web pour faire des applications mobiles
-* que differentes technos existent et plus adaptées dans certains cas, et permettent plus de choses (meilleure testabilité, etc.), il faut avoir une veille active pour ca
-* mais surtout bien faire comprendre que les technos au final ce n'est pas si essentiel que ca et qu'il faut pas en devenir dépendant
-* proposer une autre facon de faire a Cdiscount et pour ca il faut prouver que c'est bien et industrialable
-* montrer que cette facon de faire est en accord avec ce que veut mettre en place l'equipe archi
-* que les petites equipes s'en sortent mieux avec une méthode agile sur des petits projets (pizzas team comme essaye de faire Cdiscount)
-* Conclusion : devenir une inspiration pour Cdiscount sur plein de plans, et meme plus que ca => utiliser cette solution dans certains cas
+En plus de vouloir creer un logiciel de qualité, ce projet a aussi pour objectif :
 
-TODO peut etre pas interessant au final
+* Utilisation de notre expertise web pour créer une application mobile, et proposer une autre possibilité de réalisation a Cdiscount moins chere et plus efficace, prete a l'emploi (industrialisable)
+* Démonstration de l'interet de l'utilisation de nouvelles technologies, et donc l'interet d'effectuer une veille technologique active
+* Proposer une architecture moderne permettant l'isolation de la logique du domaine, et donc sa réutilisation dans un autre contexte, permettant le changement facile de technologie.
+* Démontrer que l'architecture sur laquelle l'equipe architecture travaille et essaye de mettre a de nombreux interets et permet de creer un logiciel de qualité (implementation de leur architecture dans une moindre mesure dans notre projet)
+* Interet d'avoir des ptetites equipes polyvalentes (pizzas team) sur des projets plutot que des equipe par couche logicielle
+
+Ainsi, ce projet est surtout une démonstration technique. Il permettra de démontrer de nombreuses choses en harmonie avec ce vers quoi Cdiscount souhaite tendre (meme direction). Nous souhaitons alors que notre projet et notre equipe devienne une inspiration pour Cdiscount et que notre solution sera utilisée dans certains cas précis. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chere et peut etre mieux adaptée dans certains cas, tout en utilisant notre expertise interne.
+
+TODO deja parlé des differences entre pizza team et equipe par couche ?
 
 # Choix d'architecture 
 
@@ -1145,6 +1147,7 @@ Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture d
 
 TODO schema
 TODO bien parler de l'api gateway
+TODO dire que c'est un plusieurs etapes
 
 # Méthodologie
 
@@ -1325,7 +1328,6 @@ Nous utilisons une variante du TDD se nommant le BDD (Behavior Driven Developmen
 * When : Si ...
 * Then : Alors ...
 
-
 ### Déploiement continu
 
 * fait partie de l'extreme programming
@@ -1372,24 +1374,23 @@ Grace a la technologie cordova, nous avons créé une application fonctionnant s
 
 Nous n'avons pas eu le temps d'implementer la gestion du panier, des commentaires, etc. C'etait les prochaines fonctionnalités a implementer. Le tout utilise bien evidemment les donnees reelles de Cdiscount, ayant ainsi un comportement similaire a tout moment des applications actuelles.
 
-Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons meme tenté d'innover un peu et de faire certaines choses differemment que l'application de base.
-
-## Objectifs atteints ?
-
-Pas eu le temps trop de faire les microservices, mais juste une question de temps c'etait prevu
-c'est pas vraiment ce que fait l'appli qui est interessant mais est-ce que notre methodo est bonne et le support est bon pour d'autres applis
-
-TODO revoir objectifs de base et regarder si on les a atteint
+Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons meme tenté d'innover un peu et de faire certaines choses differemment que l'application de base. Au niveau de l'implementation des microservices, nous en sommes a la premiere etape.
 
 ## Challenges
 
-* Integrer l'existant, l'archi de cdiscount est pas encore en microservices, mais au final on a fait semblant, ca sera facile a migrer quand Cdiscount sera en microservices
-* analytics et SPA, c'est pas donné, faut adapter, surtout que le systeme de cdiscount est pas fait pour, mais bon pour le poc c'etait pas tres grave
-* penser en microservices c'est pas facile quand on a pas l'habitude mais c'set cool
+Le fonctionnement de Cdiscount est actuellement n'est pas pensé pour les SPA. Par exemple, le tracking interne s'effectue en se basant sur les applications traditionnelles. Cela ne nous a pas derangé durant le développement du projet, mais c'est un point a prendre en compte si nous souhaitons industrialiser cette solution a Cdiscount. Il faudra alors developper une solution permettant l'utilisation du tracking interne avec notre solution.
 
-## La suite ? 
+Nous avons cités les soucis de performance d'AngularJS. Il est vrai que sur certaines animations, un ralentissement pouvait se ressentir. Mais grace des accelerateurs tels que CocoonJS, et avec une bonne combinaisons de librairies tierces, l'application est maintenant d'une tres bonne fluidité. 
 
-* on a fait la présentation aux chefs, ils ont trouvé l'idée tres bien, bonne mise en place des microservices sur une appli legerement en dehors des autres trucs. manque un peu de maturité selon eux (pejoratif), enfin ils ont demandé de développer un peu le truc pour que ca soit vraiment industrialisable. on pourra tester ensuite sur des applis petites (sites verticaux) pour verifier que c'est vraiment bien. et si oui, la integrer pour de vrai
+Le challenge technique etait important, surtout au niveau de l'implementation des microservices. Deux mois de developpement c'est finalement tres court, mais nous avons pu fournir un gros travail grace aux methodologies appliquees. C'est cependant pour nous un sujet passionnant et sommes satisfaits du resultat actuel.
+
+## Objectifs atteints ?
+
+Lors de la présentation finale du projet, le jury non technique etait satisfait du resultat et pense qu'apres quelques ajout pour concorder aux methodes de Cdiscount (tracking, etc.) pour rendre la solution totalement industrialisable pour Cdiscount, il sera possible de la tester sur des projets transverses, permettant d'utiliser notre expertise du monde du web pour creer des applications mobiles, plutot que de payer un prestataire. 
+
+Le jury technique quant a lui etait satisfait de voir que nos méthodes ont portés leurs fruits et que notre logiciel est de qualité au niveau de son implementation. L'architecture et la methododologie employee correspond totalement sur ce quoi veut tendre Cdiscount.
+
+Notre projet et notre equipe sont finalement une grande inspiration pour Cdiscount et les objectifs ont étés atteints.
 
 TODO conclure sur le projet ici, ou dans la grande conclusion ?
 
@@ -1432,6 +1433,10 @@ TODO parler du probleme du monolithe quelque part ?
 isomorphique ?
 
 si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
+
+tourner l'implementation des microservices sous forme d'etapes, la derniere c'est genre avec plein de monitoring, voir meme du scaling auto, mais bon ca c'est de la competence de devops
+
+dans la presentation du projet, dire que la deadline c'est la presentation
 
 ## Plan
 
