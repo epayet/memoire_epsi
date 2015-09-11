@@ -174,29 +174,11 @@ Il existe de nombreux autres types d'applications, comme par exemple Google Maps
 
 ## Navigateurs web
 
-Une application Web utilise un ou plusieurs langages de présentation (généralement HTML/CSS) et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur et de son moteur de rendu (interpréteur HTML/CSS et moteur JavaScript). 
+Une application Web utilise un ou plusieurs langages de présentation et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur.
 
-Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. Voici actuellement les principaux navigateurs web ainsi que les moteurs utilisés :
-
-* Google Chrome (moteur de rendu : **Blink**, moteur JavaScript : **V8**)
-* Firefox (moteur de rendu : **Gecko**, moteur JavaScript : **Spidermonkey**)
-* Internet Explorer (moteur de rendu : **Trident**, moteur JavaScript : **Chakra**)
-* Safari (moteur de rendu : **Webkit**, moteur JavaScript : **Nitro**)
-* Opéra (moteur de rendu : **Blink**, moteur JavaScript : **V8**)
-
-TODO pas obligé de nommer tous les moteurs...
-
-Les dernières version d'Opéra utilise le projet Chromium et comme base et utilisent donc les même moteur que Google Chrome, lui même basé sur le projet open source Chromium. Microsoft veut à terme remplacer son navigateur Internet Explorer par leur dernier projet en date : Microsoft Edge utilisant leur nouveau moteur de rendu **EdgeHTML** tout en gardant leur moteur JavaScript Chakra.
-
-TODO ca aussi
-
-![Pourcentage d'utilisation des navigateurs en 2015][browserMarketShare]
-
-TODO browser market share pas necessaire
+Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript.
 
 Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML*. 
-
-TODO Le DOM pourquoi pas
 
 ### Apparition et disparition des RIA
 
