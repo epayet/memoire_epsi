@@ -234,7 +234,7 @@ Même si aujourd’hui, cette version n’est pas prise en charge par tous les n
 
 ### Une future alternative ?
 
-Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance. Malgré les optimisations qu’apporte les derniers moteurs JavaScript, ces opérations restent coûteuses. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
+Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance, malgré les optimisations qu’apporte les derniers moteurs JavaScript. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
 
 Le JavaScript étant le support obligatoire pour faire des applications web, il reste la actuellement la cible de tout langage de programmation. Nous avons déjà vu qu’il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais qu’en est-il des langages de plus bas niveau (C/C++) ?
 
@@ -253,43 +253,33 @@ Le but ici n’est pas de remplacer JavaScript (nous avons vu auparavant que c�
 • Des performances améliorées : Les points critiques de l’application pourront être écrit en WebAssembly et être utilise comme module en JavaScript
 • Un nouveau langage au format binaire
 • Des navigateurs plus modernes : Ils pourront comprendre un format binaire plus efficace et plus léger
-• Nouvelle cible de compilation : Les différents langages pourront utiliser ce support. La com-
-pilation pour le Web sera alors facilitée
+• Nouvelle cible de compilation : Les différents langages pourront utiliser ce support. La compilation pour le Web sera alors facilitée
 
-assembleur meilleure cible que js
-c'est bien beau tout ça mais en attendent c'est du js
-de toute façon c'est pas si mal
+L'assembleur est une bien meilleure cible de compilation que le JavaScript, mais en attendant que tout cela soit standardisé, nous restons fortement dépendant de celui-ci. Les dernières versions en font tout de même un langage de programmation très valable.
 
 ### Une utilisation étendue
 
-Comme vu précédemment, le JavaScript évolue énormément. Ses per-
-formances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment
-ont fait apparaître des projets indépendants des navigateurs web.
-Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multi-
-plateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la
-programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra-
-performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme
-Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon,
-SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal
-est passe d’un solution entièrement écrite en Java a une solution en Node.js. Le gestionnaire de
-paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000
-en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de
-paquets Maven.
+Comme vu précédemment, le JavaScript évolue énormément. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment ont fait apparaître des projets indépendants des navigateurs web.
 
-La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript.
-Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web
-Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
+Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’un solution entièrement écrite en Java a une solution en Node.js. 
 
-* Conclusion : aujourd'hui, c'est concrètement la seule technologie disponible pour créer des applications web.
-
-TODO revoir les titres
-
+Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven.
 
 ![Nombre de modules pour chaque langage][npmModules]
+
+La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript. Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
+
 ![Statistiques des langages de programmation sur Github][repositoryGithub]
 
-TODO trop long certains trucs ? la partie sur utilisation etendue est interessante sinon le reste est un peu trop technique p e
 TODO images trop grandes ? meilleure image possible. annexe ?
+
+## Navigateurs web
+
+Une application Web utilise un ou plusieurs langages de présentation et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur.
+
+Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. 
+
+Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML*.
 
 ## Mobile
 
