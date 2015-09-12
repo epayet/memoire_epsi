@@ -550,58 +550,57 @@ TODO si déjà parler des monolithes, dire que ça peut devenir un monolithe
 
 #### Description
 
-Le style d'architecture Microservices est plus récent que les autres et tirent beaucoup d'inspiration de certains d'entre eux, en evitant les inconvenients de ces derniers. Voici la définition de Martin Fowler dans son article définissant les microservices :
+Le style d'architecture des microservices est plus récent que les autres et s'inspire grandement de ces derniers. Voici la définition de Martin Fowler dans son article définissant les microservices :
 
+« *Le style d'architecture des microservices prend comme approche de développer chaque application comme un ensemble de petits services, chacun fonctionnant dans son propre processus, et communiquant avec des mécanismes légers (très souvent une ressource HTTP via une API). Ces services sont construits autour d'une fonctionnalité métier et sont déployables indépendamment par un système de déploiement automatisé. Il y a un minimum de gestion centralisée de ces services, qui peuvent être écrits dans différents langages de programmation et d'utiliser différentes technologies de stockage de données* »
+
+<!--
+TODO citation et parler un peu de martin fowler peut etre ?
 "The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
+-->
 
-Les microservices se rapprochent beaucoup de l'architecture SOA (Service Oriented Architecture), mais avec une approche differente au niveau de l'implementation :
+Les microservices se rapprochent beaucoup de l'architecture SOA, mais avec une approche différente au niveau de l’implémentation :
 
-* SOA : Integre differentes applications comme un ensemble de services 
-* Microservices : architecture chaque application comme un ensemble de services
+* SOA : Intègre différentes applications comme un ensemble de services 
+* Microservices : Architecture chaque application comme un ensemble de services
 
-La majeure difference se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : "Faire une seule chose, mais la faire bien" ("Do one thing and do it well"). Voici une liste des differents attributs de cette architecture :
+La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Voici une liste des différents attributs de cette architecture :
 
-* Independant : Chaque microservice a son propre cycle de release et de déploiement. Il y a généralement une equipe de développement aux competences diverses par microservice (scalabilité des equipes). 
-* Faible couplage : Moyens de communication légers
-* Limites des modules claires et interface explicite
-* Donnee decentralisée et polyglote : chaque microservice a sa base de donnees sur une technologie independante
+<!--
+TODO citation ("Do one thing and do it well")
+-->
 
-![Differences entre une architecture monolithique et une architecture microservices][microservicesArchitecture]
+* **Indépendant** : Chaque microservice a son propre cycle de gestion de versions et de déploiement. Il y a généralement une équipe de développement aux compétences diverses par microservice (scalabilité des équipes). 
+* **Faible couplage** : Moyens de communication légers
+* **Donnée décentralisée et polyglotte** : Chaque microservice possède sa base de données sur une technologie indépendante
 
-TODO traduire la citation
+![Différences entre une architecture monolithique et une architecture microservices][microservicesArchitecture]
 
 #### Avantages
 
-* Petit et focus sur une seule fonctionalité : Facile a comprendre, IDE plus facile a charger et déploiement
-* Bonne décomposition des modules (bien pour les grandes equipes)
-* Déploiements indépendants
-* Diversité technologique et architecture evolutive 
-* Scalabilité fonctionnelle : Possibilité de dupliquer les microservices la ou c'est critique (fonctionnalités les plus demandées)
-* La reecricture limité a un seul service : il est parfois bénéfique de réécrire tout ou partie du code existant, les microservices permettent de limiter ces changements, ou du moins les permettre sans grand impact sur la totalité du systeme.
+* **Petit et focus sur une seule fonctionnalité** : Facile à comprendre, temps de chargement de l'IDE court
+* **Bonne décomposition des modules** : Limites des modules claires et interface explicite, très bien pour les grandes équipes
+* **Déploiements indépendants** : Pas de gros cycles de recettes
+* **Diversité technologique** : Chaque microservice peut être implémenté dans des technologies différentes. Permet une architecture évolutive 
+* **Scalabilité fonctionnelle** : Possibilité de dupliquer les microservices là ou c'est critique (fonctionnalités les plus demandées)
+* **Réécriture limitée a un seul service** : Il est parfois bénéfique de réécrire tout ou partie du code existant. Les microservices permettent une réécriture partielle sans grand impact sur la totalité du système
 
-#### Inconvénients et critques (et challenges ?)
+#### Inconvénients et critiques
 
-La décomposititon fonctionnelle d'une application en microservices n'est pas tache aisée. Un mauvais découpage peut faire perdre tous les avantages qu'apporte l'architecture et fait se rapprocher du monolithe. Selon Eric Evans, l'architecture DDD aiderait a la decomposition fonctionnelle grace a la notion de contexte borné du DDD.
+La décomposition fonctionnelle d'une application en microservices n'est pas tache aisée. Un mauvais découpage peut faire perdre tous les avantages qu'elle apporte et fait se rapprocher du monolithe. Selon Eric Evans, l'architecture DDD aiderait à la décomposition fonctionnelle grâce à la notion de contexte borné (*bounded context*).
 
-Cette architecture impose une forte complexité opérationnelle (configuration, déploiement, etc.). Une automatisation des taches de déploiement (déploiement continu) devient nécessaire. Il faut rajouter a cela une bonne surveillance (monitoring).
+Cette architecture impose une forte complexité opérationnelle (configuration, déploiement, etc.). Une automatisation des tâches de déploiement (déploiement continu) devient nécessaire. Il faut rajouter à cela une bonne surveillance (monitoring).
 
-Cette architecture permet une scalabilité tres précise, mais impose le développement distribué. Ainsi il faut savoir gérer : 
+Cette architecture permet une scalabilité très précise, mais impose le développement distribué. Ainsi il faut savoir gérer : 
 
-* Donnee decentralisée
+* Donnée décentralisée
 * Communication entre les services
-* Gérer l'echec d'un microservice
+* Gérer l’échec d'un microservice
 * Testing
 
-Cette architecture propose donc de nombreux avantage mais aussi un challenge elevé. Il n'est pas aisé de réussir a implementer correctement cette architecture du premier coup. Il est préférable de commencer doucement avec une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices lorsque le besoin se fait ressentir. Attention cependant a ne pas trop attendre pour le faire, ou ce sera trop complexe et il sera nécessaire de tout recommencer.
+Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
 
 TODO parlé du monolithe avant ?
-
-#### Bien pour
-
-Les SI complexes ? 
-
-TODO trouver un meilleur titre que "bien pour"
-TODO garder le bien pour ?
 
 ## Spécificités du Front-end
 
