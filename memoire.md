@@ -430,31 +430,27 @@ Ce pattern est à utiliser lorsque l'application est très simple. Il est rapide
 
 #### Description
 
-L'architecture orienté composants se concentre sur la décomposition en composants individuels (fonctionnels ou logiques) exposant des interfaces de communication bien définies comporenant méthodes, propriétés et évènements. Elle utilise un niveau d'abstraction plus haut que l'orienté objet. Voici une liste de ses principaux attributs:
+L'architecture orienté composants se concentre sur la décomposition en composants individuels (fonctionnels ou logiques) exposant des interfaces de communication bien définies comprenant méthodes, propriétés et événements. Elle utilise un niveau d'abstraction plus haut que l'orienté objet. Voici une liste de ses principaux attributs:
 
-* Reutilisable : Peut etre reutilise dans un autre scenario dans d'autres applications
-* Remplacable : Peut etre remplacé par des composants similaires
-* Sans contexte specifique : Les informations spéciques a une application comme des donnees sont passes en variable d'entree au lieu d'etre inclu et gere par le composant
-* Extensible : Possibilité d'étendre le comportement d'un composant
-* Encapsulé : Chaque composant expose des interfaces qui permettent a l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
-* Indépendant : Pensé de maniere a dependre tres peu d'autres composants. Peut etre déployé dans un autre environnement sans affecté les autres composants
+* **Réutilisable** : Peut être réutilisé dans un autre scénario et dans d'autres applications
+* **Remplaçable** : Peut être remplacé par des composants similaires
+* **Sans contexte spécifique** : Les informations spécifiques a une application comme des données sont passées en variable d’entrée au lieu d’être inclues et gérées par le composant
+* **Extensible** : Possibilité d'étendre le comportement d'un composant
+* **Encapsulé** : Chaque composant expose des interfaces qui permettent à l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
+* **Indépendant** : Dépend très peu d'autres composants. Peut être déployé dans un autre environnement sans affecter les autres composants
 
 ![Architecture orienté composants][componentArchitecture]
 
 #### Avantages
 
-* Facilité de déploiement : Changement de version avec peu d'impact sur le reste du systeme
-* Cout réduit : Utilisation de composants externes permet de réduire le cout de développement et de maintenance
-* Facilité de développement : Les composants exposent des interfaces définissant une certaine fonctionnalité permettant de développer sans impact avec le reste du systeme. 
-* Reutilisable : Comme nous l'avons vu, les composants peuvent être réutilisés dans un scenario ou d'autres applications
+* **Facilité de déploiement** : Changement de version avec peu d'impact sur le reste du système
+* **Coût réduit** : L'utilisation de composants externes permet de réduire le coût de développement et de maintenance
+* **Facilité de développement** : Les composants exposent des interfaces définissant une certaine fonctionnalité permettant de développer sans impact avec le reste du système (états internes plutôt que variables globales)
+* **Réutilisable** : Comme nous l'avons vu, les composants peuvent être réutilisés dans un autre scénario ou dans d'autres applications
 
-#### Inconvénients et critques (et challenges ?)
+#### Inconvénients et critiques (et challenges ?)
 
-Le niveau d'abstraction étant un peu plus eleve que l'orienté objet, ce style peut etre un peu plus complexe a utiliser. De plus, il n'est généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un systeme complet. En effet, ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et l'utiliser.
-
-#### Bien pour
-
-??
+Le niveau d'abstraction étant un peu plus élevé que l'orienté objet, ce style peut être un peu plus complexe à utiliser. Ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Il n'est donc généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un système complet. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et bien l'utiliser.
 
 ### Architecture orienté évènements
 
