@@ -216,7 +216,7 @@ Selon lui, il n’est pas possible refaire le web, la seule solution est de l’
 
 <!--
 « You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail ».
-TODO citation
+TODO citation footnote original et link to biblio ?
 -->
 
 ### Une version 6 bien évoluée
@@ -247,17 +247,19 @@ L'assembleur est une bien meilleure cible de compilation que le JavaScript, mais
 
 Comme vu précédemment, le JavaScript évolue énormément. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment ont fait apparaître des projets indépendants des navigateurs web.
 
-Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti la machine virtuelle V8 et la programmation événementielle (asynchrone) de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’un solution entièrement écrite en Java a une solution en Node.js. 
+Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti de la machine virtuelle V8 et de la programmation événementielle de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’une solution entièrement écrite en Java à une solution totalement écrite en Node.js. 
+
+<!--
+footnote v8
+-->
 
 Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven.
 
 ![Nombre de modules pour chaque langage][npmModules]
 
-La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript. Il est désormais le langage le plus actif ces dernières années. Les données du très connu site web Github (gestionnaire de source le plus utilisé) le démontre bien. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs.
+La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript. Il est désormais le langage le plus actif et le plus populaire ces dernières années. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs sur Github.
 
-![Statistiques des langages de programmation sur Github][repositoryGithub]
-
-TODO images trop grandes ? meilleure image possible. annexe ?
+![Statistiques des langages de programmation sur Github][topLanguagesGithub]
 
 ## Navigateurs web
 
@@ -1346,6 +1348,7 @@ dans la presentation du projet, dire que la deadline c'est la presentation
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
+[topLanguagesGithub]: images/top-langages-github.jpg
 [repositoryGithub]: images/repository_github.png
 [traditionalArchitecture]: images/traditional_architecture.png
 [spaArchitecture]: images/spa_architecture.png
