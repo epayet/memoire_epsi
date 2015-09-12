@@ -395,11 +395,11 @@ C'est aussi une question de granularité. Un ou plusieurs styles d'architecture 
 
 #### Description
 
-Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais un design pattern. Il est pris en considération ici car très utilisé dans le monde du web. Il est généralement utilisé pour les logiciels avec interface graphique. Il a plur but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
+Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais plus un design pattern. Il est pris en considération ici car il très utilisé dans le monde du web. Conçu pour les logiciels avec interface graphique, il a pour but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
 
-* Modele : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
-* Vue : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
-* Controlleur : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
+* **Modele** : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
+* **Vue** : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
+* **Controlleur** : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
 
 Voici donc à quoi ressemble le flux de traitement :
 
