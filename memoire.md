@@ -283,13 +283,15 @@ L'application n'étant disponible que via les navigateurs, elle n'est pas instal
 
 ### Mobile Natif
 
-On appelle le mobile natif, les applications pour lesquelles il est possible d'installer sur le terminal. Au contraire des applications web, qui sont dépendantes d'un navigateur web. Elles permettent l'acces generalement a plus de fonctionnalités propres au telephone (notifications, appareil photo, GPS, etc.). Elle utilise mieux les ressources du telephone (directement), comme les applications de bureau, et ont ainsi de meilleures performances.
+Le mobile natif correspond aux applications pour lesquelles il est possible d'installer sur le terminal. L'application a un accès complet aux ressources du téléphones via le système d'exploitation (GPS, appareil photo, notifications, etc.). Les performances sont alors similaires à celles des applications de bureau.
 
-Les applications réutilisent la charte graphique (look & feel) du téléphone, ce qui permet d'avoir un ensemble cohérent. Le langage de développement de ces applications dépend du systeme d'exploitation. Il est ainsi complexe de créer une application sur plusieurs plateformes de maniere native, car les technologies et l'interface a realiser sont differentes. Maintenir une application mobile native pour chaque terminal, consiste finalement a maintenir plusieurs applications avec des technologies differentes, ce qui peut avoir un cout elevé, en plus de devoir posséder les compétences de tous les terminaux.
+Visuellement, ce qui différencie généralement ces applications, c'est qu'elles utilisent la même charte graphique (*look & feel*) définie par le système d'exploitation. L'utilisateur se retrouve généralement mieux si les contrôles sont similaires entre les applications.
+
+Au niveau du développement, le langage utilisé est défini par le système d'exploitation. Il est donc différent selon le type de terminal utilisé (Java pour Android, et Objective-C pour iOS par exemple). La création d'une application native sur les principaux terminaux du marché possède un coût élevé. Maintenir une application mobile native pour chaque terminal, consiste finalement à maintenir plusieurs applications avec des technologies et chartes graphiques différentes est complexe.
 
 ### Mobile hybride
 
-Une approche plus récente alliant un peu les deux monde est ce que l'on appelle le mobile hybride. L'idée est de créer des applications mobiles en utilisant les technologies du web. Le but est d'avoir un seul code sur un seul type de technologie, mais installable sur plusieurs terminaux, meme possédant des systemes d'exploitation differents. De nombreux outils sont disponibles et permettent cette possibilité. Les couts de développement sont donc énormement diminués.
+Une approche plus récente alliant les deux monde est ce que l'on appelle le mobile hybride. L'idée est de créer des applications mobiles en utilisant les technologies du web. Le but est d'avoir un seul code sur un seul type de technologie, mais installable sur plusieurs terminaux, meme possédant des systemes d'exploitation differents. De nombreux outils sont disponibles et permettent cette possibilité. Les couts de développement sont donc énormement diminués.
 
 L'idée est d'utiliser ce que l'on appelle une webview a l'interieure d'une application native. Celle-ci interpretera l'application comme un navigateur web le ferait, permettant en plus l'utilisation des fonctionnalités natives du téléphone comme l'appareil photo, le GPS, etc.
 
