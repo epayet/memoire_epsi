@@ -174,45 +174,50 @@ Il existe de nombreux autres types d'applications, comme par exemple Google Maps
 
 ## Utilisation massive du JavaScript
 
-Aujourd'hui, les applications web dépendent énormément (si ce n'est uniquement) du langage de programmation JavaScript, mais ce n'était pas toujours le cas.
+Aujourd'hui, les applications web dépendent énormément (si ce n'est uniquement) du langage de programmation JavaScript, mais cela n'a pas toujours été le cas.
 
 ### Apparition et disparition des RIA
 
 « *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* », définition de Wikipédia.
 
-Le principe d'une RIA est d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU* pour du jeu video plus performant. Les plus utilisés et installés sont : *Adobe Flash*, *JavaFX* et *Microsoft Silverlight*.
+Le principe d'une RIA est d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU pour du jeu vidéo plus performant. Les plus utilisés et installés sont les suivants : *Adobe Flash*, *JavaFX* et *Microsoft Silverlight*.
 
-Ces plugins sont remplacés au fur et à mesure par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'utilisation des ressources auparavant uniquement accessible par le système d'exploitation (grand espace de stockage, utilisation du GPU, etc.).
+Ces plugins au fur et à mesure sont remplacés par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'utilisation des ressources auparavant uniquement accessible par le système d'exploitation (grand espace de stockage, utilisation du GPU, etc.).
 
-L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. 
+L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et de maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. 
 
 ### Attributs du langage
 
-JavaScript, aussi appelé ECMAScript est un langage de scripts créé en 1995 par Brendan Eich. C'est un langage de programmation dit dynamique ou interprété. C'est donc un langage qui exécute au lancement du programme beaucoup de comportements que les langages dits statiques exécutent durant la compilation.
+JavaScript, aussi appelé ECMAScript est un langage de scripts créé en 1995 par Brendan Eich. C'est un langage de programmation dit dynamique ou interprété, c'est-à-dire langage qui exécute au lancement du programme beaucoup de comportements que les langages dits statiques exécutent durant la compilation.
 
-Contrairement à ce que l’on pourrait croire, le JavaScript n’a rien en commun avec le Java. En effet, ces deux langages possèdent des sémantiques et des attributs très différents. Le JavaScript est un langage *orienté prototype** qui utilise des *fonctions de première classe**. Ce mélange de caractéristiques permet au JavaScript d’être un langage multi-paradigme* permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel).
+Contrairement à ce que l’on pourrait croire, le JavaScript n’a rien en commun avec le Java. En effet, ces deux langages possèdent des sémantiques et des attributs très différents. Le JavaScript est un langage *orienté prototype* qui utilise des *fonctions de première classe*. Ce mélange de caractéristiques permet au JavaScript d’être un langage multi-paradigme permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel).
 
 On dit souvent que le JavaScript est un langage incompris. Il ressemble beaucoup au Java, mais en est très différent. L'utilisation abusive de callbacks complexifie le code. On parle même de "l'enfer du callback" (*callback hell*). 
 
 ### Des alternatives viables mais pas majoritairement adoptées
 
-Pour combler les manques du langage et ses incompréhensions, de nombreux sur-langages sont
-apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d’être directement
-interprété par le navigateur, soit la possibilité de se transcrire en JavaScript. Les sur-langages les plus utilisés sont les suivants :
+Pour combler les manques du langage et ses incompréhensions, de nombreux sur-langages sont apparus. Ce sont des langages de plus haut-niveau permettant soit la possibilité d’être directement interprété par le navigateur, soit la possibilité de se transcrire en JavaScript. Les sur-langages les plus utilisés sont les suivants :
 
 * **CoffeeScript** : Créé en 2009, inspiré par le Python, Ruby, et le Haskell
 * **TypeScript**: Créé par Microsoft en 2012, ajoute la possibilité d’ajouter des variables fortement typées et d’utiliser des classes pour un orienté objet plus “classique”
 * **Dart** : Créé par Google en 2013, ajoute de nombreuses fonctionnalités comme des classes, des interfaces, des classes abstraites, des variables fortement typées, etc. Possède aussi un interpréteur directement intégré au navigateur Google Chrome. Le JavaScript est utilisé pour les autres navigateurs
 
-Ces surcouches ont toutes le même but : ajouter des fonctionnalités, faciliter le développement web, et apporter des évolutions qui apparaîtront plus vite que les nouveaux standards ECMAScript grace au support de la communauté. Cependant, aucun d’eux n’a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d’alternatives viables mais pas majoritairement adoptées.
+Ces surcouches ont toutes le même but : ajouter des fonctionnalités, faciliter le développement web, et apporter des évolutions qui apparaîtront plus vite que les nouveaux standards ECMAScript grâce au support de la communauté. Cependant, aucun d’eux n’a réellement pu émerger pour devenir la solution idéale pour créer des applications web. Actuellement, elles ont plus le statut d’alternatives viables mais pas majoritairement adoptées.
 
 ### JavaScript, actuellement la seule solution
 
 Malgré les avantages que proposent ces nouveaux langages, toutes les équipes de développement ne l’adoptent pas forcément. Beaucoup de développeurs connaissent déjà très bien le JavaScript et ne veulent pas s’en défaire pour apprendre un nouveau langage. Le fait qu’il existe de nombreuses surcouches montre bien qu’il est difficile de n’avoir qu’un seul standard de développement satisfaisant tous les développeurs. Il est cependant agréable d’avoir le choix.
 
-Le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. Voici une citation de Brendan Eich, le créateur du langage JavaScript : « You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail », qui peut être traduit par : « On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera ». Selon lui, il n’est pas possible refaire le web, la seule solution est de l’améliorer.
+Le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. Voici une citation traduite de Brendan Eich, le créateur du langage JavaScript lors d'une interview le 17 Juin 2015: 
 
+« *On ne casse pas le web, on ne peut pas tout effacer et tout recommencer. Toute personne essayant échouera* »
+
+Selon lui, il n’est pas possible refaire le web, la seule solution est de l’améliorer ou d'ajouter des alternatives.
+
+<!--
+« You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail ».
 TODO citation
+-->
 
 ### Une version 6 bien évoluée
 
