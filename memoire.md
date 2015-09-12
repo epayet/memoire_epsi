@@ -301,7 +301,7 @@ C'est finalement une alternative moins coûteuse pour créer des applications mo
 
 ## Projet de démonstration : POC
 
-Le projet décrit dans cette partie sera le projet utilisé comme support et démonstration de ce mémoire. C'est un projet réalisé avec mon équipe de type POC (Proof Of Concept). Nous l'avons d'ailleurs nommé ainsi : le POC.
+Le projet décrit dans cette partie sera le projet utilisé comme support et démonstration de ce mémoire. C'est un projet réalisé avec mon équipe de type POC (Proof Of Concept).
 
 ### Contexte et motivations
 
