@@ -360,6 +360,8 @@ En plus de vouloir creer un logiciel de qualité, ce projet a aussi pour objecti
 Ainsi, ce projet est surtout une démonstration technique. Il permettra de démontrer de nombreuses choses en harmonie avec ce vers quoi Cdiscount souhaite tendre (meme direction). Nous souhaitons alors que notre projet et notre equipe devienne une inspiration pour Cdiscount et que notre solution sera utilisée dans certains cas précis. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chere et peut etre mieux adaptée dans certains cas, tout en utilisant notre expertise interne.
 
 TODO deja parlé des differences entre pizza team et equipe par couche ?
+TODO deadline c'est la presentation
+TODO monolithe ?
 
 # Choix d'architecture 
 
@@ -763,6 +765,7 @@ Finalement que des habitudes de développement a changer. Mais c'est dans le bon
 TODO conclusion ?
 TODO refacto 
 TODO avantages inconvenients sur http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/
+TODO isomorphique ?
 
 * Bien pour les applications de type:
     * Mail (Gmail)
@@ -1330,13 +1333,9 @@ Mot clés : maintenable, assurance qualité
 
 TODO parler du probleme du monolithe quelque part ?
 
-isomorphique ?
-
 si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
 
 tourner l'implementation des microservices sous forme d'etapes, la derniere c'est genre avec plein de monitoring, voir meme du scaling auto, mais bon ca c'est de la competence de devops
-
-dans la presentation du projet, dire que la deadline c'est la presentation
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
