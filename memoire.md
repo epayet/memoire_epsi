@@ -361,7 +361,31 @@ Ce projet possède de nombreux objectifs en temps limité. Si Cdiscount valide l
 
 # Choix d'architecture 
 
-Créer une bonne application commence par choisir une bonne architecture logicielle. Ceci est même plus important que de choisir une bonne technologie, car il ne faut pas devenir dépendant de celle-ci. En effet, les technologies évoluent rapidement, et il n'est pas rare de vouloir profiter du changement de technologie, surtout dans le monde du web. Ainsi, il est nécessaire d'avoir une bonne architecture permettant cela, en plus de permettre de créer un logiciel de qualité. Nous allons donc d'abord voir les différents styles d'architecture existant, et voir les choix effectués pour le projet de démonstration.
+Créer une bonne application commence par choisir une bonne architecture logicielle. Ceci est même plus important que de choisir une bonne technologie, car il ne faut pas devenir dépendant de celle-ci. En effet, les technologies évoluent rapidement, et il n'est pas rare de vouloir profiter du changement de technologie, surtout dans le monde du web. Ainsi, il est nécessaire d'avoir une bonne architecture permettant cela, en plus de permettre de créer un logiciel de qualité.
+
+## Le monolithe
+
+Un monolithe est un système logiciel contenant plusieurs responsabilités (accès à la base de données, interface graphique, etc.).
+
+* y'en a beaucoup
+* l'archi peut amener à ça, ou l'éviter
+* plus c'est découpé, et moins c'est monolithique
+* c'est le plus simple à faire, quand c'est une ,petite appli ça va, mais pour une grosse appli non
+* en fait c'est ça qui faut retenir, plus c'est petit plus ça va => plus maintenable tout ça (conclusion ?)
+* c'est important d'en parler parce que Cdiscount a ça et veut casser ça
+* problemes du monolithe
+    * large code => intimidant => difficile a comprendre et a modifier
+    * IDE, web container overloaded
+    * dev ralenti
+    * petit changement => grand impact 
+        * chaque changement => full rebuild, test and deploy
+        * obstacle pour les changements frequents et les deploiements
+    * changement de techno = tout reecrire
+    * pas de re-write partiel
+    * si fail, tout le monolithe fail
+    * scalabilité difficile
+
+TODO
 
 ## Différents styles d'architecture
 
@@ -426,6 +450,12 @@ Nous verrons avec les autres styles d'architecture qu'il existe finalement deux 
 
 Ce pattern est à utiliser lorsque l'application est très simple. Il est rapide à mettre en oeuvre et à expliquer son fonctionnement. Pour une plus grosse application avec de nombreuses évolutions, il sera plus compliqué de maintenir un tel programme, devenant fortement couplé à la technologie utilisée.
 
+TODO gros = monolithe
+
+### Architecture en couches
+
+TODO
+
 ### Architecture orienté composants
 
 #### Description
@@ -451,6 +481,8 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 #### Inconvénients et critiques
 
 Le niveau d'abstraction étant un peu plus élevé que l'orienté objet, ce style peut être un peu plus complexe à utiliser. Ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Il n'est donc généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un système complet. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et bien l'utiliser.
+
+TODO bien déocupé, pas de monolithe
 
 ### Architecture orienté événements
 
@@ -543,7 +575,7 @@ Même si un SI est découpé en services, au fil du temps, chaque service peut d
 Cette architecture n'est pas faite pour les applications à interface graphique ou les applications en temps réels. De plus, elle a un certain coût de mise en place.
 
 <!--
-TODO si déjà parler des monolithes, dire que ça peut devenir un monolithe
+TODO ça découpe un peu, mais ça peut monolither quand même
 -->
 
 ### Microservices
@@ -564,7 +596,7 @@ Les microservices se rapprochent beaucoup de l'architecture SOA, mais avec une a
 * SOA : Intègre différentes applications comme un ensemble de services 
 * Microservices : Architecture chaque application comme un ensemble de services
 
-La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Voici une liste des différents attributs de cette architecture :
+La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Plus un service sera petit, moins il aura de chance d'évoluer en un monolithe. Voici une liste des différents attributs de cette architecture :
 
 <!--
 TODO citation ("Do one thing and do it well")
@@ -600,7 +632,7 @@ Cette architecture permet une scalabilité très précise, mais impose le dével
 
 Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
 
-TODO parlé du monolithe avant ?
+TODO le but même des microservices, c'est de faire le contraire des monolithes
 
 ## Spécificités du Front-end
 
@@ -1269,19 +1301,6 @@ Mot clés : maintenable, assurance qualité
 
 ## Notes
 
-* problemes du monolithe
-    * large code => intimidant => difficile a comprendre et a modifier
-    * IDE, web container overloaded
-    * dev ralenti
-    * petit changement => grand impact 
-        * chaque changement => full rebuild, test and deploy
-        * obstacle pour les changements frequents et les deploiements
-    * changement de techno = tout reecrire
-    * pas de re-write partiel
-    * si fail, tout le monolithe fail
-    * scalabilité difficile
-
-TODO parler du probleme du monolithe quelque part ?
 TODO les tableaux sont pas jolis
 TODO ajouter DDD vite fait dans la biblio pour la traduction en français
 
