@@ -480,41 +480,40 @@ La seule dépendance de chaque application est donc le bus central. Il faut bien
 
 #### Description
 
-L'architecture orienté domaine (Domaine Driven Design) est une approche orienté objet se concentrant sur le domaine métier de l'application, ses elements et ses comportements. Le coeur du logiciel est donc la modelisation directe du domaine, on appelle cela le modele du domaine. Le vocabulaire professionnel du domaine est préféré au jargon technique, et pour cela, la communication avec les specialistes du métier est primordiale.
+L'architecture orienté domaine (*Domaine Driven Design*) est une approche orienté objet se concentrant sur le domaine métier de l'application, ses éléments et ses comportements. Le cœur du logiciel est donc la modélisation directe du domaine, on appelle cela le modèle du domaine. Le vocabulaire professionnel du domaine est préféré au jargon technique, et pour cela, la communication avec les spécialistes du métier est primordiale.
 
 Eric Evans, l'auteur du lire Domain Driven Design écrit :
 
+« *Pour créer un logiciel de qualité, il faut connaître le sujet du logiciel. Il n'est pas possible de créer un logiciel de banque si on ne connait pas le domaine de la banque.* »
+
+<!--
+TODO citation
 "In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
+-->
 
-Il y a 4 concepts a retenir :
+Les 4 concepts à retenir sur le DDD sont les suivants :
 
-* Contexte borné (Bounded Context) : Stratégie du DDD pour traiter les gros systemes en les divisant en differents contextes en etant explicites sur leur relation.
-* Domaine : Sphere de connaissance, domaine de l'application (exemple : banque, finances, etc.)
-* Modele : Systeme d'abstractions qui décrivent les aspects d'un domaine et qui peuvent etre utilisés pour résoudre un probleme en lien avec ce domaine
-* Langage omniprésent (Ubiquitous Language) : Langage structuré autour du domaine du modele et utilisé par tous les membres de l'equipe pour connecter toutes les activités avec le logiciel
+* **Contexte borné** (*Bounded Context*) : Stratégie du DDD pour traiter les gros systèmes en les divisant en différents contextes en étant explicites sur leur relation.
+* **Domaine** : Sphère de connaissance, domaine de l'application (exemple : banque, finances, etc.)
+* **Modèle** : Système d'abstractions qui décrivent les aspects d'un domaine et qui peuvent être utilisés pour résoudre un problème en lien avec ce domaine
+* **Langage omniprésent** (*Ubiquitous Language*) : Langage structuré autour du domaine du modèle utilisé par tous les membres de l’équipe en rapport avec toutes les activités avec le logiciel
 
-Une implémentation possible de cette philosophie est l'architecture en oignon. Le domaine est isolé et encapsulé au centre, et la technique se forme autour. Cela permet de séparer concretement la logique du domaine et la logique de l'application. Les couches techniques autour du centre sont facilement interchangeables.
+Une implémentation possible de cette philosophie est l'architecture en oignon. Le domaine est isolé et encapsulé au centre, et la technique se forme autour. Cela permet de séparer concrètement la logique du domaine et la logique de l'application. Les couches techniques autour du centre sont facilement interchangeables.
 
 ![Architecture en oignon][onionArchitecture]
 
-TODO citation
-
 #### Avantages
 
-* Communication : Toute partie de l'equipe de developpement utilise le domain modele et les entites qu'il definit pour communiquer le business knowledge et le requirements en utilisant un langage metier commun, sans jargon technique
-* Extensible : le domaine du modele est tres souvent modulaire et flexible. Les améliorations sont simples a implementer en fonction des demandes metiers 
-* Testable : Le domaine du modele etant faiblement couplé, il est facilement testable.
-* Qu'importe la technologie utilisée (web service, interface graphique, etc.), le domaine métier etant central, il est facile de changer de technologies si le besoin se ressent, le coeur meme du logiciel restera idementique.
+* **Communication** : Toute partie de l’équipe de développement utilise le modèle du domaine et les entités qu'il définit pour communiquer la connaissance du sujet et les demandes du client en utilisant un langage métier commun, sans jargon technique
+* **Extensible** : Le domaine du modèle est modulaire et flexible. Les améliorations et les demandes du métier sont simples à implémenter
+* **Testable** : Le domaine du modèle étant faiblement couplé, il est facilement testable
+* **Couplage faible à la technologie** : Qu'importe la technologie utilisée (web service, interface graphique, etc.), le domaine métier étant central, il est facile de changer de technologies si le besoin se ressent, le cœur même du logiciel restera identique.
 
-#### Inconvénients et critques (et challenges ?)
+#### Inconvénients et critiques
 
-Le langage du domaine n'est pas forcement facile a utiliser, et le jargon doit etre compris de toute l'equipe. La communication est vitale et pas forcement facile a maintenir. Un mauvaise communication peut amener une mauvaise implementation du logiciel.
+Le langage du domaine n'est pas forcement facile à utiliser, et le jargon doit être compris de toute l’équipe. La communication est vitale et pas forcement facile a maintenir. Un mauvaise communication peut amener une mauvaise implémentation du logiciel.
 
-Cette architecture possede une forte complexité et un cout plus elevé de mise en place. Il conviendra aux applications ayant un domaine complexe, mais sera beaucoup moins utile avec les applications plus simples.
-
-#### Bien pour
-
-Quand le domaine est complexe
+Cette architecture possède une forte complexité et un coût plus élevé de mise en place. Il conviendra aux applications ayant un domaine complexe, mais sera beaucoup moins utile avec les applications plus simples.
 
 ### Architecture orienté services (SOA)
 
