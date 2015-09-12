@@ -136,6 +136,8 @@ Après avoir travaillé dans l’équipe Services l’année dernière, j’ai e
 d’intégrer l’équipe « Lab ». J’ai pu alors exercer librement ma veille technologique et
 proposer des choix techniques pour certaines applications.
 
+TODO equipe par couche ? dit comme ça ?
+
 # Application Web
 
 Il existe 3 grandes familles d'applications informatique (logiciels) :
@@ -305,63 +307,57 @@ Le projet décrit dans cette partie sera le projet utilisé comme support et dé
 
 ### Contexte et motivations
 
-#### Couts elevés
+#### Coûts élevés
 
-Cdiscount possede actuellement un site web responsive, une application mobile native sur les deux principaux systemes d'exploitation du marché (android et ios). La société a préféré faire sous-traiter le dévelopeement de ces deux dernieres par une entreprise plutot que de former et recruter des personnes sachant développer du natif pour chaque terminal. Il en est de meme pour les autres applications mobiles de le société (a cause de l'intertionalisation de l'entreprise). Les modifications faites aux applications sont frequentes. Cela est tres couteux pour eux.
+Cdiscount possède actuellement un site web responsive, une application mobile native sur les deux principaux systèmes d'exploitation du marché (Android et iOS). La société a préféré faire sous-traiter le développement de ces deux dernières par une autre entreprise plutôt que de recruter et former des personnes sachant développer du natif pour chacun d'entre eux.
 
-L'expertise technique de la société est les technologies web. Ne serait-il pas mieux pour elle d'utiliser ces compétences lorsque cela est possible ?
+La société étant présente de plus en plus à l'international, elle possède de plus en plus d'applications et les frais de sous-traitance sont élevés. L'expertise technique de la société est le web. Ne serait-il pas mieux pour elle d'utiliser ces compétences lorsque cela est possible ?
 
 #### Recherche de meilleure méthode et architecture
 
-Cdiscount possede une grande base de code accumulée avec le temps. Ayant gardé la meme architecture et la meme méthodologie pendant tres longtemps, elle a accumulé une dette technique importante. Se rendant compte de ses faiblesses (trop de temps pris pour ajouter des fonctionnalités), elle est récemment en recherche de meilleure méthodologie et architecture. C'est pour cette raison que pour certaines parties du SI, ce n'est plus la méthodologie du cycle en V qui est utilisée, mais tend plus vers des méthodes plus agile. C'est pour cela qu'ont ete créé des pizzas team. 
+Cdiscount possède une grande base de code accumulée avec le temps. Ayant gardé la même architecture et la même méthodologie pendant très longtemps, elle a accumulé une dette technique importante. La société se rend compte qu'il lui faut de plus en plus de temps pour créer ajouter des fonctionnalités, et est actuellement en quête de meilleure architecture et méthodologie.
 
-Cdiscount essaye d'employer d'autres méthodes pour ses nouvelles applications pour ensuite les integrer de plus en plus dans le SI. Une nouvelle application utilisant une méthode agile et une architecture et des technologies récentes serait alors une grande inspiration pour son SI.
+Si Cdiscount utilise historiquement la méthodologie du cycle en V, elle essaye de plus en plus de tendre vers des méthodes agiles. C'est pour cette raison que de plus en plus de pizzas teams sont mises en place. Pour les nouvelles applications, elle préfère cette méthode, et en profite pour mettre en place la nouvelle architecture sur laquelle elle travaille.
 
 #### Utilisation de l'expertise de notre équipe
 
-Notre équipe est spécialisée dans la veille technologique et la mise en place de nouvelles technologies. Nous avons mis en place plusieurs applications internes utilisant au maximum les dernieres technologies avec une architecture solide. L'equipe architecture travaille actuellement sur le changement de l'architecture globale de son SI et est a la recherche d'applications les appliquant et prouvant leur interet. 
+Notre équipe est spécialisée dans la veille technologique et dans la mise en place de nouvelles technologies. Nous avons mis en place plusieurs applications internes en utilisant au maximum les dernières technologies avec une architecture solide. L’équipe architecture travaille actuellement sur la prochaine architecture qu'elle va mettre en place dans le SI, et est à la recherche de nouvelles applications pour l’appliquer. L'avantage est que nous l'appliquions déjà dans nos précédentes applications.
 
-Ainsi, en utilisant notre expertise et en collaboration avec l'équipe architecture, nous avons proposé de mettre en place un projet de type POC (Proof Of Concept) qui permettra de prouver l'interet de cette nouvelle architecutre combinée avec les nouvelles technologies.
+Ainsi, en utilisant notre expertise et en collaboration avec l'équipe architecture, nous avons proposé de mettre en place un projet de type POC (Proof Of Concept) pour prouver l’intérêt de cette nouvelle architecture combinée avec l'utilisation des nouvelles technologies.
 
 ### Description
 
-La proposition que nous faisons est donc la suivante. Nous allons reproduire le comportement de l'application android actuelle, mais en utilisant :
+Nous nous proposons de reproduire le comportement de l'application Android actuelle, mais en utilisant :
 
 * Technologies web uniquement
 * Architecture bien choisie (en correspondance avec l'équipe architecture)
 * Méthodologie agile
 
-Nous avons une limite de 2 mois, et nous sommes 3 développeurs. L'idée est de réaliser le maximum et de démontrer que cette facon de faire est prete pour creer une vraie application mobile.
+Nous avons une limite de deux mois, et nous sommes trois développeurs. À la fin des deux mois, nous présenterons le projet réalisé à un jury à la fois technique et non technique. Même si le but de cette application est plutôt orienté vers la technique, il faudra qu'elle soit agréable à utiliser et que le jury non technique soit convaincu que ce soit une solution viable.
 
 ### Objectifs
 
 #### Principal objectif
 
-Le principal objectif de ce projet démonstration est le suivant : faire une application web de qualité et se munir de tout ce qu'il faut pour. Mais finalement qu'est-ce qu'un logiciel de qualité ? C'est selon moi un logiciel qui :
+Le principal objectif de ce projet est de démontrer comment faire une application de qualité. Mais finalement qu'est-ce qu'un logiciel de qualité ? C'est selon moi un logiciel possédant les caractéristiques suivantes :
 
-* Développement de fonctionnalité rapide (temps = argent)
-* Développement de nouvelle fonctionnalité sans impact sur l'existant (non régression)
-* Déploiement fréquent et rapide en production, permettant de satisfaire la demande du client
+* Développement rapide de fonctionnalités (temps = argent)
+* Développement de nouvelles fonctionnalités sans impact sur l'existant (non régression)
+* Posséder une architecture évolutive permettant de limiter la dette technique et l'apparition des bugs
+* Déploiements fréquents et rapides en production, permettant de satisfaire la demande du client
 * S'assurer que l'application fonctionne toujours en production
-
-TODO inserer titre du mémoire ? meilleur objectif ?
-TODO vraiment important cette partie, vérifier que c'est vraiment ca les qualités d'un bon logiciel
 
 #### Autres objectifs
 
-En plus de vouloir creer un logiciel de qualité, ce projet a aussi pour objectif :
+En plus de vouloir créer un logiciel de qualité, ce projet a aussi pour objectifs :
 
-* Utilisation de notre expertise web pour créer une application mobile, et proposer une autre possibilité de réalisation a Cdiscount moins chere et plus efficace, prete a l'emploi (industrialisable)
-* Démonstration de l'interet de l'utilisation de nouvelles technologies, et donc l'interet d'effectuer une veille technologique active
-* Proposer une architecture moderne permettant l'isolation de la logique du domaine, et donc sa réutilisation dans un autre contexte, permettant le changement facile de technologie.
-* Démontrer que l'architecture sur laquelle l'equipe architecture travaille et essaye de mettre a de nombreux interets et permet de creer un logiciel de qualité (implementation de leur architecture dans une moindre mesure dans notre projet)
-* Interet d'avoir des ptetites equipes polyvalentes (pizzas team) sur des projets plutot que des equipe par couche logicielle
+* Utilisation de notre expertise web pour créer une application mobile, et proposer une alternative de réalisation à Cdiscount moins chère, plus efficace et prête à l'emploi (industrialisable)
+* Démonstration de l’intérêt de l'utilisation des nouvelles technologies, et donc l’intérêt d'effectuer une veille technologique active
+* Proposer une architecture moderne permettant l'isolation de la logique du domaine de l'application, et donc sa réutilisation dans un autre contexte, permettant le changement facile de technologie
+* Cette architecture étant celle sur laquelle travaille l'équipe architecture, leur donner la possibilité d'utiliser notre projet comme preuve concrète de l'intérêt de celle-ci
+* Intérêt d'avoir des petites équipes polyvalentes (pizzas team) sur des petits projets plutôt que de grosses équipes séparées par capacité logicielles sur des gros projets
 
-Ainsi, ce projet est surtout une démonstration technique. Il permettra de démontrer de nombreuses choses en harmonie avec ce vers quoi Cdiscount souhaite tendre (meme direction). Nous souhaitons alors que notre projet et notre equipe devienne une inspiration pour Cdiscount et que notre solution sera utilisée dans certains cas précis. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chere et peut etre mieux adaptée dans certains cas, tout en utilisant notre expertise interne.
-
-TODO deja parlé des differences entre pizza team et equipe par couche ?
-TODO deadline c'est la presentation
-TODO monolithe ?
+Ce projet possède de nombreux objectifs en temps limité. Si Cdiscount valide la présentation du projet, nous pourrons continuer à développer cette solution. Ce projet va dans la même direction de l'évolution du SI de la société et souhaitons qu'il devienne une inspiration pour celui-ci. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chère et peut-être plus adaptée dans certains cas, tout en utilisant notre expertise interne.
 
 # Choix d'architecture 
 
