@@ -275,9 +275,11 @@ Il existe en réalité deux types de marché sur le mobile : le mobile natif, et
 
 ### Mobile Web
 
-Le mobile web est en fait tout ce qui passe par les navigateurs web installés sur un terminal mobile. Les technologies utilisées sont donc les memes que les navigateurs de bureau. Ces dernieres ont donc beaucoup evolué pour permettre l'interaction avec les terminaux mobiles (en plus de s'adapter aux écrans de ces derniers). 
+Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, HTML/CSS, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
 
-Il est donc necessaire qu'un meme site web soit disponible pour n'importe quel terminal. Si cela propose un challenge au niveau de la gestion de la taille des ecrans et des interactions avec l'utilisateur, il est désormais beaucoup plus facile grace aux technologies récentes. Le responsive web design permet de fairce cela facilement (grace aux media query du CSS3). Les frameworks sont nombreux. L'application n'est cependant pas installable sur le terminal, et l'utilisateur se doit d'etre connecté a internet pour l'utiliser.
+De nos jours, il est donc nécessaire qu'un site web soit disponible plusieurs types de navigation (mobile et PC). Le responsive web design facilite le développement et l'adapation des écran grâce aux media queries du CSS3 et les frameworks prêts à l'emploi sont nombreux. 
+
+L'application n'étant disponible que via les navigateurs, elle n'est pas installable sur le terminal et l'utilisateur doit être connecté à Internet pour l'utiliser. De plus, l'accès aux ressources du téléphone sont plus limitées.
 
 ### Mobile Natif
 
