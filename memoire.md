@@ -249,10 +249,6 @@ Comme vu précédemment, le JavaScript évolue énormément. Ses performances, s
 
 Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti de la machine virtuelle V8 et de la programmation événementielle de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’une solution entièrement écrite en Java à une solution totalement écrite en Node.js. 
 
-<!--
-footnote v8
--->
-
 Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven.
 
 ![Nombre de modules pour chaque langage][npmModules]
@@ -265,15 +261,15 @@ La popularité de Node.js et des applications web ont fait grimper en flèche l�
 
 Une application Web utilise un ou plusieurs langages de présentation et est interprétée par un navigateur web. Le langage JavaScript, lui aussi interprété par le navigateur, permet de rendre encore plus dynamique l'application en permettant des interactions utilisateurs de plus en plus poussées et rapides. La qualité de l'application repose alors énormément sur la performance et la précision du navigateur.
 
-Un navigateur web est composé d'un moteur de rendu (layout engine) et d'un moteur JavaScript (JavaScript engine). Le moteur de rendu interprète les langages de présentation comme HTML*/CSS*, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. 
+Un navigateur web est composé d'un moteur de rendu (*layout engine*) et d'un moteur JavaScript (*JavaScript engine*). Le moteur de rendu interprète les langages de présentation comme HTML/CSS, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. 
 
-Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML*.
+Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML.
 
 ## Mobile
 
-Si la navigation web a ete tres longtemps limité aux ordinateurs personnels, la navigation mobile est de plus en plus forte. En effet, en 2014, le nombre d'internautes utilisant un terminal mobile a depassé celui des ordinateurs personnels.
+Si la navigation web a été très longtemps limitée aux ordinateurs personnels, la navigation mobile est de plus en plus forte. En 2014, le nombre d'internautes utilisant un terminal mobile a dépassé celui des ordinateurs personnels.
 
-Il existe en réalité deux marchés sur le mobile : le mobile natif, et le mobile web. Nous allons voir la différence entre les deux et qu'est-ce que cela implique dans le développement de celles-ci.
+Il existe en réalité deux types de marché sur le mobile : le mobile natif, et le mobile web. Nous allons voir la différence entre les deux et ce que cela implique dans le développement de celles-ci.
 
 ![Nombre d'internautes mobile et PC][Mobile-web-browsing-vs-desktop-web-browsing]
 
