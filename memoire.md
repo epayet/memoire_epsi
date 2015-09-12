@@ -519,40 +519,32 @@ Cette architecture possède une forte complexité et un coût plus élevé de mi
 
 #### Description
 
-L'architecture orienté services (Service Orienté Architecture) a pour principe de proposer les fonctionnalités d'une application comme un ensemble de services. Les services possedent une interface de communication standard permettant l'invocation, la publication et la decouverte des autres services. La communication peut etre distante (réseau local ou global). 
+L'architecture orienté services (*Service Orienté Architecture*) a pour principe de proposer les fonctionnalités d'une application comme un ensemble de services. Les services possèdent une interface de communication standard permettant l'invocation, la publication et la découverte des autres services. La communication ne se fait pas via classes internes, mais uniquement via des schémas et des contrats. Elle est généralement distante (réseau local ou global), mais pas obligatoirement. Voici ses principaux attributs :
 
-Voici ses principaux attributs :
+* **Autonomie** : Chaque service est maintenu, développé, et versionné indépendamment
+* **Distribuable** : Peut être n'importe où sur le réseau tant que celui-ci supporte le protocole de communication
+* **Faible couplage** : Chaque service est indépendant des autres. Il peut être modifié ou remplacé sans problème tant que l'interface est toujours compatible
 
-* Autonomie : Chaque service est maintenu, developpe, et versionné independemment
-* Distribuable : peut etre n'importe ou sur le reseau tant que le reseau supporte le protcole de communication
-* Faible couplage : Chaque service est independant des autres. Il peut etre modifie, ou remplacé sans problemes tant l'interface est toujours compatible
-* partage de schemas et de contrats, pas de classes : pas de communication via classe interne
-
-![Passage d'un systeme non orienté service a une architecture SOA][soaArchitecture]
+![Passage d'un système non orienté service a une architecture SOA][soaArchitecture]
 
 #### Avantages
 
-* Abstraction : Les services sont autonomes et accedes via un contrat formel (couplage faible)
-* Découvrable : les services exposent une description qui permet aux autres applications et services de les localiser et d'automatiquement determiner l'interface
-* Interoperabilite : Les protocoles et formats de donnees sont bases sur les standards de l'industre. Le fournisseur et le consommateur peuvent alors etre construits et deployes sur des plateformes differentes (utilisation de langages differents possibles)
-* Réutilisation : Les services sont assez découpés pour fournir une fonctionnalité specifique, plutot que dupliquer la fonctionnalites dans plusieurs applications, ce qui supprime la duplication 
+* **Abstraction** : Les services sont autonomes et accédés via un contrat formel (couplage faible)
+* **Découvrable** : Les services exposent une description qui permet aux autres applications et services de les localiser et d'automatiquement déterminer les interfaces
+* **Interopérabilité** : Les protocoles et formats de données sont basés sur les standards de l’industrie. Le fournisseur et le consommateur peuvent alors être construits et déployés sur des plateformes différentes (utilisation de plusieurs langages possibles)
+* **Réutilisation** : Les services sont assez découpés pour fournir une fonctionnalité spécifique, plutôt que dupliquer la fonctionnalités dans plusieurs applications, ce qui supprime la duplication 
 
-#### Inconvénients et critques (et challenges ?)
+#### Inconvénients et critiques
 
-A chaque fois qu'un service interagit avec un autre service, la validation de chaque parametre d'entree prend place. Ceci augmente le temps de réponse et la charge de la machine, ce qui réduit la performance globale. De plus certains protocoles de communication sont plus lourds que d'autres (exemple : SOAP).
+À chaque fois qu'un service interagit avec un autre service, la validation de chaque paramètre d’entrée prend place. Ceci augmente le temps de réponse et la charge de la machine, ce qui réduit la performance globale. De plus certains protocoles de communication sont plus lourds que d'autres (exemple : SOAP).
 
-Meme si un SI est decoupe en services, au fil du temps, chaque service peut devenir tres large, et peut-etre meme effectuer plus de traitements qu'il devrait faire.
+Même si un SI est découpé en services, au fil du temps, chaque service peut devenir très large, et effectuer plus de traitements qu'il ne devrait faire.
 
-#### Bien pour
+Cette architecture n'est pas faite pour les applications à interface graphique ou les applications en temps réels. De plus, elle a un certain coût de mise en place.
 
-SOA is not recommended for the following type of applications:
-
-* Homogenous: Implementing SOA for applications that use the technologies of a single vendor will not be cost-effective. For example, if an application is built in Java, then it would be better to use methods of Java rather than using HTTP for inter-component communications.
-* GUI-Based: SOA would not be suitable for applications with GUI functionality, e.g. a map manipulation application. Such applications require heavy data exchange, which in turn would increase the complexity of the application if SOA is used.
-* Real-time: SOA is not desirable to be used with strictly-enforced response times since the services communicate asynchronously.
-* Stand-alone: It would be futile to invest in SOA for stand-alone non-distributed applications, which do not require request and response-based calls.
-
-Consider the SOA style if you have access to suitable services that you wish to reuse; can purchase suitable services provided by a hosting company; want to build applications that compose a variety of services into a single UI; or you are creating Software plus Services (S+S), Software as a Service (SaaS), or cloud-based applications. The SOA style is suitable when you must support message-based communication between segments of the application and expose functionality in a platform independent way, when you want to take advantage of federated services such as authentication, or you want to expose services that are discoverable through directories and can be used by clients that have no prior knowledge of the interfaces.
+<!--
+TODO si déjà parler des monolithes, dire que ça peut devenir un monolithe
+-->
 
 ### Microservices
 
