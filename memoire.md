@@ -397,38 +397,34 @@ C'est aussi une question de granularité. Un ou plusieurs styles d'architecture 
 
 Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais plus un design pattern. Il est pris en considération ici car il très utilisé dans le monde du web. Conçu pour les logiciels avec interface graphique, il a pour but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
 
-* **Modele** : Représente le coeur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
-* **Vue** : Ce avec quoi l'utilisateur interagit,  La vue n'effectue pas de traitement, elle recoit toute action de l'utilisateur et transfere au controlleur
-* **Controlleur** : Prend en charge la gestion des evenements de synchronisation pour mettre a jour la vue ou le modele et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. 
+* **Modèle** : Représente le cœur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
+* **Vue** : Ce avec quoi l'utilisateur interagit. La vue n'effectue pas de traitement, elle reçoit les actions de l'utilisateur et les transfère au contrôleur
+* **Contrôleur** : Prend en charge la gestion des événements de synchronisation pour mettre a jour la vue ou le modèle et les synchronise. Il reçoit tous les événements de la vue et enclenche les actions à effectuer.
 
 Voici donc à quoi ressemble le flux de traitement :
 
-* Chaque action utilisateur est analysée par le controleur (clic de souris, etc.)
-* Le controleur demande au modele approprié d'effectuer les traitements et notifie a la vue que la requete est traitee
-* La vue notifiée fait alors une requete au modele pour se mettre a jour (par exemple pour afficher le resultat du traitement fait par le modele)
+* Chaque action utilisateur est analysée par le contrôleur (clic de souris, etc.)
+* Le contrôleur demande au modèle approprié d'effectuer les traitements et notifie à la vue que la requête est traitée
+* La vue notifiée fait alors une requête au modèle pour se mettre a jour (par exemple pour afficher le résultat du traitement fait par le modèle)
 
-Il existe de nombreux dérivés à ce modèle (MVP, MVVM, MV*), mais restent finalement très similaires à ce modèle.
+Il existe de nombreux dérivés à ce modèle (MVP, MVVM, MV*), mais sont finalement très similaires à celui-ci.
 
-![Modèle Vue Contrôleur classique][mvc]
+![Modèle Vue Contrôleur][mvc]
 
 #### Avantages
 
-* Simplicité, efficacité et clarté : La prise en main avec une telle architecture est rapide est peu couteuse sur des petites ou moyennes applications
+* Simplicité, efficacité et clarté : La prise en main avec une telle architecture est rapide est peu coûteuse sur des petites ou moyennes applications
 * Séparation des responsabilités minimale, mais efficace
 * La modification d'une des parties n'impacte pas ou peu les autres
 * Très répandu
 
 #### Inconvénients et critiques
 
-Très souvent (généralement avec les variantes de ce modèle), la logique de l'application ne se trouve pas dans le modèle, mais dans le contrôleur, le modèle ne servant uniquement que de source de données. Ceci n'est pas vraiment un inconvénient, mais un choix. Que la logique soit dans le contrôleur ou le modèle, elle se retrouve finalement fortement couplée à celle-ci. La technologie choisie définit généralement une façon spécifique d'écrire un contrôleur ou un modèle. Ainsi, avec ce modèle, la logique de l'application se retrouve finalement fortement couplée avec la technologie choisie, ce qui rend le changement de technologie difficile.
+Très souvent dans les implémentations de ce modèle, la logique de l'application ne se trouve pas dans le modèle, mais dans le contrôleur, le modèle ne servant uniquement que de source de données. Ceci n'est pas vraiment un inconvénient, mais un choix. Que la logique soit dans le contrôleur ou le modèle, elle se retrouve finalement fortement couplée à celle-ci. La technologie choisie définit généralement une façon spécifique d'écrire un contrôleur ou un modèle. De cette manière, la logique de l'application se retrouve fortement couplée avec la technologie choisie, ce qui rend le changement de technologie difficile.
 
-Nous verrons avec les autres styles d'architecture qu'il existe finalement deux types de logiques dans une application. La logique spécifique au domaine de l'application (banque, finances, etc.), et la logique spécifique à l'application (contrôleur, service, etc.) et qu'il est généralement mieux de les séparer. 
+Nous verrons avec les autres styles d'architecture qu'il existe finalement deux types de logiques dans une application. La logique spécifique au domaine de l'application (banque, finances, etc.), et la logique spécifique à l'application (contrôleur, service, etc.) et qu'il est généralement mieux de les séparer.
 
-TODO trop tôt pour dire ça ?
-
-#### Bien pour
-
-les trucs simples ?
+Ce pattern est à utiliser lorsque l'application est très simple. Il est rapide à mettre en oeuvre et à expliquer son fonctionnement. Pour une plus grosse application avec de nombreuses évolutions, il sera plus compliqué de maintenir un tel programme, devenant fortement couplé à la technologie utilisée.
 
 ### Architecture orienté composants
 
