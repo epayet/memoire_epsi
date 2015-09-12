@@ -1338,14 +1338,6 @@ tourner l'implementation des microservices sous forme d'etapes, la derniere c'es
 
 dans la presentation du projet, dire que la deadline c'est la presentation
 
-# Glossaire {-}
-
-* lien hypertexte
-* HTTP
-* orienté prototype
-* fonction de première classe
-* multi-paradigme
-
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
 [topLanguagesGithub]: images/top-langages-github.jpg
