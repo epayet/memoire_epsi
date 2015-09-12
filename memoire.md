@@ -365,17 +365,18 @@ Créer une bonne application commence par choisir une bonne architecture logicie
 
 ## Différents styles d'architecture
 
-Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mauvais style d'architecture, juste des avantages et des inconvénients. Il faut bien les comprendre et choisir correctement en fonction du besoin. Nous n'allons pas tous les décrire dans ce mémoire, mais juste ceux pris en considération pour le POC (ou pour toute autre application web que l'on voudrait créer actuellement) et aussi ceux utilisés actuellement à Cdiscount.
+Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mauvais style d'architecture, juste des avantages et des inconvénients. Il faut bien les comprendre et choisir correctement en fonction du besoin. Nous n'allons pas tous les décrire dans ce mémoire, mais juste ceux pris en considération pour le projet (ou pour toute autre application web que l'on voudrait créer actuellement) et aussi ceux utilisés actuellement à Cdiscount.
 
 ### Description
 
-Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une definition de David Garlan and Mary Shaw dans leur livre "An Introduction to Software Architecture" :
+Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une définition de David Garlan et Mary Shaw dans leur livre "An Introduction to Software Architecture" traduite :
 
+« *... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles).* »
+
+<!--
+TODO citation et livre forme
 "family of systems in terms of a pattern of structural organization. More specifically, an architectural style determines the vocabulary of components and connectors that can be used in instances of that style, together with a set of constraints on how they can be combined. These can include topological constraints on architectural descriptions (e.g., no cycles)."
-
-Ce qui peut etre traduit par : "... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles)."
-
-TODO faire des jolis citations
+-->
 
 Voici un tableau comprenant les principaux styles d'architecture logicielles classés par catégorie.
 
@@ -386,36 +387,9 @@ Voici un tableau comprenant les principaux styles d'architecture logicielles cla
 | Domaine | DDD (Domain Driven Design) |
 | Structure | Orienté composants, Orienté objet, Architecture en couches |
 
-TODO pas joli tableau
-
-Il existe un dernier style que l'on décrira en dernier, qui se nomme les Microservices. Comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que les nouveaux apparaissent. L'architecture logicielle ne se limite généralement pas à un seul style d'architecture, c'est très souvent une combinaisons de plusieurs styles qui formeront un système logiciel complet.
+Il existe un autre style, plus récent, que l'on décrira en dernier, qui se nomme les Microservices. Comme en architecture traditionnelle, c'est souvent par le mélange d'anciens styles que de nouveaux apparaissent. L'architecture logicielle ne se limite généralement pas à un seul style d'architecture, c'est très souvent une combinaisons de plusieurs styles qui formeront un système logiciel complet.
 
 C'est aussi une question de granularité. Un ou plusieurs styles d'architecture peuvent être choisis à différents niveaux du système d'information. Cela peut aller du système d'information en lui-même jusqu'au plus petit des composants. 
-
-### Résumé des differents styles
-
-Nous allons d'abord voir un résumé de chaque style cité auparavant, puis détailler les plus importants utilisé dans le monde du web et ceux décris dans ce document. TODO en fait c'est les points clés
-
-| Style d'architecture | Description |
-| --- | --- |
-| Client/Serveur | Sépare le systeme en deux applications distinctes ou le client envoie des requetes au serveur. Tres souvent, le serveur est l'intermediaire avec une base de donnees et contient un peu de logique de l'application. TODO pas joli (originellement il disait que the server is a database with application logic represented as stored procedures)|
-| Architecture orienté composents | Décompose l'application en composants foncionnels réutilisables exposant des interfaces de communication bien défini. |
-| DDD (Domain Driven Design) | Un style d'architecture orienté objet concentré sur la modélisation d'un domaine métier et sur la définition d'objets métiers (TODO y'a un S ?) basés sur des entités en rapport avec le domaine métier. TODO ca veut rien dire nan ? |
-| Architecture en couches | Partitionne l'application en plusieurs couches (groupes logiques) | 
-| Orienté evenements | Style d'architecture utilisant un systeme d'evenements pouvant envoyer et recevoir des messages en utilisant un ou plusieurs canal de communication. De cette maniere, les applications peuvent interagir sans connaitre en detail les autres applications (couplage faible). |
-| N-tiers, 3-tiers | Sépare les fonctionnalités de l'application un plusieurs segments de la meme maniere que l'architecture en couches, a la difference que dans ce cas, chaque segment est situé sur une machine differente. TODO c'est vrai ca ? parler de n+1 ? |
-| Orienté objet | Paradigme bien connu basé sur la division des responsabilités d'une application ou d'un systeme en objets individuels et reutilisables, chacun comprenant les donnees et le comportement relevant a cet objet. |
-| SOA (Service-Oriented Architecture) | Refere aux applications qui exposent et consument des fonctionnalités a travers un service utilisant des contrats et des messages. |
-
-TODO en fait le SPA c'est un client serveur parce que ca separe vraiment du coup
-TODO ca se dit vraiment en francais le systeme ?
-TODO style d'architecture on dit aussi pattern
-TODO Message bus en fait c'est orienté eventements nan ?
-TODO integrer les microservices dans le tableau ou faire pouf apres y'a eu les microservices
-TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
-TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
-TODO traduire les noms en anglais genre SOA
-TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau plan, annexe ?
 
 ### MVC
 
@@ -1328,10 +1302,35 @@ Mot clés : maintenable, assurance qualité
     * scalabilité difficile
 
 TODO parler du probleme du monolithe quelque part ?
+TODO les tableaux sont pas jolis
+TODO ajouter DDD vite fait dans la biblio pour la traduction en français
 
 si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
 
 tourner l'implementation des microservices sous forme d'etapes, la derniere c'est genre avec plein de monitoring, voir meme du scaling auto, mais bon ca c'est de la competence de devops
+
+### Résumé des differents styles
+
+| Style d'architecture | Description |
+| --- | --- |
+| Client/Serveur | Sépare le systeme en deux applications distinctes ou le client envoie des requetes au serveur. Tres souvent, le serveur est l'intermediaire avec une base de donnees et contient un peu de logique de l'application. TODO pas joli (originellement il disait que the server is a database with application logic represented as stored procedures)|
+| Architecture orienté composents | Décompose l'application en composants foncionnels réutilisables exposant des interfaces de communication bien défini. |
+| DDD (Domain Driven Design) | Un style d'architecture orienté objet concentré sur la modélisation d'un domaine métier et sur la définition d'objets métiers (TODO y'a un S ?) basés sur des entités en rapport avec le domaine métier. TODO ca veut rien dire nan ? |
+| Architecture en couches | Partitionne l'application en plusieurs couches (groupes logiques) | 
+| Orienté evenements | Style d'architecture utilisant un systeme d'evenements pouvant envoyer et recevoir des messages en utilisant un ou plusieurs canal de communication. De cette maniere, les applications peuvent interagir sans connaitre en detail les autres applications (couplage faible). |
+| N-tiers, 3-tiers | Sépare les fonctionnalités de l'application un plusieurs segments de la meme maniere que l'architecture en couches, a la difference que dans ce cas, chaque segment est situé sur une machine differente. TODO c'est vrai ca ? parler de n+1 ? |
+| Orienté objet | Paradigme bien connu basé sur la division des responsabilités d'une application ou d'un systeme en objets individuels et reutilisables, chacun comprenant les donnees et le comportement relevant a cet objet. |
+| SOA (Service-Oriented Architecture) | Refere aux applications qui exposent et consument des fonctionnalités a travers un service utilisant des contrats et des messages. |
+
+TODO en fait le SPA c'est un client serveur parce que ca separe vraiment du coup
+TODO ca se dit vraiment en francais le systeme ?
+TODO style d'architecture on dit aussi pattern
+TODO Message bus en fait c'est orienté eventements nan ?
+TODO integrer les microservices dans le tableau ou faire pouf apres y'a eu les microservices
+TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
+TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
+TODO traduire les noms en anglais genre SOA
+TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau plan, annexe ?
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
