@@ -448,35 +448,33 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 * **Facilité de développement** : Les composants exposent des interfaces définissant une certaine fonctionnalité permettant de développer sans impact avec le reste du système (états internes plutôt que variables globales)
 * **Réutilisable** : Comme nous l'avons vu, les composants peuvent être réutilisés dans un autre scénario ou dans d'autres applications
 
-#### Inconvénients et critiques (et challenges ?)
+#### Inconvénients et critiques
 
 Le niveau d'abstraction étant un peu plus élevé que l'orienté objet, ce style peut être un peu plus complexe à utiliser. Ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Il n'est donc généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un système complet. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et bien l'utiliser.
 
-### Architecture orienté évènements
+### Architecture orienté événements
 
 #### Description
 
-L'architecture orienté evenements (en anglais "Message Bus Architecture"), utilise un systeme permettant de recevoir et d'envoyer des messages en utilisant un ou plusieurs canaux de communication. On parle généralement un bus de message central, et les communications se font tres souvent de maniere asynchrone. Ainsi, l'application peut interagir sans avoir le besoin de connaitre les détails des autres applications du systeme (couplage faible).
+L'architecture orienté événements (*Message Bus Architecture*), utilise un système permettant de recevoir et d'envoyer des messages en utilisant un ou plusieurs canaux de communication. Il y a généralement un bus de message central, et les communications peuvent se faire de manière asynchrone. Ainsi, l'application peut interagir sans avoir le besoin de connaitre les détails des autres applications du système (couplage faible).
 
 ![Architecture orienté evenements][messageBusArchitecture]
 
 #### Avantages
 
-* Extensible : Les appliciations peuvent etre enlevés ou rajouté sans avoir d'impact sur les applis existantes
-* Faible complexité : Les applications ont uniquement besoin de savoir comment communiqer avec le bus et non pas avec le reste du systeme
-* Flexibilité : La combinaison d'applications formant un systeme peut etre changée et manipulée a tout moment tout comme le pattern de communication
-* Faible couplage : Chaque application n'a qu'une seule dependance : le bus. Le comportement interne est independant. ca peut meme etre un autre langage
-* Scalabilité : il peut y avoir plusieurs instances d'une meme appli attachée au bus pour accelerer ou gerer plusieurs requetes a la fois
+* **Extensible** : Les applications peuvent être enlevées ou rajoutées sans avoir d'impact sur les autres applications existantes
+* **Faible complexité** : Les applications ont uniquement besoin de savoir comment communiquer avec le bus et non pas avec le reste du système
+* **Flexibilité** : La combinaison d'applications formant le système et le pattern de communication peuvent être changés et manipulés à tout moment
+* **Faible couplage** : Chaque application n'a qu'une seule dépendance : le bus. Le comportement interne et le langage utilisé sont indépendants. Cela permet une forte diversité technologique
+* **Scalabilité** : Il peut y avoir plusieurs instances d'une même application attachés au bus pour accélérer le processus ou gérer plusieurs requêtes à la fois
 
-#### Inconvénients et critques (et challenges ?)
+#### Inconvénients et critiques
 
-Il n'est pas aisé de choisir un pattern de communication. Il ne fait pas confondre "message" et "evenement". Un évenement est lorsque qu'il s'est passé quelque chose, tandis qu'un message peut etre tout autre chose. Par exemple, un message peut contenir une demande d'action a un autre composant, ce peut augmenter le couplage des applications. Il est recommendé d'utiliser uniquement des evenements.
+Il n'est pas aisé de choisir un pattern de communication. Il ne fait pas confondre "message" et "événement". Un événement est lorsque qu'il s'est passé quelque chose, tandis qu'un message peut être tout autre chose. Par exemple, un message peut contenir une demande d'action à un autre composant, ce qui peut augmenter le couplage entre les applications. Un événement ne doit pas être dépendant d'un application.
 
-L'evolution des evenements peut etre difficile si un changement s'opere sur les proprietés de celles-ci. Un ajout ne devrait pas comporter de soucis, mais la modification ou la suppression d'un champ peut potentiellement avoir des repercussions sur le reste du systeme. C'est pour cela que choisir un bon pattern de communication permettant les evolutions est important.
+L’évolution des événements peut être difficile si un changement s’opère sur les propriétés de celles-ci. La modification ou la suppression d'un champ peut potentiellement avoir des répercussions sur le reste du système. C'est pour cela que choisir un bon pattern de communication permettant les évolutions est important. L'ajout de propriétés sur un événement n'aura pas d'impact sur le reste du système.
 
-#### Bien pour
-
-??
+La seule dépendance de chaque application est donc le bus central. Il faut bien penser à abstraire la technologie utilisée pour faciliter le changement de technologie du bus (elles sont nombreuses).
 
 ### Architecture orienté domaine (DDD)
 
