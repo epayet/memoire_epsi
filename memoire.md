@@ -291,13 +291,13 @@ Au niveau du développement, le langage utilisé est défini par le système d'e
 
 ### Mobile hybride
 
-Une approche plus récente alliant les deux monde est ce que l'on appelle le mobile hybride. L'idée est de créer des applications mobiles en utilisant les technologies du web. Le but est d'avoir un seul code sur un seul type de technologie, mais installable sur plusieurs terminaux, meme possédant des systemes d'exploitation differents. De nombreux outils sont disponibles et permettent cette possibilité. Les couts de développement sont donc énormement diminués.
+Le mobile hybride est une approche récente alliant les deux mondes. L'idée est de créer des applications mobiles sur plusieurs terminaux en utilisant uniquement les technologies du web, qu'importe le système d'exploitation. De nombreux outils sont disponibles et les coûts de développement sont grandement diminués.
 
-L'idée est d'utiliser ce que l'on appelle une webview a l'interieure d'une application native. Celle-ci interpretera l'application comme un navigateur web le ferait, permettant en plus l'utilisation des fonctionnalités natives du téléphone comme l'appareil photo, le GPS, etc.
+Cela est possible grâce à la technologie des *webviews*. C'est en fait un navigateur intégré dans une application native. Les principaux systèmes d'exploitation du marché possèdent cette technologie. L'application est donc exactement la même sur tous les terminaux et un seul code est utilisé. Elles peuvent en plus de cela, utiliser les fonctionnalités natives du téléphone comme l'appareil photo, le GPS, etc.
 
-Les seuls inconvénients sont que le look & feel sera similaire sur tous les terminaux, utilisant beaucoup moins la charte graphique native du téléphone. Les performances sont aussi beaucoup plus faibles qu'une vraie application native. Cela ne se ressent que dans certains cas, ou les performances sont critiques pour une application (des jeux vidéos par exemple).
+Les seuls inconvénients sont que le *look & feel* sera similaire sur tous les terminaux, utilisant beaucoup moins la charte graphique native du téléphone. Les performances sont aussi plus faibles qu'une application native. Cela ne se ressent que dans certains cas où les performances sont critiques (jeux vidéos, applications en temps réel, etc.).
 
-Finalement, cela permet d'avoir une autre alternative moins couteuse pour créer des applications mobiles natives. Si les inconvénients ne sont pas dérangeant pour le cas d'utilisation, cette alternative est alors tres viable.
+C'est finalement une alternative moins coûteuse pour créer des applications mobiles natives. Selon les cas d'utilisation, elle est fortement envisageable.
 
 ## Projet de démonstration : POC
 
