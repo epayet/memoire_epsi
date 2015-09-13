@@ -755,7 +755,7 @@ SOAP a été utilisé pendant très longtemps et de nombreux web services écrit
 
 Contrairement a SOAP, qui est un protocole a part entière, REST (*Representational State Transfer*) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. Le protocole HTTP est utilisé, et permet de respecter tous les principes de l'architecture.
 
-REST est une architecture orientée ressource (contrairement à SOAP qui est orienté méthodes). Par exemple, une API web représentera un client comme une ressource, et sera manipulable a cette adresse :`http://www.foo.com/Clients`.  Les verbes HTTP (GET, POST, PUT, DELETE.) permettront de récupérer, ajouter, modifier ou supprimer cette ressource.
+REST est une architecture orientée ressource (contrairement à SOAP qui est orienté méthodes). Par exemple, une API web représentera un client comme une ressource, et sera manipulable a cette adresse :`http://www.foo.com/Clients`.  Les verbes HTTP (GET, POST, PUT, DELETE) permettront de récupérer, ajouter, modifier ou supprimer cette ressource.
 
 REST est une architecture dite sans état (*stateless*). Un serveur RESTful peut ainsi répondre à des requêtes venant de plusieurs clients, et il est plus aisé de multiplier les serveurs. REST est généralement utilisé lors d'une mise en place d'une mise en place des microservices grâce a sa légèreté.
 
@@ -763,31 +763,33 @@ REST est une architecture dite sans état (*stateless*). Un serveur RESTful peut
 
 #### SOA + architecture en couches
 
-Cdiscount utilise actuellement une architecture orientée service. Chaque service utilise une architecture en couches. Nous avons vu les avantages et les inconvenients de chacun. Si la séparation fonctionnelle etait claire au debut, aujourd'hui chaque service s'apparente de plus en plus a un monolithe. La société est en pleine reflexion pour casser ses monolithes et avoir une architecture plus souple.
+Cdiscount utilise actuellement une architecture orientée service et chaque service utilise une architecture en couches. Nous avons vu les avantages et les inconvénients de chacun. Si la séparation fonctionnelle était claire au début, aujourd'hui chaque service s'apparente de plus en plus a un monolithe. La société est en pleine réflexion pour casser ses monolithes et avoir une architecture plus souple.
 
 #### Microservices
 
-C'est l'architecture vers laquelle Cdiscount veut tendre. Elle etudie actuellement une strategie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tache aisée et nous allons proceder au fur et a mesure.
+C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes.
 
-TODO choix d'architecture avec S ou pas ?
-TODO isomorphique ??
+## Ce qu'il faut retenir
 
-## Idéologie commune (ce qu'il faut retenir)
+Nous avons vu de nombreux styles d'architecture et les spécificités du monde du web. Les principes clés à retenir selon moi et ce que nous allons appliqer pour notre projet sont les suivants : 
 
-* vu plein de choses mais ce qu'il faut retenir
-* le monolithe c'est pas bien
-* le fait de separer client serveur ca casse deja un peu, mais c'est possible d'avoir un cote serveur aussi
-* l'archi microservices ca casse encore plus
-* architecture > techno
-* 2 types de logiques et que c'est bien de les separer
-* donc grande inspiration du DDD au moins pour ca
-* donc separer la logique du domaine de la logique de l'appli ca decouple bien. et les microservices encore plus => diversité technologique et efficace, bon decoupage fonctionnel et deploiements faciles, facile a comprendre
-* c'est pas forcement facile a implementer bien d'un coup mais faut faire au fur et a mesure, mais faut bien avoir ca en tete. choisir une methodo qui permet de faire ca aussi, aller sur la mauvaise pente c'est rapide et beaucoup de dette technique apres.
+### Le monolithe, à éviter
 
-TODO Je dis que tel style est meilleur que tel autre. Dans tous les cas ou juste celui du POC ? 
-TODO parler de l'archi en couche parce que cdiscount utilise ca ? critiquer celle de cdiscount ? Si oui comparer au MVC un peu
-TODO qu'est-ce qui est appliqué au POC, c'est assez clair ?
-TODO monolithe
+Les choix d'architecture que nous faisons ont pour but d'éviter le monolithe. Le fait de séparer le client et le serveur sépare déjà le processus en deux, mais ce n'est pas suffisant. Pour faire en sorte que le serveur ne devienne pas lui-même un monolithe, il faut que chaque service soit le plus petit et simple possible (KISS). L'architecture se rapproche le plus de ce concept est l'architecture des microservices.
+
+### Deux types de logiques distinctes
+
+S'il y a bien un concept principal à retenir du DDD, c'est qu'il existe deux types de logiques : la logique du domaine de l'application et la logique applicative. La logique du domaine est la modélisation la plus proche du métier, et c'est le cœur de l'application. La logique applicative reliera la logique du domaine à une certaine pile technologique (interface graphique, web services, etc.). Le fait de les séparer permet de coller n'importe quelle pile technologique au métier, et d'en changer facilement.
+
+### Architecture > technologies
+
+La diversité technologique possède de nombreux bénéfices. Un bon choix d'architecture est primordial pour permettre cela. Il faut donc d'abord bien choisir son architecture avant de foncer tête baissée dans une certaine technologie. Certes, la technologie est ce qu'il y a de plus concret pour réaliser une application, mais il ne faut pas perdre de vue qu'elle évolue très vite et qu'elle risque de changer rapidement. 
+
+Une architecture permettant une permutation facile de technologies, est une architecture qui durera. Utiliser des nouvelles technologies autant que possible garde les développeurs affûtés et accroît leur créativité. 
+
+### Résumé des choix d'architecture du projet
+
+Pour notre projet, l'application client sera une SPA basée sur une architecture orientée composants couplée avec une architecture orientée événements. Le serveur sera un web service RESTful basé sur l'architecture des microservices. Nous allons implémenter les microservices au fur et à mesure car c'est pour nous une architecture nouvelle et plus complexe à mettre en oeuvre.
 
 # Choix technologiques
 
