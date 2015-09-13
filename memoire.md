@@ -709,24 +709,24 @@ source javascript google
 
 ### Choix de styles d'architecture
 
-Au niveau du front-end, l'architecture MVC est tres répendue. Nous avons vu les avantages et les inconvenients de celui-ci. Nous allons voir que d'autres possibilités apparaissent avec les derniers standards du web.
+Au niveau du front-end, le pattern MVC est très répandu, le pattern le plus utilisé pour les interfaces graphiques. Nous avons vu les avantages et les inconvenients de celui-ci. D'autres possibilités sont apparues avec les derniers standards du web.
 
 #### Architecture orienté composants
 
-Cette architecture devient de plus en plus répandue et le web evolue de plus en plus sur cette solution. L'implémentation de cette architecture au niveau du front-end est disponible avec ce que l'on appelle des web components (composants web). Cela permet l'encapsulation et l'interopérabilité d'un element HTML individuel. Voici les propriétés d'un composant web standard :
+Cette architecture est de plus en plus utilisé dans le monde du web grâce aux *web components* (composants web). Un composant web est un élément HTML individuel encapsulant certaines fonctionnalités, et réutilisable plusieurs fois dans des contextes différents. Voici une liste des différentes propriétés d'un composant web standard :
 
-* Elements et proprietes personnalisées : Permet la création d'element HTML autres que ceux standards (p, a, h1, h2, etc.) avec des proprietés propres
-* Shadow DOM et CSS scopé : Isolation du CSS et du DOM par composant web (le CSS d'un composant n'affectera pas le reste de la page) 
-* Imports HTML : Permet l'import d'autres composants via le code HTML
-* HTML Templates : Un composant s'écrit via un fichier HTML
+* **Éléments et propriétés personnalisés** : Permet la création d’élément HTML autres que ceux standards (p, a, h1, h2, etc.) avec des propriétés propres et personnalisables
+* ***Shadow DOM* et *scoped CSS*** : Création d'un nouveau noeud isolé du DOM, ayant son propre CSS n'affectant pas le reste de la page 
+* **Imports HTML** : Permet l'import d'autres composants via le code HTML
+* **HTML Templates** : Un composant s'écrit via un fichier HTML
 
-Si les navigateurs aujourd'hui n'implementent pas tous encore ces prochains standards du web, celui-ci tend sur cette lignée. Il est possible d'utiliser des aujourd'hui les composants web grace a des polyfills ou des frameworks definissant leur propre maniere de creer des composants web.
+Tous les navigateurs n'implémentent pas ces derniers standards du web, mais il est possible de les utiliser dès aujourd'hui grâce a des polyfills ou des frameworks définissant leur propre manière de créer des composants web.
 
-#### Architecture orienté évènements
+#### Architecture orienté événements
 
-Les composants etant independants et autonomes, une facon de relier le tout est d'utiliser un bus d'evenements central, et donc l'architecture orienté evenements. Il est aisé d'en creer un en JavaScript, et certains frameworks le proposent. Cela permet de profiter des avantages de ces deux architectures.
+Les composants étant indépendants et autonomes, une façon de relier les relier est d'utiliser un bus d’événements central (architecture orienté événements). Il est aisé d'en créer un soi-même en JavaScript, et certains frameworks le proposent. Cela permet de profiter des avantages de ces deux architectures.
 
-Les facons de faire sont nombreuses et le choix dependra finalement beaucoup des projets, du styles de developpement des equipes, etc. 
+Les possibilités sont nombreuses, et les choix doivent êtres faits selon les équipes et les projets.
 
 ## Spécificités du Back-end
 
