@@ -384,6 +384,12 @@ Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mau
 
 ### Description
 
+<!--
+TODO vérifier qu'il n'a a pas de redit entre les attributs et les avantages. peut être faire des phrases à la place des attributs
+TODO pas trop parler de Cdiscount dans cette partie ? abstrait
+TODO remplacer testing pas testabilité
+-->
+
 Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une définition de David Garlan et Mary Shaw dans leur livre "An Introduction to Software Architecture" traduite :
 
 « *... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles).* »
@@ -453,28 +459,16 @@ Chaque couche peut être sur un même tiers (même ordinateur physique), ou sur 
 
 #### Avantages : 
 
-* **Abstraction** : 
-* **Isolation** : 
-* **Séparation des responsabilités** :
-* **Performance** : 
-* **Réutilisabilité** :
-* **Testabilité** : 
-
-* Abstraction. Layered architecture abstracts the view of the system as whole while providing enough detail to understand the roles and responsibilities of individual layers and the relationship between them. Layers allow changes to be made at the abstract level. You can increase or decrease the level of abstraction you use in each layer of the hierarchical stack.
-
-Isolation. Allows you to isolate technology upgrades to individual layers in order to reduce risk and minimize impact on the overall system.
-
-Manageability. Separation of core concerns helps to identify dependencies, and organizes the code into more manageable sections.
-
-Performance. Distributing the layers over multiple physical tiers can improve scalability, fault tolerance, and performance.
-
-Reusability. Roles promote reusability. Lower layers have no dependencies on higher layers, potentially allowing them to be reusable in other scenarios.
-
-Testability. Increased testability arises from having well-defined layer interfaces, as well as the ability to switch between different implementations of the layer interfaces. Separated Presentation patterns allow you to build mock objects that mimic the behavior of concrete objects such as the Model, Controller, or View during testing.
+* **Abstraction** : L'architecture donne une bonne vue d'ensemble du système et il est facile de comprendre le rôle de chaque couche et les relations entre elles. Les couches hautes ont un niveau plus fort d'abstraction
+* **Isolation** : Il est possible d'isoler techniquement les couches
+* **Séparation des responsabilités** : Les dépendances entre les couches sont claires et facilement gérables 
+* **Performance** : Séparer les couches en plusieurs tiers (architecture multi-tiers) permet d'augmenter les performances
+* **Réutilisable** : Chaque couche est réutilisable une fonctionnalité de la couche supérieure
+* **Testabilité** : Les interfaces de chaque couche facilite la testabilité
 
 #### Inconvénients
 
-* un monolithe est une architecture en couche. un seul process, plusieurs couches = monolithe
+Si le fait de séparer le système en plusieurs couches est une bonne idée pour ne pas avoir un seul gros système, chaque couche peut devenir un monolithe. Généralement, chaque couche contient plusieurs fonctionnalités et sont dans le même processus. On assimile beaucoup cette architecture à un monolithe.
 
 ### Architecture orienté composants
 
@@ -501,8 +495,6 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 #### Inconvénients et critiques
 
 Le niveau d'abstraction étant un peu plus élevé que l'orienté objet, ce style peut être un peu plus complexe à utiliser. Ce style ne se concentre pas sur les protocoles de communication, la gestion d'état, etc. Il n'est donc généralement pas utilisé seul. Il est souvent combiné avec d'autres styles pour créer un système complet. Ainsi, pour tirer profit de ce style, il faut bien le comprendre et bien l'utiliser.
-
-TODO bien déocupé, pas de monolithe
 
 ### Architecture orienté événements
 
@@ -592,11 +584,7 @@ L'architecture orienté services (*Service Orienté Architecture*) a pour princi
 
 Même si un SI est découpé en services, au fil du temps, chaque service peut devenir très large, et effectuer plus de traitements qu'il ne devrait faire.
 
-Cette architecture n'est pas faite pour les applications à interface graphique ou les applications en temps réels. De plus, elle a un certain coût de mise en place.
-
-<!--
-TODO ça découpe un peu, mais ça peut monolither quand même
--->
+Cette architecture n'est pas faite pour les applications à interface graphique ou les applications en temps réels. De plus, elle a un certain coût de mise en place. Elle découpe beaucoup le système, et permet un peu plus d'éviter les monolithes. Cependant, chaque service peut devenir un monolithe à lui seul au fil du temps.
 
 ### Microservices
 
@@ -616,7 +604,7 @@ Les microservices se rapprochent beaucoup de l'architecture SOA, mais avec une a
 * SOA : Intègre différentes applications comme un ensemble de services 
 * Microservices : Architecture chaque application comme un ensemble de services
 
-La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Plus un service sera petit, moins il aura de chance d'évoluer en un monolithe. Voici une liste des différents attributs de cette architecture :
+La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Plus un service sera petit, moins il aura de chance d'évoluer en un monolithe. Le principe très simple est le suivant : plus un service est petit, moins il sera monolithique au fil du temps. Voici une liste des différents attributs de cette architecture :
 
 <!--
 TODO citation ("Do one thing and do it well")
@@ -643,22 +631,14 @@ La décomposition fonctionnelle d'une application en microservices n'est pas tac
 
 Cette architecture impose une forte complexité opérationnelle (configuration, déploiement, etc.). Une automatisation des tâches de déploiement (déploiement continu) devient nécessaire. Il faut rajouter à cela une bonne surveillance (monitoring).
 
-Cette architecture permet une scalabilité très précise, mais impose le développement distribué. Ainsi il faut savoir gérer : 
+Si la diversité technologique est renforcée avec cette architecture, il est demandé aux équipes de développement de maîtriser plusieurs technologies et langages. Cette architecture permet une scalabilité très précise, mais impose le développement distribué. Ainsi il faut savoir gérer : 
 
 * Donnée décentralisée
 * Communication entre les services
 * Gérer l’échec d'un microservice
-* Testing
+* Gestion des tests
 
 Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
-
-<!--
-TODO le but même des microservices, c'est de faire le contraire des monolithes
-TODO maitrise de différentes technologies et langages
-TODO vérifier qu'il n'a a pas de redit entre les attributs et les avantages. peut être faire des phrases à la place des attributs
-TODO pas trop parler de Cdiscount dans cette partie ? abstrait
-TODO remplacer testing pas testabilité
--->
 
 ## Spécificités du Front-end
 
