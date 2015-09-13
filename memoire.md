@@ -666,7 +666,7 @@ On parle d'une application web traditionnelle lorsque la formation de la vue (HT
 
 L'HTML étant un document statique, le JavaScript est généralement utilisé pour rendre l'expérience utilisateur plus intéressante en modifiant la structure de l'HTML (via le DOM) et permettre des effets de type animation, etc.  Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont rechargés à chaque demande de page, car le serveur doit les régénérer.
 
-#### Critiques de l'architecture
+#### Critiques 
 
 Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avancés. Nous allons cependant voir les limites de celles-ci.
 
@@ -676,74 +676,36 @@ Le client doit charger la page HTML à chaque fois qu’il navigue entre les pag
 
 Ce type d'applications est très souvent *stateful*. Il est commun lors du développement d'application web traditionnelle de stocker des variables en session pour chaque utilisateur (panier, etc.). Nous avons vu que cela complexifie beaucoup l'application, surtout si l'on veut ajouter des serveurs.
 
-Ce type d'applications convient très bien pour les applications web ayant très peu d'interactions avec le client, et où le fait d'être une application monolithique et *stateful* n'est pas dérangeant. Cela correspond à une poignée de sites web comme un site statique, présentation d'une produit, etc.
+Ce type d'applications convient très bien pour les applications web simples ayant très peu d'interactions avec le client, et où le fait d'être une application monolithique et *stateful* n'est pas dérangeant. Cela correspond à une poignée de sites web comme un site statique, présentation d'une produit, etc.
 
 ### Passage aux Single Page Application
 
 #### Description
 
-Le javascript ayant évolué, permet des interactions plus dynamiques avec un serveur grâce à l’AJAX*. L’AJAX permet au javascript de lancer une requête http non bloquante (asynchrone) et d’avoir le résultat de la requête sans avoir à recharger la page.
+Les évolutions récentes du JavaScript ont changé complètement les méthodes de développement d'applications web grâce aux performances des derniers moteurs JavaScript et à l’interaction facilitée avec un serveur via AJAX. Il existe désormais un nouveau type d'applications web, les *Single Page Applications* (SPA). 
 
-Cet atout, combine a la performance des recent moteurs javascript ont permis l’apparition d’un nouveau type d’applications, les Single Page Applications (SPA). C’est une application permettant à l’utilisateur d’avoir une expérience dynamique et non bloquante (proche des applications de bureau). En effet, l’utilisateur ne charge qu’une seule fois les fichiers de l’application (HTML/CSS et surtout Javascript). Le javascript s’occupe ensuite de changer la structure des pages en
-fonction des actions de l’utilisateur. Les communications serveur se font par AJAX et ne
-demandent pas le rechargement de la page. 
+L'AJAX permet de lancer une requête HTTP non bloquante (asynchrone) et d'avoir le résultat de la requête sans avoir à recharger la page. Les navigateurs récents et leurs moteurs JavaScript sont capable de gérer eux-mêmes totalement la vue en changeant la structure des pages en fonction des actions du l'utilisateur. L'expérience est alors plus dynamique et non bloquante, et donc plus proche des applications de bureau.
 
-Nous avons vu qu'avec l'architecture traditionnelle et le rendu cote serveur, la gestion de la vue et des donnees est confuse. Le but ici est d'avoir reelement deux applications totalement differentes. L'une est le client (la vue), comprenant toutes les interactions avec l'internaute (HTML/CSS/JavaScript), et l'autre est le serveur, comprenant la logique metier faisant abstraction de tout ce qui est visuel. Le serveur devient ce que l'on appelle commenement un web service, pouvant servir plusieurs types de client.
+Ce type d'application sépare clairement l'interface graphique (client) et des traitements non visuels (serveur) tels que la gestion des données en deux applications différentes (2 tiers) pouvant utiliser des technologies différentes. Ce dernier apparaît généralement sous la forme de web service, pouvant servir plusieurs types de clients. Les moyens de communication sont généralement légers (JSON, XML, etc.). N'ayant plus à former la vue, la charge des serveurs est aussi grandement diminuée.
 
 ![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
 
-TODO refacto + archit ttradi
+#### Critiques
 
-#### Avantages
+L'application n'ayant qu'un seul point d’entrée, celle-ci peut être un peu plus longue a charger au début. Ceci vient du fait que le navigateur doit complètement charger les frameworks dont il est dépendant avant de pouvoir débuter l'application. Après ce chargement initial, l'application est cependant très fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilisés sont très souvent les mêmes et sont souvent mis en cache.
 
-##### Un meilleur découplage
+Ce type d'application repose entièrement sur le JavaScript. Si auparavant il était très peu utilisé, voir facultatif, il est désormais obligatoire pour faire fonctionner ce genre d'applications. On peut cependant considérer qu’aujourd’hui, tous les internautes ont le JavaScript d'activé. 
 
-Le fait d'avoir réellement deux applications différentes (serveur et client) rend plus facile le développement (couplage faible*). Il y a plusieurs avantages a cela. 
+Les moteurs de recherches ou les outils d'analyse sont grandement basées sur le modèle des applications traditionnelles. De nombreux moteurs de recherche n’exécutent pas de JavaScript et ne peuvent indexer les SPA. Les outils d'analyse de page web utilisent généralement le chargement de nouvelles pages comme unité d'analyse. C'est désormais beaucoup moins pertinent avec les applications comprenant un seul point d'entrée. 
 
-D'une part, l'architecture globle de l'application est beaucoup plus claire. Il n'y a plus de confusion entre le serveur qui doit s'occuper du chargement de la vue et le client qui doit rendre ce contenu statique plus dynamique. Le serveur ne sert finalement que les donnees.
+Si les standards du web ont étés conçus à la base pour les applications traditionnelles, c'est en cours de changement. Les SPA sont de plus en plus communes et évoluent dans ce sens. Par exemple, le moteur de recherche le plus utilisé Google a récemment intégré le JavaScript lors de son processus d'indexation.
 
-D'autre part, la communication entre le client et le serveur s'effectuant generalement de maniere textuelle (json, xml, etc.*) via le protocole HTTP (on appelle cela un web service), cela permet d'avoir des technologies independantes. La migration d'un langage ou d'une technologie du cote serveur est alors facilitée. 
+Ce type d'applications convient très bien pour les applications web avec beaucoup d'interactions utilisateur avec un meilleur dynamisme. De nombreuses applications très connues utilisent déjà ce modèle comme Gmail (application de gestion de mails), Facebook, Twitter (réseaux sociaux), etc.
 
-De plus, avec cette architecture, il est possible de facilement reutiliser le serveur dans un autre contexte avec un autre client. Il est alors plus aisé de creer un client natif mobile par exemple. Il suffit de refaire l'interface. TODO c'est moche comme phrase. 
-
-##### Des performances améliorées
-
-Le fait que le serveur ne se charge plus de former la vue, mais que des donnees de maniere textuelle soulage grandement la charge des serveurs. L'application web utilise ainsi les ressources du navigateurs pour former la vue. Cela est possible grace aux récentes avancées du JavaScript.
-
-Nous avons vu la difference entre un programme stateful et stateless (TODO c'est vrai ?). Nous avons aussi vu que l'architecture traditionnelle pousse a l'utilisation du stateful du cote du serveur. Sans etre une regle, a l'inverse, l'architecture SPA pousse a l'architecture stateless. Cela facilite grandement la scalabilite horizontale et permet d'avoir des performances grandement ameliorees du cote du serveur aussi.
-
-#### Inconvenients
-
-Cette architecture est finalement beaucoup plus evoluee et fonctionne tres differemment de l'architecture traditionnelle. Les standards du web et les navigateurs ont etes concus pour l'architecture traditionnelle et ce changement d'architecture apporte quelques difficultés. Cependant, celle-ci va de plus en plus devenir la norme et les standards ainsi que les navigateurs evoluent dans ce sens. 
-
-TODO dire ca a la fin p e
-
-##### JavaScript obligatoire
-
-Pendant tres longtemps, le JavaScript etait tres peu utilisé et il etait meme facultatif. Les dernieres applications web reposant entierement sur ce dernier, les internautes se doivent de l'avoir activé pour utiliser les appliactions web. Ceci est de moins en moins problématique, car il est généralement activé par défaut. On peut aujourd'hui considérer que tous les internautes ont le JavaScript d'activé. 
-
-##### Outils habituels du web a adapter
-
-Si les applications web changent, les outils gravitant autour se doivent aussi de changer. Par exemple les moteurs de recherche qui indexent les sites web (SEO) n'executent généralement pas de JavaScript, or comme nous l'avons vu, celui-ci est tres souvent essentiel. Recemment, le moteur de recherche le plus utilise Google integre l'utilisation du JavaScript lors de l'indexation des pages.
-
-Les outils d'analyse de trafic Web doivent aussi s'adapter. En effet, ceux-ci se basent beaucoup sur le chargement de nouvelles pages lors de son analyse, ce qui est beaucoup moins pertinant avec une architecture Single Page.
-
-TODO des chiffres p e pour dire que Google est le plus utilise
-
-##### Chargement de l'application un peu plus lourd
-
-L'application n'ayant qu'un seul point d'entree, celle-ci peut etre un peu plus longue a charger au debut. Ceci vient du fait que le navigateur doit completement charger les frameworks dont il est dependant avant de pouvoir debuter l'application. Apres ce chargement initial, l'application est cependant tres fluide, n'ayant pas le besoin de recharger plus tard. De plus, les frameworks utilises sont tres souvent les memes et sont souvent mis en cache.
-
-Finalement que des habitudes de développement a changer. Mais c'est dans le bon sens. evolution evolution
-
-TODO conclusion ?
-TODO refacto 
-TODO avantages inconvenients sur http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/
-TODO isomorphique ?
-
-* Bien pour les applications de type:
-    * Mail (Gmail)
-* Dire dans quel cas c'est mieux quel archi quelque part avec des exemple p e
+<!--
+insérer footnotes pour les chiffres de Google
+source javascript google
+-->
 
 ### Choix de styles d'architecture
 
