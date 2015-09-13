@@ -793,15 +793,13 @@ Pour notre projet, l'application client sera une SPA basée sur une architecture
 
 # Choix technologiques
 
-Maintenant que nous avons decidé quelle architecture mettre en place pour note projet, ainsi que les differents principes a retenir, l'étape suivante est de choisir des technologies permettant de les appliquer. Meme si nous avons retenu que les choix d'architecture sont plus important que les choix techniques, et qu'il ne faut pas en devenir dependant, il faut tout de meme choisir les bonnes technologies pour concretiser le tout.
-
-Pour rappel, nous allons essayer de separer au maximum la logique du domaine de la logique de l'application. Ceci nous permettra de choisir la technologie la plus adaptée pour chaque composant et de pouvoir la changer facilement si le besoin s'en ressent.
+Le monde du web évolue très vite et les technologies sont nombreuses. Il n'est pas aisé d'en choisir, cela dépend beaucoup de l'architecture que l'on veut mettre en place ainsi que le style de développement de l'équipe.
 
 ## Choix d'un framework SPA
 
-C'est surement le choix le plus difficile a effectuer. Il existe de nombreux frameworks pour creer des SPA. Il est aussi possible de ne pas utiliser de frameworks, mais d'effectuer a la place une combinaison de librairies. Cependant, un framework apporte de la structure a l'application, une architecture flexible et renforce la separation des responsabilités. 
+C'est surement le choix le plus difficile à effectuer. Il existe de nombreux frameworks pour créer des SPA. Il est aussi possible de ne pas utiliser de frameworks, et d'utiliser une combinaison de librairies. Un framework apporte cependant de la structure à l'application, une architecture flexible et renforce la séparation des responsabilités. 
 
-Nous ne presenterons pas tous les frameworks SPA ici, car il en existe beaucoup. Nous allons alors presenter ceux qui ont etes pris en compte pour le projet de demonstration. Au final, ils evoluent tres vite, et il est interessant de passer de l'un a l'autre selon les applications et les composants.
+Nous ne présenterons pas tous les frameworks SPA, car il en existe beaucoup. Ils évoluent très vite et le choix peut être différent d'une année à l'autre. Voici ceux pris en compte pour notre projet : 
 
 ### AngularJS
 
