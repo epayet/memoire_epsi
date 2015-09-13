@@ -365,27 +365,18 @@ Créer une bonne application commence par choisir une bonne architecture logicie
 
 ## Le monolithe
 
-Un monolithe est un système logiciel contenant plusieurs responsabilités (accès à la base de données, interface graphique, etc.).
+Une application monolithique est une application mettant plusieurs fonctionnalités dans un seul processus. De nombreuses applications existantes sont monolithiques, car ce sont les plus simples à réaliser. Si cela convient aux petites applications, au fil du temps cette application deviendra de plus en plus complexe lors de son évolution. L'architecture modulaire prévue au début est alors difficile à garder.
 
-* y'en a beaucoup
-* l'archi peut amener à ça, ou l'éviter
-* plus c'est découpé, et moins c'est monolithique
-* c'est le plus simple à faire, quand c'est une ,petite appli ça va, mais pour une grosse appli non
-* en fait c'est ça qui faut retenir, plus c'est petit plus ça va => plus maintenable tout ça (conclusion ?)
-* c'est important d'en parler parce que Cdiscount a ça et veut casser ça
-* problemes du monolithe
-    * large code => intimidant => difficile a comprendre et a modifier
-    * IDE, web container overloaded
-    * dev ralenti
-    * petit changement => grand impact 
-        * chaque changement => full rebuild, test and deploy
-        * obstacle pour les changements frequents et les deploiements
-    * changement de techno = tout reecrire
-    * pas de re-write partiel
-    * si fail, tout le monolithe fail
-    * scalabilité difficile
+« *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil.
 
-TODO
+Les inconvénients du monolithe sont :
+
+* **Développement ralenti** : La large base de code intimide les développeurs, surtout les nouveaux. Il est difficile à comprendre et à modifier. De plus, il alourdit énormément l'environnement de développement (IDE) et est plus lourd à charger
+* **Petit changement = Grand impact** : Chaque changement demande une phase de compilation, tests, et déploiement complète. Cela devient un obstacle pour les changements et déploiements fréquents
+* **Gestion de l’échec** : Si une partie du monolithe échoue, le monolithe en entier échoue
+* **Engagement à long terme sur une technologie** : Le monolithe est réalisé dans une seule technologie. Il est difficile d'en changer, et la réécriture partielle est impossible. Il est intéressant d’exploiter les capacités de différents langages pour des buts spécifiques, comme par exemple R pour faire du calcul statistique ou Node.js pour du temps réel
+
+Ces inconvénients se font de plus en plus ressentir au fil du temps et ont un grand impact sur la productivité des développeurs. Cdiscount possède plusieurs applications monolithiques dans son SI et s'en rend bien compte. Les choix de styles d'architecture peuvent amener ou éviter le monolithe. 
 
 ## Différents styles d'architecture
 
@@ -633,6 +624,7 @@ Cette architecture permet une scalabilité très précise, mais impose le dével
 Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
 
 TODO le but même des microservices, c'est de faire le contraire des monolithes
+TODO maitrise de différentes technologies et langages
 
 ## Spécificités du Front-end
 
@@ -1303,6 +1295,7 @@ Mot clés : maintenable, assurance qualité
 
 TODO les tableaux sont pas jolis
 TODO ajouter DDD vite fait dans la biblio pour la traduction en français
+TODO link sur microservices et netflix ?
 
 si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
 
