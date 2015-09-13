@@ -439,13 +439,42 @@ Très souvent dans les implémentations de ce modèle, la logique de l'applicati
 
 Nous verrons avec les autres styles d'architecture qu'il existe finalement deux types de logiques dans une application. La logique spécifique au domaine de l'application (banque, finances, etc.), et la logique spécifique à l'application (contrôleur, service, etc.) et qu'il est généralement mieux de les séparer.
 
-Ce pattern est à utiliser lorsque l'application est très simple. Il est rapide à mettre en oeuvre et à expliquer son fonctionnement. Pour une plus grosse application avec de nombreuses évolutions, il sera plus compliqué de maintenir un tel programme, devenant fortement couplé à la technologie utilisée.
-
-TODO gros = monolithe
+Ce pattern est à utiliser lorsque l'application est très simple. Il est rapide à mettre en oeuvre et à expliquer son fonctionnement. Pour une plus grosse application avec de nombreuses évolutions, il sera plus compliqué de maintenir un tel programme, devenant fortement couplé à la technologie utilisée. Une application MVC est très souvent monolithique.
 
 ### Architecture en couches
 
-TODO
+#### Description
+
+L'architecture en couches regroupe les fonctionnalités reliées en couches distinctes empilées verticalement. Les fonctionnalités dans une même couche sont reliées par un rôle ou une responsabilité commune. La communication entre les couches est explicites et faiblement couplée. Chaque couche encapsule les responsabilités de la couche en dessous, et uniquement dans ce sens.
+
+![Exemple d'architecture en couches][layeredArchitecture]
+
+Chaque couche peut être sur un même tiers (même ordinateur physique), ou sur plusieurs. On parle d'architecture multi-tiers dans ce cas là. 
+
+#### Avantages : 
+
+* **Abstraction** : 
+* **Isolation** : 
+* **Séparation des responsabilités** :
+* **Performance** : 
+* **Réutilisabilité** :
+* **Testabilité** : 
+
+* Abstraction. Layered architecture abstracts the view of the system as whole while providing enough detail to understand the roles and responsibilities of individual layers and the relationship between them. Layers allow changes to be made at the abstract level. You can increase or decrease the level of abstraction you use in each layer of the hierarchical stack.
+
+Isolation. Allows you to isolate technology upgrades to individual layers in order to reduce risk and minimize impact on the overall system.
+
+Manageability. Separation of core concerns helps to identify dependencies, and organizes the code into more manageable sections.
+
+Performance. Distributing the layers over multiple physical tiers can improve scalability, fault tolerance, and performance.
+
+Reusability. Roles promote reusability. Lower layers have no dependencies on higher layers, potentially allowing them to be reusable in other scenarios.
+
+Testability. Increased testability arises from having well-defined layer interfaces, as well as the ability to switch between different implementations of the layer interfaces. Separated Presentation patterns allow you to build mock objects that mimic the behavior of concrete objects such as the Model, Controller, or View during testing.
+
+#### Inconvénients
+
+* un monolithe est une architecture en couche. un seul process, plusieurs couches = monolithe
 
 ### Architecture orienté composants
 
@@ -623,8 +652,13 @@ Cette architecture permet une scalabilité très précise, mais impose le dével
 
 Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
 
+<!--
 TODO le but même des microservices, c'est de faire le contraire des monolithes
 TODO maitrise de différentes technologies et langages
+TODO vérifier qu'il n'a a pas de redit entre les attributs et les avantages. peut être faire des phrases à la place des attributs
+TODO pas trop parler de Cdiscount dans cette partie ? abstrait
+TODO remplacer testing pas testabilité
+-->
 
 ## Spécificités du Front-end
 
@@ -1337,6 +1371,7 @@ TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau pla
 [onionArchitecture]: images/onion_architecture.jpg
 [soaArchitecture]: images/soa.png
 [microservicesArchitecture]: images/microservices.png
+[layeredArchitecture]: images/LayeredArchitecture.png
 [soap]: images/soap.png
 [spaFrameworks]: images/spa_frameworks.jpg
 [cycleV]: images/cycle_en_v.png
