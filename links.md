@@ -36,6 +36,8 @@ http://www.slideshare.net/abagmar/anand-bagmar-behavior-driven-testing-bdt-in-ag
 https://en.wikipedia.org/wiki/Test-driven_development#Benefits
 http://juliendubreuil.fr/blog/developpement/de-application-monolithique-aux-architectures-microservices-ou-orientees-composants/
 http://microservices.io/patterns/monolithic.html
+http://programmers.stackexchange.com/questions/101337/whats-the-difference-between-stateful-and-stateless
+https://www.netmarketshare.com/search-engine-market-share.aspx?qprid=4&qpcustomd=0
 
 ## En plus
 
