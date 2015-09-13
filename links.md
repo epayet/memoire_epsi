@@ -34,6 +34,8 @@ https://fr.wikipedia.org/wiki/Extreme_programming
 https://en.wikipedia.org/wiki/Scrum_(software_development)
 http://www.slideshare.net/abagmar/anand-bagmar-behavior-driven-testing-bdt-in-agile
 https://en.wikipedia.org/wiki/Test-driven_development#Benefits
+http://juliendubreuil.fr/blog/developpement/de-application-monolithique-aux-architectures-microservices-ou-orientees-composants/
+http://microservices.io/patterns/monolithic.html
 
 ## En plus
 
