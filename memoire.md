@@ -730,44 +730,34 @@ Les possibilités sont nombreuses, et les choix doivent êtres faits selon les �
 
 ## Spécificités du Back-end
 
-Nous avons vu qu'il y a deux manieres de creer des applications web, la maniere traditionnelle et avec les SPA. De la maniere traditionnelle, le serveur s'occupe de gerer les donnees en arriere plan (back-end), mais aussi de former la vue. Les SPA sépare ces deux responsabilités en deux applications differentes. Le back-end expose donc generalement des web services qui font l'interface avec des bases de donnees, communication avec d'autres web services, etc.
+Avec une application web traditionnelle, le back-end possède de nombreuses responsabilités, donc la formation de la vue. Avec les SPA, ce n'est plus nécessaire.
 
 ### Passage aux Web services
 
-Un service web permet la communication et l'echange de donnees entre deux applications. Le protocole généralement utilisé est l'HTTP. Il existe majoritairement 2 types de web services : SOAP et REST. 
+Un service web permet la communication et l’échange de données entre deux applications. Le protocole généralement utilisé est l'HTTP. Il existe 2 principaux types de web services : SOAP et REST. 
 
 #### SOAP
 
-D’après Wikipédia :
+« *SOAP (Simple Object Access Protocol) est un protocole de RPC (Remote Procedure Call) orienté objet bâti sur XML. Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer des méthodes d'objets physiquement situés sur un autre serveur. Le protocole SOAP est composé de deux parties :*
 
-"SOAP (Simple Object Access Protocol) est un protocole de RPC (Remote Procedure Call) orienté objet bâti sur XML. Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer des méthodes d'objets physiquement situés sur un autre serveur. Le protocole SOAP est composé de deux parties :
-
-* une enveloppe, contenant des informations sur le message lui-même afin de permettre son acheminement et son traitement
-* un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre (appelé WSDL)."
+* *une enveloppe, contenant des informations sur le message lui-même afin de permettre son acheminement et son traitement*
+* *un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre (appelé WSDL).* », définition de Wikipédia.
 
 ![Représentation de l’enveloppe SOAP][soap]
 
 SOAP décrit la manière dont les applications doivent communiquer entre elles, ce qui peut augmenter le couplage entre le serveur et les clients. Une évolution du coté du serveur demande une mise a jour des clients. 
 
-SOAP permet l'utilisation de plusieurs protocoles autres que l'HTTP tel que le SMTP, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le XML alourdit grandement les echanges. 
+SOAP permet l'utilisation de plusieurs protocoles autres que l'HTTP tel que le SMTP, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le XML alourdit grandement les échanges. 
 
-SOAP a été utilisé pendant tres longtemps et de nombreux web services ecrits en SOAP existent encore actuellement (de nombreux web services sont ecrits en SOAP chez Cdiscount). Cependant, des solutions plus légeres sont de plus en plus preferées telle que REST. SOAP est generalement utilisé pour mettre en place une architecture orientée services (SOA).
-
-TODO wiki ?
+SOAP a été utilisé pendant très longtemps et de nombreux web services écrits en SOAP existent encore actuellement (de nombreux web services sont écrits en SOAP chez Cdiscount). Cependant, des solutions plus légères sont préférées telle que REST. SOAP est souvent utilisé pour mettre en place une architecture orientée services (SOA).
 
 #### REST
 
-Contrairement a SOAP, qui est un protocole a part entiere, REST (Representational State Transfer) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. C'est généralement le protocole HTTP (tres leger) qui est utilisé. Il est tres simple a utiliser et permet de respecter tous les principes de l'architecture. 
+Contrairement a SOAP, qui est un protocole a part entière, REST (*Representational State Transfer*) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. Le protocole HTTP est utilisé, et permet de respecter tous les principes de l'architecture.
 
-REST est une architecture orientée ressource (contrairement a SOAP qui est orienté méthodes). Par exemple, une API web representera un client comme une ressource, et sera manipulable a cette adresse (ajout, modification, suppresion, etc.): `http://www.foo.com/Clients`. 
+REST est une architecture orientée ressource (contrairement à SOAP qui est orienté méthodes). Par exemple, une API web représentera un client comme une ressource, et sera manipulable a cette adresse :`http://www.foo.com/Clients`.  Les verbes HTTP (GET, POST, PUT, DELETE.) permettront de récupérer, ajouter, modifier ou supprimer cette ressource.
 
-REST est une architecture dite sans etat (stateless).
-
-TODO Texte wiki : L'absence de gestion d’état du client sur le serveur conduit à une plus grande indépendance entre le client et le serveur. Elle permet également de ne pas avoir à maintenir une connexion permanente entre le client et le serveur. Le serveur peut ainsi répondre à d'autres requêtes venant d'autres clients sans saturer l'ensemble de ses ports de communication. Cela devient essentiel dans un système distribué.
-
-REST est généralement utilisé lors d'une mise en place d'une mise en place des microservices grace a sa legereté.
-
-TODO deja parlé de stateless ?
+REST est une architecture dite sans état (*stateless*). Un serveur RESTful peut ainsi répondre à des requêtes venant de plusieurs clients, et il est plus aisé de multiplier les serveurs. REST est généralement utilisé lors d'une mise en place d'une mise en place des microservices grâce a sa légèreté.
 
 ### Choix de styles d'architecture
 
