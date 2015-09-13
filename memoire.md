@@ -640,57 +640,43 @@ Si la diversité technologique est renforcée avec cette architecture, il est de
 
 Cette architecture propose donc de nombreux avantage mais aussi un challenge technique élevé. Il n'est pas aisé de réussir a implémenter correctement cette architecture du premier coup. Il est préférable de commencer simplement par une architecture monolithique, pour ensuite migrer au fur et a mesure les parties essentielles en microservices. 
 
-## Spécificités du Front-end
+## Spécificités du front-end
 
-Maintenant que nous avons vu globalement les principaux styles d'architecture, nous allons voir les spécificités des applications web en commencant par le front-end. Nous allons ensuite choisir les styles d'architecture pour le POC.
+Une application web moderne se découpe généralement en deux applications (style d'architecture client/serveur) : le client (*front-end*) et le serveur (*back-end*). Nous allons voir les spécificités de chacun et décider des styles d'architecture à appliquer pour notre projet.
+
+### Rappel sur la gestion d'état
+
+Il y a deux types d'applications, celles qui ont une gestion d'état et celles qui n'en n'ont pas. Une application dîtes "*stateful*" stocke en mémoire certaines valeurs entre plusieurs appels, tandis qu'une application dîtes "*stateless*" ne gardera rien mémoire et est sans contexte précis.
+
+Une application *stateless* est beaucoup plus facile à gérer car qu'importe le processus depuis lequel il est appelé, le résultat ne sera pas contextualisé à celui-ci. On ne peut pas se permettre d'appeler une application *stateful* depuis 2 processus différents car les valeurs stockées en mémoire par le premier processus sont inaccessibles par l'autre. 
+
+Il est donc beaucoup plus facile de scaler une application *stateless*, car le résultat est indépendant du processus où il est appelé. De manière générale, cela simplifie grandement le développement et le passage aux microservices.
 
 ### Application traditionnelle
 
 #### Description
 
-On dit qu'une application web utilise une architecture traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (server-side rendering). Le principe est le suivant : 
+On parle d'une application web traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (*server-side rendering*). Le principe est le suivant : 
 
-* Un navigateur web envoie une premiere requete lors de l'arrivee sur un site web. 
-* Le serveur va chercher des donnees si necessaire, puis forme la vue entierement (document HTML statique) et repond ce document au navigateur.
-* Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l'operation precedente recommence. Il recoit la page HTML suivant, etc.
-
-Du cote du serveur, une architecture du type MVC* (Modele Vue Controleur) est generalement mise en place pour bien separer les concepts (formation de la vue, des donnees et de la logique metier*). L’HTML étant un document statique, pour rendre l’expérience utilisateur plus intéressante, on utilise du javascript chargé côté client pour modifier la structure de l’HTML courant (via le DOM) et permettre des effets de type animation, etc. Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont chargés à chaque demande de page, car lorsque l’utilisateur demande une autre page (par exemple passage de l’accueil du site à la gestion de son compte), la logique est différente ainsi que l’HTML (le CSS et le Javascript sont souvent mis en cache par le navigateur). Une nouvelle page web correspond à une nouvelle logique qui doit être générée.
+* Un navigateur web envoie une première requête lors de l’arrivée sur un site web. 
+* Le serveur va chercher des données si nécessaire, puis forme la vue entièrement (document HTML statique) et répond ce document au navigateur.
+* Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l’opération précédente recommence. Il reçoit la page HTML suivante, etc.
 
 ![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
 
-TODO relire et remplacer architecture par application traditionnelle
+L'HTML étant un document statique, le JavaScript est généralement utilisé pour rendre l'expérience utilisateur plus intéressante en modifiant la structure de l'HTML (via le DOM) et permettre des effets de type animation, etc.  Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont rechargés à chaque demande de page, car le serveur doit les régénérer.
 
 #### Critiques de l'architecture
 
-Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avances. Nous allons cependant voir les limites de celles-ci.
+Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avancés. Nous allons cependant voir les limites de celles-ci.
 
-##### Temps de chargement
+L'HTML est donc formé du côté du serveur, mais le JavaScript est exécuté du côté du client. C'est donc très perturbant de gérer deux types de code dans une même application, surtout lorsque les interactions avec l'utilisateur sont complexes. L'application devient rapidement monolithique à cause de ce mélange de responsabilités.
 
-Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages où qu’il envoie un formulaire. Les traitements serveur sont exécutés à chaque fois, et le client recharge le javascript côté client à chaque requête, ce qui ralentit beaucoup sa navigation. De plus, la création de la page HTML est a la charge du serveur, ce qui augmente le travail effectue cote serveur.L'avantage est que la page affichée est définitive et allege le client.
+Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages ou qu’il envoie un formulaire. Le serveur doit générer la vue à chaque changement de page, ce qui ralentit la navigation du client et augmente la charge du serveur. L'avantage cependant, c'est que le client possède très peu de charge.
 
-##### Limites de l'architecture MVC
+Ce type d'applications est très souvent *stateful*. Il est commun lors du développement d'application web traditionnelle de stocker des variables en session pour chaque utilisateur (panier, etc.). Nous avons vu que cela complexifie beaucoup l'application, surtout si l'on veut ajouter des serveurs.
 
-Avec cette architecture, le serveur est charge a la fois de gerer les donnees, les vues et la logique metier. L'architecture MVC* a pour but de bien marquer cette separation au niveau du code. Si la couche Model sert d'acces au donnees, la couche Vue sert a generer l'HTML, la partie Controler fait le lien entre les deux. On met tres souvent la logique pure de l'application dans les controleurs, ce qui rend difficile sa reutilisation dans un autre contexte.
-
-##### Un metier difficilement reutilisable (couplage fort)
-
-Le code metier est tres souvent melange avec les controlleurs de l'application web. Le metier est donc dans ce cas fortement couple avec l'application web. Pour creer une application sur un autre support (mobile, bureau, etc.), cette logique est difficilement reutilisable et devra surement etre reimplementee dans une autre technologie (redevelopper l'acces aux donnees, etc.). 
-
-TODO ca c'est peut etre plutot les limites de l'architecture MVC qui a enmene a la creation del'architecture SOA, peut etre que ca a rien a voir avec les limites de l'architecture traditionnelle. 
-
-##### Travail de la vue cote client et cote serveur confus
-
-Le serveur genere les fichiers utilises par le navigateur (HTML/CSS/JavaScript). L'HTML est un langage statique. Nous avons vu precedemment que le JavaScript permet de dynamiser l'application. Le developpeur doit alors gerer l'HTML brut genere pour le client, ainsi que le JavaScript qui permettra de dynamiser le tout. 
-
-##### Une architecture qui pousse au stateful
-
-Une application dite "stateless" est une application qui ne garde aucune information entre les requetes HTTP. A l'inverse, une application dite "stateful" est une application qui a la possibilité de garder des informations entre les requetes (remplissage d'un panier, connexion d'un utilisateur). Il est commun lors du developpement d'application web de stoquer des variables en session pour chaque utilisateur. Si cela peut etre tres pratique, la gestion d'un etat apporte une difficulte supplementaire a l'application. En plus de cela, il est plus difficile de scaler (TODO ca existe comme mot ?) horizontalement (rajouter des serveurs) car le partage de ces informations entre plusieurs machines n'est pas tache aisee.
-
-* Bien pour les applis de types :
-    * Site marchand 
-    * Site web statique
-
-TODO refacto 
+Ce type d'applications convient très bien pour les applications web ayant très peu d'interactions avec le client, et où le fait d'être une application monolithique et *stateful* n'est pas dérangeant. Cela correspond à une poignée de sites web comme un site statique, présentation d'une produit, etc.
 
 ### Passage aux Single Page Application
 
@@ -1310,6 +1296,7 @@ Mot clés : maintenable, assurance qualité
 TODO les tableaux sont pas jolis
 TODO ajouter DDD vite fait dans la biblio pour la traduction en français
 TODO link sur microservices et netflix ?
+TODO les grosses images en annexe ? j'ai une petite image des microservicers vs monolithic surinternet
 
 si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
 
