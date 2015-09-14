@@ -767,7 +767,18 @@ Cdiscount utilise actuellement une architecture orientée service et chaque serv
 
 #### Microservices
 
-C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes.
+C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes. Voici notre plan d'implémentation des microservices pour notre API RESTful.
+
+TODO
+
+Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
+
+TODO schema
+
+Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel).
+
+TODO schema
+TODO bien parler de l'api gateway
 
 ## Ce qu'il faut retenir
 
@@ -948,30 +959,17 @@ Si Bootstrap est le plus connu, nous avons utilisé un plus récent : Angular Ma
 
 ## Choix d'un langage serveur
 
-Il existe de nombreuses solutions pour creer des serveurs RESTful. Les plus communes sont : 
+Il existe de nombreuses solutions pour créer des serveurs RESTful. Les plus communes sont : 
 
-* Java (avec framework http comme Jersey)
+* Java (avec un framework HTTP comme Jersey)
 * C# (avec WCF)
 * PHP (pas optimisé à la base pour faire du RESTful, mais possible tout de même)
 
-Nous avons choisi le NodeJS comme solution. Comme vu précédemment, le JavaScript est un langage tres adapté pour le back-end, d'autant plus avec la derniere version. NodeJS comporte le plus grand nombres de modules open sources avec son gestionnaire de paquets npm. Utilisant l'architecture des microservices, nous pourront créer certains services dans d'autres technologies si nous trouvons cela necessaire. Nous voulons pour l'instant tirer parti du fait que nous utilisons le meme langage de developpement des deux cotés et sommes tres efficaces de cette maniere. 
-
-TODO deja dit plus grand nombre de modules open source
-TODO detailler un peu pourquoi node ?
+Nous avons choisi le NodeJS comme solution. Comme vu précédemment, le JavaScript est un langage très adapté pour le back-end, d'autant plus avec la dernière version. NodeJS comporte le plus grand nombres de modules open sources avec son gestionnaire de paquets npm. Utilisant l'architecture des microservices, nous pourront créer certains services dans d'autres technologies si nous trouvons cela est nécessaire. Nous voulons pour l'instant tirer parti du fait que nous utilisons le même langage de développement de chaque côté (client et serveur) sommes très efficaces de cette manière. 
 
 ## Containers 
 
-La meilleure facon de creer et gerer des microservices actuellement est de passer via des containeurs grace a la technologie Docker. Un containeur est un espace linux isolé pouvant interagir avec d'autres containeurs. Le principe est tres similaire a une machine virtuelle, mais en beaucoup plus leger et efficace. Il est parfait pour creer une ou plusieurs instances d'une meme application aisément.
-
-Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
-
-TODO schema
-
-Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel).
-
-TODO schema
-TODO bien parler de l'api gateway
-TODO dire que c'est un plusieurs etapes
+La meilleure façon de créer et de gérer des microservices actuellement est de passer via des containers en utilisant Docker. Les containers créés par Docker sont des espaces Linux isolés pouvant interagir avec d'autres containers. Le principe est très similaire à une machine virtuelle, mais en beaucoup plus léger et plus efficace. Il est aisé de créer par exemple plusieurs instances d'une même application. Docker utilise un fichier descriptif (Dockerfile) permettant d'en créer facilement à la volée.
 
 # Méthodologie
 
