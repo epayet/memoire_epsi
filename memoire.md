@@ -888,10 +888,7 @@ Nous ajoutons un bus d’événements central pour profiter de l'architecture or
 
 ## Choisir les bons outils
 
-De nombreux outils sont à disposition pour faciliter le développement d'applications web. Certains sont même nécessaires pour le développement mobile ou pour appliquer les méthodes agiles. 
-
-TODO DRY, optimisation à tous les niveau, efficacité primordiale
-TODO c'est super pour les machines de déploiement, elles ont la compilation de l'appli et le téléchargement des libraires automatisées et le dev gagne du temps aussi
+De nombreux outils sont à disposition pour faciliter le développement d'applications web. Certains sont même nécessaires pour le développement mobile ou pour appliquer les méthodes agiles. Les tâches répétitives réduisent grandement la productivité des développeurs (DRY : Don't Repeat Yourself). L'automatisation de celles-ci permettent alors une meilleure productivité et simplifient le déploiement.
 
 ### Outils de compilation
 
@@ -928,6 +925,10 @@ Dans la même lignée que les *tasks runners*, nous utilisons un automate appel�
 │   └── product.service.spec.js     * Test unitaire du service
 └── cdiscount.business.js           * Module parent
 ```
+
+<!--
+TODO structure des fichiers
+-->
 
 ### Gestionnaire de versions
 
