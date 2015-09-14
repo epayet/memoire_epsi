@@ -74,13 +74,12 @@ TODO
 
 # TODO
 
-* Intro
+* Relecture chérie
 * Présentation de l'entreprise
+* Intro
 * Conclusion
 * Résumé de 5 pages max
 * Refacto visuel
 * Vérification des normes (nombre de pages, etc.)
 * Ajout du glossaire, sources, etc.
 * Relecture finale
-* Page de titre
-* Relecture chérie
