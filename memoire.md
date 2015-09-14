@@ -888,61 +888,62 @@ Nous ajoutons un bus d’événements central pour profiter de l'architecture or
 
 ## Choisir les bons outils
 
-De nombreux outils sont a disposition pour faciliter le developpement d'applications web. Certains sont meme necessaire pour le developpement mobile ou pour les methodes agiles. 
+De nombreux outils sont à disposition pour faciliter le développement d'applications web. Certains sont même nécessaires pour le développement mobile ou pour appliquer les méthodes agiles. 
+
+TODO DRY, optimisation à tous les niveau, efficacité primordiale
+TODO c'est super pour les machines de déploiement, elles ont la compilation de l'appli et le téléchargement des libraires automatisées et le dev gagne du temps aussi
 
 ### Outils de compilation
 
 #### Gulp
 
-Gulp est un task runner. Son but est limiter les actions repetitives et d'automatiser certaines taches. Il est tres comparable a Maven dans le monde Java. Il en existe plusieurs dans le monde du JavaScript, mais nous avons choisi celui-ci pour sa simplicité.
+Gulp est un *task runner*. Son but est de limiter les actions répétitives et d'automatiser certaines taches. Il est très comparable à Maven du monde Java. Il en existe plusieurs dans le monde du JavaScript, mais nous avons choisi celui-ci pour sa simplicité. Nos principales tâches de compilation sont :
 
-Nous avons plusieurs taches et les principales sont :
+* "**build:web**" : C'est la tâche principale, elle compile les fichiers sources et prépare le résultat final dans un dossier différent prêt pour la production
+* "**build:mobile**" : Effectue l'équivalent pour le mobile
+* "**watch**" : Relance automatiquement la compilation des fichiers a chaque sauvegarde d'un des fichiers sources. Recharge aussi le navigateur web
+* "**server**" : Lance un serveur de développement lisant les fichiers compilés par la tache de compilation
 
-* "build:web" : C'est la tache principale, elle compile les fichiers sources et les prepare le resultat final dans un dossier different
-* "build:mobile" : Effectue la meme chose pour le mobile
-* "watch" : Relance automatiquement la compilation des fichiers a chaque sauvegarde d'un des fichiers sources, recharge aussi le navigateur web
-* "server" : Lance un serveur de developpement lisant les fichiers compilés par la tache de compilation
-
-La plus grosse tache est la compilation pour le web. Comme nous utilisons la derniere version de JavaScript, mais qu'elle n'est pas encore supportée par tous navigateurs, nous devons la transpiler (passage a une version anterieure compatible). D'autres astuces sont aussi utilisées comme la minification des fichiers pour prendre moins de place, etc.
+Comme nous utilisons la dernière version de JavaScript qui n'est pas encore supportée par tous navigateurs, nous devons la transpiler (passage a une version antérieure compatible). D'autres astuces sont aussi utilisées comme la minification des fichiers ainsi que d'autre optimisations. Nous gagnons énormément de temps de développement avec des outils et la mise en production est facilitée.
 
 ##### Cordova
 
-* anciennement PhoneGap
-* framework de dévepllopemnt mobile
-* permet de faire du natif avec les technos web = application hybride
-* fonctionnalité natives du tel comme photo, GPS, tout ca
-* acceleration webview avec cocoonjs
+Cordova (anciennement PhoneGap) est un framework de développement mobile multiplateforme. Il permet de développement d'application mobiles hybrides en utilisant uniquement les technologies du web avec la possibilité d'utiliser les fonctionnalités natives du téléphone tels que l'appareil photo, le GPS, les notifications, etc.
 
-TODO pas deja dis ca ?
+Nous utilisons CocoonJS combiné avec *webview-plus* pour accélérer l'application (les webviews d'origine sont n'utilisent parfois pas totalement les capacités du téléphone selon le système d'exploitation utilisé.
 
 ### Automate
 
-Dans la meme lignée que les tasks runners, nous utilisons un automate appelé Yeoman. C'est un outil permettant d'automatiser la creation de fichiers lorsque c'est redondant. Par exemple avec AngularJS, la création d'un composant est longue parce qu'il y a de nombreux fichiers. Nous avons alors créé notre propre générateur avec cet outil pour générer les bons fichiers.
+Dans la même lignée que les *tasks runners*, nous utilisons un automate appelé Yeoman. C'est un outil permettant d'automatiser la création de fichiers redondants. Par exemple avec AngularJS, la création d'un composant est longue parce qu'il y a de nombreux fichiers. Nous avons alors créé notre propre générateur avec cet outil. L'utilisation se fait ainsi : `yo angular-es6-components:component product` et générera les fichiers suivants :
 
-TODO exemple avec `yo angular-es6-components:component myComponent` et montrer les fichiers créés ?
+```
+├── product/                        * Dossier du composant 
+│   ├── product.controller.js       * Contrôleur du composant (aucune logique)
+│   ├── product.controller.spec.js  * Test unitaire du contrôleur
+│   ├── product.css                 * Style
+│   ├── product.directive.js        * Directive AngularJS (déclaration du composant)
+│   ├── product.html                * Vue
+│   ├── product.js                  * Définition du module AngularJS
+│   ├── product.service.js          * Service (logique de domaine)
+│   └── product.service.spec.js     * Test unitaire du service
+└── cdiscount.business.js           * Module parent
+```
 
 ### Gestionnaire de versions
 
-Un gestionnaire de versions est fortement recommandé, surtout avec les méthodes agiles.
-
-* versionnig est tres important
-* git le plus utilisé
-
-TODO c'est vraiment interressant d'ecrire la dessus ?
+Un gestionnaire de versions est fortement recommandé, surtout avec les méthodes agiles. Nous utilisons git.
 
 ### Gestionnaire de paquets
 
-Nous utilisons beaucoup de librairies open source, que ce soit du coté du front-end ou du back-end. Chacune d'elles a sa propre version et il devient complexe de s'en sortir lorsqu'elles sont nombreuses. De plus, c'est une mauvaise pratique de melanger les librairie tierces avec le code source sur le gestionnaire de versions. 
+Nous utilisons beaucoup de librairies open source, que ce soit du coté du front-end ou du back-end. Chaque librairie est à utiliser avec une version spécifique et la gestion se complexifie avec de nombreuses librairies externes. De plus, c'est une mauvaise pratique de mélanger les librairie tierces avec le code source sur le gestionnaire de versions. 
 
-L'interet d'un gestionnaire de paquets est que grace a un fichier descriptif comprenant la liste des librairie tierces avec une version spécifique, chaque developpeur (ou machine de deploiement) est capable de telecharger la correcte version. Au niveau du front-end, nous utilisons Bower.
-
-TODO DRY ?
+Un gestionnaire de paquets utilise un fichier descriptif comprenant la liste des librairies ainsi que leurs versions. Il suffit d'une ligne de commande pour toutes les installer. Au niveau du front-end, nous utilisons Bower.
                 
 ### Framework Graphique
 
-Il n'est pas aisé de faire du CSS, et de nombreuses surcouches existent pour ameliorer son comportement de base (SASS, LESS, etc.). Nous avons préféré utiliser un framework graphique tout fait avec quelques legeres modifications en CSS par souci de rapidité. 
+Il existe plusieurs solution pour faciliter l'utilisation du CSS. Des surcouches comme SASS ou LESS ajoutent des fonctionnalités à ce langage, et de nombreux frameworks existent. Les ajouts à faire en CSS sont beaucoup moindres.
 
-Si Bootstrap est le plus connu, nous avons utilisé un plus récent : Angular Material. Il propose d'utiliser le Material Design de Google adapté pour AngularJS. Il est selon nous tres agreable a utiliser et a voir.
+Si Bootstrap est le plus connu, nous avons utilisé un plus récent : Angular Material. Il propose d'utiliser le Material Design de Google adapté pour AngularJS. Il est visuellement très agréable et possède une bonne ergonomie. Il simplifie grandement le développement car il est très adapté à AngularJS et est facile à utiliser.
 
 ## Choix d'un langage serveur
 
