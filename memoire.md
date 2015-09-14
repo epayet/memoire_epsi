@@ -973,47 +973,37 @@ La meilleure façon de créer et de gérer des microservices actuellement est de
 
 # Méthodologie
 
-Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle considere fortement les methodes agiles et laisse le champ libre aux pizzas team recemment formées. Pour notre projet, nous allons appliquer la methode de l'extreme Programming que nous allons definir.
+Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tends de plus en plus vers les méthodes agiles et la récente création des pizzas team le démontre. 
 
 ## Cycle en V
 
-Le cycle en V est un modele conceptuel de gestion de projet. Il est constitué en plusieurs etapes et sont découpées ainsi :
-
-* Analyse des besoins et création des spécifications
-* Conception
-* Developpement
-* Tests (unitaires, intégration, etc.)
-* Recette
+Le cycle en V est un modèle conceptuel de gestion de projet. Il est constitué en plusieurs étapes et sont découpées ainsi :
 
 ![Étapes du cycle en V][cycleV]
 
-Le but de cette méthode est de limiter les retours aux etapes précédentes. En pratique, il est difficile voire impossible de totalement détacher la phase de conception d'un projet de sa phase de réalisation. C'est souvent au cours de l'implémentation qu'on se rend compte que les spécifications initiales étaient incomplètes, fausses, ou irréalisables, sans compter les ajouts de nouvelles fonctionnalités par les clients.
+Le but de cette méthode est de limiter les retours aux étapes précédentes. En pratique, il est difficile voire impossible de totalement détacher la phase de conception d'un projet de sa phase de réalisation. C'est souvent au cours de l'implémentation qu'on se rend compte que les spécifications initiales étaient incomplètes, fausses, ou irréalisables, sans compter les ajouts de nouvelles fonctionnalités par les clients.
 
-Il est difficile d'appliquer l'architecture des microservices avec cette méthodologie, ainsi que le déploiement rapide en production. Le cycle en V comporte beaucoup d'étapes impliquand de nombreuses equipes, limitant la vitesse de passage en production. Une seule equipe independante et polyvalente dédiée a chaque microservices serait plus efficace, gérant elle meme son cycle de releases, ses propres choix techniques, etc.
-
-TODO l'image est assez descriptive des etapes nan ?
+Il est difficile d'appliquer l'architecture des microservices avec cette méthodologie, car cette méthode ne permet pas de mises en production fréquentes. Le cycle en V comporte beaucoup d'étapes impliquant de nombreuses équipes. Une seule équipe indépendante et polyvalente dédiée a chaque microservice serait plus efficace, gérant elle même son cycle de recettes, ayant ses propres choix techniques, etc.
 
 ## Méthode agile : SCRUM
 
-SCRUM est une méthode agile iterative et incrementale pour gerer le developpemnt d'un produit. Elle a pour but d'encourager l'equipe a s'auto-organiser en mettant en avant une forte communication par tous les membres de l'equipe, quelque soit sa discipline. 
+SCRUM est une méthode agile itérative et incrémentale pour gérer le développement d'un produit. Elle a encourage l’équipe a s'auto-organiser en mettant en avant une forte communication par tous les membres de l’équipe, quelque soit sa discipline. 
 
-Cette méthode prend en compte le fait que le client change souvent d'avis, et que des imprévus peuvent arriver. Elle a pour cela une approche empirique, c'est a dire qu'elle accepte qu'un projet ne peut totalement etre compris et bien défini. Pour cela, le fait de modifier souvent le produit permet de repondre rapidement aux satisfactions du client en s'adaptant a ses demandes emergentes. 
+Cette méthode prend en compte le fait que le client change souvent d'avis, et que des imprévus peuvent arriver. Elle a pour cela une approche empirique, c'est-à-dire qu'elle accepte qu'un projet ne peut totalement être compris et bien défini. Pour cela, le fait de modifier souvent le produit permet de répondre rapidement aux satisfactions du client en s'adaptant a ses demandes émergentes. Les trois principaux rôles d'une équipe SCRUM sont :
 
-Une equipe SCRUM possede trois roles principaux :
+* **Product owner (PO)** : Représente les parties prenantes et est la voix du client. Son rôle est de s'assurer que l’équipe apporte de la valeur ajoutée au produit.
+* **Equipe de développement** : Equipe responsable d'ajouter de la valeur au produit à la fin de chaque itération
+* **Scrum Master** : Facilitateur, celui qui s'occupe de ce qui ralentit l’équipe de développement. Il s'assure aussi que les rituels sont bien respectés
 
-* Product owner : Représentes les parties prenantes et est la voix du client. Son role est de s'assurer que l'equipe apporte de la valeur ajoutée au produit.
-* Equipe de developpement : Equipe responsable d'ajouter de la valeur au produit a la fin de chaque iteration
-* Scrum Master : Facilitateur, celui qui s'occupe de ce qui ralentit l'equipe de dev. Il s'assure aussi que les rituels sont bien respectés
+Le produit possède un *product backlog*. C'est un artefact contient la liste des *user stories* (fonctionnalités) à ajouter au produit. Le déceloppement de celui-ci se fait en plusieurs itérations (*sprint*). Chaque sprint possède son *sprint backlog* qui contient la liste des fonctionnalités à ajouter pour cette itération. 
 
-La methode est constituée de differents evenements et rituels important a respecter. En effet, les respecter permet d'optimiser l'efficacité de chaque membre de l'equipe grace a une bonne communication. Le resultat est que le produit est de bonne qualité, respectant les demandes du client. Voici les principaux evenements et rituels :
+La méthode est constituée de différents événements et rituels importants à respecter. En effet, les respecter permet d'optimiser l'efficacité de chaque membre de l’équipe grâce a une bonne communication. Le résultat est que le produit est de bonne qualité, respectant les demandes du client. Voici les principaux événements et rituels :
 
-* Sprint : Iteration avec une duree specifique (time-box)
-* Sprint Planning : Se deroule au debut de chaque sprint, le but est d'estimer les taches a effectuer et d'assigner des taches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l'equipe de developpement (velocité)
-* Daily Scrum : Rencontre journaliere de toute l'equipe SCRUM, ou chaque membre dit le travail effectué la veille, le travaille qu'il effectuera ce jour et les problemes rencontrés
-* Sprint review : Presentation du resultat aux parties prenantes, et revue du travail effectué et non effectué
-* sprint retrospective : Reflexion sur le dernier sprint, identification de ce qu'il s'est bien passé, mal passé et comment le processus pourrait etre amélioré. Permet aussi d'ajuster la vélocité de l'equipe
-
-TODO parler du product backlog
+* **Sprint** : Itération avec une durée spécifique (time-box)
+* **Sprint Planning** : Se déroule au début de chaque sprint, le but est d'estimer les tâches à effectuer et d'assigner les tâches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l’équipe de développement (vélocité)
+* **Daily Scrum** : Rencontre journalière de toute l’équipe SCRUM, où chaque membre dit le travail effectué la veille, le travaille qu'il effectuera ce jour et les problèmes rencontrés
+* **Sprint review** : Présentation du résultat aux parties prenantes, et revue du travail effectué et non effectué
+* **Sprint retrospective** : Réflexion sur le dernier sprint, identification de ce qu'il s'est bien passé, mal passé et comment le processus pourrait être amélioré. Permet aussi d'ajuster la vélocité de l’équipe
 
 ## Méthode agile : Extreme Programming
 
