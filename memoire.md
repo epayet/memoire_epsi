@@ -1007,13 +1007,11 @@ La méthode est constituée de différents événements et rituels importants à
 
 ## Méthode agile : Extreme Programming
 
-La méthode SCRUM ne couvre aucune technique d'ingénierie logicielle. Dans le cas d'un developpement d'application, il est necessaire de la completer avec des pratiques de qualité logicielle.
+La méthode SCRUM ne couvre aucune technique d'ingénierie logicielle. Dans le cas d'un développement d'application, il est nécessaire de la compléter avec des pratiques de qualité logicielle.
 
-Extreme Programming (XP) est une méthode agile plus particulièrement orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
+Extreme Programming (XP) est une méthode agile orientée sur l'aspect réalisation d'une application, sans pour autant négliger l'aspect gestion de projet. XP est adapté aux équipes réduites avec des besoins changeants. XP pousse à l'extrême des principes simples.
 
-Son but principal est de réduire les coûts du changement. Dans les méthodes traditionnelles, les besoins sont définis et souvent fixés au départ du projet informatique ce qui accroît les coûts ultérieurs de modifications. XP s'attache à rendre le projet plus flexible et ouvert au changement en introduisant des valeurs de base, des principes et des pratiques.
-
-Voici les pratiques poussees a l'extreme :
+Le but principal est de réduire les coûts du changement. Dans les méthodes traditionnelles, les besoins sont définis et souvent fixés au début du projet, ce qui accroît les coûts ultérieurs de modifications. Pour éviter cela, XP définit des principes et des pratiques simple, mais poussés à "l’extrême" : 
 
 * puisque la revue de code est une bonne pratique, elle sera faite en permanence (par un binôme)
 * puisque les tests sont utiles, ils seront faits systématiquement avant chaque mise en œuvre
@@ -1023,14 +1021,12 @@ Voici les pratiques poussees a l'extreme :
 * puisque l'intégration des modifications est cruciale, nous l'effectuerons plusieurs fois par jour
 * puisque les besoins évoluent vite, nous ferons des cycles de développement très rapides pour nous adapter au changement
 
-Voici le cycle de développement pour chaque scenario (fonctinnalité a developper) :
+Voici le cycle de développement pour chaque scénario (fonctionnalité a développer) :
 
-* une phase d'exploration détermine les scénarios "client" qui seront fournis pendant cette itération
-* l'équipe transforme les scénarios en tâches à réaliser et en tests fonctionnels
-* chaque développeur s'attribue des tâches et les réalise avec un binôme
-* lorsque tous les tests fonctionnels passent, le produit est livré
-
-![Cycle de l'Extreme Programming][xp]
+* Phase d'exploration déterminant les scénarios qui seront fournis pendant cette itération
+* L'équipe transforme les scénarios en tâches à réaliser et en tests fonctionnels
+* Chaque développeur s'attribue des tâches et les réalise avec un binôme
+* Lorsque tous les tests fonctionnels passent, le produit est livré
 
 XP decrit 12 pratiques, regroupées en 4 categories.
 
@@ -1039,138 +1035,111 @@ XP decrit 12 pratiques, regroupées en 4 categories.
 * Pair Programming : Programmer avec un partenaire
 * Planning Game : Similaire au sprint planning de SCRUM
 * TDD (Test Driven Developement) : Coder le test avant la fonctionnalité
-* Equipe complete : Le client fait partie de l'equipe et se doit d'etre disponible a tout moment
+* Équipe complète : Le client fait partie de l’équipe et se doit d’être disponible a tout moment
 
 ### Process continu
 
-* Integration continue : Lancer les tests unitaire a chaque code rajouté par un developpeur sur le gestionnaire de versions
+* Intégration continue : Lancer les tests unitaire à chaque code rajouté par un développeur sur le gestionnaire de versions
 * Refactoring : S'assurer que le code est efficace et sans duplication (bonne architecture)
-* Petites releases : Mise en production fréquente
+* Petites releases : Mises en production fréquentes
 
 ### Compréhension commune
 
-* Standards de code : Avoir un style de code convenant a toute l'equipe
-* Possession commune de code : Le code n'appartien a personne, mais a toute l'equipe
-* Architecture simple : La philosophie de l'équipe est "Simple est mieux" (KISS : Keep It Simple Stupid). L'equipe doit toujours se demander "N'y a t il pas un moyen plus simple d'implementer cette fonctionnalité ?".
-* Métaphore du systeme : Toute l'equipe (client, manager, developpeur, etc.) est capable de decrire comment le systeme fonctionne avec des mots simples. 
+* Standards de code : Avoir un style de code convenant a toute l’équipe
+* Possession commune de code : Le code n’appartient a personne, mais a toute l’équipe
+* Architecture simple : La philosophie de l'équipe est "Simple est mieux" (KISS : Keep It Simple Stupid). L’équipe doit toujours se demander "N'y a t il pas un moyen plus simple d’implémenter cette fonctionnalité ?".
+* Métaphore du système : Toute l’équipe (client, manager, développeur, etc.) est capable de décrire comment le système fonctionne avec des mots simples. 
 
-### Bien etre du programmeur
+### Bien être du programmeur
 
-Le dernier principe est "Rythme tenable". Les programmeurs ne devrait pas faire d'heures supplémentaires pour realiser le travail. Un programmeur fatigué n'est pas un programmeur efficace et creatif, et la qualité du code sera moindre. 
-
-TODO attention ca vient beaucoup de wikipedia
+Le dernier principe est "Rythme tenable". Les programmeurs ne devrait pas faire d'heures supplémentaires pour réaliser le travail. Un programmeur fatigué n'est pas un programmeur efficace et créatif. La qualité du code en sera grandement amoindrie.
 
 ## Appliqué au projet
 
 ### Ce que nous retenons des méthodes agiles
 
-Pour notre equipe et notre projet, nous prenons inspiration de ces methodes agiles. SCRUM definit de bonnes méthodes de gestion de projet, tandis que l'extreme programming definit de nombreuses bonnes pratiques logicielles. Il faut faire tres attention a ne pas perdre l'interet d'une des deux methodes en ne l'implementant pas totalement.
+Pour notre équipe et notre projet, nous prenons inspiration de ces méthodes agiles. SCRUM définit de bonnes méthodes de gestion de projet, tandis que l'extreme programming fournit de nombreuses bonnes pratiques logicielles. Il faut faire très attention à ne pas perdre l’intérêt d'une des deux méthodes en ne les appliquant pas totalement.
 
-Le mot "extreme" d'extreme programming peut paraitre comme un mot pejoratif, mais ce n'est finalement qu'une liste simple de bonnes pratiques a respecter pour avoir un logiciel de qualité. Pour notre projot, nous allons donc utiliser ces bonnes pratiques, en plus d'utiliser les rituels et artefacts de SCRUM. Ce que nous retenons vraiment de ces deux methodes et ce que nous prenons comme philosophie sont les points suivants :
+Le mot "extrême" d'extreme programming peut paraître péjoratif, mais ce n'est finalement qu'une liste simple de bonnes pratiques à respecter pour avoir un logiciel de qualité. Pour notre projet, nous allons donc les utiliser, en plus des rituels et artefacts de SCRUM. Ce que nous retenons vraiment de ces deux méthodes et ce que nous prenons comme philosophie sont les points suivants :
 
 #### Testing 
 
-Une des pratiques les plus importantes. Un logiciel testé permet de s'assurer que toute nouvelle fonctionnalité n'affecte pas le reste du systeme. Le fait d'ecire le test en premier (TDD) force le refactoring et assure une bonne conception des le depart, limitant la dette technique.
+Une des pratiques les plus importantes. Un logiciel testé permet de s'assurer que toute nouvelle fonctionnalité n'affecte pas le reste du système. Le fait d'écrire le test en premier (TDD) force le refactoring constant et assure une bonne conception dès le départ, limitant la dette technique.
 
 #### Code Review 
 
-La revue de code par un autre collegue permet de s'assurer de la qualité de celui-ci. Cela donne du recul a celui qui l'a developpé et lui permet de s'ameliorer. Cela limite par la meme occasion la possesion du code par une seule personne. Si c'est difficile de faire du pair programming constamment, nous pensons qu'il est necessaire qu'un code sur la branche principale soit revu par au moins deux personnes. 
+La revue de code par un autre collègue permet de s'assurer de la qualité de celui-ci. Cela donne du recul à celui qui l'a développé et lui permet de s’améliorer et d’affûter son esprit critique. Cela limite par la même occasion la possession du code par une seule personne. Si c'est difficile de faire du pair programming constamment, nous pensons qu'il est nécessaire qu'un code sur la branche principale soit revu au moins par deux personnes. 
 
-#### Pas de dette technique
+#### Ne jamais avoir de dette technique
 
-La dette technique ralentit le developpement et renforce la possibilité d'avoir des bugs dans le systeme. Nous faisons tout ce que nous pouvons pour l'eviter. Pour cela, il est important de respecter les bonnes pratiques de l'extreme programming (TDD, code review, etc.). Les developpeurs doivent toujours etres satisfait du code sur la branche principale, et ne jamais penser que le probleme pourra etre reglé plus tard. 
+La dette technique ralentit le développement et renforce la possibilité d'avoir des bugs dans le système. Nous faisons tout ce que nous pouvons pour l’éviter. Pour cela, il est important de respecter les bonnes pratiques de l'extreme programming (TDD, code review, etc.). Les développeurs doivent toujours être satisfaits du code sur la branche principale, et ne jamais penser que le problème pourra être réglé plus tard. 
 
-Si le travail est effectué sur un code existant de type legacy (code non testé comportant généralement une forte dette technique), nous appliquons la *boy scoot rule*. Celle-ci definit qu'un developpeur qui touche a un morceau de code, doit forcement le rendre plus propre qu'il l'a laissé. Cela permet de reduire petit a petit la dette technique lorsque celle-ci est trop elevé.
+Si le travail est effectué sur un code existant de type legacy (code non testé comportant généralement une forte dette technique), nous appliquons la *boy scoot rule*. Celle-ci définit qu'un développeur qui touche a un morceau de code, doit forcement le rendre plus propre qu'il l'a laissé. Cela permet de réduire petit a petit la dette technique lorsque celle-ci est trop élevée.
 
-#### Déploiments rapides, faciles, et fréquents
+#### Déploiements rapides, faciles, et fréquents
 
-La procédure de déploiement en production doit etre automatisée, et fréquente. Si cette procedure est rapide, les developpeurs auront la possibilité d'ajouter des fonctionnalités et corriger des bugs facilement. L'automatisation est un énorme gain de temps. La présences de nombreux tests permet aussi de s'assurer que le déploiment s'est effectué sans problemes avec l'integration continue. 
+La procédure de déploiement en production doit être automatisée, et fréquente. Si cette procédure est rapide, les développeurs auront la possibilité d'ajouter des fonctionnalités et corriger les bugs facilement. L'automatisation est un énorme gain de temps. La présence de nombreux tests permet aussi de s'assurer que le déploiement s'est effectué sans problèmes grâce à l’intégration continue. 
 
 #### Utiliser les bons outils
 
-Tout outil permettant de gagner du temps doit etre utilisé (environnement de developpement, etc.). Il en est de meme des artefacts de SCRUM tels que la vélocité. Etre capable de mesurer la capacité de travail de l'equipe est tres important.
+Tout outil permettant de gagner du temps doit être utilisé (environnement de développement, etc.). Il en est de même des artefacts de SCRUM tels que la vélocité. Etre capable de mesurer la capacité de travail de l’équipe est très important.
 
 #### Une bonne communication
 
-Une bonne communication tous les jours avec les autres membres de l'equipe permet de ne pas avoir un membre bloqué sur une problematiques pendant plusieurs jours.
+Une bonne communication tous les jours avec les autres membres de l’équipe permet de ne pas avoir un membre bloqué sur une problématiques pendant plusieurs jours. Une équipe soudée, qui s'occupe rapidement des problèmes est une équipe efficace.
 
-#### Bien etre des membres de l'equipe
+#### Bien être des membres de l’équipe
 
-Une equipe bien dans sa peau, bien reposée, et ayant de l'interet pour le travail effectué est une equipe efficace. Pour cela, il ne faut pas que les membres ait de nombreuses heures supplémentaires a effectuer. La vélocité de l'equipe est présente pour mesurer sa capacité a travailler. Elle est plus facile a mesurer sur des intervalles de tempes courts (contrairement au cycle en V possedant de nombreuses etapes). L'equipe ne devrait donc pas travailler en plus de sa velocité. De plus, un systeme bien testé limites les problemes en production et les besoins d'effectuer des heures supplementaires.
+Une équipe bien dans sa peau, bien reposée, et ayant de l’intérêt pour le travail effectué est une équipe productive. Pour cela, il ne faut pas que les membres aient de nombreuses heures supplémentaires a effectuer. La vélocité de l’équipe est présente pour mesurer sa capacité a travailler aux heure traditionnelles. Elle est plus facile à mesurer sur des intervalles de tempes courts (contrairement au cycle en V possédant de nombreuses étapes). Un système bien testé limites les problèmes en production et les besoins d'effectuer des heures supplémentaires.
 
-Pour les developpeurs, avoir du temps dégagé pour effectuer de la veille technologique est tres important. Cela permet d'avoir des developpeurs toujours afutés techniquement et enforce leur creativité et compétence technique, ainsi que l'interet pour le travail effectué. Cela peut paraitre sans valeur ajoutée pour le produit, mais c'est en realité ce qui pourra faire la difference dans la realisation de celui-ci, plus originale et moderne. Un peu de veille tous les jours ou meme une apres midi par semaine dans les periodes creuses ont de grands benefices. Il est encore mieux lorsque des ateliers de partage de connaissance sont organisés de temps en temps, qui affute en meme temps les talents de communication des membres.
+Pour les développeurs, avoir du temps dégagé pour effectuer de la veille technologique est très important. Cela permet d'avoir des développeurs toujours affûtés techniquement et renforce leur créativité et leur compétence technique, ainsi que l’intérêt pour le travail effectué. Cela peut paraître sans valeur ajoutée pour le produit, mais c'est en réalité ce qui pourra faire la différence dans la réalisation de celui-ci, la rendant plus originale et moderne. Un peu de veille tous les jours ou même une après-midi par semaine dans les périodes creuses ont de grands bénéfices. Organiser des ateliers de partage de connaissance (exemple : Coding Dojo) rend la chose encore plus efficace, et permet aussi d'améliorer les talents de communication des membres de l'équipe.
 
 ### Différents types de tests
 
-Nous avons vu que le testing est tres important dans la realisation d'un logiciel. Il existe cependant plusieurs types de tests possedant un interet et un cout differents.
+Nous avons vu que le testing est très important dans la réalisation d'un logiciel. Il existe cependant plusieurs types de tests possédant un intérêt et un coût différents.
 
 #### Pyramide des tests
 
-La pyramide de tests est un concept créé par  Mike Cohn, described in his book Succeeding with Agile. Le point clé qu'il essaye de demontrer est qu'un logiciel devrait avoir beaucoup plus de tests unitaires de bas niveau (faciles a ecrire et beaucoup d'interet), que de tests d'interface graphique de haut niveau (difficiles a ecrire et moins d'interet). Attentien, il ne dit pas que les tests de haut niveau sont sans interet, il dit que l'on devrait ecrire plus de tests faciles a ecrire que de tests difficiles a ecrire (temps perdu).
+La pyramide de tests est un concept créé par Mike Cohn, dans son livre "Succeeding with Agile". Le point clé qu'il essaye de démontrer est qu'un logiciel devrait avoir beaucoup plus de tests unitaires de bas niveau (faciles à écrire), que de tests de haut niveau (difficiles à écrire). Attention, il ne dit pas que les tests de haut niveau sont sans intérêt, il pense juste que l'on devrait écrire plus de tests faciles à écrire que de tests difficiles à écrire (temps perdu). Tout est une question de rapport temps passé / intérêt.
 
-Les tests de haut niveau sont differents selon la partie technique implementée, dans tous les cas on parle souvent de tests fonctionnels, ceux qui sont le plus proche du resultat final, representant une fonctionnalité de l'application. Ce sont généralement les tests que l'on ecrit en premier. 
+Les tests de haut niveau sont différents selon la partie technique implémentée, dans tous les cas on parle souvent de tests fonctionnels. Ce sont les plus proche du résultat final, représentant une fonctionnalité de l'application. Ce sont généralement les tests que l'on écrit en premier. Dans le cas du front-end, ce sont généralement des tests d'interface graphique, et pour le back-end, ce sont des tests d'API ou des tests d'intégration.
 
-Dans le cas du front-end, ce sont généralement des tests d'interface graphique (UI). Ils ne sont généralement pas faciles a ecrire mais dans notre cas, grace a la technologie choisie (AngularJS), des outils spécifiques facilitent l'ecriture de ceux-ci (Protractor). On enclenche par exemple une action (clic sur un bouton) et on verifie qu'il se passe le comportement voulu, comme l'apparition d'une pop-up, etc.
+Un test unitaire substituera les dépendances (*mock*), ce qui n'est généralement pas le cas des tests de haut niveau. Ils sont beaucoup plus faciles à écrire car grâce aux mocks, la fonction testée retournera toujours le même résultat. Les tests de haut niveau utilise les connections réelles, le résultat est beaucoup moins prévisible, mais plus proche de la réalité.
 
-Dans le cas du back-end, on parle généralement de test d'API ou de test d'integration. On ecrit un test qui appelle diretctemment l'API et qui va verifier que le resultat obtenu (généralement une donée) est correct. Il peut s'averer complexe d'effectuer ce genre de tests lorsqu'une base de donnée est impliquée, car la donnée n'est peut etre pas consistante. Généralement, une base de données de tests différente de celle de production est utilisée. 
-
-Cela signifie qu'un test peut avoir un résultat different selon le contexte (non idempotent). Ce n'est pas le cas des tests unitaires qui vont substituer les parties externes de la methode testée pour avoir toujours le meme resultat. C'est pour cette raisons qu'ils sont beaucoup plus faciles a ecrire, mais ils ne mettront pas en valeurs certains aspects. 
-
-Il faut retenir ceci : Un test unitaire permet de verifier qu'une methode est capable de gerer plusieurs cas, et un test de haut niveau verifie qu'une fois le tout relié, l'ensemble fonctionne. Les tests unitaires forcent aussi une bonne separation des responsabilités.
+Il faut retenir ceci : Un test unitaire permet de vérifier qu'une méthode est capable de gérer plusieurs cas bien définis, et un test de haut niveau vérifie qu'une fois le tout relié, l'ensemble fonctionne.
 
 ![Pyramide des tests][testPyramid]
 
 #### TDD (Test Driven Developement)
 
-Le TDD (Test Driven Development) ou developpment piloté par les tests est une méthode de développement pronant la repetition et les cycles de developpement courts. Si au depart le TDD etait une pratique de l'extreme programming, c'est aujourd'hui une pratique plus generalement adoptée. Le principe est le suivant :
+Le TDD (*Test Driven Development*) ou développement piloté par les tests est une méthode de développement prônant la répétition et les cycles de développement courts. Si au départ, le TDD était une pratique de l'extreme programming, c'est aujourd'hui une pratique plus généralisée. Le principe est le suivant :
 
-* Rouge : Le developpeur ecrit un test qui va definir l'amelioration ou la creation d'une fonction (le test va automatiquement echouer, on dit que le test est rouge)
-* Vert : Le developpeur ecrit ensuite le code minimum faisant reussir le test
-* Refacto : Il va ensuite refactorer le code jusqu'a ce qu'il soit satisfaisant (standards acceptables par l'equipe). Il verifie que ces changement n'ont impacté aucun test
+* **Rouge** : Le développeur écrit un test qui va définir l’amélioration ou la création d'une fonction (le test va automatiquement échouer, on dit que le test est rouge)
+* **Vert** : Le développeur écrit ensuite le code minimum pour faire réussir le test (le test passe au vert)
+* **Refacto** : Il va ensuite réfactorer le code jusqu’à ce qu'il soit satisfaisant (standards acceptables par l’équipe). Il vérifie que ces changement n'ont impacté aucun autre test (pas de régression)
 
-Selon Kent Beck, connu pour avoir défini cette technique dans son livre Test Driven Development: By Example, le TDD encourage une architecture simple et efficace. Cette technique parait etrange pour beaucoup de developpeurs, car ce n'est pas l'ecriture de la solution du probleme qui est ecrite en premier. C'est plutot un test mettant en valeur ce qui manque au systeme.
+Selon Kent Beck, connu pour avoir défini cette technique dans son livre "Test Driven Development: By Example", le TDD encourage une architecture simple et efficace. Cette technique parait étrange pour beaucoup de développeurs, car ce n'est pas la solution qui est écrite en premier, mais le test la validant. Cela met plus en valeur ce qui manque à la fonction, et le fait d'utiliser la fonction avant de la créer renforce la réflexion sur la bonne conception de celle-ci.
 
-Dans le cas d'une nouvelle fonctionnalité a implementer, resoudre le test signifie que la fonctionnalité a été rajoutée. Dans le cas d'un bug, il faut ecrire un test mettant en valeur le cas ou la fonction echoue, et faire passer le test signifie que le bug est corrigé. Dans tous les cas, la derniere etape permet de s'assurer que le code rajouté est de qualité et de ce fait, est une étape tres importante. 
-
-De plus, ne pas casser un autre test que le nouveau ecrit signifie qu'aucune regression n'a ete faite au systeme. Ainsi, la presence de nombreux tests permet de s'assurer que le systeme evolue et ne regresse pas (apparition de bugs). On parle de tests de non régression.
-
-Nous utilisons une variante du TDD se nommant le BDD (Behavior Driven Development), developpement piloté par le comportement. C'est le meme principe que TDD mais avec une description du test un peu plus claire. C'est tres utile pour les tests de haut niveau (tests fonctionnels) car l'implementation du test ressemble fortement a une phrase ecrite en langage commun (francais, anglais, etc.). La convention est la suivante :
-
-* Given : Etant donné que ...
-* When : Si ...
-* Then : Alors ...
+Dans le cas d'une nouvelle fonctionnalité a rajouter, résoudre le test signifie que la fonctionnalité a bien été implémentée. Dans le cas d'un bug, il faut écrire un test mettant en valeur le cas ou la fonction échoue, et faire passer le test signifie que le bug est corrigé. Dans tous les cas, la dernière étape est la plus importante, car c'est celle qui assure qu'en plus du fait que la fonction est bien implémentée, elle est aussi de bonne qualité.
 
 ### Déploiement continu
 
-* fait partie de l'extreme programming
-* niveau au dessus de l'integration continue
-* integration continue c'est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier à chaque modification de code source que le résultat des modifications ne produit pas de régression dans l'application développée
-* Le principal but de cette pratique est de détecter les problèmes d'intégration au plus tôt lors du développement. De plus, elle permet d'automatiser l'exécution des suites de tests et de voir l'évolution du développement du logiciel.
-* L'intégration continue est de plus en plus utilisée en entreprise afin d'améliorer la qualité du code et du produit final
-* et donc le déploiement continu, c'est que en plus de tout ca, la mise en production est automatique apres chaque feature développée
-* avec ca on est sur que ca marche en prod avec tous les tests
-* plusieurs outils pour ca. deja il faut un serveur d'integration qui surveille le gestionnaire de version pour que a chaque commit, il lance les tests et tout ca. Nous on a utilisé Jenkins pour ca, mais y'a plein d'autres trucs. Docker aide vachement aussi, parce que faut juste lancer des containers
+L'intégration continue vérifie que toute modification du code source ne produit aucune régression au système en lançant une phase tests à chaque nouveau morceau de code ajouté. Le principal but de cette pratique est de détecter les problèmes d'intégration au plus tôt lors du développement. Cette solution est de plus en plus utilisée en entreprise car elle améliore la qualité du code et du produit final.
 
-TODO déploiement a la fin du dev d'une feature ou a la fin d'une release ?
-TODO parler de ca ? si pas ici, parler d'integration continue et de jenkins quelque part
+Le déploiement continu fait partie de l'extreme programming. C'est un niveau au dessus de l'intégration continue car elle effectue en plus de l'intégration, le déploiement automatisé de l'application si tous les tests sont passés. 
 
-## Démonstration de développement d'une fonctionnalité
+Il y a généralement un serveur d'intégration qui surveille le gestionnaire de versions. Il existe de nombreuses solutions d'intégration continue, nous avons utilisé Jenkins pour notre projet. Le fait d'utiliser Docker simplifie grandement l'automatisation des déploiements.
 
-Un sprint contient généralement l'implementation de plusieurs fonctionnalités. Une fonctionnalité est definie via une User Story ecrite au Sprint Planning. Voici notre méthodologie concrete pour ajouter une fonctionnalité au produit.
+## Démonstration du développement d'une fonctionnalité
 
-* Creation d'une nouvelle branche
-* Ecriture de tests de haut niveau (Integration test, E2E test)
-* Ecriture de la fonctionnalité en TDD
-* Un bug ? Création d'un test mettant en valeur le bug, puis correction
+Voici notre méthodologie concrète employée pour ajouter une fonctionnalité au produit.
+
+* Création d'une nouvelle branche sur le gestionnaire de versions (évite le conflit avec les autres nouvelles fonctionnalités implémentées en parallèle)
+* Écriture de tests de haut niveau (Intégration ou UI selon le cas)
+* Écriture du code source en TDD strict (il est interdit d'ajouter du code source sans la mise en valeur du manque par un test)
 * Code review par un autre membre de l'équipe
-* Integration de la nouvelle branche sur la branche principale
-* Verification que tous les tests passent grace a l'integration continue
-
-La création d'une nouvelle branche permet au developpeur s'etant assigné une user story d'implementer son code sans interagir avec les autres membres de l'equipe, et ne pas avoir des conflits de code fréquemment. Une branche n'est reintegrée que si elle est validée par un autre membre de l'equipe. Une branche ne devrait pas etre longtemps eloignée de la branche principale, sinon le travail de merge devient plus complexe.
-
-TODO meilleur nom ?
-TODO deja defini quelque part ce qu'est une user story
-TODO deja defini quelque part integration continue ?
+* Intégration de la nouvelle branche sur la branche principale
+* Vérification de la non régression grâce a l’intégration continue
 
 # Résultats du projet
 
