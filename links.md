@@ -67,3 +67,21 @@ browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines
 # LaTeX
 
 <http://tex.stackexchange.com/questions/70860/can-latex-perform-calculation-like-excel-formula-table>
+
+# Notes
+
+TODO
+
+# TODO
+
+* Intro
+* Présentation de l'entreprise
+* Conclusion
+* Résumé de 5 pages max
+* Refacto visuel
+* Vérification des normes (nombre de pages, etc.)
+* Ajout du glossaire, sources, etc.
+* Relecture finale
+* Page de titre
+* Relecture chérie
+* Remerciements
