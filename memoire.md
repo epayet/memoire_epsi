@@ -808,13 +808,11 @@ Nous ne présenterons pas tous les frameworks SPA, car il en existe beaucoup. Il
 AngularJS est un framework créé en 2009 par Google. Il propose :
 
 * Injection de dépendances
-* Pattern MVVM utilisé mais avec notion de "service" qui peut servir pour mettr de la business logic
+* Pattern MVVM utilisé mais avec une notion de "service" qui peut être utilisé pour la logique de domaine
 * Orienté composants possible (via directives)
-* Testing avancé et facilité:
-    * Tests unitaires
-    * Tests UI (E2E) via protractor
+* Testing avancé mis en avant (unitaire et UI)
 * Découpage fonctionnel sous forme de modules
-* Two way data binding : passage des donnes du controleur a la vue automatique au niveau du code
+* Two way data-binding : Lien entre la vue et le contrôleur automatique
 
 Une version 2 est en cours de développement et va apporter de nombreuses choses :
 
@@ -825,18 +823,16 @@ Une version 2 est en cours de développement et va apporter de nombreuses choses
 
 #### Avantages
 
-* Stable et production-ready 
+* Stable et largement utilisé en production
 * Large communauté : framework le plus utilisé, de nombreux modules open source
-* Two-way data binding facilite grandement le développement et permet d'eviter la manipulation du DOM
+* Le Two way data-binding facilite grandement le développement et permet d’éviter la manipulation du DOM
 * Séparation des fichiers claire pour chaque composant (HTML, JS, CSS)
 
 #### Inconvénients
 
 * Prise en main difficile
-* Version 2 non rétro-compatible (si utilisé en orienté composants, migration facilitée)
-* Performances (le two-way data-binding a un impact sur la performance générale de l'application)
-
-TODO comment ecrire 2 way data binding
+* Version 2 non rétro-compatible (si version utilisée en orienté composants, migration facilitée)
+* Performances (le two way data-binding a un impact sur la performance générale de l'application)
 
 ![Tendance des recherches d’après Google Trends][spaFrameworks]
 
