@@ -840,54 +840,51 @@ Une version 2 est en cours de développement et va apporter de nombreuses choses
 
 #### Description
 
-ReactJS est un framework créé en 2013 par Facebook. Il est par conception orienté composants et utilise le virtual DOM, implémentation differente du shadow dom (non standard), aillant de tres bonnes performances. Par conception, ce framework s'occupe unique de la vue et doit etre utilisé avec un autre framework pour etre complet. 
+ReactJS est un framework créé en 2013 par Facebook. Il est par conception orienté composants et utilise le *virtual DOM*, implémentation différente du *Shadow dom*, avec de très bonnes performances. Par conception, ce framework s'occupe unique de la vue et doit être complété par d'autres librairies.
 
-Facebook a créé une architecture se nommant Flux pour complementer ReactJS. C'est une architecture orienté evenements pronant le flux de donnees unidirectionnel (contraire du two-way data binding). Bien utilisé, il est beaucoup plus clair et performant. Ce qu'il faut retenir c'est : les donnees descendent, et les actions remontent, chacun dans un sens. 
+Facebook a créé une architecture se nommant Flux, complémentaire de ReactJS. C'est une architecture orienté événements prônant le flux de données unidirectionnel (contraire du two way data-binding). Bien utilisé, il est beaucoup plus clair et plus performant. Ce qu'il faut retenir c'est : les données descendent, et les actions remontent, unidirectionnellement. 
 
 #### Avantages
 
 * Simple et rapide a mettre en place
 * Architecture Flux claire et efficace
-* SEO : possibilité de faire du server-side rendering
+* SEO : Possibilité de faire du server-side rendering
 * Performances
 * Communauté grandissante
 
 #### Inconvénients
 
-* Utilisation du JSX : JSX mélange l'HTML et le JavaScript dans un meme fichier par souci de simplicité. C'est un choix personnel, mais je prefere avoir les avoir séparé (melange de vue et de logique)
-* JSX et virtual DOM non standards, malgré leur efficacité
+* Utilisation du JSX : Mélange l'HTML et le JavaScript dans un même fichier par souci de simplicité. Ce n'est pas un inconvénient en soi, mais il faut approuver ce concept. Cela mène selon moi à un mélange de vue et de logique, même si cela simplifie grandement la création de composants.
+* JSX et virtual DOM non standards, contrairement au Shadow DOM. Ils sont cependant très efficaces
 
 ### Polymer
 
 #### Description
 
-Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un framework, car il est beaucoup moins complet que les autres. Les web components, tels qu'ils sont definis par le W3C ne sont pas encore supportés par tous les navigateurs. Polymer propose donc un systeme de polyfill pour creer des composants web se rapprochant plus du standard, comprenant le Shadow DOM, l'import HTML, etc.
+Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un framework, car il est beaucoup moins complet que les autres. Les web components, tels qu'ils sont définis par le W3C ne sont pas encore supportés par tous les navigateurs. Polymer propose donc un système de polyfill pour créer des composants web se rapprochant plus du standard, comprenant le Shadow DOM, l'import HTML, etc.
 
 #### Avantages
 
 * Les composants créés se rapprochent plus du futur standard que les autres frameworks
-* Peut etre combiné avec d'autres librairies
+* Peut être combiné avec d'autres librairies, combinaison personnalisée
 
 #### Inconvénients
 
-* Tres recent, version 1.0 sortie il y a peu de temps
-* Tres peu de modules open source
+* Très récent, version 1.0 sortie il y a peu de temps
+* Peu de modules open source
 * Pas un framework, moins complet mais si le choix est de faire une combinaison de librairies, pourra convenir
 
 ### Un choix difficile
 
-Le choix est difficile a effectuer car les technologies présentées sont toutes bien (permettant l'orienté composants et l'orienté evenements) et sont a la pointe des technologies web. Le choix dependra finalement du projet et du style des equipes de developpement. 
+Le choix est difficile a effectuer car les technologies présentées sont toutes de bonne qualité, conviennent à nos choix d'architecture (orienté composants et orienté événements) et sont à la pointe des technologies web. Le choix dépendra finalement du projet et du style de développement des équipes. 
 
-Pour ce qu'il est de notre projet, nous avons choisi angular pour les raisonts suivantes. Il est le framework le plus mature et possedant la plus grande communauté dans sa catégorie. Les ressources a disposition sont alors importantes. Il met beaucoup en avant le testing, et c'est un facteur tres important pour notre projet. De plus, notre equipe a de l'experience avec ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 moins, c'est a prendre en compte.
+Pour notre projet, nous avons choisi AngularJS. C'est le framework le plus mature et possédant la plus grande communauté dans sa catégorie et les ressources à disposition sont importantes. La testabilité est fortement mise en avant, ce qui est un point clé pour notre projet. Notre équipe possède déjà de l’expérience sur ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 mois, c'est un facteur important.
 
-Nous aurions pu choisir ReactJS pour ses performances et sa philosophie, mais finalement les performances d'AngularJS sont tres correctes pour notre besoin, et nous préférons le style de developpement d'angularJS (preferance pour la structure des fichiers d'angular par rapport au JSX de ReactJS). C'est donc vraiment une preferance finalement.
+Nous aurions pu choisir ReactJS pour ses performances et sa philosophie, mais finalement les performances d'AngularJS sont suffisantes pour notre projet, et nous préférons son style de développement (préférence pour la structure des fichiers proposée par AngularJS par rapport au JSX de ReactJS). 
 
-Polymer est selon moi trop jeune, la version 1.0 etant sortie alors que nous avions deja commencé le projet. Avec une bonne combinaison de librairies, il peut cependant devenir une alternative tres interessante. 
+Polymer est selon moi trop jeune, la version 1.0 étant sortie alors que nous avions déjà commencé le projet. Avec une bonne combinaison de librairies, il peut cependant devenir une alternative très intéressante. 
 
-Nous avons rajouté a notre choix d'angular un bus d'evenements central pour profiter de l'architecture orienté evenements. N'etant pas fourni avec AngularJS, nous avons créé notre bus d'evenements en JavaScript.
-
-TODO parler de la structure des fichiers d'un component ? (controller, service, css, etc.)
-TODO faire des phrases des fois
+Nous ajoutons un bus d’événements central pour profiter de l'architecture orienté événements. N’étant pas fourni avec AngularJS, nous avons créé notre propre bus en JavaScript.
 
 ## Choisir les bons outils
 
