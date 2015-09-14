@@ -1,5 +1,8 @@
 # Introduction {-}
 
+TODO
+
+<!--
 Lors de mon cursus d'ingénierie informatique a l'epsi Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d'etre a la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets tres interessants, ce qui m'a permis de m'améliorer dans de nombreux domaines.
 
 Travaillant d'abord essentiellement sur des applications web internes, mon travail etait tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance aupres de mes superieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et transmettre le résultat de mes recherches sous forme d'atelier en communauté de type coding dojo*.
@@ -13,9 +16,13 @@ Le but de ce mémoire est de passer en revue ces possibilités, d'offrir des pro
 Nous verrons d'abord les besoins de créer une application web et l'évolution au fil des années de celles-ci. Nous verrons ensuite les différentes architectures modernes et utilisées sur le marché ainsi que les technologies actuelles répondant a ces problématiques. Nous aurons l'occasion de voir plusieurs exemples, comprenant la possibilite de faire aussi une application mobile via les applications que j'ai moi-meme develepe au sein de Cdiscount.
 
 Developpeur full stack, architecture moderne
+-->
 
 # Présentation de l'entreprise {-}
 
+TODO
+
+<!--
 Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses
 employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500
 personnes dont environ 300 dans la partie SI (Système d’Information). Elle a été créée en
@@ -137,6 +144,8 @@ d’intégrer l’équipe « Lab ». J’ai pu alors exercer librement ma veille
 proposer des choix techniques pour certaines applications.
 
 TODO equipe par couche ? dit comme ça ?
+
+-->
 
 # Application Web
 
@@ -769,8 +778,9 @@ Cdiscount utilise actuellement une architecture orientée service et chaque serv
 
 C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes. Voici notre plan d'implémentation des microservices pour notre API RESTful.
 
-TODO
+TODO étape 1, 2, 3
 
+<!--
 Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
 
 TODO schema
@@ -779,6 +789,7 @@ Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture d
 
 TODO schema
 TODO bien parler de l'api gateway
+-->
 
 ## Ce qu'il faut retenir
 
@@ -1173,11 +1184,15 @@ Le jury technique quant-à lui était satisfait de voir que nos méthodes ont po
 
 # Conclusion {-}
 
+TODO
+
+<!--
 brain
 monolith is dead
 c'est pas the choix mais les choix qu'on a fait, du style, du style. on a juste essayé de bien choisir pour avoir comme resultat un logiciel de bonne qualité, maintenable, etc.
+-->
 
-TODO
+<!--
 
 # Notes et plan {-}
 
@@ -1224,6 +1239,8 @@ TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tier
 TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
 TODO traduire les noms en anglais genre SOA
 TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau plan, annexe ?
+
+-->
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
