@@ -84,4 +84,3 @@ TODO
 * Relecture finale
 * Page de titre
 * Relecture chérie
-* Remerciements

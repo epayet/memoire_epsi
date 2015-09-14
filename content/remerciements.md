@@ -1,16 +1,9 @@
-Je tiens à remercier tout d'abord l'entreprise qui m'a pris en alternance depuis maintenant deux ans et qui me propose par la suite de continuer avec elle.
-Durant ces deux années, j'ai en effet pu progresser sur de très nombreux sujets.
+Je remercie Cdiscount, l'entreprise pour laquelle j'ai eu la chance de travailler pendant 3 ans. 
 
-Je remercie mon tuteur M. Anthony DON, pour sa confiance, 
-son enthousiasme et ses encouragements lors de la réalisation des nombreux projets qui ont permis l'écriture de ce mémoire,
-ainsi que pour son aide sur la correction du document.
+J'ai eu la chance d'avoir deux tuteurs durant cette longue période. Je remercie donc Olivier ABRARD, mon premier tuteur qui a toujours vu en moi un énorme potentiel, et qui m'a soutenu dans mes projets. Je remercie ensuite Grégory TAUDIN, mon second tuteur, qui a toujours eu une grande confiance en mes compétences, en me poussant toujours au maximum de mes capacités. 
 
-Je remercie également M. Arnaud CUEILLE pour son aide.
+J'ai rencontré de nombreuses personnes à Cdiscount avec qui il était agréable de travailler. Nombreux d'entre eux sont devenus mes amis. Edouard SOUAN, alternant venant lui aussi de l'EPSI, membre de mon équipe est la personne avec qui j'ai travaillé le plus longtemps. Je le remercie pour sa patiente et son entrain. 
 
-Je remercie ma mère, qui a passé du temps à me relire et corriger mon orthographe.
+Je remercie aussi l'EPSI, sans qui toute cette experience n'aurait pas été possible.
 
-Je remercie tout spécialement mon père, qui, je le sais, a passé beaucoup de temps à relire ce long document.
-
-\begin{center}
-\textit{Il a toujours cru en moi et restera au fond de mon cœur.}
-\end{center}
+Je remercie bien sûr grandement ma famille qui malgré la distance me porte un énorme soutien.
