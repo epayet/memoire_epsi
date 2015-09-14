@@ -1143,37 +1143,33 @@ Voici notre méthodologie concrète employée pour ajouter une fonctionnalité a
 
 # Résultats du projet
 
-Ayant appliqué ces principes (architecture, méthodologies, technologies) sur notre projet durant 2 mois avec notre équipe de 3 développeurs, nous sommes arrivés a un resultat satisfaisant. Nous allons maintenant voir jusqu'ou le developpement est allé et les objectifs ont étés atteints.
+Ayant appliqué ces principes (architecture, méthodologies, technologies) sur notre projet durant 2 mois avec notre équipe de 3 développeurs, nous sommes arrivés a un résultat satisfaisant. Nous allons maintenant voir jusqu’où le développement est allé et si les objectifs ont étés atteints.
 
 ## Résultat
 
-Grace a la technologie cordova, nous avons créé une application fonctionnant sur plusieurs terminaux mobiles (ios, android) ainsi que sur les navigateurs web. En voulant imiter le fonctionnement de l'application android, nous avons eu le temps d'implémenter les fonctionnalités suivantes :
+Grace a la technologie Cordova, nous avons créé une application fonctionnant sur plusieurs terminaux mobiles (iOS, Android) ainsi que sur les navigateurs web. En voulant imiter le fonctionnement de l'application Android, nous avons eu le temps d'implémenter les fonctionnalités suivantes :
 
-* Acceuil : Contient les derniers offres du moment
-* Navigation : Navigation par catégorie (Informatique, Immobilier, etc.)
-* Fiche produit : Fiche déthaillée d'un produit
+* **Accueil** : Contient les dernières offres promotionnelles du moment
+* **Navigation** : Navigation par catégorie (Informatique, Immobilier, etc.)
+* **Fiche produit** : Fiche détaillée d'un produit
 
-Nous n'avons pas eu le temps d'implementer la gestion du panier, des commentaires, etc. C'etait les prochaines fonctionnalités a implementer. Le tout utilise bien evidemment les donnees reelles de Cdiscount, ayant ainsi un comportement similaire a tout moment des applications actuelles.
+Nous n'avons pas eu le temps d’implémenter la gestion du panier, des commentaires, etc. C’était les futures fonctionnalités à implémenter sur la liste. Le tout utilise bien évidemment les données réelles de Cdiscount, ayant ainsi un comportement similaire aux applications actuelles.
 
-Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons meme tenté d'innover un peu et de faire certaines choses differemment que l'application de base. Au niveau de l'implementation des microservices, nous en sommes a la premiere etape.
+Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons même tenté d'innover un peu et de faire certaines choses différemment de l'application de base. Au niveau de l’implémentation des microservices, nous en sommes a la première étape.
 
 ## Challenges
 
-Le fonctionnement de Cdiscount est actuellement n'est pas pensé pour les SPA. Par exemple, le tracking interne s'effectue en se basant sur les applications traditionnelles. Cela ne nous a pas derangé durant le développement du projet, mais c'est un point a prendre en compte si nous souhaitons industrialiser cette solution a Cdiscount. Il faudra alors developper une solution permettant l'utilisation du tracking interne avec notre solution.
+Le fonctionnement actuel de Cdiscount n'est pas pensé pour les SPA. Par exemple, la solution de tracking interne s'effectue en se basant sur les applications web traditionnelles. Cela ne nous a pas dérangé durant le développement du projet, mais c'est un point à prendre en compte si nous souhaitons industrialiser cette solution à Cdiscount. Il faudra alors trouver un moyen d'intégrer l'utilisation du tracking interne avec notre solution.
 
-Nous avons cités les soucis de performance d'AngularJS. Il est vrai que sur certaines animations, un ralentissement pouvait se ressentir. Mais grace des accelerateurs tels que CocoonJS, et avec une bonne combinaisons de librairies tierces, l'application est maintenant d'une tres bonne fluidité. 
+Nous avons parfois rencontré les soucis de performances engrangés par les webviews et AngularJS. Avec une bonne combinaison de librairies et grâce aux accélérateurs de webview, l'application est maintenant d'une très bonne fluidité.
 
-Le challenge technique etait important, surtout au niveau de l'implementation des microservices. Deux mois de developpement c'est finalement tres court, mais nous avons pu fournir un gros travail grace aux methodologies appliquees. C'est cependant pour nous un sujet passionnant et sommes satisfaits du resultat actuel.
+Le challenge technique était important, surtout au niveau de l’implémentation des microservices. Deux mois de développement c'est finalement très court, mais nous avons pu fournir un travail conséquent grâce aux méthodologies appliquées. C'est cependant pour nous un sujet passionnant et sommes satisfaits du résultat actuel.
 
 ## Objectifs atteints ?
 
-Lors de la présentation finale du projet, le jury non technique etait satisfait du resultat et pense qu'apres quelques ajout pour concorder aux methodes de Cdiscount (tracking, etc.) pour rendre la solution totalement industrialisable pour Cdiscount, il sera possible de la tester sur des projets transverses, permettant d'utiliser notre expertise du monde du web pour creer des applications mobiles, plutot que de payer un prestataire. 
+Lors de la présentation finale du projet, le jury non technique était satisfait du résultat et pense qu’après quelques ajouts pour concorder aux méthodes de Cdiscount (tracking, etc.), il sera possible de tester notre solution sur des projets transverses, permettant d'utiliser au mieux notre expertise des technologies du web.
 
-Le jury technique quant a lui etait satisfait de voir que nos méthodes ont portés leurs fruits et que notre logiciel est de qualité au niveau de son implementation. L'architecture et la methododologie employee correspond totalement sur ce quoi veut tendre Cdiscount.
-
-Notre projet et notre equipe sont finalement une grande inspiration pour Cdiscount et les objectifs ont étés atteints.
-
-TODO conclure sur le projet ici, ou dans la grande conclusion ?
+Le jury technique quant-à lui était satisfait de voir que nos méthodes ont portés leurs fruits et que notre logiciel est de qualité au niveau de son implémentation. L'architecture et la méthodologie employée correspondent totalement à l'évolution de Cdiscount.
 
 # Conclusion {-}
 
