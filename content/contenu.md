@@ -1,6 +1,6 @@
 # Introduction {-}
 
-Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 à 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu intégrer plusieurs équipes et participer à de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
+Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 à 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu intégrer plusieurs équipes et participer à de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.\cite{styles_archi}
 
 Mon travail était tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance auprès de mes supérieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et de parfaire mes talents de conception.
 
