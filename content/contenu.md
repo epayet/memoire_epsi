@@ -20,132 +20,109 @@ Developpeur full stack, architecture moderne
 
 # Présentation de l'entreprise {-}
 
-TODO
+## Une entreprise grandissante
 
-<!--
-Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses
-employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500
-personnes dont environ 300 dans la partie SI (Système d’Information). Elle a été créée en
-1998 par trois frères et vendait principalement des CDs. Elle vend aujourd’hui toutes sortes
-de marchandises (High tech, loisirs, équipements de maison, etc.). Cdiscount possède aussi
-deux magasins physiques à Bordeaux et à Paris qui proposent les meilleures ventes du site
-internet physiquement.
+Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes dont environ 300 dans la partie SI (Système d’Information). Elle a été créée en 1998 par trois frères et vendait principalement des CDs. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). Cdiscount possède aussi deux magasins physiques à Bordeaux et à Paris qui proposent les meilleures ventes du site internet physiquement.
 
-Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution
-en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la
-livraison dans les magasins casino. Le site s'est alors imposé comme l'un des principaux sites
-de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe
-ainsi en France devant Amazon, le leader mondial dans ce domaine.
-Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à
-l’international. Elle s’est récemment implémentée en Colombie et en Côte d’Ivoire, puis
-bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays.
-Pour s’adapter à ces changements, Cdiscount revoit de plus en plus son architecture au
-niveau des équipes et au niveau du code réalisé. Son objectif actuel est d’avoir une
-plateforme facilement utilisable dans un autre pays. Pour cela il faut notamment gérer
-l’intertionalisation et la facilité de déploiement de l’application. Il est donc nécessaire de
-s’assurer du bon fonctionnement de toutes les couches applicatives et les adapter aux
-nouveaux besoins. Ainsi l’objectif de Cdiscount est de plus en plus miser sur la qualité du
-code ainsi que l’innovation et choisir au mieux les technologies adaptées à chaque besoin.
-Plusieurs chantiers sont en cours pour ces changements.
-Le SI de Cdiscount est historiquement divisé en ��quipe par domaine. En voici quelques-uns :
+Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la livraison dans les magasins Casino. Le site s'est alors imposé comme l'un des principaux sites de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe ainsi en France devant Amazon, le leader mondial dans ce domaine. Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à l’international. Elle s’est récemment implémentée en Colombie, en Côte d’Ivoire, en Thaïlande, puis bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays. 
 
-* Front
+## Changements en cours
 
-C’est l’équipe qui s’occupe de l’interface du site. Au niveau de la logique « métier », ils se
-basent sur les services web créés par l’équipe services.
-* DBA
+A l'heure actuelle, Cdiscount possède de nombreuses applications complexes sur tout types de supports (mobiles, PC, etc.). Chaque pays déployé possède sa propre version car chacun a ses spécificités. En plus de cela, uniquement en France, Cdiscount possède aussi de nombreux sites "verticaux", différents de son site principal, proposant des articles à la vente restraints à un seul domaine (exemple : vente de billets d'avions). Le nombre d'applications différentes ne cesse de grandir et la méthodologie employée lorsque la société ne travaillait que sur son site principal (cdiscount.com) est difficilement applicable dans ce nouveau contexte.
 
-DBA signifie DataBase Administrator (administrateur de base de données). Cette équipe
-s’assure de la qualité et du fonctionnement de l’utilisation de la base de données.
+Pour s’adapter à ces changements, Cdiscount retravaille sa méthodologie et son architecture. Son objectif est d'accentuer la qualité du code fourni et de miser sur l'innovation technologique. Si historiquement, les technologies principales utilisées chez Cdiscount proviennent du monde Microsoft (C#, ASP.NET, SQL Server, Visual Studio, etc.), elle utilise de plus en plus sur des alternatives open source.
 
-* Delivery Management
+<!--TODO open source glossaire-->
 
-2Ils s’occupent de la gestion des différents serveurs à distance. Ils s’occupent donc des
-déploiements d’applications d’un environnement à un autre et s’assurent du maintien à jour
-et du bon fonctionnement de celles-ci (fichiers de configuration, etc.).
+## Différent types d'équipes
 
-* MCO
+Le SI de Cdiscount est historiquement divisé en équipe par domaine technique, mais un nouveau genre d'équipes fait son apparition au sein de son SI : les "feature teams". On les nomme aussi parfois les "pizza teams". Ce sont des équipes polyvalentes ne dépassant pas 8 personnes assignés à une seule fonctionnalité. Les méthodes agiles sont plus faciles à appliquer avec ce genre d'équipe.
 
-Le maintien en condition opérationnelle (abrégé MCO) est l'ensemble des mesures prises
-pour garantir que la bascule vers un environnement dégradé n'entraîne pas une altération
-inacceptable des conditions de travail habituelles.
-Dans le cadre d'un plan de continuité d'activité (PCA), le MCO couvre principalement la
-stratégie de sauvegarde utilisée et la méthodologie de déploiement de celle-ci sur un
-environnement dégradé ainsi que la réplication de la configuration des équipements.
-Il prévoit aussi, dans le cadre d'une production continue, le remplacement des pièces
-défectueuses, le diagnostic des pannes, la formation, la documentation.
+<!--TODO glossaire pizzas team ??-->
 
-* Sécurité
+### Équipes par domaine
 
-Cette équipe est chargée de s’assurer de la sécurité du site et des différents développements
-réalisés, ainsi que différentes failles possibles liées au réseau.
+* **Front**
 
-* Architecture
+C’est l’équipe qui s’occupe de l’interface du site. La logique est implémentée dans les autres équipes consommés via des *web services*. 
 
-Ce sont ceux qui font l’architecture globale du SI. Ils font ainsi les choix de technologie et de
-conception. Ils s’occupent aussi du Framework de Cdiscount.
+* **DBA**
 
-* Fonctionnel/Métier
+DBA signifie DataBase Administrator (administrateur de base de données). Cette équipe s’assure de la qualité et du bon fonctionnement des bases de données.
 
-Ils s’occupent de discuter des besoins de l’entreprise et de créer les projets en conséquence.
-Ils s’occupent du budget à appliquer aux projets ainsi que les spécifications/cahiers des
-charges.
+* **Delivery Management**
 
-* Big Data
+Ils s’occupent de la gestion des différents serveurs à distance et des déploiements d’applications d’un environnement à un autre. Ils s’assurent aussi du maintien à jour et du bon fonctionnement de celles-ci (fichiers de configuration, etc.).
 
-C’est une équipe dédiée à la récolte ainsi que l’analyse des données récoltées en masse sur
-le site Cdiscount. Ils utilisent ces données pour réaliser des rapports
-hebdomadaires/mensuels sur différents sujets.
+* **MCO**
 
-* Services
+Le maintien en condition opérationnelle (abrégé MCO) est l'ensemble des mesures prises pour garantir que la bascule vers un environnement dégradé n'entraîne pas une altération inacceptable des conditions de travail habituelles. Dans le cadre d'un plan de continuité d'activité (PCA), le MCO couvre principalement la stratégie de sauvegarde utilisée et la méthodologie de déploiement de celle-ci sur un environnement dégradé ainsi que la réplication de la configuration des équipements. 
 
-C’est l’équipe qui intègre toutes les fonctionnalités dîtes « métier » du site sous forme de
-services web développées généralement pour l’équipe Front mais aussi pour d’autres
-équipes ayant besoin de fonctionnalités internes (exemple : back-office).
+* **Sécurité**
 
-* Lab : R&D
+Cette équipe est chargée de s’assurer de la sécurité du site et des différents développements réalisés, ainsi que différentes failles possibles liées au réseau.
 
-C’est l’équipe chargée de maintenir l�innovation à Cdiscount. Pour cela, elle est en constante
-veille informatique et propose de nouvelles idées de technologies au SI. Leur objectif est de
-maintenir à jour les technologies utilisées, et donc de construire la plateforme de demain.
-Elle propose aussi des projets innovants comme l’open API et a le champ libre sur le choix
-des technologies.
-Si historiquement, les équipes sont séparées comme présenté ci-dessus, de plus en plus,
-Cdiscount crée des équipes avec une vision différente, ce qu’elle appelle des « feature
-teams ». Ce sont des équipes non pas spécialisées dans un domaine, mais spécialisées sur
-un/une sujet/fonctionnalité. Pour cela, elle réunit plusieurs personnes aux compétences
-différentes et forme une équipe autour d’un sujet qu’elles connaissent bien. Voici quelques
-exemples de « feature team » :
+* **Architecture**
 
-* Market Place
+Ce sont ceux qui font l’architecture globale du SI. Ils font ainsi les choix de technologie et de conception. Ils s’occupent aussi du Framework de Cdiscount.
 
-C’est l‘équipe en charge de la place de marché de Cdiscount, c’est-à-dire les autres vendeurs
-que Cdiscount qui vendent leurs produits à travers Cdiscount.
+<!--TODO framework glossaire-->
 
-* Moteur de Recherche
+* **Fonctionnel/Métier**
+
+Ils s’occupent de discuter des besoins de l’entreprise et de créer les projets en conséquence. Ils s’occupent du budget à appliquer aux projets ainsi que les spécifications/cahiers des charges.
+
+* **Big Data**
+
+C’est une équipe dédiée à la récolte ainsi que l’analyse des données récoltées en masse sur le site Cdiscount. Ils utilisent ces données pour réaliser des rapports hebdomadaires/mensuels sur différents sujets.
+
+* **Services**
+
+C’est l’équipe qui intègre toutes les fonctionnalités dîtes « métier » du site sous forme de services web développées généralement pour l’équipe Front mais aussi pour d’autres équipes ayant besoin de fonctionnalités internes (exemple : back-office).
+
+* **Lab : R&D**
+
+C’est l’équipe chargée de maintenir l'innovation à Cdiscount. Pour cela, elle est en constante veille informatique et propose de nouvelles idées de technologies au SI. Leur objectif est de maintenir à jour les technologies utilisées, et donc de construire la plateforme de demain. Elle propose aussi des projets innovants comme l’open API et a le champ libre sur le choix des technologies.
+
+### Équipes par fonctionnalité
+
+Cdiscount possède désormais de nombreuses "feature teams". Il existe une équipe par pays et certaines équipes s'occupent d'une fonctionnalité transverse comme celles-ci :
+
+* **Market Place**
+
+C’est l‘équipe en charge de la place de marché de Cdiscount, c’est-à-dire les autres vendeurs que Cdiscount, qui vendent leurs produits à travers du site cdiscount.com.
+
+* **Moteur de Recherche**
 
 C’est l’équipe en charge du moteur de recherche.
 
-* Order
+* **Order**
 
 C’est l’équipe en charge de la prise de commande.
-Historiquement, les technologies principales utilisées chez Cdiscount proviennent du monde
-Microsoft :
-* C#
-* ASP.NET
-* SQL Server
-* WCF
-* Visual Studio
 
-Cependant, au vu des changements actuels, de plus en plus d’alternatives sont apparues,
-comme du Java ou encore du NodeJS pour certaines applications.
-Après avoir travaillé dans l’équipe Services l’année dernière, j’ai eu cette année la chance
-d’intégrer l’équipe « Lab ». J’ai pu alors exercer librement ma veille technologique et
-proposer des choix techniques pour certaines applications.
+## Implication personnelle dans l'entreprise
 
-TODO equipe par couche ? dit comme ça ?
+Ayant effectué 3 ans en alternance dans cette entreprise, j'ai eu l'occasion d'intégrer plusieurs équipes. J'ai d'abord travaillé dans l'équipe services puis ensuite dans l'équipe Lab (R&D). J'ai alors participé à de nombreux projets, me permettant de comprendre le fonctionnement du SI de Cdiscount. 
 
--->
+### Projets
+
+Membre de l'équipe services, les projets étaient en rapport direct avec le site cdiscount.com, mais après avoir intégré l'équipe R&D, les projets étaient beaucoup plus transverses et variés. 
+
+#### WSManager
+
+C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif est de faciliter l'appel aux différents web services de Cdiscount. L'équipe services est en charge de nombreux web services de types différents sur des environnements différents (production, préproduction, développement, etc.). Les outils existants n'ont pas une prise en main facile et ne proposent pas un listing partagé des services existants à Cdiscount, accessibles à tous les développeurs. WSManager est donc un projet de gestion collaborative de web services. 
+
+#### OpenAPI
+
+Cdiscount propose depuis peu une API ouverte donnant un accès au catalogue de Cdiscount via web service. J'ai eu l'occasion de participer à ce projet et suis a l'origine du portail développeur, accessible à l'adresse http://dev.cdiscount.com. Il contient une documentation interactive de l'openAPI ainsi que la gestion des comptes développeurs.
+
+#### POC
+
+C'est le projet servant de support pour ce document. Il sera décrit par la suite.
+
+### Veille informatique et formations
+
+En plus des projets cités ci-dessus, mon rôle au sein de l'équipe Lab était d'effectuer une veille technologique active et d'organiser des ateliers de partage de connaissance sur le sujet sous forme de coding dojos. Le projet WSManager me servait de support direct pour appliquer mes recherches.
 
 # Application Web
 

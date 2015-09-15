@@ -72,10 +72,26 @@ browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines
 
 on peut utiliser le mot pattern comme ca ?
 
+## Notes kiwi
+
+le poc tarde a arriver
+le mobile est un peu long
+résumé des archi avec avantages inconvenients interessant
+
+sinon faut faire comme JM
+dire ben voilà les plus importantes/utilisées
+faire une grosse description
+et faire une partie autre
+et forcer un peu moins sur la description
+
+## Notes OA
+
+SOA trop léger
+manque d'implication personnelle
+impression de lire un listing des archis
+
 # TODO
 
-* Relecture chérie
-* Présentation de l'entreprise
 * Intro
 * Conclusion
 * Résumé de 5 pages max
