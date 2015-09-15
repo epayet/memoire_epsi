@@ -70,7 +70,7 @@ browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines
 
 # Notes
 
-TODO
+on peut utiliser le mot pattern comme ca ?
 
 # TODO
 

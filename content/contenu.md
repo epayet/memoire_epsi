@@ -165,7 +165,7 @@ Il existe 3 grandes familles d'applications informatique (logiciels) :
 
 Ce qui différencie finalement ces 3 types d'applications est le support sur lequel elles sont accessibles. Ceci implique généralement des technologies et langages différents. Les avancées récentes des navigateurs web ont fait des applications web des applications complètes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript).
 
-La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web à un tout autre niveau, dépassant même les limites de la plateforme. En effet, il est désormais possible de faire des application natives mobiles ou de bureau en n'utilisant que des technologies web approchant les performances des applications natives. Cela permet d'avoir un coût de développement moindre grâce à la réutilisation de code pour les différentes plateformes. Le web est désormais la cible de toutes les applications.
+La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web à un tout autre niveau, dépassant même les limites de la plateforme. En effet, il est désormais possible de faire des applications natives mobiles ou de bureau en n'utilisant que des technologies web approchant les performances des applications natives. Cela permet d'avoir un coût de développement moindre grâce à la réutilisation de code pour les différentes plateformes. Le web est désormais la cible de toutes les applications.
 
 ## Description
 
@@ -191,9 +191,9 @@ Aujourd'hui, les applications web dépendent énormément (si ce n'est uniquemen
 
 « *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* », définition de Wikipédia.
 
-Le principe d'une RIA est d'installer un plugin sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU pour du jeu vidéo plus performant. Les plus utilisés et installés sont les suivants : *Adobe Flash*, *JavaFX* et *Microsoft Silverlight*.
+Le principe d'une RIA est d'installer un module sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU pour du jeu vidéo plus performant. Les plus utilisés et installés sont les suivants : *Adobe Flash*, *JavaFX* et *Microsoft Silverlight*.
 
-Ces plugins au fur et à mesure sont remplacés par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'utilisation des ressources auparavant uniquement accessible par le système d'exploitation (grand espace de stockage, utilisation du GPU, etc.).
+Ces modules au fur et à mesure sont remplacés par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'utilisation des ressources auparavant uniquement accessible par le système d'exploitation (grand espace de stockage, utilisation du GPU, etc.).
 
 L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et de maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. 
 
@@ -203,7 +203,7 @@ JavaScript, aussi appelé ECMAScript est un langage de scripts créé en 1995 pa
 
 Contrairement à ce que l’on pourrait croire, le JavaScript n’a rien en commun avec le Java. En effet, ces deux langages possèdent des sémantiques et des attributs très différents. Le JavaScript est un langage *orienté prototype* qui utilise des *fonctions de première classe*. Ce mélange de caractéristiques permet au JavaScript d’être un langage multi-paradigme permettant plusieurs styles de programmation : orienté objet, fonctionnel, impératif, etc. Une des caractéristiques phare de ce langage est la possibilité de faire de la programmation dite événementielle ou asynchrone grâce à la notion de callback (fonction de rappel).
 
-On dit souvent que le JavaScript est un langage incompris. Il ressemble beaucoup au Java, mais en est très différent. L'utilisation abusive de callbacks complexifie le code. On parle même de "l'enfer du callback" (*callback hell*). 
+On dit souvent que le JavaScript est un langage incompris. Il ressemble beaucoup au Java, mais en est très différent. L'utilisation abusive de de ces fonctions complexifie le code. On parle même de "l'enfer du callback" (*callback hell*). 
 
 ### Des alternatives viables mais pas majoritairement adoptées
 
@@ -240,7 +240,7 @@ Même si aujourd’hui, cette version n’est pas prise en charge par tous les n
 
 Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance, malgré les optimisations qu’apportent les derniers moteurs JavaScript. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
 
-Le JavaScript étant le support obligatoire pour faire des applications web, il reste la actuellement la cible de tout langage de programmation. Nous avons déjà vu qu’il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais c'est également possible avec des langages de plus bas niveau (C/C++). Ce type de langage a généralement comme cible de compilation l'assembleur.
+Le JavaScript étant le support obligatoire pour faire des applications web, il reste actuellement la cible de tout langage de programmation. Nous avons déjà vu qu’il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais c'est également possible avec des langages de plus bas niveau (C/C++). Ce type de langage a généralement comme cible de compilation l'assembleur.
 
 #### Solution actuelle : asm.js
 
@@ -248,7 +248,7 @@ Le projet asm.js est un sous-ensemble de JavaScript ne contenant que le nécessa
 
 #### Solution future : WebAssembly
 
-Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d’une structure officielle permettant l’utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly. Il a pour but de gérer le format binaire par les navigateurs. Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialisé le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l’extension .wasm). Des performances 20 fois supérieures a asm.js sont annoncées.
+Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d’une structure officielle permettant l’utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly. Il a pour but de gérer le format binaire par les navigateurs. Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialisé le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l’extension .wasm). Des performances 20 fois supérieures à asm.js sont annoncées.
 
 Le but ici n’est pas de remplacer JavaScript (nous avons vu auparavant que c’est pour l’instant impossible), mais d’apporter un nouveau langage alternatif. Le Web pourra ainsi profiter du meilleur des deux mondes : langage de haut niveau interprété (JavaScript), et un langage de bas niveau compilé en binaire (WebAssembly).
 
@@ -289,6 +289,10 @@ Il existe en réalité deux types de marché sur le mobile : le mobile natif, et
 Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, HTML/CSS, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
 
 De nos jours, il est donc nécessaire qu'un site web soit disponible plusieurs types de navigation (mobile et PC). Le responsive web design facilite le développement et l'adapation des écran grâce aux media queries du CSS3 et les frameworks prêts à l'emploi sont nombreux. 
+
+<!--
+TODO responsive web design et framework glossaire
+-->
 
 L'application n'étant disponible que via les navigateurs, elle n'est pas installable sur le terminal et l'utilisateur doit être connecté à Internet pour l'utiliser. De plus, l'accès aux ressources du téléphone sont plus limitées.
 
@@ -426,6 +430,8 @@ C'est aussi une question de granularité. Un ou plusieurs styles d'architecture 
 #### Description
 
 Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais plus un design pattern. Il est pris en considération ici car il très utilisé dans le monde du web. Conçu pour les logiciels avec interface graphique, il a pour but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
+
+<!--TODO design pattern glossaire-->
 
 * **Modèle** : Représente le cœur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
 * **Vue** : Ce avec quoi l'utilisateur interagit. La vue n'effectue pas de traitement, elle reçoit les actions de l'utilisateur et les transfère au contrôleur
@@ -655,11 +661,11 @@ Une application web moderne se découpe généralement en deux applications (sty
 
 ### Rappel sur la gestion d'état
 
-Il y a deux types d'applications, celles qui ont une gestion d'état et celles qui n'en n'ont pas. Une application dîtes "*stateful*" stocke en mémoire certaines valeurs entre plusieurs appels, tandis qu'une application dîtes "*stateless*" ne gardera rien mémoire et est sans contexte précis.
+Il y a deux types d'applications, celles qui ont une gestion d'état et celles qui n'en n'ont pas. Une application dites "*stateful*" stocke en mémoire certaines valeurs entre plusieurs appels, tandis qu'une application dîtes "*stateless*" ne gardera rien mémoire et est sans contexte précis.
 
 Une application *stateless* est beaucoup plus facile à gérer car qu'importe le processus depuis lequel il est appelé, le résultat ne sera pas contextualisé à celui-ci. On ne peut pas se permettre d'appeler une application *stateful* depuis 2 processus différents car les valeurs stockées en mémoire par le premier processus sont inaccessibles par l'autre. 
 
-Il est donc beaucoup plus facile de scaler une application *stateless*, car le résultat est indépendant du processus où il est appelé. De manière générale, cela simplifie grandement le développement et le passage aux microservices.
+La scalabilité est beaucoup plus facile avec une application *stateless*, car le résultat est indépendant du processus où il est appelé. De manière générale, cela simplifie grandement le développement et le passage aux microservices.
 
 ### Application traditionnelle
 
@@ -705,7 +711,7 @@ L'application n'ayant qu'un seul point d’entrée, celle-ci peut être un peu p
 
 Ce type d'application repose entièrement sur le JavaScript. Si auparavant il était très peu utilisé, voir facultatif, il est désormais obligatoire pour faire fonctionner ce genre d'applications. On peut cependant considérer qu’aujourd’hui, tous les internautes ont le JavaScript d'activé. 
 
-Les moteurs de recherches ou les outils d'analyse sont grandement basées sur le modèle des applications traditionnelles. De nombreux moteurs de recherche n’exécutent pas de JavaScript et ne peuvent indexer les SPA. Les outils d'analyse de page web utilisent généralement le chargement de nouvelles pages comme unité d'analyse. C'est désormais beaucoup moins pertinent avec les applications comprenant un seul point d'entrée. 
+Les moteurs de recherches ou les outils d'analyse sont grandement basés sur le modèle des applications traditionnelles. De nombreux moteurs de recherche n’exécutent pas de JavaScript et ne peuvent indexer les SPA. Les outils d'analyse de page web utilisent généralement le chargement de nouvelles pages comme unité d'analyse. C'est désormais beaucoup moins pertinent avec les applications comprenant un seul point d'entrée. 
 
 Si les standards du web ont étés conçus à la base pour les applications traditionnelles, c'est en cours de changement. Les SPA sont de plus en plus communes et évoluent dans ce sens. Par exemple, le moteur de recherche le plus utilisé Google a récemment intégré le JavaScript lors de son processus d'indexation.
 
@@ -772,7 +778,7 @@ REST est une architecture dite sans état (*stateless*). Un serveur RESTful peut
 
 #### SOA + architecture en couches
 
-Cdiscount utilise actuellement une architecture orientée service et chaque service utilise une architecture en couches. Nous avons vu les avantages et les inconvénients de chacun. Si la séparation fonctionnelle était claire au début, aujourd'hui chaque service s'apparente de plus en plus a un monolithe. La société est en pleine réflexion pour casser ses monolithes et avoir une architecture plus souple.
+Cdiscount utilise actuellement une architecture orientée service et chaque service utilise une architecture en couches. Nous avons vu les avantages et les inconvénients de chacun. Si la séparation fonctionnelle était claire au début, aujourd'hui chaque service s'apparente de plus en plus à un monolithe. La société est en pleine réflexion pour casser ses monolithes et avoir une architecture plus souple.
 
 #### Microservices
 
@@ -898,7 +904,7 @@ Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un fra
 
 ### Un choix difficile
 
-Le choix est difficile a effectuer car les technologies présentées sont toutes de bonne qualité, conviennent à nos choix d'architecture (orienté composants et orienté événements) et sont à la pointe des technologies web. Le choix dépendra finalement du projet et du style de développement des équipes. 
+Le choix est difficile à effectuer car les technologies présentées sont toutes de bonne qualité, conviennent à nos choix d'architecture (orienté composants et orienté événements) et sont à la pointe des technologies web. Le choix dépendra finalement du projet et du style de développement des équipes. 
 
 Pour notre projet, nous avons choisi AngularJS. C'est le framework le plus mature et possédant la plus grande communauté dans sa catégorie et les ressources à disposition sont importantes. La testabilité est fortement mise en avant, ce qui est un point clé pour notre projet. Notre équipe possède déjà de l’expérience sur ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 mois, c'est un facteur important.
 
@@ -984,7 +990,9 @@ La meilleure façon de créer et de gérer des microservices actuellement est de
 
 # Méthodologie
 
-Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tends de plus en plus vers les méthodes agiles et la récente création des pizzas team le démontre. 
+Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tend de plus en plus vers les méthodes agiles et la récente création des pizzas team le démontre. 
+
+<!--TODO pizza team dans glossaire ?-->
 
 ## Cycle en V
 
@@ -1101,7 +1109,7 @@ Une bonne communication tous les jours avec les autres membres de l’équipe pe
 
 #### Bien être des membres de l’équipe
 
-Une équipe bien dans sa peau, bien reposée, et ayant de l’intérêt pour le travail effectué est une équipe productive. Pour cela, il ne faut pas que les membres aient de nombreuses heures supplémentaires a effectuer. La vélocité de l’équipe est présente pour mesurer sa capacité a travailler aux heure traditionnelles. Elle est plus facile à mesurer sur des intervalles de tempes courts (contrairement au cycle en V possédant de nombreuses étapes). Un système bien testé limites les problèmes en production et les besoins d'effectuer des heures supplémentaires.
+Une équipe bien dans sa peau, bien reposée, et ayant de l’intérêt pour le travail effectué est une équipe productive. Pour cela, il ne faut pas que les membres aient de nombreuses heures supplémentaires à effectuer. La vélocité de l’équipe est présente pour mesurer sa capacité à travailler aux heures traditionnelles. Elle est plus facile à mesurer sur des intervalles de tempes courts (contrairement au cycle en V possédant de nombreuses étapes). Un système bien testé limite les problèmes en production et les besoins d'effectuer des heures supplémentaires.
 
 Pour les développeurs, avoir du temps dégagé pour effectuer de la veille technologique est très important. Cela permet d'avoir des développeurs toujours affûtés techniquement et renforce leur créativité et leur compétence technique, ainsi que l’intérêt pour le travail effectué. Cela peut paraître sans valeur ajoutée pour le produit, mais c'est en réalité ce qui pourra faire la différence dans la réalisation de celui-ci, la rendant plus originale et moderne. Un peu de veille tous les jours ou même une après-midi par semaine dans les périodes creuses ont de grands bénéfices. Organiser des ateliers de partage de connaissance (exemple : Coding Dojo) rend la chose encore plus efficace, et permet aussi d'améliorer les talents de communication des membres de l'équipe.
 
@@ -1150,23 +1158,23 @@ Voici notre méthodologie concrète employée pour ajouter une fonctionnalité a
 * Écriture du code source en TDD strict (il est interdit d'ajouter du code source sans la mise en valeur du manque par un test)
 * Code review par un autre membre de l'équipe
 * Intégration de la nouvelle branche sur la branche principale
-* Vérification de la non régression grâce a l’intégration continue
+* Vérification de la non régression grâce à l’intégration continue
 
 # Résultats du projet
 
-Ayant appliqué ces principes (architecture, méthodologies, technologies) sur notre projet durant 2 mois avec notre équipe de 3 développeurs, nous sommes arrivés a un résultat satisfaisant. Nous allons maintenant voir jusqu’où le développement est allé et si les objectifs ont étés atteints.
+Ayant appliqué ces principes (architecture, méthodologies, technologies) sur notre projet durant 2 mois avec notre équipe de 3 développeurs, nous sommes arrivés à un résultat satisfaisant. Nous allons maintenant voir jusqu’où le développement est allé et si les objectifs ont étés atteints.
 
 ## Résultat
 
-Grace a la technologie Cordova, nous avons créé une application fonctionnant sur plusieurs terminaux mobiles (iOS, Android) ainsi que sur les navigateurs web. En voulant imiter le fonctionnement de l'application Android, nous avons eu le temps d'implémenter les fonctionnalités suivantes :
+Grâce à la technologie Cordova, nous avons créé une application fonctionnant sur plusieurs terminaux mobiles (iOS, Android) ainsi que sur les navigateurs web. En voulant imiter le fonctionnement de l'application Android, nous avons eu le temps d'implémenter les fonctionnalités suivantes :
 
 * **Accueil** : Contient les dernières offres promotionnelles du moment
 * **Navigation** : Navigation par catégorie (Informatique, Immobilier, etc.)
 * **Fiche produit** : Fiche détaillée d'un produit
 
-Nous n'avons pas eu le temps d’implémenter la gestion du panier, des commentaires, etc. C’était les futures fonctionnalités à implémenter sur la liste. Le tout utilise bien évidemment les données réelles de Cdiscount, ayant ainsi un comportement similaire aux applications actuelles.
+Nous n'avons pas eu le temps d’implémenter la gestion du panier, des commentaires, etc. C’étaient les futures fonctionnalités à implémenter sur la liste. Le tout utilise bien évidemment les données réelles de Cdiscount, ayant ainsi un comportement similaire aux applications actuelles.
 
-Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons même tenté d'innover un peu et de faire certaines choses différemment de l'application de base. Au niveau de l’implémentation des microservices, nous en sommes a la première étape.
+Le résultat est selon nous satisfaisant, avec de bonnes performances, et une interface utilisateur simple et efficace. Nous avons même tenté d'innover un peu et de faire certaines choses différemment de l'application de base. Au niveau de l’implémentation des microservices, nous en sommes à la première étape.
 
 ## Challenges
 
@@ -1180,7 +1188,7 @@ Le challenge technique était important, surtout au niveau de l’implémentatio
 
 Lors de la présentation finale du projet, le jury non technique était satisfait du résultat et pense qu’après quelques ajouts pour concorder aux méthodes de Cdiscount (tracking, etc.), il sera possible de tester notre solution sur des projets transverses, permettant d'utiliser au mieux notre expertise des technologies du web.
 
-Le jury technique quant-à lui était satisfait de voir que nos méthodes ont portés leurs fruits et que notre logiciel est de qualité au niveau de son implémentation. L'architecture et la méthodologie employée correspondent totalement à l'évolution de Cdiscount.
+Le jury technique quant-à lui était satisfait de voir que nos méthodes ont porté leurs fruits et que notre logiciel est de qualité au niveau de son implémentation. L'architecture et la méthodologie employées correspondent totalement à l'évolution de Cdiscount.
 
 # Conclusion {-}
 
