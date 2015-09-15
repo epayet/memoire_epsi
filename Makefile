@@ -27,13 +27,13 @@ build/%.tex: content/%.md
 	mkdir -p build/
 	pandoc -o $@ --latex-engine xelatex --listings --chapters --template content/empty-pandoc-tpl.tex $<
 
-build/%.tex: content/%.tex
+build/%: content/%
 	cp $< $@
 
 build/%.bib: content/%.bib
 	cp $< $@
 
-memoire-%.pdf: versions/%.tex $(SCHEMAS_OUT) $(SVG_OUT_TEX) $(ODS_OUT) $(MD_OUT) $(TEX) $(BIB)
+memoire-%.pdf: versions/%.tex $(SCHEMAS_OUT) $(SVG_OUT_TEX) $(ODS_OUT) $(MD_OUT) $(TEX) $(BIB) build/attestation.pdf
 	$(eval $@_NAME := $(notdir $(basename $<)))
 	$(eval $@_FULLNAME := template-$($@_NAME))
 	cp -r fonts/ images/ build/

@@ -18,7 +18,7 @@ Notre équipe s'est proposé pour créer un projet de type POC (Proof Of Concept
 * Démonstration de l’intérêt de l’utilisation des nouvelles technologies, et donc l’intérêt d’effectuer une veille technologique active
 * Proposer une architecture moderne permettant l’isolation de la logique du domaine de l’application, et donc sa réutilisation dans un autre contexte, permettant le changement facile de technologie
 * Cette architecture étant celle sur laquelle travaille l’équipe architecture, leur donner la possibilité d’utiliser notre projet comme preuve concrète de l’intérêt de celle-ci 
-* Intérêt d'avoir des petites équipes polyvalentes (pizzas team) sur des petits projets plutôt que de grosses équipes séparées par domaines techniques sur des gros projets
+* Intérêt d'avoir des petites équipes polyvalentes (pizzas team) sur des petits projets plutôt que de grosses équipes séparées par domaines techniques sur des gros projets
 
 Mais finalement qu’est-ce qu’un logiciel de qualité ? C’est selon moi un logiciel possédant les caractéristiques suivantes :
 

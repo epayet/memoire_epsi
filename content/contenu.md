@@ -1,15 +1,15 @@
 # Introduction {-}
 
-Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 à 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu intégrer plusieurs équipes et participer à de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.\cite{styles_archi}
+Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 à 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu intégrer plusieurs équipes et participer à de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
 
 Mon travail était tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance auprès de mes supérieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et de parfaire mes talents de conception.
 
 Le monde du web évolue très vite et est difficile à suivre. De nombreuses technologies apparaissent régulièrement. Faire une application web moderne, et de qualité n'est pas un travail facile. Trouver la solution idéale et faire les bons choix techniques selon le projet et le style de développement de l'équipe demande une bonne compétence d’analyse et une veille technologique active. 
 
 Cdiscount sous-traite actuellement le développement de ses applications mobiles. Le nombre d'applications qu'elle possède ne cesse de grandir et le prix de développement devient de plus en plus conséquent.
-L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type \gls{POC} (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
+L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type \gls{poc} (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
 
-En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du SI (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple. 
+En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du \gls{si} (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple. 
 
 **Quels sont les choix à effectuer et quels sont les étapes à suivre pour la conception et la réalisation d'une application web moderne de qualité ?**
 
@@ -19,19 +19,15 @@ Ce document définira ce qu'est une application web et ce qu'est un logiciel de 
 
 ## Une entreprise grandissante
 
-Cdiscount est une entreprise d'e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes et environ 300 personnes sont dans la partie SI. Elle a été créée en 1998 par trois frères et vendait principalement des CD. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). 
+CDiscount est une entreprise d'e-commerce qui gère le site web CDiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes et environ 300 personnes sont dans la partie SI. Elle a été créée en 1998 par trois frères et vendait principalement des CD. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). 
 
-Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la livraison dans les magasins Casino. Le site s'est alors imposé comme l'un des principaux sites de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe ainsi en France devant Amazon, le leader mondial dans ce domaine. Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à l’international. Elle s’est récemment implémentée en Colombie, en Côte d’Ivoire, en Thaïlande, puis bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays. 
+Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la livraison dans les magasins Casino. En plus de cela, Cdiscount fait partie désormais du grand groupe Cnova, grosse multinationale qui fait passer CDiscount parmis les 1er acteurs mondiaux\cite{cnova}. Le site s'est alors imposé comme l'un des principaux sites de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe ainsi en France devant Amazon, le leader mondial dans ce domaine. Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à l’international. Elle s’est récemment implémentée en Colombie, en Côte d’Ivoire, en Thaïlande, puis bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays. 
 
-Pour s’adapter à ces changements, Cdiscount retravaille sa méthodologie et son architecture. Son objectif est d'accentuer la qualité du code fourni et de miser sur l'innovation technologique. Si historiquement, les technologies principales utilisées chez Cdiscount proviennent du monde Microsoft (C#, ASP.NET, SQL Server, Visual Studio, etc.), elle utilise de plus en plus sur des alternatives open source.
-
-<!--TODO open source glossaire-->
+Pour s’adapter à ces changements, Cdiscount retravaille sa méthodologie et son architecture. Son objectif est d'accentuer la qualité du code fourni et de miser sur l'innovation technologique. Si historiquement, les technologies principales utilisées chez Cdiscount proviennent du monde Microsoft, elle utilise de plus en plus sur des alternatives \gls{open_source}.
 
 ## Différent types d'équipes
 
 Le SI de Cdiscount est historiquement divisé en équipes par domaine technique.
-
-<!--TODO glossaire pizzas team ??-->
 
 ### Équipes par domaine
 
@@ -53,21 +49,25 @@ Cette équipe est chargée de s’assurer de la sécurité du site et des diffé
 
 * **Architecture**
 
-Ce sont ceux qui font l’architecture globale du SI. Ils font ainsi les choix de technologie et de conception. Ils s’occupent aussi du Framework de Cdiscount.
-
-<!--TODO framework glossaire-->
+Ce sont ceux qui font l’architecture globale du SI. Ils font ainsi les choix de technologie et de conception. Ils s’occupent aussi du \gls{framework} de Cdiscount.
 
 * **Fonctionnel/Métier**
 
-Ils s’occupent de discuter des besoins de l’entreprise et de créer les projets en conséquence. Ils s’occupent du budget à appliquer aux projets ainsi que les spécifications/cahiers des charges.
+Ils sont l’incarnation du besoin auprès des équipes du \gls{si}. En agile (comme le montrera le chapitre à cet effet, il ont souvent le rôle de responsable du produit ou « Product owner ». Souvent, ce sont aussi eux qui répondent du budget à appliquer aux projets.
 
 * **Big Data**
 
 C’est une équipe dédiée à la récolte ainsi que l’analyse des données récoltées en masse sur le site Cdiscount. Ils utilisent ces données pour réaliser des rapports hebdomadaires/mensuels sur différents sujets.
+Une autre partie de l’équipe s’occupe de trier, de quantifier et de donner de la valeur aux données, se sont les « data scientists ».
 
 * **Services**
 
 C’est l’équipe qui intègre toutes les fonctionnalités dites « métier » du site sous forme de services web développées généralement pour l’équipe Front mais aussi pour d’autres équipes ayant besoin de fonctionnalités internes (exemple : back-office).
+L’idée de l'équipe est donc de fournir des briques métiers aux autres équipes de SI. Ces briques régissent les règles métiers mais fournissent également des services plus techniques voir utilitaires.
+
+* **Performances**
+
+Depuis 4 ans, CDiscount a fait un virage a 180° sur le monitoring de la performance. Ce sont absolument tous les indicateurs qui permettent d’améliorer l’expérience client mais aussi le référencement (intimement lié a la performance)
 
 * **Lab : R&D**
 
@@ -75,7 +75,7 @@ C’est l’équipe chargée de maintenir l'innovation à Cdiscount. Pour cela, 
 
 ### Équipes par fonctionnalité
 
-Un nouveau genre d'équipes fait son apparition au sein du SI de Cdiscount : les "feature teams". On les nomme aussi parfois les "pizza teams". Ce sont des équipes polyvalentes ne dépassant pas 8 personnes assignées à une seule fonctionnalité. Les méthodes agiles sont plus faciles à appliquer avec ce genre d'équipes. Il existe une équipe par pays et certaines équipes s'occupent d'une certaine fonctionnalité, comme celles-ci :
+Un nouveau genre d'équipes fait son apparition au sein du SI de Cdiscount : les "feature teams". On les nomme aussi parfois les "\gls{pizza_teams}". Ce sont des équipes polyvalentes ne dépassant pas 8 personnes assignées à une seule fonctionnalité. Les méthodes agiles sont plus faciles à appliquer avec ce genre d'équipes. Il existe une équipe par pays et certaines équipes s'occupent d'une certaine fonctionnalité, comme celles-ci :
 
 * **Market Place**
 
@@ -103,7 +103,7 @@ C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif
 
 #### OpenAPI
 
-Cdiscount propose depuis peu une API ouverte donnant un accès au catalogue de Cdiscount via web service. J'ai eu l'occasion de participer à ce projet et suis à l'origine du portail développeur, accessible à l'adresse http://dev.cdiscount.com. Il contient une documentation interactive de l'openAPI ainsi que la gestion des comptes développeurs.
+Cdiscount propose depuis peu une \gls{api} ouverte donnant un accès au catalogue de Cdiscount via web service. J'ai eu l'occasion de participer à ce projet et suis à l'origine du portail développeur, accessible à l'adresse http://dev.cdiscount.com. Il contient une documentation interactive de l'openAPI ainsi que la gestion des comptes développeurs.
 
 #### POC
 
@@ -111,9 +111,7 @@ C'est le projet servant de support pour ce document. Il sera décrit par la suit
 
 ### Veille technologique et formations
 
-En plus des projets cités ci-dessus, mon rôle au sein de l'équipe Lab était d'effectuer une veille technologique active et d'organiser des ateliers de partage de connaissance sur le sujet sous forme de coding dojos. Le projet WSManager me servait de support direct pour appliquer mes recherches. Elles ont été très utiles pour la mise en place du POC.
-
-<!--TODO gloassaire codong dojo-->
+En plus des projets cités ci-dessus, mon rôle au sein de l'équipe Lab était d'effectuer une veille technologique active et d'organiser des ateliers de partage de connaissance sur le sujet sous forme de \gls{coding_dojo}. Le projet WSManager me servait de support direct pour appliquer mes recherches. Elles ont été très utiles pour la mise en place du POC.
 
 # Application Web
 
@@ -137,7 +135,7 @@ La facilité de développement de celles-ci ainsi que la performance des moteurs
 
 ## Description
 
-Une application web, contrairement à une application de bureau, est une application uniquement manipulable via un navigateur web. L'application est généralement installée sur un serveur et est accessible via un réseau (internet, réseau local, etc.). On a ici une architecture client/serveur où le navigateur web est le client. À la différence d'un site web statique, une application web est constituée de liens hypertextes provoquant l'envoi de nouvelles requêtes utilisant généralement le protocole HTTP. Voici des exemples d'applications web les plus courantes :
+Une application web, contrairement à une application de bureau, est une application uniquement manipulable via un navigateur web. L'application est généralement installée sur un serveur et est accessible via un réseau (internet, réseau local, etc.). On a ici une architecture client/serveur où le navigateur web est le client. À la différence d'un site web statique, une application web est constituée de \gls{liens_hypertextes} provoquant l'envoi de nouvelles requêtes utilisant généralement le protocole \gls{http}. Voici des exemples d'applications web les plus courantes :
 
 * Moteur de recherche : Application qui recherche des documents (Ex : Google, Bing, Yahoo, etc.)
 * WebMail : Application qui permet d'envoyer et de recevoir des courriers électroniques (Ex : Gmail, Outlook, etc.)
@@ -151,19 +149,9 @@ Une application web, contrairement à une application de bureau, est une applica
 
 Il existe de nombreux autres types d'applications, comme par exemple Google Maps qui permet de consulter des cartes géographiques du monde entier.
 
-## Utilisation massive du JavaScript
+## JavaScript, le langage du web
 
 Aujourd'hui, les applications web dépendent énormément (si ce n'est uniquement) du langage de programmation JavaScript, mais cela n'a pas toujours été le cas.
-
-### Apparition et disparition des RIA
-
-« *Une Rich Internet Application (RIA), ou application Internet riche, est une application Web qui offre des caractéristiques similaires aux logiciels traditionnels installés sur un ordinateur. La dimension interactive et la vitesse d'exécution sont particulièrement soignées dans ces applications Web* », définition de Wikipédia.
-
-Le principe d'une RIA est d'installer un module sur l'ordinateur permettant d'utiliser les ressources du système d'exploitation au lieu de celles du navigateur web (plus limitées) pour faire fonctionner l'application. Il était alors possible d'utiliser des ressources précédemment inaccessibles au navigateur comme la caméra, ou encore le GPU pour du jeu vidéo plus performant. Les plus utilisés et installés sont les suivants : *Adobe Flash*, *JavaFX* et *Microsoft Silverlight*.
-
-Ces modules au fur et à mesure sont remplacés par des alternatives basées uniquement sur des technologies directement utilisées par le navigateur web (HTML5, JavaScript, etc.). Cela s'explique par l'avancée récente des standards du web permettant l'utilisation des ressources auparavant uniquement accessible par le système d'exploitation (grand espace de stockage, utilisation du GPU, etc.).
-
-L'intérêt est que les utilisateurs des applications web n'ont plus besoin d'installer et de maintenir à jour un logiciel tiers. Adobe Flash lui même a annoncé qu'il allait arrêter la production de son logiciel pour les mobiles et qu'il incitait les développeurs à se tourner vers des solutions full web. 
 
 ### Attributs du langage
 
@@ -189,38 +177,15 @@ Malgré les avantages que proposent ces nouveaux langages, toutes les équipes d
 
 Le JavaScript a pris une place trop importante dans le monde du Web pour être remplacé. Voici une citation traduite de Brendan Eich, le créateur du langage JavaScript lors d'une interview le 17 Juin 2015: 
 
-« *On ne casse pas le web, on ne peut pas tout effacer et recommencer. Toute personne essayant échouera* »
+« *On ne casse pas le web, on ne peut pas tout effacer et recommencer. Toute personne essayant échouera* »\cite{break_web}
 
 Selon lui, il n’est pas possible refaire le web, la seule solution est de l’améliorer ou d'ajouter des alternatives.
-
-<!--
-« You don’t break the web, you don’t get to clean the slate and start over. Anybody who tries is going to fail ».
-TODO citation footnote original et link to biblio ?
--->
 
 ### Une version 6 bien évoluée
 
 On dit souvent que c’est que le JavaScript est à la fois adoré et détesté. C’est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives open source, la récente version 6 (on parle d'ECMAScript 6, abrégé ES6, ou encore d'ECMAScript2015) fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. 
 
 Même si aujourd’hui, cette version n’est pas prise en charge par tous les navigateurs, il est possible d’écrire du code en ES6, et le transformer en ES5 grâce à des transpileurs (transforme un code source en un équivalent dans un autre langage). Le code écrit est alors plus moderne et fonctionne malgré tout sur les différents navigateurs dès aujourd’hui. Le but est d’utiliser au plus tôt les derniers standards et avoir une application plus facile à maintenir et profiter rapidement des dernières évolutions.
-
-### Une future alternative ?
-
-Etant un langage de haut-niveau, le JavaScript propose de nombreuses fonctionnalités comme la gestion automatique de la mémoire, types dynamiques, etc. qui facilitent la programmation mais sont coûteuses au niveau de la performance, malgré les optimisations qu’apportent les derniers moteurs JavaScript. Il a été prouvé que des langages de plus bas niveau (avec gestion manuelle de la mémoire, typage strict, etc.) compilés (et non interprétés) sont beaucoup plus performants mais plus difficiles à écrire et maintenir.
-
-Le JavaScript étant le support obligatoire pour faire des applications web, il reste actuellement la cible de tout langage de programmation. Nous avons déjà vu qu’il est possible de transformer un code source de plus haut niveau (sur-langage) en JavaScript (CoffeeScript, TypeScript, etc.). Mais c'est également possible avec des langages de plus bas niveau (C/C++). Ce type de langage a généralement comme cible de compilation l'assembleur.
-
-#### Solution actuelle : asm.js
-
-Le projet asm.js est un sous-ensemble de JavaScript ne contenant que le nécessaire pour un langage de plus bas-niveau en évitant d’utiliser les fonctionnalités coûteuses de haut-niveau. Le but est d’approcher les performances des applications natives (applications de bureau). Étant un sous-ensemble du JavaScript, il est déjà supporté par tous les navigateurs actuels. La possibilité de compiler du code natif dans le monde du web permet d’avoir de meilleures performances (seulement 1.5x plus lentes que du natif avec asm.js).
-
-#### Solution future : WebAssembly
-
-Le futur du web veut suivre cette lignée et trouver une solution standardisée et efficace qui peut cohabiter avec le JavaScript. Le Web a besoin d’une structure officielle permettant l’utilisation de langages de bas-niveau, et ne pas dépendre uniquement du JavaScript. Un projet officiel a démarré, et se nomme WebAssembly. Il a pour but de gérer le format binaire par les navigateurs. Avoir un nouveau format de fichier permettrait donc de faciliter le passage des langages comme le C au Web. Ce projet a été officialisé le 17 Juin 2015 par Brendan Eich, le créateur du langage JavaScript. Microsoft, Google, etc. travaillent ensemble pour officialiser et répandre ce nouveau format de fichier (qui aura l’extension .wasm). Des performances 20 fois supérieures à asm.js sont annoncées.
-
-Le but ici n’est pas de remplacer JavaScript (nous avons vu auparavant que c’est pour l’instant impossible), mais d’apporter un nouveau langage alternatif. Le Web pourra ainsi profiter du meilleur des deux mondes : langage de haut niveau interprété (JavaScript), et un langage de bas niveau compilé en binaire (WebAssembly).
-
-L'assembleur est une bien meilleure cible de compilation que le JavaScript, mais en attendant que tout cela soit standardisé, nous restons fortement dépendant de celui-ci. Les dernières versions en font tout de même un langage de programmation très valable.
 
 ### Une utilisation étendue
 
@@ -234,7 +199,13 @@ Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand n
 
 La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript. Il est désormais le langage le plus actif et le plus populaire ces dernières années. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs sur Github.
 
-![Statistiques des langages de programmation sur Github][topLanguagesGithub]
+<!--![Statistiques des langages de programmation sur Github][topLanguagesGithub]-->
+
+\begin{figure}
+\includegraphics[width=\textwidth]{images/top-langages-github.jpg}
+\caption{Statistiques des langages de programmation sur Github}
+\label{fig:topLangages}
+\end{figure}
 
 ## Navigateurs web
 
@@ -242,7 +213,7 @@ Une application Web utilise un ou plusieurs langages de présentation et est int
 
 Un navigateur web est composé d'un moteur de rendu (*layout engine*) et d'un moteur JavaScript (*JavaScript engine*). Le moteur de rendu interprète les langages de présentation comme HTML/CSS, tandis que le moteur JavaScript interprète de langage de programmation JavaScript. 
 
-Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et XML.
+Avant standardisation, les navigateurs avaient tout d'abord leur implémentation individuelle du DOM. Le DOM (Document Object Model) est maintenant un standard du W3C (organisme de normalisation à but non lucratif) qui décrit une interface indépendante de tout langage de programmation et de toute plate-forme, permettant à des scripts d'accéder ou de mettre à jour le contenu, la structure ou le style de documents HTML et \gls{xml}.
 
 ## Mobile
 
@@ -254,13 +225,9 @@ Il existe en réalité deux types de marché sur le mobile : le mobile natif, et
 
 ### Mobile Web
 
-Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, HTML/CSS, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
+Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, HTML/\gls{css}, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
 
-De nos jours, il est donc nécessaire qu'un site web soit disponible plusieurs types de navigation (mobile et PC). Le responsive web design facilite le développement et l'adapation des écran grâce aux media queries du CSS3 et les frameworks prêts à l'emploi sont nombreux. 
-
-<!--
-TODO responsive web design et framework glossaire
--->
+De nos jours, il est donc nécessaire qu'un site web soit disponible plusieurs types de navigation (mobile et PC). Le \gls{responsive_web_design} facilite le développement et l'adaptation des écrans.
 
 L'application n'étant disponible que via les navigateurs, elle n'est pas installable sur le terminal et l'utilisateur doit être connecté à Internet pour l'utiliser. De plus, l'accès aux ressources du téléphone sont plus limitées.
 
@@ -338,7 +305,7 @@ En plus de vouloir créer un logiciel de qualité, ce projet a aussi pour object
 * Cette architecture étant celle sur laquelle travaille l'équipe architecture, leur donner la possibilité d'utiliser notre projet comme preuve concrète de l'intérêt de celle-ci
 * Intérêt d'avoir des petites équipes polyvalentes (pizzas team) sur des petits projets plutôt que de grosses équipes séparées par capacité logicielles sur des gros projets
 
-Ce projet possède de nombreux objectifs en temps limité. Si Cdiscount valide la présentation du projet, nous pourrons continuer à développer cette solution. Ce projet va dans la même direction de l'évolution du SI de la société et souhaitons qu'il devienne une inspiration pour celui-ci. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chère et peut-être plus adaptée dans certains cas, tout en utilisant notre expertise interne.
+Ce projet possède de nombreux objectifs en temps limité. Si CDiscount valide la présentation du projet, nous pourrons continuer à développer cette solution. Ce projet va dans la même direction de l'évolution du SI de la société et souhaitons qu'il devienne une inspiration pour celui-ci. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chère et peut-être plus adaptée dans certains cas, tout en utilisant notre expertise interne.
 
 # Choix d'architecture 
 
@@ -348,7 +315,7 @@ Créer une bonne application commence par choisir une bonne architecture logicie
 
 Une application monolithique est une application mettant plusieurs fonctionnalités dans un seul processus. De nombreuses applications existantes sont monolithiques, car ce sont les plus simples à réaliser. Si cela convient aux petites applications, au fil du temps cette application deviendra de plus en plus complexe lors de son évolution. L'architecture modulaire prévue au début est alors difficile à garder.
 
-« *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil.
+« *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil. \cite{julien}
 
 Les inconvénients du monolithe sont :
 
@@ -365,22 +332,12 @@ Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mau
 
 ### Description
 
-<!--
-TODO vérifier qu'il n'a a pas de redit entre les attributs et les avantages. peut être faire des phrases à la place des attributs
-TODO pas trop parler de Cdiscount dans cette partie ? abstrait
-TODO remplacer testing pas testabilité
--->
 
 Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une définition de David Garlan et Mary Shaw dans leur livre "An Introduction to Software Architecture" traduite :
 
-« *... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles).* »
+« *... famille de systemes en termes d'un modèle d'organisation structurelle. Plus specifiquement, un style d'architecture determine le vocabulaire des composants et connecteurs qui peuvent etre utilises dans des cas de ce style, avec un ensemble de contraintes sur la façon dont ils peuvent être combinés. Ceux-ci peuvent inclure des contraintes topologiques sur descriptions architecturales (par exemple, pas de cycles).* » \cite{introduction_software}
 
-<!--
-TODO citation et livre forme
-"family of systems in terms of a pattern of structural organization. More specifically, an architectural style determines the vocabulary of components and connectors that can be used in instances of that style, together with a set of constraints on how they can be combined. These can include topological constraints on architectural descriptions (e.g., no cycles)."
--->
-
-Voici un tableau comprenant les principaux styles d'architecture logicielles classés par catégorie.
+Voici un tableau comprenant les principaux styles d'architecture logicielles classés par catégorie. \cite{styles_archi}
 
 | Catégorie | Styles d'architectures |
 | --- | --- |
@@ -397,9 +354,7 @@ C'est aussi une question de granularité. Un ou plusieurs styles d'architecture 
 
 #### Description
 
-Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais plus un design pattern. Il est pris en considération ici car il très utilisé dans le monde du web. Conçu pour les logiciels avec interface graphique, il a pour but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
-
-<!--TODO design pattern glossaire-->
+Le MVC (Modèle Vue Contrôleur) n'est pas vraiment un style d'architecture mais plus un \gls{design_pattern}. Il est pris en considération ici car il très utilisé dans le monde du web. Conçu pour les logiciels avec interface graphique, il a pour but de bien séparer les données, la présentation et les traitements. Voici le détail des 3 parties extraites :
 
 * **Modèle** : Représente le cœur algorithmique de l'application (traitements des données, interactions avec la base de données, etc.)
 * **Vue** : Ce avec quoi l'utilisateur interagit. La vue n'effectue pas de traitement, elle reçoit les actions de l'utilisateur et les transfère au contrôleur
@@ -413,7 +368,11 @@ Voici donc à quoi ressemble le flux de traitement :
 
 Il existe de nombreux dérivés à ce modèle (MVP, MVVM, MV*), mais sont finalement très similaires à celui-ci.
 
-![Modèle Vue Contrôleur][mvc]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/mvc.png}
+\caption{Modèle Vue Contrôleur}
+\label{fig:mvc}
+\end{figure}
 
 #### Avantages
 
@@ -466,7 +425,11 @@ L'architecture orienté composants se concentre sur la décomposition en composa
 * **Encapsulé** : Chaque composant expose des interfaces qui permettent à l'appelant d'utiliser les fonctionnalités du composant sans savoir son fonctionnement interne (état ou variables internes)
 * **Indépendant** : Dépend très peu d'autres composants. Peut être déployé dans un autre environnement sans affecter les autres composants
 
-![Architecture orienté composants][componentArchitecture]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/component_architecture}
+\caption{Architecture orienté composants}
+\label{fig:components}
+\end{figure}
 
 #### Avantages
 
@@ -511,12 +474,7 @@ L'architecture orienté domaine (*Domaine Driven Design*) est une approche orien
 
 Eric Evans, l'auteur du lire Domain Driven Design écrit :
 
-« *Pour créer un logiciel de qualité, il faut connaître le sujet du logiciel. Il n'est pas possible de créer un logiciel de banque si on ne connait pas le domaine de la banque.* »
-
-<!--
-TODO citation
-"In order to create a good software, you have to know what the software is all about. You cannot create a banking software system unless you have a good understanding of what banking is all about, one must understand the domain of banking."
--->
+« *Pour créer un logiciel de qualité, il faut connaître le sujet du logiciel. Il n'est pas possible de créer un logiciel de banque si on ne connait pas le domaine de la banque.* » \cite{eric_evans}
 
 Les 4 concepts à retenir sur le DDD sont les suivants :
 
@@ -526,8 +484,6 @@ Les 4 concepts à retenir sur le DDD sont les suivants :
 * **Langage omniprésent** (*Ubiquitous Language*) : Langage structuré autour du domaine du modèle utilisé par tous les membres de l’équipe en rapport avec toutes les activités avec le logiciel
 
 Une implémentation possible de cette philosophie est l'architecture en oignon. Le domaine est isolé et encapsulé au centre, et la technique se forme autour. Cela permet de séparer concrètement la logique du domaine et la logique de l'application. Les couches techniques autour du centre sont facilement interchangeables.
-
-![Architecture en oignon][onionArchitecture]
 
 #### Avantages
 
@@ -552,8 +508,6 @@ L'architecture orienté services (*Service Orienté Architecture*) a pour princi
 * **Distribuable** : Peut être n'importe où sur le réseau tant que celui-ci supporte le protocole de communication
 * **Faible couplage** : Chaque service est indépendant des autres. Il peut être modifié ou remplacé sans problème tant que l'interface est toujours compatible
 
-![Passage d'un système non orienté service a une architecture SOA][soaArchitecture]
-
 #### Avantages
 
 * **Abstraction** : Les services sont autonomes et accédés via un contrat formel (couplage faible)
@@ -563,7 +517,7 @@ L'architecture orienté services (*Service Orienté Architecture*) a pour princi
 
 #### Inconvénients et critiques
 
-À chaque fois qu'un service interagit avec un autre service, la validation de chaque paramètre d’entrée prend place. Ceci augmente le temps de réponse et la charge de la machine, ce qui réduit la performance globale. De plus certains protocoles de communication sont plus lourds que d'autres (exemple : SOAP).
+À chaque fois qu'un service interagit avec un autre service, la validation de chaque paramètre d’entrée prend place. Ceci augmente le temps de réponse et la charge de la machine, ce qui réduit la performance globale. De plus certains protocoles de communication sont plus lourds que d'autres (exemple : SOAP). L'architecture n'utilise pas forcément SOAP, mai c'est c'est très commun.
 
 Même si un SI est découpé en services, au fil du temps, chaque service peut devenir très large, et effectuer plus de traitements qu'il ne devrait faire.
 
@@ -575,29 +529,24 @@ Cette architecture n'est pas faite pour les applications à interface graphique 
 
 Le style d'architecture des microservices est plus récent que les autres et s'inspire grandement de ces derniers. Voici la définition de Martin Fowler dans son article définissant les microservices :
 
-« *Le style d'architecture des microservices prend comme approche de développer chaque application comme un ensemble de petits services, chacun fonctionnant dans son propre processus, et communiquant avec des mécanismes légers (très souvent une ressource HTTP via une API). Ces services sont construits autour d'une fonctionnalité métier et sont déployables indépendamment par un système de déploiement automatisé. Il y a un minimum de gestion centralisée de ces services, qui peuvent être écrits dans différents langages de programmation et d'utiliser différentes technologies de stockage de données* »
-
-<!--
-TODO citation et parler un peu de martin fowler peut etre ?
-"The microservices architecture style is an approach to developing a single application as a suite of small services, each running in its own process, and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independantly deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming langages and use different data storage technologies"
--->
+« *Le style d'architecture des microservices prend comme approche de développer chaque application comme un ensemble de petits services, chacun fonctionnant dans son propre processus, et communiquant avec des mécanismes légers (très souvent une ressource HTTP via une API). Ces services sont construits autour d'une fonctionnalité métier et sont déployables indépendamment par un système de déploiement automatisé. Il y a un minimum de gestion centralisée de ces services, qui peuvent être écrits dans différents langages de programmation et d'utiliser différentes technologies de stockage de données* » \cite{martin_fowler}
 
 Les microservices se rapprochent beaucoup de l'architecture SOA, mais avec une approche différente au niveau de l’implémentation :
 
 * SOA : Intègre différentes applications comme un ensemble de services 
 * Microservices : Architecture chaque application comme un ensemble de services
 
-La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* ». Plus un service sera petit, moins il aura de chance d'évoluer en un monolithe. Le principe très simple est le suivant : plus un service est petit, moins il sera monolithique au fil du temps. Voici une liste des différents attributs de cette architecture :
-
-<!--
-TODO citation ("Do one thing and do it well")
--->
+La majeure différence se situe donc au niveau de la taille d'un service. Les microservices se rapprochent plus la philosophie Unix : « *Faire une seule chose, mais la faire bien* » \footnote{Do one thing and do it well}. Plus un service sera petit, moins il aura de chance d'évoluer en un monolithe. Le principe très simple est le suivant : plus un service est petit, moins il sera monolithique au fil du temps. Voici une liste des différents attributs de cette architecture :
 
 * **Indépendant** : Chaque microservice a son propre cycle de gestion de versions et de déploiement. Il y a généralement une équipe de développement aux compétences diverses par microservice (scalabilité des équipes). 
 * **Faible couplage** : Moyens de communication légers
 * **Donnée décentralisée et polyglotte** : Chaque microservice possède sa base de données sur une technologie indépendante
 
-![Différences entre une architecture monolithique et une architecture microservices][microservicesArchitecture]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/microservices}
+\caption{Différences entre une architecture monolithique et une architecture microservices}
+\label{fig:attestation}
+\end{figure}
 
 #### Avantages
 
@@ -631,7 +580,7 @@ Une application web moderne se découpe généralement en deux applications (sty
 
 Il y a deux types d'applications, celles qui ont une gestion d'état et celles qui n'en n'ont pas. Une application dites "*stateful*" stocke en mémoire certaines valeurs entre plusieurs appels, tandis qu'une application dîtes "*stateless*" ne gardera rien mémoire et est sans contexte précis.
 
-Une application *stateless* est beaucoup plus facile à gérer car qu'importe le processus depuis lequel il est appelé, le résultat ne sera pas contextualisé à celui-ci. On ne peut pas se permettre d'appeler une application *stateful* depuis 2 processus différents car les valeurs stockées en mémoire par le premier processus sont inaccessibles par l'autre. 
+Une application *stateless* est beaucoup plus facile à gérer car qu'importe le processus depuis lequel il est appelé, le résultat ne sera pas contextualisé à celui-ci. On ne peut pas se permettre d'appeler une application *stateful* depuis 2 processus différents car les valeurs stockées en mémoire par le premier processus sont inaccessibles par l'autre, interdisant à un loadbalancer de passer d’un serveur à l’autre de manière invisible pour le client.
 
 La scalabilité est beaucoup plus facile avec une application *stateless*, car le résultat est indépendant du processus où il est appelé. De manière générale, cela simplifie grandement le développement et le passage aux microservices.
 
@@ -645,7 +594,11 @@ On parle d'une application web traditionnelle lorsque la formation de la vue (HT
 * Le serveur va chercher des données si nécessaire, puis forme la vue entièrement (document HTML statique) et répond ce document au navigateur.
 * Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l’opération précédente recommence. Il reçoit la page HTML suivante, etc.
 
-![Schéma en anglais représentant l’architecture classique][traditionalArchitecture]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/traditional_architecture}
+\caption{Schéma en anglais représentant l’architecture classique}
+\label{fig:tdarchi}
+\end{figure}
 
 L'HTML étant un document statique, le JavaScript est généralement utilisé pour rendre l'expérience utilisateur plus intéressante en modifiant la structure de l'HTML (via le DOM) et permettre des effets de type animation, etc.  Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont rechargés à chaque demande de page, car le serveur doit les régénérer.
 
@@ -671,7 +624,11 @@ L'AJAX permet de lancer une requête HTTP non bloquante (asynchrone) et d'avoir 
 
 Ce type d'application sépare clairement l'interface graphique (client) et des traitements non visuels (serveur) tels que la gestion des données en deux applications différentes (2 tiers) pouvant utiliser des technologies différentes. Ce dernier apparaît généralement sous la forme de web service, pouvant servir plusieurs types de clients. Les moyens de communication sont généralement légers (JSON, XML, etc.). N'ayant plus à former la vue, la charge des serveurs est aussi grandement diminuée.
 
-![Schéma en anglais représentant l’architecture Single Page Application][spaArchitecture]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/spa_architecture}
+\caption{Évolution du prix des instances SPOT}
+\label{fig:spa}
+\end{figure}
 
 #### Critiques
 
@@ -685,11 +642,6 @@ Si les standards du web ont étés conçus à la base pour les applications trad
 
 Ce type d'applications convient très bien pour les applications web avec beaucoup d'interactions utilisateur avec un meilleur dynamisme. De nombreuses applications très connues utilisent déjà ce modèle comme Gmail (application de gestion de mails), Facebook, Twitter (réseaux sociaux), etc.
 
-<!--
-insérer footnotes pour les chiffres de Google
-source javascript google
--->
-
 ### Choix de styles d'architecture
 
 Au niveau du front-end, le pattern MVC est très répandu, le pattern le plus utilisé pour les interfaces graphiques. Nous avons vu les avantages et les inconvenients de celui-ci. D'autres possibilités sont apparues avec les derniers standards du web.
@@ -699,11 +651,11 @@ Au niveau du front-end, le pattern MVC est très répandu, le pattern le plus ut
 Cette architecture est de plus en plus utilisé dans le monde du web grâce aux *web components* (composants web). Un composant web est un élément HTML individuel encapsulant certaines fonctionnalités, et réutilisable plusieurs fois dans des contextes différents. Voici une liste des différentes propriétés d'un composant web standard :
 
 * **Éléments et propriétés personnalisés** : Permet la création d’élément HTML autres que ceux standards (p, a, h1, h2, etc.) avec des propriétés propres et personnalisables
-* ***Shadow DOM* et *scoped CSS*** : Création d'un nouveau noeud isolé du DOM, ayant son propre CSS n'affectant pas le reste de la page 
+* **Shadow DOM et scoped CSS** : Création d'un nouveau noeud isolé du DOM, ayant son propre CSS n'affectant pas le reste de la page 
 * **Imports HTML** : Permet l'import d'autres composants via le code HTML
 * **HTML Templates** : Un composant s'écrit via un fichier HTML
 
-Tous les navigateurs n'implémentent pas ces derniers standards du web, mais il est possible de les utiliser dès aujourd'hui grâce a des polyfills ou des frameworks définissant leur propre manière de créer des composants web.
+Tous les navigateurs n'implémentent pas ces derniers standards du web, mais il est possible de les utiliser dès aujourd'hui grâce a des \gls{polyfills} ou des frameworks définissant leur propre manière de créer des composants web.
 
 #### Architecture orienté événements
 
@@ -733,7 +685,7 @@ SOAP décrit la manière dont les applications doivent communiquer entre elles, 
 SOAP permet l'utilisation de plusieurs protocoles autres que l'HTTP tel que le SMTP, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le XML alourdit grandement les échanges. 
 
 SOAP a été utilisé pendant très longtemps et de nombreux web services écrits en SOAP existent encore actuellement (de nombreux web services sont écrits en SOAP chez Cdiscount). Cependant, des solutions plus légères sont préférées telle que REST. SOAP est souvent utilisé pour mettre en place une architecture orientée services (SOA).
-
+ 
 #### REST
 
 Contrairement a SOAP, qui est un protocole a part entière, REST (*Representational State Transfer*) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. Le protocole HTTP est utilisé, et permet de respecter tous les principes de l'architecture.
@@ -750,24 +702,11 @@ Cdiscount utilise actuellement une architecture orientée service et chaque serv
 
 #### Microservices
 
-C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes. Voici notre plan d'implémentation des microservices pour notre API RESTful.
-
-TODO étape 1, 2, 3
-
-<!--
-Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
-
-TODO schema
-
-Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel).
-
-TODO schema
-TODO bien parler de l'api gateway
--->
+C'est l'architecture vers laquelle Cdiscount veut tendre car elle permettrait de briser ses monolithes qui ralentissent fortement le développement de fonctionnalités. La société étudie actuellement une stratégie de migration. Pour le projet de démonstration, nous souhaitons mettre aussi en place cette architecture. Ce n'est pas tâche aisée et nous allons procéder en plusieurs étapes. 
 
 ## Ce qu'il faut retenir
 
-Nous avons vu de nombreux styles d'architecture et les spécificités du monde du web. Les principes clés à retenir selon moi et ce que nous allons appliqer pour notre projet sont les suivants : 
+Nous avons vu de nombreux styles d'architecture et les spécificités du monde du web. Les principes clés à retenir selon moi et ce que nous allons appliquer pour notre projet sont les suivants : 
 
 ### Le monolithe, à éviter
 
@@ -806,7 +745,7 @@ AngularJS est un framework créé en 2009 par Google. Il propose :
 * Injection de dépendances
 * Pattern MVVM utilisé mais avec une notion de "service" qui peut être utilisé pour la logique de domaine
 * Orienté composants possible (via directives)
-* Testing avancé mis en avant (unitaire et UI)
+* Testing avancé mis en avant (unitaire et UI (User Interface))
 * Découpage fonctionnel sous forme de modules
 * Two way data-binding : Lien entre la vue et le contrôleur automatique
 
@@ -830,7 +769,6 @@ Une version 2 est en cours de développement et va apporter de nombreuses choses
 * Version 2 non rétro-compatible (si version utilisée en orienté composants, migration facilitée)
 * Performances (le two way data-binding a un impact sur la performance générale de l'application)
 
-![Tendance des recherches d’après Google Trends][spaFrameworks]
 
 ### ReactJS + Flux
 
@@ -882,6 +820,12 @@ Polymer est selon moi trop jeune, la version 1.0 étant sortie alors que nous av
 
 Nous ajoutons un bus d’événements central pour profiter de l'architecture orienté événements. N’étant pas fourni avec AngularJS, nous avons créé notre propre bus en JavaScript.
 
+\begin{figure}
+\includegraphics[width=\textwidth]{images/spa_frameworks}
+\caption{Tendance des recherches d’après Google Trends}
+\label{fig:spa_fram}
+\end{figure}
+
 ## Choisir les bons outils
 
 De nombreux outils sont à disposition pour faciliter le développement d'applications web. Certains sont même nécessaires pour le développement mobile ou pour appliquer les méthodes agiles. Les tâches répétitives réduisent grandement la productivité des développeurs (DRY : Don't Repeat Yourself). L'automatisation de celles-ci permettent alors une meilleure productivité et simplifient le déploiement.
@@ -907,7 +851,10 @@ Nous utilisons CocoonJS combiné avec *webview-plus* pour accélérer l'applicat
 
 ### Automate
 
-Dans la même lignée que les *tasks runners*, nous utilisons un automate appelé Yeoman. C'est un outil permettant d'automatiser la création de fichiers redondants. Par exemple avec AngularJS, la création d'un composant est longue parce qu'il y a de nombreux fichiers. Nous avons alors créé notre propre générateur avec cet outil. L'utilisation se fait ainsi : `yo angular-es6-components:component product` et générera les fichiers suivants :
+Dans la même lignée que les *tasks runners*, nous utilisons un automate appelé Yeoman. C'est un outil permettant d'automatiser la création de fichiers redondants. Par exemple avec AngularJS, la création d'un composant est longue parce qu'il y a de nombreux fichiers. Nous avons alors créé notre propre générateur avec cet outil. L'utilisation se fait ainsi : `yo angular-es6-components:component product`.
+<!--
+TODO si j'ai le temps
+et générera les fichiers suivants :
 
 ```
 ├── product/                        * Dossier du composant 
@@ -921,7 +868,7 @@ Dans la même lignée que les *tasks runners*, nous utilisons un automate appel�
 │   └── product.service.spec.js     * Test unitaire du service
 └── cdiscount.business.js           * Module parent
 ```
-
+-->
 <!--
 TODO structure des fichiers
 -->
@@ -956,11 +903,13 @@ Nous avons choisi le NodeJS comme solution. Comme vu précédemment, le JavaScri
 
 La meilleure façon de créer et de gérer des microservices actuellement est de passer via des containers en utilisant Docker. Les containers créés par Docker sont des espaces Linux isolés pouvant interagir avec d'autres containers. Le principe est très similaire à une machine virtuelle, mais en beaucoup plus léger et plus efficace. Il est aisé de créer par exemple plusieurs instances d'une même application. Docker utilise un fichier descriptif (Dockerfile) permettant d'en créer facilement à la volée.
 
+Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
+
+Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel). Il faudra ensuite créér une API interface (API gateway), qui redirigera les requêtes vers les bons microservices.
+
 # Méthodologie
 
 Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tend de plus en plus vers les méthodes agiles et la récente création des pizzas team le démontre. 
-
-<!--TODO pizza team dans glossaire ?-->
 
 ## Cycle en V
 
@@ -984,7 +933,7 @@ Cette méthode prend en compte le fait que le client change souvent d'avis, et q
 
 Le produit possède un *product backlog*. C'est un artefact contient la liste des *user stories* (fonctionnalités) à ajouter au produit. Le déceloppement de celui-ci se fait en plusieurs itérations (*sprint*). Chaque sprint possède son *sprint backlog* qui contient la liste des fonctionnalités à ajouter pour cette itération. 
 
-La méthode est constituée de différents événements et rituels importants à respecter. En effet, les respecter permet d'optimiser l'efficacité de chaque membre de l’équipe grâce a une bonne communication. Le résultat est que le produit est de bonne qualité, respectant les demandes du client. Voici les principaux événements et rituels :
+La méthode est constituée de différents événements et rituels importants à respecter. En effet, les respecter permet d'optimiser l'efficacité de chaque membre de l’équipe grâce a une bonne communication. Le résultat est que le produit est de bonne qualité, respectant les demandes du client. Chaque personne est responsable de son travail et du bon respect des rituels. Voici les principaux événements et rituels :
 
 * **Sprint** : Itération avec une durée spécifique (time-box)
 * **Sprint Planning** : Se déroule au début de chaque sprint, le but est d'estimer les tâches à effectuer et d'assigner les tâches les plus prioritaires (jugé par le PO) au sprint en fonction de la capacité de l’équipe de développement (vélocité)
@@ -1095,7 +1044,11 @@ Un test unitaire substituera les dépendances (*mock*), ce qui n'est généralem
 
 Il faut retenir ceci : Un test unitaire permet de vérifier qu'une méthode est capable de gérer plusieurs cas bien définis, et un test de haut niveau vérifie qu'une fois le tout relié, l'ensemble fonctionne.
 
-![Pyramide des tests][testPyramid]
+\begin{figure}
+\includegraphics[width=\textwidth]{images/test_pyramid}
+\caption{Pyramide des tests}
+\label{fig:pyramid}
+\end{figure}
 
 #### TDD (Test Driven Developement)
 
