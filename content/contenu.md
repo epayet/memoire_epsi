@@ -1,23 +1,19 @@
 # Introduction {-}
 
-Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
+Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 à 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu intégrer plusieurs équipes et participer à de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
 
 Mon travail était tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance auprès de mes supérieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et de parfaire mes talents de conception.
 
-Le monde du web évolue très vite et est difficile à suivre. De nombreuses nouvelles technologies et techniques apparaissent régulièrement. Faire une application web moderne, et de qualité n'est pas un travail facile. Trouver la solution idéale et faire les bons choix techniques selon le projet et le style de développement de l'équipe demande une bonne compétence d’analyse et une veille technologique active. 
+Le monde du web évolue très vite et est difficile à suivre. De nombreuses technologies apparaissent régulièrement. Faire une application web moderne, et de qualité n'est pas un travail facile. Trouver la solution idéale et faire les bons choix techniques selon le projet et le style de développement de l'équipe demande une bonne compétence d’analyse et une veille technologique active. 
 
-Cdiscount sous-traite actuellement le développement de ses applications mobiles. Le nombre d'applications mobiles qu'elle possède ne cesse de grandir et le prix de développement devient de plus en plus conséquent.
+Cdiscount sous-traite actuellement le développement de ses applications mobiles. Le nombre d'applications qu'elle possède ne cesse de grandir et le prix de développement devient de plus en plus conséquent.
 L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type POC (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
 
-En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du SI (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple de logiciel de qualité.
+En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du SI (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple. 
 
 **Quels sont les choix a effectuer et quels sont les étapes a suivre pour la concepetion et la réalisation d'une application web moderne de quailté ?**
 
-Ce document définira ce qu'est une application web et ce qu'est-ce qu'un logiciel de qualité. Nous suivrons ensuite le cheminement pour la création du projet qui servira de support pour ce document. Il s'effectuera en 3 étapes :
-
-* Choix d'architecture
-* Choix de technologies
-* Choix de méthodologie
+Ce document définira ce qu'est une application web et ce qu'est un logiciel de qualité. Nous suivrons ensuite le cheminement de création du projet qui servira de support (POC). 
 
 # Présentation de l'entreprise {-}
 

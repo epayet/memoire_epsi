@@ -153,8 +153,6 @@ TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau pla
 
 # TODO
 
-* Intro
-* Conclusion
 * Résumé de 5 pages max
 * Refacto visuel
 * Vérification des normes (nombre de pages, etc.)
