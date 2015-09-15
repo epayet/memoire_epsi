@@ -7,11 +7,11 @@ Mon travail était tout d'abord essentiellement le développement d'applications
 Le monde du web évolue très vite et est difficile à suivre. De nombreuses technologies apparaissent régulièrement. Faire une application web moderne, et de qualité n'est pas un travail facile. Trouver la solution idéale et faire les bons choix techniques selon le projet et le style de développement de l'équipe demande une bonne compétence d’analyse et une veille technologique active. 
 
 Cdiscount sous-traite actuellement le développement de ses applications mobiles. Le nombre d'applications qu'elle possède ne cesse de grandir et le prix de développement devient de plus en plus conséquent.
-L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type POC (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
+L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type \gls{POC} (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
 
 En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du SI (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple. 
 
-**Quels sont les choix a effectuer et quels sont les étapes a suivre pour la concepetion et la réalisation d'une application web moderne de quailté ?**
+**Quels sont les choix à effectuer et quels sont les étapes à suivre pour la conception et la réalisation d'une application web moderne de qualité ?**
 
 Ce document définira ce qu'est une application web et ce qu'est un logiciel de qualité. Nous suivrons ensuite le cheminement de création du projet qui servira de support (POC). 
 
@@ -19,7 +19,7 @@ Ce document définira ce qu'est une application web et ce qu'est un logiciel de 
 
 ## Une entreprise grandissante
 
-Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes et environ 300 personnes sont dans la partie SI. Elle a été créée en 1998 par trois frères et vendait principalement des CDs. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). 
+Cdiscount est une entreprise d'e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes et environ 300 personnes sont dans la partie SI. Elle a été créée en 1998 par trois frères et vendait principalement des CD. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). 
 
 Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la livraison dans les magasins Casino. Le site s'est alors imposé comme l'un des principaux sites de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe ainsi en France devant Amazon, le leader mondial dans ce domaine. Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à l’international. Elle s’est récemment implémentée en Colombie, en Côte d’Ivoire, en Thaïlande, puis bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays. 
 
