@@ -1,22 +1,22 @@
 # Introduction {-}
 
-TODO
-
-<!--
-Lors de mon cursus d'ingénierie informatique a l'epsi Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d'etre a la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets tres interessants, ce qui m'a permis de m'améliorer dans de nombreux domaines.
+Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d'etre à la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets tres interessants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
 
 Travaillant d'abord essentiellement sur des applications web internes, mon travail etait tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance aupres de mes superieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et transmettre le résultat de mes recherches sous forme d'atelier en communauté de type coding dojo*.
 
-Le monde du web est un mondu qui évolue tres vite et est difficile a suivre. De nombreux frameworks* et nouvelles technique/architectures apparaissent régulierement. Il n'est pas aisé de trouver la solution idéale lorsque l'on commence le développement d'une nouvelle application web de faire les bons choix technique allouant aisance de dévelloppement, assurance qualité, maintenance allégée du code, etc. En combinant mes recherches et mes compétences d'analyse et de développement, j'ai maintenant une bonne vision sur les possibilités et les choix techniques a faire en fonction des besoins de l'application.
+Le monde du web est un monde qui évolue très vite et qui est difficile à suivre. De nombreux frameworks* et nouvelles techniques apparaissent régulierement. Il n'est pas aisé de trouver la solution idéale lorsque l'on commence le développement d'une nouvelle application web de faire les bons choix technique. Faire une application web moderne, et de qualité n'est pas un travail facile. Les compétences requises sont nombreuses et une veille technologique réguliere est necessaire. 
 
-Cela s'est ressenti non seulement dans la vie des applications sur lesquelles j'etais en charge, mais aussi dans mon métier. J'ai ainsi pu intégrer une équipe orientée R&D (Recherche et Développement), pour devenir un expert technique et évoluer du métier du développeur vers le métier d'architecte.
+Cdiscount possede plusieurs applications mobiles. Elle sous-traite actuellement le développement de celles-ci. Le nombre d'applications mobile qu'elle possede ne cesse de grandir et le prix de développement devient de plus en plus conséquent. L'expertise technique de Cdiscount étant le web, notre équipe propose de créer un projet de type POC pour prouver qu'is est possible d'utiliser note expertise pour creer des applications mobiles.
 
-Le but de ce mémoire est de passer en revue ces possibilités, d'offrir des propositions d'architecture logicielle et des choix de technologies, basées sur mon expériences et le résultat de mes recherches. A la fin de celui-ci, nous serons capables de faire un choix sur la technologie et l'architecture a mettre en place, en fonction des besoins fonctionnels pour creer une application web, mais aussi une application mobile.
+En parallele, Cdiscount réfléchit actuellement a rénover le fonctionnement de son SI et veut de plus en plus utiliser les méthodes agiles. Elle encourage les nouvelles applications a les utiliser. Nous voulons démontrer qu'en utilisant une bonne architecture ainsi qu'une bonne méthododlogie, il est possible de créer un logiciel de qualité.
 
-Nous verrons d'abord les besoins de créer une application web et l'évolution au fil des années de celles-ci. Nous verrons ensuite les différentes architectures modernes et utilisées sur le marché ainsi que les technologies actuelles répondant a ces problématiques. Nous aurons l'occasion de voir plusieurs exemples, comprenant la possibilite de faire aussi une application mobile via les applications que j'ai moi-meme develepe au sein de Cdiscount.
+**Quels sont les choix a effectuer et quels sont les étapes a suivre pour la concepetion et la réalisation d'une application web moderne de quailté ?**
 
-Developpeur full stack, architecture moderne
--->
+Ce document définira ce qu'est une application web et ce qu'est la qualité logicielle et ses interets. Nous suivrons ensuite le cheminement pour la création du projet qui servira de support pour ce document. C'est un projet de type POC. Son but est de démontrer que les méthodes agiles combinées avec une bonne architecutre permet de créer un applicaiton de qualité.  Il s'effectue en 3 étapes :
+
+* Choix d'architecture
+* Choix de technologies
+* Choix de méthodologie
 
 # Présentation de l'entreprise {-}
 
@@ -1169,13 +1169,17 @@ Le jury technique quant-à lui était satisfait de voir que nos méthodes ont po
 
 # Conclusion {-}
 
-TODO
+Le projet de démonstration est un succes et a atteint ses objectifs. C'est un logiciel de qualité, permettant l'implémentation rapide de nouvelles fonctionnalités sans accumuler de dette technique. Nous avons par la meme occasion démontré a Cdiscount qu'il est possible de creer des applications mobiles en utilisant uniquement les technologies web, notre domaine d'expertise. Lors de la présentation, le jury s'en est bien rendu compte et souhaite tester notre solution sur des applications transverses. Il faut avant cela, que nous la finalisons en vérifiant qu'elle s'integre bien avec les methodes actuelles de Cdiscount.  
 
-<!--
-brain
-monolith is dead
-c'est pas the choix mais les choix qu'on a fait, du style, du style. on a juste essayé de bien choisir pour avoir comme resultat un logiciel de bonne qualité, maintenable, etc.
--->
+Nous retenons aussi que pour créer un logiciel de qualité, il faut choisir une bonne architecture qui permet d'eviter que l'application se transforme en monolithe. Le style d'architecture des microservices est la meilleure solution pour l'éviter. Son principe tres simple est que plus une fonctionnalité est petite, simple et isolée, moins elle aura de chance de se transformer en monolithe. Plus une fonctionnalité est implémentée de maniere simple, plus elle sera facile a comprendre et a maintenir pour les developpeurs. Cdiscount a bien raison de vouloir l'integrer dans son SI, et notre projet est un bon exemple.
+
+Le DDD nous a appris que le fait de separer dans une application les deux types de logiques (domaine et applicative), permet une meilleure liberté technologique. C'est d'autant plus utile dans le domaine du web car elles evoluent tres vite, et il est bénéfique de profiter du meilleur des nouvelles technologies. Il est important d'effectuer une veille technologique active pour pouvoir en profiter.
+
+SCRUM et extreme programming allient parfaitement gestion de projets et bonnes pratiques de développement. Nous recommendons fortement l'utilisation de ces deux la lors du développement d'un logiciel, c'est selon moi la clé pour avoir un logiciel de qualité.
+
+Le travail d'un architecte logiciel est la conception d'applications. Le travail d'un développeur de logiciel est la réalisation d'applications. Nous avons vu qu'il est difficile de séparer la phase de conception d’un projet de sa phase de réalisation. C'est le point faible de la méthodologie du cycle en V, et les méthodes agiles ont pour but de rallier ces deux phases. De nombreuses entreprises séparent ces deux roles.
+
+Qu'est-ce reelement le travail d'un ingénieur logiciel ? Un ingénieur logiciel est donc capable de concevoir ET réaliser une application. Une équipe d'ingénieurs logiciels sera capable de concevoir et de realiser une application de A a Z avec de la rigueur et de la communication. Il est plus facile de faire une application de qualité ainsi.  
 
 <!--
 

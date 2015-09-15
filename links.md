@@ -71,6 +71,7 @@ browser share : https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines
 # Notes
 
 on peut utiliser le mot pattern comme ca ?
+assez insisté sur la qualité logicielle et ce que ca apporte ?
 
 ## Notes kiwi
 
@@ -89,6 +90,14 @@ et forcer un peu moins sur la description
 SOA trop léger
 manque d'implication personnelle
 impression de lire un listing des archis
+
+## Notes GTA
+
+Le responsive web design facilite le développement et l’adapation des écran grâce aux media queries du CSS3 et les frameworks prêts à l’emploi sont nombreux. => ca veut rient dire apparremment
+
+structure du projet et code en annexe pour casser la theorie ?
+
+prouver les gains financiers que peut apporter une appli hybride
 
 # TODO
 
