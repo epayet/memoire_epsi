@@ -1,18 +1,19 @@
 # Introduction {-}
 
-Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d'etre à la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets tres interessants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
+Lors de mon cursus d'ingénierie informatique à l'EPSI Bordeaux, j'ai eu l'occasion de travailler en alternance durant 3 ans à Cdiscount (de 2012 a 2015). Leader dans le domaine du e-commerce en France, Cdiscount est une entreprise qui se doit d’être à la pointe de la technologie. Durant ces 3 ans, j'ai pu travailler dans plusieurs équipes ainsi que sur de nombreux projets très intéressants, ce qui m'a permis de m'améliorer dans de nombreux domaines et de devenir un expert en technologies web.
 
-Travaillant d'abord essentiellement sur des applications web internes, mon travail etait tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance aupres de mes superieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et transmettre le résultat de mes recherches sous forme d'atelier en communauté de type coding dojo*.
+Mon travail était tout d'abord essentiellement le développement d'applications. Gagnant de l'expérience et de la confiance auprès de mes supérieurs, mon travail de tous les jours a progressivement évolué. En plus du développement, j'ai eu du temps dégagé pour faire de la recherche sur les nouvelles technologies, et de parfaire mes talents de conception.
 
-Le monde du web est un monde qui évolue très vite et qui est difficile à suivre. De nombreux frameworks* et nouvelles techniques apparaissent régulierement. Il n'est pas aisé de trouver la solution idéale lorsque l'on commence le développement d'une nouvelle application web de faire les bons choix technique. Faire une application web moderne, et de qualité n'est pas un travail facile. Les compétences requises sont nombreuses et une veille technologique réguliere est necessaire. 
+Le monde du web évolue très vite et est difficile à suivre. De nombreuses nouvelles technologies et techniques apparaissent régulièrement. Faire une application web moderne, et de qualité n'est pas un travail facile. Trouver la solution idéale et faire les bons choix techniques selon le projet et le style de développement de l'équipe demande une bonne compétence d’analyse et une veille technologique active. 
 
-Cdiscount possede plusieurs applications mobiles. Elle sous-traite actuellement le développement de celles-ci. Le nombre d'applications mobile qu'elle possede ne cesse de grandir et le prix de développement devient de plus en plus conséquent. L'expertise technique de Cdiscount étant le web, notre équipe propose de créer un projet de type POC pour prouver qu'is est possible d'utiliser note expertise pour creer des applications mobiles.
+Cdiscount sous-traite actuellement le développement de ses applications mobiles. Le nombre d'applications mobiles qu'elle possède ne cesse de grandir et le prix de développement devient de plus en plus conséquent.
+L'expertise technique de la société étant le web, notre équipe propose de créer un projet de type POC (Proof Of Concept) pour prouver qu'il est possible d'utiliser note expertise pour créer des applications mobiles et limiter les coûts.
 
-En parallele, Cdiscount réfléchit actuellement a rénover le fonctionnement de son SI et veut de plus en plus utiliser les méthodes agiles. Elle encourage les nouvelles applications a les utiliser. Nous voulons démontrer qu'en utilisant une bonne architecture ainsi qu'une bonne méthododlogie, il est possible de créer un logiciel de qualité.
+En parallèle, de nombreux chantiers sont en cours pour rénover le fonctionnement du SI (Système d’Information) de Cdiscount et changer l'architecture interne ainsi que les méthodes de développement utilisées. Elle encourage fortement les nouvelles applications à utiliser les méthodes agiles et à implémenter l'architecture sur laquelle elle travaille (microservices). Le projet que nous allons réaliser pourra servir d'exemple de logiciel de qualité.
 
 **Quels sont les choix a effectuer et quels sont les étapes a suivre pour la concepetion et la réalisation d'une application web moderne de quailté ?**
 
-Ce document définira ce qu'est une application web et ce qu'est la qualité logicielle et ses interets. Nous suivrons ensuite le cheminement pour la création du projet qui servira de support pour ce document. C'est un projet de type POC. Son but est de démontrer que les méthodes agiles combinées avec une bonne architecutre permet de créer un applicaiton de qualité.  Il s'effectue en 3 étapes :
+Ce document définira ce qu'est une application web et ce qu'est-ce qu'un logiciel de qualité. Nous suivrons ensuite le cheminement pour la création du projet qui servira de support pour ce document. Il s'effectuera en 3 étapes :
 
 * Choix d'architecture
 * Choix de technologies
@@ -22,13 +23,9 @@ Ce document définira ce qu'est une application web et ce qu'est la qualité log
 
 ## Une entreprise grandissante
 
-Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes dont environ 300 dans la partie SI (Système d’Information). Elle a été créée en 1998 par trois frères et vendait principalement des CDs. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). Cdiscount possède aussi deux magasins physiques à Bordeaux et à Paris qui proposent les meilleures ventes du site internet physiquement.
+Cdiscount est une entreprise de e-commerce qui gère le site web Cdiscount.com. Ses employés ainsi que ses entrepôts sont situés à Bordeaux. Elle emploie environ 1500 personnes et environ 300 personnes sont dans la partie SI. Elle a été créée en 1998 par trois frères et vendait principalement des CDs. Elle vend aujourd’hui toutes sortes de marchandises (High tech, loisirs, équipements de maison, etc.). 
 
 Elle est aujourd’hui filiale à 99,6% du Groupe Casino qui est un grand groupe de distribution en France et dans le monde. Ceci lui a permis de profiter de différents avantages comme la livraison dans les magasins Casino. Le site s'est alors imposé comme l'un des principaux sites de vente en ligne français avec un chiffre d'affaires de 1,6 milliard d'euros TTC. Elle passe ainsi en France devant Amazon, le leader mondial dans ce domaine. Cdiscount a profité aussi du groupe Casino pour s’implémenter de plus en plus à l’international. Elle s’est récemment implémentée en Colombie, en Côte d’Ivoire, en Thaïlande, puis bientôt au Brésil ou encore au Panama pour profiter du e-commerce fleurissant de ces pays. 
-
-## Changements en cours
-
-A l'heure actuelle, Cdiscount possède de nombreuses applications complexes sur tout types de supports (mobiles, PC, etc.). Chaque pays déployé possède sa propre version car chacun a ses spécificités. En plus de cela, uniquement en France, Cdiscount possède aussi de nombreux sites "verticaux", différents de son site principal, proposant des articles à la vente restraints à un seul domaine (exemple : vente de billets d'avions). Le nombre d'applications différentes ne cesse de grandir et la méthodologie employée lorsque la société ne travaillait que sur son site principal (cdiscount.com) est difficilement applicable dans ce nouveau contexte.
 
 Pour s’adapter à ces changements, Cdiscount retravaille sa méthodologie et son architecture. Son objectif est d'accentuer la qualité du code fourni et de miser sur l'innovation technologique. Si historiquement, les technologies principales utilisées chez Cdiscount proviennent du monde Microsoft (C#, ASP.NET, SQL Server, Visual Studio, etc.), elle utilise de plus en plus sur des alternatives open source.
 
@@ -36,7 +33,7 @@ Pour s’adapter à ces changements, Cdiscount retravaille sa méthodologie et s
 
 ## Différent types d'équipes
 
-Le SI de Cdiscount est historiquement divisé en équipe par domaine technique, mais un nouveau genre d'équipes fait son apparition au sein de son SI : les "feature teams". On les nomme aussi parfois les "pizza teams". Ce sont des équipes polyvalentes ne dépassant pas 8 personnes assignés à une seule fonctionnalité. Les méthodes agiles sont plus faciles à appliquer avec ce genre d'équipe.
+Le SI de Cdiscount est historiquement divisé en équipes par domaine technique.
 
 <!--TODO glossaire pizzas team ??-->
 
@@ -53,10 +50,6 @@ DBA signifie DataBase Administrator (administrateur de base de données). Cette 
 * **Delivery Management**
 
 Ils s’occupent de la gestion des différents serveurs à distance et des déploiements d’applications d’un environnement à un autre. Ils s’assurent aussi du maintien à jour et du bon fonctionnement de celles-ci (fichiers de configuration, etc.).
-
-* **MCO**
-
-Le maintien en condition opérationnelle (abrégé MCO) est l'ensemble des mesures prises pour garantir que la bascule vers un environnement dégradé n'entraîne pas une altération inacceptable des conditions de travail habituelles. Dans le cadre d'un plan de continuité d'activité (PCA), le MCO couvre principalement la stratégie de sauvegarde utilisée et la méthodologie de déploiement de celle-ci sur un environnement dégradé ainsi que la réplication de la configuration des équipements. 
 
 * **Sécurité**
 
@@ -78,15 +71,15 @@ C’est une équipe dédiée à la récolte ainsi que l’analyse des données r
 
 * **Services**
 
-C’est l’équipe qui intègre toutes les fonctionnalités dîtes « métier » du site sous forme de services web développées généralement pour l’équipe Front mais aussi pour d’autres équipes ayant besoin de fonctionnalités internes (exemple : back-office).
+C’est l’équipe qui intègre toutes les fonctionnalités dites « métier » du site sous forme de services web développées généralement pour l’équipe Front mais aussi pour d’autres équipes ayant besoin de fonctionnalités internes (exemple : back-office).
 
 * **Lab : R&D**
 
-C’est l’équipe chargée de maintenir l'innovation à Cdiscount. Pour cela, elle est en constante veille informatique et propose de nouvelles idées de technologies au SI. Leur objectif est de maintenir à jour les technologies utilisées, et donc de construire la plateforme de demain. Elle propose aussi des projets innovants comme l’open API et a le champ libre sur le choix des technologies.
+C’est l’équipe chargée de maintenir l'innovation à Cdiscount. Pour cela, elle est en constante veille technologique et propose de nouvelles idées de technologies au SI. Leur objectif est de maintenir à jour les technologies utilisées, et donc de construire la plateforme de demain. Elle a le champ libre sur le choix des technologies.
 
 ### Équipes par fonctionnalité
 
-Cdiscount possède désormais de nombreuses "feature teams". Il existe une équipe par pays et certaines équipes s'occupent d'une fonctionnalité transverse comme celles-ci :
+Un nouveau genre d'équipes fait son apparition au sein du SI de Cdiscount : les "feature teams". On les nomme aussi parfois les "pizza teams". Ce sont des équipes polyvalentes ne dépassant pas 8 personnes assignées à une seule fonctionnalité. Les méthodes agiles sont plus faciles à appliquer avec ce genre d'équipes. Il existe une équipe par pays et certaines équipes s'occupent d'une certaine fonctionnalité, comme celles-ci :
 
 * **Market Place**
 
@@ -102,27 +95,29 @@ C’est l’équipe en charge de la prise de commande.
 
 ## Implication personnelle dans l'entreprise
 
-Ayant effectué 3 ans en alternance dans cette entreprise, j'ai eu l'occasion d'intégrer plusieurs équipes. J'ai d'abord travaillé dans l'équipe services puis ensuite dans l'équipe Lab (R&D). J'ai alors participé à de nombreux projets, me permettant de comprendre le fonctionnement du SI de Cdiscount. 
+Ayant effectué 3 ans en alternance dans cette entreprise, j'ai eu l'occasion d'intégrer plusieurs équipes. J'ai d'abord travaillé dans l'équipe services puis dans l'équipe Lab (R&D). J'ai alors participé à de nombreux projets, me permettant de comprendre le fonctionnement du SI de Cdiscount. 
 
 ### Projets
 
-Membre de l'équipe services, les projets étaient en rapport direct avec le site cdiscount.com, mais après avoir intégré l'équipe R&D, les projets étaient beaucoup plus transverses et variés. 
+Membre de l'équipe services, les projets étaient en rapport direct avec le site cdiscount.com, mais après avoir intégré l'équipe Lab, les projets étaient beaucoup plus transverses et variés. 
 
 #### WSManager
 
-C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif est de faciliter l'appel aux différents web services de Cdiscount. L'équipe services est en charge de nombreux web services de types différents sur des environnements différents (production, préproduction, développement, etc.). Les outils existants n'ont pas une prise en main facile et ne proposent pas un listing partagé des services existants à Cdiscount, accessibles à tous les développeurs. WSManager est donc un projet de gestion collaborative de web services. 
+C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif est de faciliter l'appel aux différents web services de Cdiscount. L'équipe services est en charge de nombreux web services de types différents sur des environnements différents (production, préproduction, développement, etc.). Les outils existants n'ont pas une prise en main facile et ne proposent pas un listing partagé des services existants à Cdiscount, accessibles à tous les développeurs. WSManager est donc un outil de gestion collaborative de web services. 
 
 #### OpenAPI
 
-Cdiscount propose depuis peu une API ouverte donnant un accès au catalogue de Cdiscount via web service. J'ai eu l'occasion de participer à ce projet et suis a l'origine du portail développeur, accessible à l'adresse http://dev.cdiscount.com. Il contient une documentation interactive de l'openAPI ainsi que la gestion des comptes développeurs.
+Cdiscount propose depuis peu une API ouverte donnant un accès au catalogue de Cdiscount via web service. J'ai eu l'occasion de participer à ce projet et suis à l'origine du portail développeur, accessible à l'adresse http://dev.cdiscount.com. Il contient une documentation interactive de l'openAPI ainsi que la gestion des comptes développeurs.
 
 #### POC
 
 C'est le projet servant de support pour ce document. Il sera décrit par la suite.
 
-### Veille informatique et formations
+### Veille technologique et formations
 
-En plus des projets cités ci-dessus, mon rôle au sein de l'équipe Lab était d'effectuer une veille technologique active et d'organiser des ateliers de partage de connaissance sur le sujet sous forme de coding dojos. Le projet WSManager me servait de support direct pour appliquer mes recherches.
+En plus des projets cités ci-dessus, mon rôle au sein de l'équipe Lab était d'effectuer une veille technologique active et d'organiser des ateliers de partage de connaissance sur le sujet sous forme de coding dojos. Le projet WSManager me servait de support direct pour appliquer mes recherches. Elles ont été très utiles pour la mise en place du POC.
+
+<!--TODO gloassaire codong dojo-->
 
 # Application Web
 
@@ -1169,67 +1164,17 @@ Le jury technique quant-à lui était satisfait de voir que nos méthodes ont po
 
 # Conclusion {-}
 
-Le projet de démonstration est un succes et a atteint ses objectifs. C'est un logiciel de qualité, permettant l'implémentation rapide de nouvelles fonctionnalités sans accumuler de dette technique. Nous avons par la meme occasion démontré a Cdiscount qu'il est possible de creer des applications mobiles en utilisant uniquement les technologies web, notre domaine d'expertise. Lors de la présentation, le jury s'en est bien rendu compte et souhaite tester notre solution sur des applications transverses. Il faut avant cela, que nous la finalisons en vérifiant qu'elle s'integre bien avec les methodes actuelles de Cdiscount.  
+Le projet de démonstration est un succès et a atteint ses objectifs. C'est un logiciel de qualité, permettant l'implémentation rapide de nouvelles fonctionnalités sans accumuler de dette technique. Nous avons par la même occasion démontré à Cdiscount qu'il est possible de créer des applications mobiles en utilisant uniquement les technologies web, notre domaine d'expertise. Lors de la présentation, le jury s'en est bien rendu compte et souhaite tester notre solution sur des applications transverses. Il faut avant cela, que nous finalisons l'intégration avec les méthodes actuelles de Cdiscount.
 
-Nous retenons aussi que pour créer un logiciel de qualité, il faut choisir une bonne architecture qui permet d'eviter que l'application se transforme en monolithe. Le style d'architecture des microservices est la meilleure solution pour l'éviter. Son principe tres simple est que plus une fonctionnalité est petite, simple et isolée, moins elle aura de chance de se transformer en monolithe. Plus une fonctionnalité est implémentée de maniere simple, plus elle sera facile a comprendre et a maintenir pour les developpeurs. Cdiscount a bien raison de vouloir l'integrer dans son SI, et notre projet est un bon exemple.
+Nous retenons que pour créer un logiciel de qualité, il faut choisir une architecture qui permet d’éviter que l'application se transforme en monolithe et le style d'architecture des microservices est la meilleure solution actuellement. Son principe est très simple : plus une fonctionnalité est petite, simple et isolée, moins elle aura de chance de se transformer en monolithe. Une service simple est simple à comprendre et à améliorer. Cdiscount a bien raison de vouloir l’intégrer dans son SI, et notre projet est un bon exemple.
 
-Le DDD nous a appris que le fait de separer dans une application les deux types de logiques (domaine et applicative), permet une meilleure liberté technologique. C'est d'autant plus utile dans le domaine du web car elles evoluent tres vite, et il est bénéfique de profiter du meilleur des nouvelles technologies. Il est important d'effectuer une veille technologique active pour pouvoir en profiter.
+Le DDD (Domain Driven Design) nous a appris qu'il existe en fait deux types de logiques dans une application : logique de domaine et logique applicative. Le fait de les séparer permet une meilleure liberté technologique. C'est d'autant plus utile dans le domaine du web car les technologies évoluent très vite. Il est important d'effectuer une veille technologique active pour pouvoir en profiter.
 
-SCRUM et extreme programming allient parfaitement gestion de projets et bonnes pratiques de développement. Nous recommendons fortement l'utilisation de ces deux la lors du développement d'un logiciel, c'est selon moi la clé pour avoir un logiciel de qualité.
+SCRUM et Extreme Programming (XP) allient parfaitement gestion de projets et bonnes pratiques de développement. XP met beaucoup en avant le bien-être du développeur, et met tout en place pour cela. Nous recommandons fortement leur utilisation lors du développement d'applications, c'est selon moi la clé pour avoir un logiciel de qualité.
 
-Le travail d'un architecte logiciel est la conception d'applications. Le travail d'un développeur de logiciel est la réalisation d'applications. Nous avons vu qu'il est difficile de séparer la phase de conception d’un projet de sa phase de réalisation. C'est le point faible de la méthodologie du cycle en V, et les méthodes agiles ont pour but de rallier ces deux phases. De nombreuses entreprises séparent ces deux roles.
+Le travail d'un architecte logiciel est la conception d'applications. Le travail d'un développeur de logiciel est la réalisation d'applications. Nous avons vu qu'il est difficile de séparer la phase de conception d’un projet de sa phase de réalisation. C'est le point faible de la méthodologie du cycle en V, et les méthodes agiles ont pour but de rallier ces deux phases. De nombreuses entreprises séparent ces deux rôles, et la qualité du logiciel est en amoindrie.
 
-Qu'est-ce reelement le travail d'un ingénieur logiciel ? Un ingénieur logiciel est donc capable de concevoir ET réaliser une application. Une équipe d'ingénieurs logiciels sera capable de concevoir et de realiser une application de A a Z avec de la rigueur et de la communication. Il est plus facile de faire une application de qualité ainsi.  
-
-<!--
-
-# Notes et plan {-}
-
-## But
-
-Faire une application web moderne et professionnelle.
-
-Faire les bon choix : architecture, technologie et méthodologie
-
-Démonstration avec projet POC
-
-Mot clés : maintenable, assurance qualité
-
-## Notes
-
-TODO les tableaux sont pas jolis
-TODO ajouter DDD vite fait dans la biblio pour la traduction en français
-TODO link sur microservices et netflix ?
-TODO les grosses images en annexe ? j'ai une petite image des microservicers vs monolithic surinternet
-
-si j'enleve le javascript au debut, justifier quelque part pourquoi j'utilise ca et que c'est trop bien la version ES6
-
-tourner l'implementation des microservices sous forme d'etapes, la derniere c'est genre avec plein de monitoring, voir meme du scaling auto, mais bon ca c'est de la competence de devops
-
-### Résumé des differents styles
-
-| Style d'architecture | Description |
-| --- | --- |
-| Client/Serveur | Sépare le systeme en deux applications distinctes ou le client envoie des requetes au serveur. Tres souvent, le serveur est l'intermediaire avec une base de donnees et contient un peu de logique de l'application. TODO pas joli (originellement il disait que the server is a database with application logic represented as stored procedures)|
-| Architecture orienté composents | Décompose l'application en composants foncionnels réutilisables exposant des interfaces de communication bien défini. |
-| DDD (Domain Driven Design) | Un style d'architecture orienté objet concentré sur la modélisation d'un domaine métier et sur la définition d'objets métiers (TODO y'a un S ?) basés sur des entités en rapport avec le domaine métier. TODO ca veut rien dire nan ? |
-| Architecture en couches | Partitionne l'application en plusieurs couches (groupes logiques) | 
-| Orienté evenements | Style d'architecture utilisant un systeme d'evenements pouvant envoyer et recevoir des messages en utilisant un ou plusieurs canal de communication. De cette maniere, les applications peuvent interagir sans connaitre en detail les autres applications (couplage faible). |
-| N-tiers, 3-tiers | Sépare les fonctionnalités de l'application un plusieurs segments de la meme maniere que l'architecture en couches, a la difference que dans ce cas, chaque segment est situé sur une machine differente. TODO c'est vrai ca ? parler de n+1 ? |
-| Orienté objet | Paradigme bien connu basé sur la division des responsabilités d'une application ou d'un systeme en objets individuels et reutilisables, chacun comprenant les donnees et le comportement relevant a cet objet. |
-| SOA (Service-Oriented Architecture) | Refere aux applications qui exposent et consument des fonctionnalités a travers un service utilisant des contrats et des messages. |
-
-TODO en fait le SPA c'est un client serveur parce que ca separe vraiment du coup
-TODO ca se dit vraiment en francais le systeme ?
-TODO style d'architecture on dit aussi pattern
-TODO Message bus en fait c'est orienté eventements nan ?
-TODO integrer les microservices dans le tableau ou faire pouf apres y'a eu les microservices
-TODO n tiers 3 tiers c'est en anglais, en francais c'est architecture trois tiers, ou pas ?
-TODO le tableau c'est juste traduit du site, verifier individuellement que c'est vraiment ca
-TODO traduire les noms en anglais genre SOA
-TODO en fait je sais pas si je garde cette partie, c'est pas dans le nouveau plan, annexe ?
-
--->
+Un ingénieur logiciel est capable de concevoir ET réaliser une application. Le meilleur chemin pour avoir un logiciel de qualité est d'avoir une équipe d'ingénieurs logiciels, travaillant ensemble durant toutes les phases du projet (conception, réalisation et mise en oeuvre). 
 
 [browserMarketShare]: images/browser_share.png
 [npmModules]: images/npm_modules.PNG
