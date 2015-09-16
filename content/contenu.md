@@ -53,7 +53,7 @@ Ce sont ceux qui font l’architecture globale du SI. Ils font ainsi les choix d
 
 * **Fonctionnel/Métier**
 
-Ils sont l’incarnation du besoin auprès des équipes du \gls{si}. En agile (comme le montrera le chapitre à cet effet, il ont souvent le rôle de responsable du produit ou « Product owner ». Souvent, ce sont aussi eux qui répondent du budget à appliquer aux projets.
+Ils sont l’incarnation du besoin auprès des équipes du \gls{si}. En agile (comme le montrera le chapitre à cet effet, il ont souvent le rôle de responsable du produit ou "\gls{product_owner}". Souvent, ce sont aussi eux qui répondent du budget à appliquer aux projets.
 
 * **Big Data**
 
@@ -99,7 +99,7 @@ Membre de l'équipe services, les projets étaient en rapport direct avec le sit
 
 #### WSManager
 
-C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif est de faciliter l'appel aux différents web services de Cdiscount. L'équipe services est en charge de nombreux web services de types différents sur des environnements différents (production, préproduction, développement, etc.). Les outils existants n'ont pas une prise en main facile et ne proposent pas un listing partagé des services existants à Cdiscount, accessibles à tous les développeurs. WSManager est donc un outil de gestion collaborative de web services. 
+C'est le projet sur lequel j'ai clairement passé le plus de temps. Son objectif est de faciliter l'appel aux différents \gls{web_service} de Cdiscount. L'équipe services est en charge de nombreux web services de types différents sur des environnements différents (production, préproduction, développement, etc.). Les outils existants n'ont pas une prise en main facile et ne proposent pas un listing partagé des services existants à Cdiscount, accessibles à tous les développeurs. WSManager est donc un outil de gestion collaborative de web services. 
 
 #### OpenAPI
 
@@ -129,7 +129,7 @@ Il existe 3 grandes familles d'applications informatique (logiciels) :
 
 « *Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile, tel qu'un assistant personnel, un téléphone portable, un « smartphone », un baladeur numérique, une tablette tactile* », définition de Wikipédia.
 
-Ce qui différencie finalement ces 3 types d'applications est le support sur lequel elles sont accessibles. Ceci implique généralement des technologies et langages différents. Les avancées récentes des navigateurs web ont fait des applications web des applications complètes et avancées en utilisant uniquement les technologies web (centrées généralement autour du Javascript).
+Ce qui différencie finalement ces 3 types d'applications est le support sur lequel elles sont accessibles. Ceci implique généralement des technologies et langages différents. Les avancées récentes des navigateurs web ont fait des applications web des applications complètes et avancées en utilisant uniquement les technologies web (centrées généralement autour du JavaScript).
 
 La facilité de développement de celles-ci ainsi que la performance des moteurs de navigateurs ont propulsé les applications web à un tout autre niveau, dépassant même les limites de la plateforme. En effet, il est désormais possible de faire des applications natives mobiles ou de bureau en n'utilisant que des technologies web approchant les performances des applications natives. Cela permet d'avoir un coût de développement moindre grâce à la réutilisation de code pour les différentes plateformes. Le web est désormais la cible de toutes les applications.
 
@@ -183,7 +183,7 @@ Selon lui, il n’est pas possible refaire le web, la seule solution est de l’
 
 ### Une version 6 bien évoluée
 
-On dit souvent que c’est que le JavaScript est à la fois adoré et détesté. C’est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives open source, la récente version 6 (on parle d'ECMAScript 6, abrégé ES6, ou encore d'ECMAScript2015) fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. 
+On dit souvent que c’est que le JavaScript est à la fois adoré et détesté\cite{javascript}. C’est un langage très puissant mais souvent mal compris et mal utilisé car très permissif. Malgré une évolution plus lente que les autres alternatives \gls{open_source}, la récente version 6 (on parle d'ECMAScript 6, abrégé ES6, ou encore d'ECMAScript2015) fait de celui-ci un langage de plus en plus viable et comble les différents manques et incompréhensions citées auparavant. 
 
 Même si aujourd’hui, cette version n’est pas prise en charge par tous les navigateurs, il est possible d’écrire du code en ES6, et le transformer en ES5 grâce à des transpileurs (transforme un code source en un équivalent dans un autre langage). Le code écrit est alors plus moderne et fonctionne malgré tout sur les différents navigateurs dès aujourd’hui. Le but est d’utiliser au plus tôt les derniers standards et avoir une application plus facile à maintenir et profiter rapidement des dernières évolutions.
 
@@ -191,15 +191,13 @@ Même si aujourd’hui, cette version n’est pas prise en charge par tous les n
 
 Comme vu précédemment, le JavaScript évolue énormément. Ses performances, sa facilite de programmation, et tous les avantages que nous avons vu précédemment ont fait apparaître des projets indépendants des navigateurs web.
 
-Un projet phare est Node.js, projet open source créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti de la machine virtuelle V8 et de la programmation événementielle de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’une solution entièrement écrite en Java à une solution totalement écrite en Node.js. 
+Un projet phare est Node.js, projet \gls{open_source} créé en 2009. C’est un environnement multiplateforme orienté vers les applications réseaux. Node.js tire parti de la machine virtuelle V8 et de la programmation événementielle de JavaScript pour créer des serveurs web ultra performants pouvant tenir une charge importante, sans avoir besoin d’un logiciel externe comme Apache ou Nginx. Cette solution est maintenant utilisée par les plus grandes entreprises (Groupon, SAP, LinkedIn, Microsoft, Yahoo !, Walmart, etc) et possède une communauté très active. Paypal est passe d’une solution entièrement écrite en Java à une solution totalement écrite en Node.js. 
 
 Le gestionnaire de paquets de Node.js (npm) est celui possédant le plus grand nombre de module (plus de 80 000 en 2014), faisant de Node.js le langage le plus actif, détrônant ainsi Java et son gestionnaire de paquets Maven.
 
 ![Nombre de modules pour chaque langage][npmModules]
 
 La popularité de Node.js et des applications web ont fait grimper en flèche l’utilisation du JavaScript. Il est désormais le langage le plus actif et le plus populaire ces dernières années. Ainsi, en plus de posséder le plus grand nombre de modules, le langage JavaScript contient le plus grand nombre de dépôts actifs sur Github.
-
-<!--![Statistiques des langages de programmation sur Github][topLanguagesGithub]-->
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/top-langages-github.jpg}
@@ -225,7 +223,7 @@ Il existe en réalité deux types de marché sur le mobile : le mobile natif, et
 
 ### Mobile Web
 
-Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, HTML/\gls{css}, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
+Le mobile web correspond aux applications utilisables uniquement via les navigateurs web installés sur les terminaux mobiles. Les technologies utilisées sont donc les mêmes que les navigateurs de bureau (JavaScript, \gls{html}/\gls{css}, etc.). Elles permettent désormais une interaction et un affichage sur écrans de terminaux mobiles biens adaptés. 
 
 De nos jours, il est donc nécessaire qu'un site web soit disponible plusieurs types de navigation (mobile et PC). Le \gls{responsive_web_design} facilite le développement et l'adaptation des écrans.
 
@@ -251,7 +249,7 @@ C'est finalement une alternative moins coûteuse pour créer des applications mo
 
 ## Projet de démonstration : POC
 
-Le projet décrit dans cette partie sera le projet utilisé comme support et démonstration de ce mémoire. C'est un projet réalisé avec mon équipe de type POC (Proof Of Concept).
+Le projet décrit dans cette partie sera le projet utilisé comme support et démonstration de ce mémoire. C'est un projet réalisé avec mon équipe de type \gls{poc} (Proof Of Concept).
 
 ### Contexte et motivations
 
@@ -265,20 +263,20 @@ La société étant présente de plus en plus à l'international, elle possède 
 
 Cdiscount possède une grande base de code accumulée avec le temps. Ayant gardé la même architecture et la même méthodologie pendant très longtemps, elle a accumulé une dette technique importante. La société se rend compte qu'il lui faut de plus en plus de temps pour créer ajouter des fonctionnalités, et est actuellement en quête de meilleure architecture et méthodologie.
 
-Si Cdiscount utilise historiquement la méthodologie du cycle en V, elle essaye de plus en plus de tendre vers des méthodes agiles. C'est pour cette raison que de plus en plus de pizzas teams sont mises en place. Pour les nouvelles applications, elle préfère cette méthode, et en profite pour mettre en place la nouvelle architecture sur laquelle elle travaille.
+Si Cdiscount utilise historiquement la méthodologie du cycle en V, elle essaye de plus en plus de tendre vers des méthodes agiles. C'est pour cette raison que de plus en plus de \gls{pizza_teams} sont mises en place. Pour les nouvelles applications, elle préfère cette méthode, et en profite pour mettre en place la nouvelle architecture sur laquelle elle travaille.
 
 #### Utilisation de l'expertise de notre équipe
 
 Notre équipe est spécialisée dans la veille technologique et dans la mise en place de nouvelles technologies. Nous avons mis en place plusieurs applications internes en utilisant au maximum les dernières technologies avec une architecture solide. L’équipe architecture travaille actuellement sur la prochaine architecture qu'elle va mettre en place dans le SI, et est à la recherche de nouvelles applications pour l’appliquer. L'avantage est que nous l'appliquions déjà dans nos précédentes applications.
 
-Ainsi, en utilisant notre expertise et en collaboration avec l'équipe architecture, nous avons proposé de mettre en place un projet de type POC (Proof Of Concept) pour prouver l’intérêt de cette nouvelle architecture combinée avec l'utilisation des nouvelles technologies.
+Ainsi, en utilisant notre expertise et en collaboration avec l'équipe architecture, nous avons proposé de mettre en place un projet de type \gls{poc} pour prouver l’intérêt de cette nouvelle architecture combinée avec l'utilisation des nouvelles technologies.
 
 ### Description
 
 Nous nous proposons de reproduire le comportement de l'application Android actuelle, mais en utilisant :
 
-* Technologies web uniquement
 * Architecture bien choisie (en correspondance avec l'équipe architecture)
+* Technologies web uniquement
 * Méthodologie agile
 
 Nous avons une limite de deux mois, et nous sommes trois développeurs. À la fin des deux mois, nous présenterons le projet réalisé à un jury à la fois technique et non technique. Même si le but de cette application est plutôt orienté vers la technique, il faudra qu'elle soit agréable à utiliser et que le jury non technique soit convaincu que ce soit une solution viable.
@@ -303,9 +301,9 @@ En plus de vouloir créer un logiciel de qualité, ce projet a aussi pour object
 * Démonstration de l’intérêt de l'utilisation des nouvelles technologies, et donc l’intérêt d'effectuer une veille technologique active
 * Proposer une architecture moderne permettant l'isolation de la logique du domaine de l'application, et donc sa réutilisation dans un autre contexte, permettant le changement facile de technologie
 * Cette architecture étant celle sur laquelle travaille l'équipe architecture, leur donner la possibilité d'utiliser notre projet comme preuve concrète de l'intérêt de celle-ci
-* Intérêt d'avoir des petites équipes polyvalentes (pizzas team) sur des petits projets plutôt que de grosses équipes séparées par capacité logicielles sur des gros projets
+* Intérêt d'avoir des petites équipes polyvalentes (\gls{pizza_teams}) sur des petits projets plutôt que de grosses équipes séparées par capacité logicielles sur des gros projets
 
-Ce projet possède de nombreux objectifs en temps limité. Si CDiscount valide la présentation du projet, nous pourrons continuer à développer cette solution. Ce projet va dans la même direction de l'évolution du SI de la société et souhaitons qu'il devienne une inspiration pour celui-ci. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chère et peut-être plus adaptée dans certains cas, tout en utilisant notre expertise interne.
+Ce projet possède de nombreux objectifs en temps limité. Si CDiscount valide la présentation du projet, nous pourrons continuer à développer cette solution. Ce projet va dans la même direction de l'évolution du \gls{si} de la société et souhaitons qu'il devienne une inspiration pour celui-ci. Nous ne prétendons pas vouloir remplacer les applications mobiles actuelles, mais proposer une nouvelle solution moins chère et peut-être plus adaptée dans certains cas, tout en utilisant notre expertise interne.
 
 # Choix d'architecture 
 
@@ -313,13 +311,13 @@ Créer une bonne application commence par choisir une bonne architecture logicie
 
 ## Le monolithe
 
-Une application monolithique est une application mettant plusieurs fonctionnalités dans un seul processus. De nombreuses applications existantes sont monolithiques, car ce sont les plus simples à réaliser. Si cela convient aux petites applications, au fil du temps cette application deviendra de plus en plus complexe lors de son évolution. L'architecture modulaire prévue au début est alors difficile à garder.
+Une application monolithique est une application mettant plusieurs fonctionnalités dans un seul processus. De nombreuses applications existantes sont monolithiques, car ce sont les plus simples à réaliser. Si cela convient aux petites applications, au fil du temps cette application deviendra de plus en plus complexe lors de son évolution. L'architecture modulaire prévue au début est alors difficile à garder.\cite{monolith}
 
 « *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil. \cite{julien}
 
 Les inconvénients du monolithe sont :
 
-* **Développement ralenti** : La large base de code intimide les développeurs, surtout les nouveaux. Il est difficile à comprendre et à modifier. De plus, il alourdit énormément l'environnement de développement (IDE) et est plus lourd à charger
+* **Développement ralenti** : La large base de code intimide les développeurs, surtout les nouveaux. Il est difficile à comprendre et à modifier. De plus, il alourdit énormément l'environnement de développement (\gls{ide}) et est plus lourd à charger
 * **Petit changement = Grand impact** : Chaque changement demande une phase de compilation, tests, et déploiement complète. Cela devient un obstacle pour les changements et déploiements fréquents
 * **Gestion de l’échec** : Si une partie du monolithe échoue, le monolithe en entier échoue
 * **Engagement à long terme sur une technologie** : Le monolithe est réalisé dans une seule technologie. Il est difficile d'en changer, et la réécriture partielle est impossible. Il est intéressant d’exploiter les capacités de différents langages pour des buts spécifiques, comme par exemple R pour faire du calcul statistique ou Node.js pour du temps réel
@@ -331,7 +329,6 @@ Ces inconvénients se font de plus en plus ressentir au fil du temps et ont un g
 Il existe de nombreux styles d'architecture. Il n'y a pas vraiment de bon ou mauvais style d'architecture, juste des avantages et des inconvénients. Il faut bien les comprendre et choisir correctement en fonction du besoin. Nous n'allons pas tous les décrire dans ce mémoire, mais juste ceux pris en considération pour le projet (ou pour toute autre application web que l'on voudrait créer actuellement) et aussi ceux utilisés actuellement à Cdiscount.
 
 ### Description
-
 
 Mais tout d'abord qu'est-ce qu'un style architectural ? Voici une définition de David Garlan et Mary Shaw dans leur livre "An Introduction to Software Architecture" traduite :
 
@@ -550,7 +547,7 @@ La majeure différence se situe donc au niveau de la taille d'un service. Les mi
 
 #### Avantages
 
-* **Petit et focus sur une seule fonctionnalité** : Facile à comprendre, temps de chargement de l'IDE court
+* **Petit et focus sur une seule fonctionnalité** : Facile à comprendre, temps de chargement de l'\gls{ide} court
 * **Bonne décomposition des modules** : Limites des modules claires et interface explicite, très bien pour les grandes équipes
 * **Déploiements indépendants** : Pas de gros cycles de recettes
 * **Diversité technologique** : Chaque microservice peut être implémenté dans des technologies différentes. Permet une architecture évolutive 
@@ -559,7 +556,7 @@ La majeure différence se situe donc au niveau de la taille d'un service. Les mi
 
 #### Inconvénients et critiques
 
-La décomposition fonctionnelle d'une application en microservices n'est pas tache aisée. Un mauvais découpage peut faire perdre tous les avantages qu'elle apporte et fait se rapprocher du monolithe. Selon Eric Evans, l'architecture DDD aiderait à la décomposition fonctionnelle grâce à la notion de contexte borné (*bounded context*).
+La décomposition fonctionnelle d'une application en microservices n'est pas tache aisée. Un mauvais découpage peut faire perdre tous les avantages qu'elle apporte et fait se rapprocher du monolithe. Selon Eric Evans\cite{eric_microservices}, l'architecture DDD aiderait à la décomposition fonctionnelle grâce à la notion de contexte borné (*bounded context*).
 
 Cette architecture impose une forte complexité opérationnelle (configuration, déploiement, etc.). Une automatisation des tâches de déploiement (déploiement continu) devient nécessaire. Il faut rajouter à cela une bonne surveillance (monitoring).
 
@@ -591,22 +588,22 @@ La scalabilité est beaucoup plus facile avec une application *stateless*, car l
 On parle d'une application web traditionnelle lorsque la formation de la vue (HTML) se produit du cote du serveur (*server-side rendering*). Le principe est le suivant : 
 
 * Un navigateur web envoie une première requête lors de l’arrivée sur un site web. 
-* Le serveur va chercher des données si nécessaire, puis forme la vue entièrement (document HTML statique) et répond ce document au navigateur.
+* Le serveur va chercher des données si nécessaire, puis forme la vue entièrement (document \gls{html} statique) et répond ce document au navigateur.
 * Le navigateur affiche cette page directement. Si l'internaute remplit un formulaire, ou clique sur un lien pour changer de page, l’opération précédente recommence. Il reçoit la page HTML suivante, etc.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/traditional_architecture}
-\caption{Schéma en anglais représentant l’architecture classique}
+\caption{Application web traditionnelle}
 \label{fig:tdarchi}
 \end{figure}
 
-L'HTML étant un document statique, le JavaScript est généralement utilisé pour rendre l'expérience utilisateur plus intéressante en modifiant la structure de l'HTML (via le DOM) et permettre des effets de type animation, etc.  Il faut bien comprendre que les fichiers HTML/CSS/Javascript sont rechargés à chaque demande de page, car le serveur doit les régénérer.
+L'\gls{html} étant un document statique, le JavaScript est généralement utilisé pour rendre l'expérience utilisateur plus intéressante en modifiant la structure de l'\gls{html} (via le \gls{dom}) et permettre des effets de type animation, etc.  Il faut bien comprendre que les fichiers \gls{html}/\gls{css}/Javascript sont rechargés à chaque demande de page, car le serveur doit les régénérer.
 
 #### Critiques 
 
-Cette architecture a été utilisée depuis très longtemps et les frameworks proposés (généralement du MVC) sont très avancés. Nous allons cependant voir les limites de celles-ci.
+Cette architecture a été utilisée depuis très longtemps et les \gls{framework} proposés (généralement du MVC) sont très avancés. Nous allons cependant voir les limites de celles-ci.
 
-L'HTML est donc formé du côté du serveur, mais le JavaScript est exécuté du côté du client. C'est donc très perturbant de gérer deux types de code dans une même application, surtout lorsque les interactions avec l'utilisateur sont complexes. L'application devient rapidement monolithique à cause de ce mélange de responsabilités.
+L'\gls{html} est donc formé du côté du serveur, mais le JavaScript est exécuté du côté du client. C'est donc très perturbant de gérer deux types de code dans une même application, surtout lorsque les interactions avec l'utilisateur sont complexes. L'application devient rapidement monolithique à cause de ce mélange de responsabilités.
 
 Le client doit charger la page HTML à chaque fois qu’il navigue entre les pages ou qu’il envoie un formulaire. Le serveur doit générer la vue à chaque changement de page, ce qui ralentit la navigation du client et augmente la charge du serveur. L'avantage cependant, c'est que le client possède très peu de charge.
 
@@ -618,15 +615,15 @@ Ce type d'applications convient très bien pour les applications web simples aya
 
 #### Description
 
-Les évolutions récentes du JavaScript ont changé complètement les méthodes de développement d'applications web grâce aux performances des derniers moteurs JavaScript et à l’interaction facilitée avec un serveur via AJAX. Il existe désormais un nouveau type d'applications web, les *Single Page Applications* (SPA). 
+Les évolutions récentes du JavaScript ont changé complètement les méthodes de développement d'applications web grâce aux performances des derniers moteurs JavaScript et à l’interaction facilitée avec un serveur via AJAX\footnote{Asynchronous JavaScript and XML}. Il existe désormais un nouveau type d'applications web, les *Single Page Applications* (SPA). 
 
-L'AJAX permet de lancer une requête HTTP non bloquante (asynchrone) et d'avoir le résultat de la requête sans avoir à recharger la page. Les navigateurs récents et leurs moteurs JavaScript sont capable de gérer eux-mêmes totalement la vue en changeant la structure des pages en fonction des actions du l'utilisateur. L'expérience est alors plus dynamique et non bloquante, et donc plus proche des applications de bureau.
+L'AJAX permet de lancer une requête \gls{http} non bloquante (asynchrone) et d'avoir le résultat de la requête sans avoir à recharger la page. Les navigateurs récents et leurs moteurs JavaScript sont capable de gérer eux-mêmes totalement la vue en changeant la structure des pages en fonction des actions du l'utilisateur. L'expérience est alors plus dynamique et non bloquante, et donc plus proche des applications de bureau.
 
-Ce type d'application sépare clairement l'interface graphique (client) et des traitements non visuels (serveur) tels que la gestion des données en deux applications différentes (2 tiers) pouvant utiliser des technologies différentes. Ce dernier apparaît généralement sous la forme de web service, pouvant servir plusieurs types de clients. Les moyens de communication sont généralement légers (JSON, XML, etc.). N'ayant plus à former la vue, la charge des serveurs est aussi grandement diminuée.
+Ce type d'application sépare clairement l'interface graphique (client) et des traitements non visuels (serveur) tels que la gestion des données en deux applications différentes (2 tiers) pouvant utiliser des technologies différentes. Ce dernier apparaît généralement sous la forme de web service, pouvant servir plusieurs types de clients. Les moyens de communication sont généralement légers (\gls{json}, \gls{xml}, etc.). N'ayant plus à former la vue, la charge des serveurs est aussi grandement diminuée.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/spa_architecture}
-\caption{Évolution du prix des instances SPOT}
+\caption{Single Page Application}
 \label{fig:spa}
 \end{figure}
 
@@ -638,28 +635,28 @@ Ce type d'application repose entièrement sur le JavaScript. Si auparavant il é
 
 Les moteurs de recherches ou les outils d'analyse sont grandement basés sur le modèle des applications traditionnelles. De nombreux moteurs de recherche n’exécutent pas de JavaScript et ne peuvent indexer les SPA. Les outils d'analyse de page web utilisent généralement le chargement de nouvelles pages comme unité d'analyse. C'est désormais beaucoup moins pertinent avec les applications comprenant un seul point d'entrée. 
 
-Si les standards du web ont étés conçus à la base pour les applications traditionnelles, c'est en cours de changement. Les SPA sont de plus en plus communes et évoluent dans ce sens. Par exemple, le moteur de recherche le plus utilisé Google a récemment intégré le JavaScript lors de son processus d'indexation.
+Si les standards du web ont étés conçus à la base pour les applications traditionnelles, c'est en cours de changement. Les SPA sont de plus en plus communes et évoluent dans ce sens. Par exemple, le moteur de recherche le plus utilisé Google\cite{google} a récemment intégré le JavaScript lors de son processus d'indexation.
 
 Ce type d'applications convient très bien pour les applications web avec beaucoup d'interactions utilisateur avec un meilleur dynamisme. De nombreuses applications très connues utilisent déjà ce modèle comme Gmail (application de gestion de mails), Facebook, Twitter (réseaux sociaux), etc.
 
 ### Choix de styles d'architecture
 
-Au niveau du front-end, le pattern MVC est très répandu, le pattern le plus utilisé pour les interfaces graphiques. Nous avons vu les avantages et les inconvenients de celui-ci. D'autres possibilités sont apparues avec les derniers standards du web.
+Au niveau du front-end, le pattern MVC est très répandu, le pattern le plus utilisé pour les interfaces graphiques. Nous avons vu les avantages et les inconvénients de celui-ci. D'autres possibilités sont apparues avec les derniers standards du web.
 
 #### Architecture orienté composants
 
 Cette architecture est de plus en plus utilisé dans le monde du web grâce aux *web components* (composants web). Un composant web est un élément HTML individuel encapsulant certaines fonctionnalités, et réutilisable plusieurs fois dans des contextes différents. Voici une liste des différentes propriétés d'un composant web standard :
 
 * **Éléments et propriétés personnalisés** : Permet la création d’élément HTML autres que ceux standards (p, a, h1, h2, etc.) avec des propriétés propres et personnalisables
-* **Shadow DOM et scoped CSS** : Création d'un nouveau noeud isolé du DOM, ayant son propre CSS n'affectant pas le reste de la page 
-* **Imports HTML** : Permet l'import d'autres composants via le code HTML
+* **Shadow DOM et scoped \gls{css}** : Création d'un nouveau noeud isolé du \gls{dom}, ayant son propre CSS n'affectant pas le reste de la page 
+* **Imports \gls{html}** : Permet l'import d'autres composants via le code HTML
 * **HTML Templates** : Un composant s'écrit via un fichier HTML
 
-Tous les navigateurs n'implémentent pas ces derniers standards du web, mais il est possible de les utiliser dès aujourd'hui grâce a des \gls{polyfills} ou des frameworks définissant leur propre manière de créer des composants web.
+Tous les navigateurs n'implémentent pas ces derniers standards du web, mais il est possible de les utiliser dès aujourd'hui grâce a des \gls{polyfills} ou des \gls{framework} définissant leur propre manière de créer des composants web.
 
 #### Architecture orienté événements
 
-Les composants étant indépendants et autonomes, une façon de relier les relier est d'utiliser un bus d’événements central (architecture orienté événements). Il est aisé d'en créer un soi-même en JavaScript, et certains frameworks le proposent. Cela permet de profiter des avantages de ces deux architectures.
+Les composants étant indépendants et autonomes, une façon de relier les relier est d'utiliser un bus d’événements central (architecture orienté événements). Il est aisé d'en créer un soi-même en JavaScript, et certains \gls{framework} le proposent. Cela permet de profiter des avantages de ces deux architectures.
 
 Les possibilités sont nombreuses, et les choix doivent êtres faits selon les équipes et les projets.
 
@@ -669,28 +666,28 @@ Avec une application web traditionnelle, le back-end possède de nombreuses resp
 
 ### Passage aux Web services
 
-Un service web permet la communication et l’échange de données entre deux applications. Le protocole généralement utilisé est l'HTTP. Il existe 2 principaux types de web services : SOAP et REST. 
+Un service web permet la communication et l’échange de données entre deux applications. Le protocole généralement utilisé est l'\gls{http}. Il existe 2 principaux types de web services : SOAP et REST. 
 
 #### SOAP
 
 « *SOAP (Simple Object Access Protocol) est un protocole de RPC (Remote Procedure Call) orienté objet bâti sur XML. Il permet la transmission de messages entre objets distants, ce qui veut dire qu'il autorise un objet à invoquer des méthodes d'objets physiquement situés sur un autre serveur. Le protocole SOAP est composé de deux parties :*
 
 * *une enveloppe, contenant des informations sur le message lui-même afin de permettre son acheminement et son traitement*
-* *un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre (appelé WSDL).* », définition de Wikipédia.
+* *un modèle de données, définissant le format du message, c'est-à-dire les informations à transmettre (appelé WSDL\footnote{Web Services Description Language}).* », définition de Wikipédia.
 
 ![Représentation de l’enveloppe SOAP][soap]
 
 SOAP décrit la manière dont les applications doivent communiquer entre elles, ce qui peut augmenter le couplage entre le serveur et les clients. Une évolution du coté du serveur demande une mise a jour des clients. 
 
-SOAP permet l'utilisation de plusieurs protocoles autres que l'HTTP tel que le SMTP, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le XML alourdit grandement les échanges. 
+SOAP permet l'utilisation de plusieurs protocoles autres que l'\gls{http} tel que le SMTP\footnote{Simple Mail Transfer Protocol}, mais en pratique, c'est généralement uniquement l'HTTP qui est utilisé. Le nombre d'informations transitant décrit avec le \gls{xml} alourdit grandement les échanges. 
 
 SOAP a été utilisé pendant très longtemps et de nombreux web services écrits en SOAP existent encore actuellement (de nombreux web services sont écrits en SOAP chez Cdiscount). Cependant, des solutions plus légères sont préférées telle que REST. SOAP est souvent utilisé pour mettre en place une architecture orientée services (SOA).
  
 #### REST
 
-Contrairement a SOAP, qui est un protocole a part entière, REST (*Representational State Transfer*) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. Le protocole HTTP est utilisé, et permet de respecter tous les principes de l'architecture.
+Contrairement à SOAP, qui est un protocole à part entière, REST (*Representational State Transfer*) est un style d'architecture. Les systèmes qui suivent les principes de l'architecture REST sont appelés RESTful. Le protocole HTTP est utilisé, et permet de respecter tous les principes de l'architecture.
 
-REST est une architecture orientée ressource (contrairement à SOAP qui est orienté méthodes). Par exemple, une API web représentera un client comme une ressource, et sera manipulable a cette adresse :`http://www.foo.com/Clients`.  Les verbes HTTP (GET, POST, PUT, DELETE) permettront de récupérer, ajouter, modifier ou supprimer cette ressource.
+REST est une architecture orientée ressource (contrairement à SOAP qui est orienté méthodes). Par exemple, une \gls{api} web représentera un client comme une ressource, et sera manipulable a cette adresse :`http://www.foo.com/Clients`.  Les verbes \gls{http} (GET, POST, PUT, DELETE) permettront de récupérer, ajouter, modifier ou supprimer cette ressource.
 
 REST est une architecture dite sans état (*stateless*). Un serveur RESTful peut ainsi répondre à des requêtes venant de plusieurs clients, et il est plus aisé de multiplier les serveurs. REST est généralement utilisé lors d'une mise en place d'une mise en place des microservices grâce a sa légèreté.
 
@@ -710,7 +707,7 @@ Nous avons vu de nombreux styles d'architecture et les spécificités du monde d
 
 ### Le monolithe, à éviter
 
-Les choix d'architecture que nous faisons ont pour but d'éviter le monolithe. Le fait de séparer le client et le serveur sépare déjà le processus en deux, mais ce n'est pas suffisant. Pour faire en sorte que le serveur ne devienne pas lui-même un monolithe, il faut que chaque service soit le plus petit et simple possible (KISS). L'architecture se rapproche le plus de ce concept est l'architecture des microservices.
+Les choix d'architecture que nous faisons ont pour but d'éviter le monolithe. Le fait de séparer le client et le serveur sépare déjà le processus en deux, mais ce n'est pas suffisant. Pour faire en sorte que le serveur ne devienne pas lui-même un monolithe, il faut que chaque service soit le plus petit et simple possible (KISS\footnote{Keep It Simple Stupid}). L'architecture se rapproche le plus de ce concept est l'architecture des microservices.
 
 ### Deux types de logiques distinctes
 
@@ -732,15 +729,15 @@ Le monde du web évolue très vite et les technologies sont nombreuses. Il n'est
 
 ## Choix d'un framework SPA
 
-C'est surement le choix le plus difficile à effectuer. Il existe de nombreux frameworks pour créer des SPA. Il est aussi possible de ne pas utiliser de frameworks, et d'utiliser une combinaison de librairies. Un framework apporte cependant de la structure à l'application, une architecture flexible et renforce la séparation des responsabilités. 
+C'est surement le choix le plus difficile à effectuer. Il existe de nombreux \gls{framework} pour créer des SPA. Il est aussi possible de ne pas en utiliser, et d'utiliser une combinaison de librairies. Un \gls{framework} apporte cependant de la structure à l'application, une architecture flexible et renforce la séparation des responsabilités. 
 
-Nous ne présenterons pas tous les frameworks SPA, car il en existe beaucoup. Ils évoluent très vite et le choix peut être différent d'une année à l'autre. Voici ceux pris en compte pour notre projet : 
+Nous ne présenterons pas tous les \gls{framework} SPA, car il en existe beaucoup. Ils évoluent très vite et le choix peut être différent d'une année à l'autre. Voici ceux pris en compte pour notre projet : 
 
 ### AngularJS
 
 #### Description
 
-AngularJS est un framework créé en 2009 par Google. Il propose :
+AngularJS est un \gls{framework} créé en 2009 par Google. Il propose :
 
 * Injection de dépendances
 * Pattern MVVM utilisé mais avec une notion de "service" qui peut être utilisé pour la logique de domaine
@@ -759,9 +756,9 @@ Une version 2 est en cours de développement et va apporter de nombreuses choses
 #### Avantages
 
 * Stable et largement utilisé en production
-* Large communauté : framework le plus utilisé, de nombreux modules open source
-* Le Two way data-binding facilite grandement le développement et permet d’éviter la manipulation du DOM
-* Séparation des fichiers claire pour chaque composant (HTML, JS, CSS)
+* Large communauté : framework le plus utilisé, de nombreux modules \gls{open_source}
+* Le Two way data-binding facilite grandement le développement et permet d’éviter la manipulation du \gls{dom}
+* Séparation des fichiers claire pour chaque composant (\gls{html}, JavaScript, \gls{css})
 
 #### Inconvénients
 
@@ -769,12 +766,11 @@ Une version 2 est en cours de développement et va apporter de nombreuses choses
 * Version 2 non rétro-compatible (si version utilisée en orienté composants, migration facilitée)
 * Performances (le two way data-binding a un impact sur la performance générale de l'application)
 
-
 ### ReactJS + Flux
 
 #### Description
 
-ReactJS est un framework créé en 2013 par Facebook. Il est par conception orienté composants et utilise le *virtual DOM*, implémentation différente du *Shadow dom*, avec de très bonnes performances. Par conception, ce framework s'occupe unique de la vue et doit être complété par d'autres librairies.
+ReactJS est un \gls{framework} créé en 2013 par Facebook. Il est par conception orienté composants et utilise le *virtual DOM*, implémentation différente du *Shadow DOM*, avec de très bonnes performances. Par conception, ce framework s'occupe unique de la vue et doit être complété par d'autres librairies.
 
 Facebook a créé une architecture se nommant Flux, complémentaire de ReactJS. C'est une architecture orienté événements prônant le flux de données unidirectionnel (contraire du two way data-binding). Bien utilisé, il est beaucoup plus clair et plus performant. Ce qu'il faut retenir c'est : les données descendent, et les actions remontent, unidirectionnellement. 
 
@@ -782,20 +778,20 @@ Facebook a créé une architecture se nommant Flux, complémentaire de ReactJS. 
 
 * Simple et rapide a mettre en place
 * Architecture Flux claire et efficace
-* SEO : Possibilité de faire du server-side rendering
+* \gls{seo} : Possibilité de faire du server-side rendering
 * Performances
 * Communauté grandissante
 
 #### Inconvénients
 
-* Utilisation du JSX : Mélange l'HTML et le JavaScript dans un même fichier par souci de simplicité. Ce n'est pas un inconvénient en soi, mais il faut approuver ce concept. Cela mène selon moi à un mélange de vue et de logique, même si cela simplifie grandement la création de composants.
+* Utilisation du JSX : Mélange l'\gls{html} et le JavaScript dans un même fichier par souci de simplicité. Ce n'est pas un inconvénient en soi, mais il faut approuver ce concept. Cela mène selon moi à un mélange de vue et de logique, même si cela simplifie grandement la création de composants.
 * JSX et virtual DOM non standards, contrairement au Shadow DOM. Ils sont cependant très efficaces
 
 ### Polymer
 
 #### Description
 
-Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un framework, car il est beaucoup moins complet que les autres. Les web components, tels qu'ils sont définis par le W3C ne sont pas encore supportés par tous les navigateurs. Polymer propose donc un système de polyfill pour créer des composants web se rapprochant plus du standard, comprenant le Shadow DOM, l'import HTML, etc.
+Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un \gls{framework}, car il est beaucoup moins complet que les autres. Les web components, tels qu'ils sont définis par le W3C ne sont pas encore supportés par tous les navigateurs. Polymer propose donc un système de \gls{polyfills} pour créer des composants web se rapprochant plus du standard, comprenant le Shadow DOM, l'import HTML, etc.
 
 #### Avantages
 
@@ -805,14 +801,14 @@ Polymer est une librairie crée par Google en 2014. Ce n'est pas vraiment un fra
 #### Inconvénients
 
 * Très récent, version 1.0 sortie il y a peu de temps
-* Peu de modules open source
+* Peu de modules \gls{open_source}
 * Pas un framework, moins complet mais si le choix est de faire une combinaison de librairies, pourra convenir
 
 ### Un choix difficile
 
 Le choix est difficile à effectuer car les technologies présentées sont toutes de bonne qualité, conviennent à nos choix d'architecture (orienté composants et orienté événements) et sont à la pointe des technologies web. Le choix dépendra finalement du projet et du style de développement des équipes. 
 
-Pour notre projet, nous avons choisi AngularJS. C'est le framework le plus mature et possédant la plus grande communauté dans sa catégorie et les ressources à disposition sont importantes. La testabilité est fortement mise en avant, ce qui est un point clé pour notre projet. Notre équipe possède déjà de l’expérience sur ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 mois, c'est un facteur important.
+Pour notre projet, nous avons choisi AngularJS. C'est le \gls{framework} le plus mature et possédant la plus grande communauté dans sa catégorie et les ressources à disposition sont importantes. La testabilité est fortement mise en avant, ce qui est un point clé pour notre projet. Notre équipe possède déjà de l’expérience sur ce framework et nous sommes efficaces avec celui-ci. Pour un projet durant 2 mois, c'est un facteur important.
 
 Nous aurions pu choisir ReactJS pour ses performances et sa philosophie, mais finalement les performances d'AngularJS sont suffisantes pour notre projet, et nous préférons son style de développement (préférence pour la structure des fichiers proposée par AngularJS par rapport au JSX de ReactJS). 
 
@@ -822,7 +818,7 @@ Nous ajoutons un bus d’événements central pour profiter de l'architecture or
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/spa_frameworks}
-\caption{Tendance des recherches d’après Google Trends}
+\caption{Tendance des recherches d’après Google Trends\cite{angular}}
 \label{fig:spa_fram}
 \end{figure}
 
@@ -879,7 +875,7 @@ Un gestionnaire de versions est fortement recommandé, surtout avec les méthode
 
 ### Gestionnaire de paquets
 
-Nous utilisons beaucoup de librairies open source, que ce soit du coté du front-end ou du back-end. Chaque librairie est à utiliser avec une version spécifique et la gestion se complexifie avec de nombreuses librairies externes. De plus, c'est une mauvaise pratique de mélanger les librairie tierces avec le code source sur le gestionnaire de versions. 
+Nous utilisons beaucoup de librairies \gls{open_source}, que ce soit du coté du front-end ou du back-end. Chaque librairie est à utiliser avec une version spécifique et la gestion se complexifie avec de nombreuses librairies externes. De plus, c'est une mauvaise pratique de mélanger les librairie tierces avec le code source sur le gestionnaire de versions. 
 
 Un gestionnaire de paquets utilise un fichier descriptif comprenant la liste des librairies ainsi que leurs versions. Il suffit d'une ligne de commande pour toutes les installer. Au niveau du front-end, nous utilisons Bower.
                 
@@ -893,7 +889,7 @@ Si Bootstrap est le plus connu, nous avons utilisé un plus récent : Angular Ma
 
 Il existe de nombreuses solutions pour créer des serveurs RESTful. Les plus communes sont : 
 
-* Java (avec un framework HTTP comme Jersey)
+* Java (avec un \gls{framework} \gls{http} comme Jersey)
 * C# (avec WCF)
 * PHP (pas optimisé à la base pour faire du RESTful, mais possible tout de même)
 
@@ -903,13 +899,13 @@ Nous avons choisi le NodeJS comme solution. Comme vu précédemment, le JavaScri
 
 La meilleure façon de créer et de gérer des microservices actuellement est de passer via des containers en utilisant Docker. Les containers créés par Docker sont des espaces Linux isolés pouvant interagir avec d'autres containers. Le principe est très similaire à une machine virtuelle, mais en beaucoup plus léger et plus efficace. Il est aisé de créer par exemple plusieurs instances d'une même application. Docker utilise un fichier descriptif (Dockerfile) permettant d'en créer facilement à la volée.
 
-Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du load-balancing. 
+Dans le cas de notre projet, nous avons commencé par creer une seule instance de notre API RESTful dans un seul container (apparant a un monolithe). Il est aisé de creer plusieurs instances de celui-ci si nous le souhaitons grace a du \gls{load-balancing}. 
 
 Si nous souhaitons aller encore plus loin et respecter vraiment l'architecture des microservices, nous devrions créer un microservice par route. Par exemple, les routes /api/products ou /api/basket serait dans des containeurs isolés avec un nombre d'instance propre (scaling fonctionnel). Il faudra ensuite créér une API interface (API gateway), qui redirigera les requêtes vers les bons microservices.
 
 # Méthodologie
 
-Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tend de plus en plus vers les méthodes agiles et la récente création des pizzas team le démontre. 
+Les choix d'architecture et de technologies sont faits, il est maintenant important de choisir une bonne méthodologie. Cdiscount utilise historiquement la méthode du cycle en V. Cependant, elle tend de plus en plus vers les méthodes agiles et la récente création des \gls{pizza_teams} le démontre. 
 
 ## Cycle en V
 
@@ -1028,7 +1024,7 @@ Une bonne communication tous les jours avec les autres membres de l’équipe pe
 
 Une équipe bien dans sa peau, bien reposée, et ayant de l’intérêt pour le travail effectué est une équipe productive. Pour cela, il ne faut pas que les membres aient de nombreuses heures supplémentaires à effectuer. La vélocité de l’équipe est présente pour mesurer sa capacité à travailler aux heures traditionnelles. Elle est plus facile à mesurer sur des intervalles de tempes courts (contrairement au cycle en V possédant de nombreuses étapes). Un système bien testé limite les problèmes en production et les besoins d'effectuer des heures supplémentaires.
 
-Pour les développeurs, avoir du temps dégagé pour effectuer de la veille technologique est très important. Cela permet d'avoir des développeurs toujours affûtés techniquement et renforce leur créativité et leur compétence technique, ainsi que l’intérêt pour le travail effectué. Cela peut paraître sans valeur ajoutée pour le produit, mais c'est en réalité ce qui pourra faire la différence dans la réalisation de celui-ci, la rendant plus originale et moderne. Un peu de veille tous les jours ou même une après-midi par semaine dans les périodes creuses ont de grands bénéfices. Organiser des ateliers de partage de connaissance (exemple : Coding Dojo) rend la chose encore plus efficace, et permet aussi d'améliorer les talents de communication des membres de l'équipe.
+Pour les développeurs, avoir du temps dégagé pour effectuer de la veille technologique est très important. Cela permet d'avoir des développeurs toujours affûtés techniquement et renforce leur créativité et leur compétence technique, ainsi que l’intérêt pour le travail effectué. Cela peut paraître sans valeur ajoutée pour le produit, mais c'est en réalité ce qui pourra faire la différence dans la réalisation de celui-ci, la rendant plus originale et moderne. Un peu de veille tous les jours ou même une après-midi par semaine dans les périodes creuses ont de grands bénéfices. Organiser des ateliers de partage de connaissance (exemple : \gls{coding_dojo}) rend la chose encore plus efficace, et permet aussi d'améliorer les talents de communication des membres de l'équipe.
 
 ### Différents types de tests
 
@@ -1036,9 +1032,9 @@ Nous avons vu que le testing est très important dans la réalisation d'un logic
 
 #### Pyramide des tests
 
-La pyramide de tests est un concept créé par Mike Cohn, dans son livre "Succeeding with Agile". Le point clé qu'il essaye de démontrer est qu'un logiciel devrait avoir beaucoup plus de tests unitaires de bas niveau (faciles à écrire), que de tests de haut niveau (difficiles à écrire). Attention, il ne dit pas que les tests de haut niveau sont sans intérêt, il pense juste que l'on devrait écrire plus de tests faciles à écrire que de tests difficiles à écrire (temps perdu). Tout est une question de rapport temps passé / intérêt.
+La pyramide de tests est un concept créé par Mike Cohn, dans son livre "Succeeding with Agile"\cite{suceeding_with_agile}. Le point clé qu'il essaye de démontrer est qu'un logiciel devrait avoir beaucoup plus de tests unitaires de bas niveau (faciles à écrire), que de tests de haut niveau (difficiles à écrire). Attention, il ne dit pas que les tests de haut niveau sont sans intérêt, il pense juste que l'on devrait écrire plus de tests faciles à écrire que de tests difficiles à écrire (temps perdu). Tout est une question de rapport temps passé / intérêt.
 
-Les tests de haut niveau sont différents selon la partie technique implémentée, dans tous les cas on parle souvent de tests fonctionnels. Ce sont les plus proche du résultat final, représentant une fonctionnalité de l'application. Ce sont généralement les tests que l'on écrit en premier. Dans le cas du front-end, ce sont généralement des tests d'interface graphique, et pour le back-end, ce sont des tests d'API ou des tests d'intégration.
+Les tests de haut niveau sont différents selon la partie technique implémentée, dans tous les cas on parle souvent de tests fonctionnels. Ce sont les plus proche du résultat final, représentant une fonctionnalité de l'application. Ce sont généralement les tests que l'on écrit en premier. Dans le cas du front-end, ce sont généralement des tests d'interface graphique, et pour le back-end, ce sont des tests d'\gls{api} ou des tests d'intégration.
 
 Un test unitaire substituera les dépendances (*mock*), ce qui n'est généralement pas le cas des tests de haut niveau. Ils sont beaucoup plus faciles à écrire car grâce aux mocks, la fonction testée retournera toujours le même résultat. Les tests de haut niveau utilise les connections réelles, le résultat est beaucoup moins prévisible, mais plus proche de la réalité.
 
@@ -1058,7 +1054,7 @@ Le TDD (*Test Driven Development*) ou développement piloté par les tests est u
 * **Vert** : Le développeur écrit ensuite le code minimum pour faire réussir le test (le test passe au vert)
 * **Refacto** : Il va ensuite réfactorer le code jusqu’à ce qu'il soit satisfaisant (standards acceptables par l’équipe). Il vérifie que ces changement n'ont impacté aucun autre test (pas de régression)
 
-Selon Kent Beck, connu pour avoir défini cette technique dans son livre "Test Driven Development: By Example", le TDD encourage une architecture simple et efficace. Cette technique parait étrange pour beaucoup de développeurs, car ce n'est pas la solution qui est écrite en premier, mais le test la validant. Cela met plus en valeur ce qui manque à la fonction, et le fait d'utiliser la fonction avant de la créer renforce la réflexion sur la bonne conception de celle-ci.
+Selon Kent Beck, connu pour avoir défini cette technique dans son livre "Test Driven Development: By Example"\cite{tdd}, le TDD encourage une architecture simple et efficace. Cette technique parait étrange pour beaucoup de développeurs, car ce n'est pas la solution qui est écrite en premier, mais le test la validant. Cela met plus en valeur ce qui manque à la fonction, et le fait d'utiliser la fonction avant de la créer renforce la réflexion sur la bonne conception de celle-ci.
 
 Dans le cas d'une nouvelle fonctionnalité a rajouter, résoudre le test signifie que la fonctionnalité a bien été implémentée. Dans le cas d'un bug, il faut écrire un test mettant en valeur le cas ou la fonction échoue, et faire passer le test signifie que le bug est corrigé. Dans tous les cas, la dernière étape est la plus importante, car c'est celle qui assure qu'en plus du fait que la fonction est bien implémentée, elle est aussi de bonne qualité.
 
@@ -1075,7 +1071,7 @@ Il y a généralement un serveur d'intégration qui surveille le gestionnaire de
 Voici notre méthodologie concrète employée pour ajouter une fonctionnalité au produit.
 
 * Création d'une nouvelle branche sur le gestionnaire de versions (évite le conflit avec les autres nouvelles fonctionnalités implémentées en parallèle)
-* Écriture de tests de haut niveau (Intégration ou UI selon le cas)
+* Écriture de tests de haut niveau (Intégration ou UI\footnote{User Interface} selon le cas)
 * Écriture du code source en TDD strict (il est interdit d'ajouter du code source sans la mise en valeur du manque par un test)
 * Code review par un autre membre de l'équipe
 * Intégration de la nouvelle branche sur la branche principale

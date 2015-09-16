@@ -33,7 +33,7 @@ build/%: content/%
 build/%.bib: content/%.bib
 	cp $< $@
 
-memoire-%.pdf: versions/%.tex $(SCHEMAS_OUT) $(SVG_OUT_TEX) $(ODS_OUT) $(MD_OUT) $(TEX) $(BIB) build/attestation.pdf
+memoire-%.pdf: versions/%.tex $(SCHEMAS_OUT) $(SVG_OUT_TEX) $(ODS_OUT) $(MD_OUT) $(TEX) $(BIB) build/attestation.jpg
 	$(eval $@_NAME := $(notdir $(basename $<)))
 	$(eval $@_FULLNAME := template-$($@_NAME))
 	cp -r fonts/ images/ build/
