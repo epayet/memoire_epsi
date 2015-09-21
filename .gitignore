@@ -1,4 +1,3 @@
 *.pdf
 schemas/*.tex
 !content/*.pdf
-slides.html
