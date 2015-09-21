@@ -1,22 +1,33 @@
-% Habits
-% John Doe
-% March 22, 2005
+% 
+% Conception et réalisation d’une application web de qualité, un cheminement d’ingénieur logiciel
+% Emmanuel Payet
 
-# In the morning
+# Entreprise
 
-## Getting up
+# Application Web
 
-- Turn off alarm
-- Get out of bed
+## JavaScript, le langage du web
 
-## Breakfast
+---
 
-- Eat eggs
-- Drink coffee
+![Nombre de modules][moduleCounts]
 
-# In the evening
+# Choix d'architecture
 
-## Dinner
+# Choix technologiques
 
-- Eat spaghetti
-- Drink wine
+## test
+
+test
+
+## test2
+
+texet
+
+# Méthodologie
+
+# Résultat du projet
+
+# Conclusion
+
+[moduleCounts]: images/npm_modules.PNG
