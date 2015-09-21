@@ -72,7 +72,7 @@ view: memoire-view.pdf
 	xdg-open memoire-view.pdf
 
 prez: slides.md
-	pandoc -t html5 --template=template-revealjs.html --standalone --section-divs --variable theme="moon" --variable transition="concave" slides.md -o slides.html
+	pandoc -t revealjs --template=template-revealjs.html --standalone --variable theme="moon" --variable transition="slide" slides.md -o slides.html
 
 clean: 
 	rm -rf build/
