@@ -1,16 +1,20 @@
 % 
 % Conception et réalisation d’une application web de qualité, un cheminement d’ingénieur logiciel
-% Emmanuel Payet
+% <span style="text-transform: capitalize; font-weight:normal;">Emmanuel Payet</span>
 
 # Entreprise
 
-## De nombreux changements
+--- 
+
+### De nombreux changements
 
 * Présente de plus en plus a l'international
 * Mise sur les nouvelles technologies et la qualité logicielle
 * Changement de méthodologie et d'architecture
 
-## Ma place dans l'entreprise
+---
+
+### Ma place dans l'entreprise
 
 * Mon Equipe et son role
 
