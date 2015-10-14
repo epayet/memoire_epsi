@@ -72,7 +72,7 @@ view: memoire-view.pdf
 	xdg-open memoire-view.pdf
 
 prez: slides.md
-	pandoc -t revealjs --template=template-revealjs.html --standalone --variable theme="black" --variable transition="slide" slides.md -o slides.html
+	pandoc -t revealjs --template=template-revealjs.html --incremental --standalone --variable theme="black" --variable transition="slide" slides.md -o slides.html
 
 clean: 
 	rm -rf build/
