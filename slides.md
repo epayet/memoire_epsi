@@ -1,68 +1,137 @@
 % 
 % Conception et réalisation d’une application web de qualité, un cheminement d’ingénieur logiciel
-% Emmanuel Payet
+% <span style="text-transform: capitalize; font-weight:normal;">Emmanuel Payet</span>
 
-# Entreprise
+# Présentation
 
-## De nombreux changements
+---
 
-* Présente de plus en plus a l'international
+![](images/cdiscount.png)
+
+* Créé en 1998
+* Groupe Cnova
+* C.A. : 1,6 Milliard d’euros
+* 1200 salariés
+
+--- 
+
+### De nombreux changements
+
+* Présente de plus en plus à l'international
 * Mise sur les nouvelles technologies et la qualité logicielle
 * Changement de méthodologie et d'architecture
 
-## Ma place dans l'entreprise
+---
 
-* Mon Equipe et son role
+### Ma place dans l'entreprise
 
-# Projet d'étude
+* 3 ans d'alternance
+* Equipe Services
+* Equipe Lab (R&D)
 
-## Contexte et Motivations
+---
 
-* Couts élevés
-* Recherche de meilleures méthode et architecture
-* Utilisation de l'expertise de notre équipe
+### Mes missions
 
-## Description
+* WSManager
+* Portail développeur openAPI <small>(<a target="blank" href="https://dev.cdiscount.com">https://dev.cdiscount.com</a>)</small>
+* POC mobile
+* Organisation de coding dojos
+* Formation d'un développeur junior
 
-## Objectif principal
+# Projet d'étude : POC
 
-* Créer un logiciel de qualité ? C'est quoi ?
-    * Développement rapide de fonctionnalités (temps = argent)
-    * Développement de nouvelles fonctionnalités sans impact sur l’existant (non régression)
-    * Posséder une architecture évolutive permettant de limiter la dette technique et l’apparition des bugs
-    * Déploiements fréquents et rapides en production, permettant de satisfaire la demande du client
-    * S’assurer que l’application fonctionne toujours en production
+---
 
-## Autres objectifs
+### Applications mobiles actuelles
 
-* Utilisation de notre expertise web pour créer une application mobile
-* Démonstration de l’intérêt de l’utilisation des nouvelles technologies
-* Isolation de la logique du domaine métier
-* Concrétisation des nouveaux changements chez Cdiscount
-* Intérêt d’avoir des petites équipes polyvalentes (pizza teams) 
+* Nombreuses
+* Multiples plateformes (Android, iOS)
+* Natives + sites mobiles
+* Sous-traitance
+
+---
+
+### Contexte et Motivations
+
+* Coûts élevés
+* Recherche de meilleures méthodes et architectures
+* Ré-intégrer le développement en interne
+
+---
+
+### Ce que nous proposons
+
+* Reproduction de l'application Android actuelle
+* Technologies web uniquement
+* Application web + mobile (hybride) avec le même code
+* Cross-plateforme
+* Architecture et méthodologie travaillée
+* Qualité logicielle
+* 2 mois de développement
+
+---
+
+### Objectif principal : Qualité logicielle
+
+* Développement rapide de fonctionnalités <small>(temps = argent)</small>
+* Sans régression, ni dette technique
+* Architecture évolutive
+* Déploiements fréquents et rapides en production
+* Satisfaire la demande du client
+* Limiter les bugs
+* Production toujours en marche
+
+---
+
+### Autres objectifs
+
+* Utilisation de notre expertise technique (web)
+* Intérêt des nouvelles technologies
+* Proposer une alternative
+* Projet support pour les changements à Cdiscount
+    * Pizza teams
+    * Microservices
 
 # Choix d'architecture
 
-## Monolithe
+---
+
+### Monolithe
 
 « *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil.
 
-## Inconvénients
+---
+
+### Inconvénients
 
 * Développement ralenti 
 * Petit changement = Grand impact 
 * Gestion de l’échec 
 * Engagement à long terme sur une technologie
 
-## Microservices
+---
 
-* KISS : Keep It Simple Stupid
+### Microservices
+
+* <u>KISS</u> : Keep It Simple Stupid
+* <u>SOA</u> : Intègre différentes applications comme un ensemble de services
+* <u>Microservices</u> : Architecture chaque application comme un ensemble de services
 
 ---
 
-![Monolithe vs Microservices](images/microservices.png)
+![Monolithe vs Microservices](images/microservices.jpg)
 
-# Architecture globale de l'application
+---
+
+### Avantages
+
+* Petit et focus sur une seule fonctionnalité 
+* Bonne décomposition des modules
+* Déploiements indépendants 
+* Diversité technologique
+* Scalabilité fonctionnelle
+* Réécriture limitée a un seul service
 
 ---
 
@@ -72,23 +141,92 @@
 
 ![](images/spa_architecture.png)
 
-## Deux types de logiques
+---
 
-* DDD
+### Deux types de logiques
+
 * Logique métier
 * Logique applicative
 
-## Architecture > Technologies
+## Architecture <br> > <br> Technologies
+
+<p></p> <!--had to insert something, or else bug ???-->
 
 # Choix technologiques
 
-# Méthodologie
+---
+
+### Front-end
+
+![](images/front-end-technos.png)
+
+---
+
+### Back-end
+
+![](images/nodejs-npm.jpg)
+
+---
+
+### Containers
+
+![](images/docker.jpg)
+
+# Choix de méthodologie
+
+---
+
+### Cycle en V
+
+![](images/cycle_en_v.jpg)
+
+---
+
+### Méthodes agiles
+
+* SCRUM
+* Extreme Programming
+
+--- 
+
+### Ce que nous retenons
+
+* Testing
+* Déploiement continu
+* Code review
+* Pas de dette technique
+* Utiliser les bons outils
+* Bonne communication
+* Bien-être des membres de l'équipe
 
 # Résultat du projet
 
-## Résultats
+---
 
-## Challenges
+### Démonstration du développement d’une fonctionnalité
+
+* Création d'une nouvelle branche
+* Écriture de tests de haut niveau (Intégration / UI)
+* Écriture du code source en TDD strict
+* Code review par un autre membre de l’équipe
+* Intégration de la nouvelle branche
+* Vérification de la non régression
+
+---
+
+### Fonctionnalités développées
+
+* Accueil 
+* Navigation 
+* Fiche produit 
+
+---
+
+### Challenges
+
+* Intégration des SPA chez Cdiscount
+* Performances de l'application hybride
+* Challenge technique (Microservices)
 
 ## Objectifs atteints ?
 
@@ -96,10 +234,12 @@
 
 ---
 
-* architecte = conception
-* développeur = réalisation
-* ingénieur logiciel = conception ET réalisation
+* Architecte = Conception
+* Développeur = Réalisation
+* Ingénieur Logiciel = Conception ET Réalisation
+
+---
+
+### Logiciel de qualité
 
 ![](images/team.png)
-
-[moduleCounts]: images/npm_modules.PNG
