@@ -8,18 +8,12 @@
 
 ![](images/cdiscount.png)
 
+* Bordelaise
 * Créé en 1998
-* Groupe Cnova
+* Groupe Cnova / Casino
 * C.A. : 1,6 Milliard d’euros
 * 1200 salariés
-
---- 
-
-### De nombreux changements
-
 * Présente de plus en plus à l'international
-* Mise sur les nouvelles technologies et la qualité logicielle
-* Changement de méthodologie et d'architecture
 
 ---
 
@@ -35,7 +29,7 @@
 
 * WSManager
 * Portail développeur openAPI <small>(<a target="blank" href="https://dev.cdiscount.com">https://dev.cdiscount.com</a>)</small>
-* POC mobile
+* POC web mobile
 * Organisation de coding dojos
 * Formation d'un développeur junior
 
@@ -82,24 +76,13 @@
 * Limiter les bugs
 * Production toujours en marche
 
----
-
-### Autres objectifs
-
-* Utilisation de notre expertise technique (web)
-* Intérêt des nouvelles technologies
-* Proposer une alternative
-* Projet support pour les changements à Cdiscount
-    * Pizza teams
-    * Microservices
-
 # Choix d'architecture
 
 ---
 
 ### Monolithe
 
-« *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil.
+<p class="fragment">« *De l’application simple à l’application à tout faire, il n’y a qu’un pas.* », Julien Dubreuil.</p>
 
 ---
 
@@ -114,6 +97,17 @@
 
 ### Microservices
 
+* Chaque application est un ensemble de services
+* Communication avec des mécanismes légers (HTTP)
+* Service = 1 Fonctionnalité
+* Déploiements indépendants
+* Ecrits dans différents langages
+* Différentes technologies de stockage de données
+
+---
+
+### Philosophie et implémentation
+
 * <u>KISS</u> : Keep It Simple Stupid
 * <u>SOA</u> : Intègre différentes applications comme un ensemble de services
 * <u>Microservices</u> : Architecture chaque application comme un ensemble de services
@@ -124,6 +118,10 @@
 
 ---
 
+![Monolithe vs Microservices](images/microservices2.png)
+
+---
+
 ### Avantages
 
 * Petit et focus sur une seule fonctionnalité 
@@ -131,7 +129,15 @@
 * Déploiements indépendants 
 * Diversité technologique
 * Scalabilité fonctionnelle
-* Réécriture limitée a un seul service
+* Réécriture limitée à un seul service
+
+---
+
+## Architecture <br> > <br> Technologies
+
+<p></p> <!--had to insert something, or else bug ???-->
+
+# Choix technologiques
 
 ---
 
@@ -143,16 +149,7 @@
 
 ---
 
-### Deux types de logiques
-
-* Logique métier
-* Logique applicative
-
-## Architecture <br> > <br> Technologies
-
-<p></p> <!--had to insert something, or else bug ???-->
-
-# Choix technologiques
+![Aperçu de l'architecture globale](images/api_gateway.png)
 
 ---
 
@@ -171,6 +168,13 @@
 ### Containers
 
 ![](images/docker.jpg)
+
+---
+
+### Deux types de logiques
+
+* Logique métier
+* Logique applicative
 
 # Choix de méthodologie
 
@@ -205,7 +209,7 @@
 
 ### Démonstration du développement d’une fonctionnalité
 
-* Création d'une nouvelle branche
+* Création d'une nouvelle branche sur git
 * Écriture de tests de haut niveau (Intégration / UI)
 * Écriture du code source en TDD strict
 * Code review par un autre membre de l’équipe
@@ -242,4 +246,6 @@
 
 ### Logiciel de qualité
 
-![](images/team.png)
+<img class="fragment" src="images/team.png"/>
+
+# Des questions ?
