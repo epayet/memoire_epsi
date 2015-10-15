@@ -56,18 +56,12 @@
 <img src="images/cdiscount.png" />
 </figure>
 <ul>
+<li class="fragment">Bordelaise</li>
 <li class="fragment">Créé en 1998</li>
-<li class="fragment">Groupe Cnova</li>
+<li class="fragment">Groupe Cnova / Casino</li>
 <li class="fragment">C.A. : 1,6 Milliard d’euros</li>
 <li class="fragment">1200 salariés</li>
-</ul>
-</section><section class="slide level2">
-
-<h3 id="de-nombreux-changements">De nombreux changements</h3>
-<ul>
 <li class="fragment">Présente de plus en plus à l'international</li>
-<li class="fragment">Mise sur les nouvelles technologies et la qualité logicielle</li>
-<li class="fragment">Changement de méthodologie et d'architecture</li>
 </ul>
 </section><section class="slide level2">
 
@@ -83,7 +77,7 @@
 <ul>
 <li class="fragment">WSManager</li>
 <li class="fragment">Portail développeur openAPI <small>(<a target="blank" href="https://dev.cdiscount.com">https://dev.cdiscount.com</a>)</small></li>
-<li class="fragment">POC mobile</li>
+<li class="fragment">POC web mobile</li>
 <li class="fragment">Organisation de coding dojos</li>
 <li class="fragment">Formation d'un développeur junior</li>
 </ul>
@@ -129,24 +123,14 @@
 <li class="fragment">Limiter les bugs</li>
 <li class="fragment">Production toujours en marche</li>
 </ul>
-</section><section class="slide level2">
-
-<h3 id="autres-objectifs">Autres objectifs</h3>
-<ul>
-<li class="fragment">Utilisation de notre expertise technique (web)</li>
-<li class="fragment">Intérêt des nouvelles technologies</li>
-<li class="fragment">Proposer une alternative</li>
-<li class="fragment">Projet support pour les changements à Cdiscount
-<ul>
-<li class="fragment">Pizza teams</li>
-<li class="fragment">Microservices</li>
-</ul></li>
-</ul>
 </section></section>
 <section><section id="choix-darchitecture" class="titleslide slide level1"><h1>Choix d'architecture</h1></section><section class="slide level2">
 
 <h3 id="monolithe">Monolithe</h3>
-<p>« <em>De l’application simple à l’application à tout faire, il n’y a qu’un pas.</em> », Julien Dubreuil.</p>
+<p class="fragment">
+« <em>De l’application simple à l’application à tout faire, il n’y a qu’un pas.</em> », Julien Dubreuil.
+</p>
+
 </section><section class="slide level2">
 
 <h3 id="inconvénients">Inconvénients</h3>
@@ -160,6 +144,17 @@
 
 <h3 id="microservices">Microservices</h3>
 <ul>
+<li class="fragment">Chaque application est un ensemble de services</li>
+<li class="fragment">Communication avec des mécanismes légers (HTTP)</li>
+<li class="fragment">Service = 1 Fonctionnalité</li>
+<li class="fragment">Déploiements indépendants</li>
+<li class="fragment">Ecrits dans différents langages</li>
+<li class="fragment">Différentes technologies de stockage de données</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="philosophie-et-implémentation">Philosophie et implémentation</h3>
+<ul>
 <li class="fragment"><u>KISS</u> : Keep It Simple Stupid</li>
 <li class="fragment"><u>SOA</u> : Intègre différentes applications comme un ensemble de services</li>
 <li class="fragment"><u>Microservices</u> : Architecture chaque application comme un ensemble de services</li>
@@ -171,6 +166,11 @@
 </figure>
 </section><section class="slide level2">
 
+<figure>
+<img src="images/microservices2.png" alt="Monolithe vs Microservices" /><figcaption>Monolithe vs Microservices</figcaption>
+</figure>
+</section><section class="slide level2">
+
 <h3 id="avantages">Avantages</h3>
 <ul>
 <li class="fragment">Petit et focus sur une seule fonctionnalité</li>
@@ -178,9 +178,14 @@
 <li class="fragment">Déploiements indépendants</li>
 <li class="fragment">Diversité technologique</li>
 <li class="fragment">Scalabilité fonctionnelle</li>
-<li class="fragment">Réécriture limitée a un seul service</li>
+<li class="fragment">Réécriture limitée à un seul service</li>
 </ul>
-</section><section class="slide level2">
+</section><section id="architecture-technologies" class="slide level2">
+<h1>Architecture <br> &gt; <br> Technologies</h1>
+<p></p> <!--had to insert something, or else bug ???-->
+
+</section></section>
+<section><section id="choix-technologiques" class="titleslide slide level1"><h1>Choix technologiques</h1></section><section class="slide level2">
 
 <figure>
 <img src="images/traditional_architecture.png" />
@@ -192,17 +197,10 @@
 </figure>
 </section><section class="slide level2">
 
-<h3 id="deux-types-de-logiques">Deux types de logiques</h3>
-<ul>
-<li class="fragment">Logique métier</li>
-<li class="fragment">Logique applicative</li>
-</ul>
-</section><section id="architecture-technologies" class="slide level2">
-<h1>Architecture <br> &gt; <br> Technologies</h1>
-<p></p> <!--had to insert something, or else bug ???-->
-
-</section></section>
-<section><section id="choix-technologiques" class="titleslide slide level1"><h1>Choix technologiques</h1></section><section class="slide level2">
+<figure>
+<img src="images/api_gateway.png" alt="Aperçu de l&#39;architecture globale" /><figcaption>Aperçu de l'architecture globale</figcaption>
+</figure>
+</section><section class="slide level2">
 
 <h3 id="front-end">Front-end</h3>
 <figure>
@@ -220,6 +218,13 @@
 <figure>
 <img src="images/docker.jpg" />
 </figure>
+</section><section class="slide level2">
+
+<h3 id="deux-types-de-logiques">Deux types de logiques</h3>
+<ul>
+<li class="fragment">Logique métier</li>
+<li class="fragment">Logique applicative</li>
+</ul>
 </section></section>
 <section><section id="choix-de-méthodologie" class="titleslide slide level1"><h1>Choix de méthodologie</h1></section><section class="slide level2">
 
@@ -251,7 +256,7 @@
 
 <h3 id="démonstration-du-développement-dune-fonctionnalité">Démonstration du développement d’une fonctionnalité</h3>
 <ul>
-<li class="fragment">Création d'une nouvelle branche</li>
+<li class="fragment">Création d'une nouvelle branche sur git</li>
 <li class="fragment">Écriture de tests de haut niveau (Intégration / UI)</li>
 <li class="fragment">Écriture du code source en TDD strict</li>
 <li class="fragment">Code review par un autre membre de l’équipe</li>
@@ -287,10 +292,9 @@
 </section><section class="slide level2">
 
 <h3 id="logiciel-de-qualité">Logiciel de qualité</h3>
-<figure>
-<img src="images/team.png" />
-</figure>
+<p><img class="fragment" src="images/team.png"/></p>
 </section></section>
+<section><section id="des-questions" class="titleslide slide level1"><h1>Des questions ?</h1></section></section>
 </div>
 
 <script src="reveal.js/lib/js/head.min.js"></script>
@@ -304,6 +308,8 @@
     progress: true,
     history: true,
     center: true,
+    touch: true,
+    mouseWheel: true,
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'black', 
