@@ -20,6 +20,11 @@ Using your own machine :
 make memoire.pdf
 ```
 
+### Presentation
+
+revealjs
+TODO
+
 ## Files
 
 ```
